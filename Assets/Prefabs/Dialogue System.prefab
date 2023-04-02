@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 196537197346992399}
   - component: {fileID: 449640207234642200}
   - component: {fileID: 6013262533182749022}
+  - component: {fileID: 7236028986619255655}
   m_Layer: 0
   m_Name: Dialogue System
   m_TagString: Untagged
@@ -125,7 +126,7 @@ MonoBehaviour:
   startNode: Start
   startAutomatically: 1
   runSelectedOptionAsLine: 0
-  lineProvider: {fileID: 0}
+  lineProvider: {fileID: 7236028986619255655}
   verboseLogging: 1
   onNodeStart:
     m_PersistentCalls:
@@ -168,6 +169,19 @@ MonoBehaviour:
   dialogueView: {fileID: 6405619918323516763}
   continueActionType: 1
   continueActionKeyCode: 32
+--- !u!114 &7236028986619255655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522360974067825010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f0777399ec04ef6957da2ae823eb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLanguageCode: en-US
 --- !u!1 &2208582824940892336
 GameObject:
   m_ObjectHideFlags: 0
