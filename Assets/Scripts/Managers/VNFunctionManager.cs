@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
@@ -32,7 +33,7 @@ public class VNFunctionManager : DialogueViewBase
 		public AudioSource genericAudioSource; // local prefab, used for instantiating sounds
 
 		// big lists to keep track of all instantiated objects
-		List<AudioSource> sounds = new List<AudioSource>(); // big list of all instantiated sounds
+		List<EventInstance> sounds = new List<EventInstance>(); // big list of all instantiated sounds
 		List<Image> sprites = new List<Image>(); // big list of all instantianted sprites
 
 		// store sprite references for "actors" (characters, etc.)
@@ -45,9 +46,10 @@ public class VNFunctionManager : DialogueViewBase
 			// have to type out game object names in Yarn scripts (also
 			// gives us a performance increase by avoiding GameObject.Find)
 
-			runner.AddCommandHandler<string,float,string>("PlayAudio", PlayAudio );
-			runner.AddCommandHandler<string>("StopAudio", StopAudio );
-			runner.AddCommandHandler("StopAudioAll", StopAudioAll );
+			runner.AddCommandHandler<string>("PlaySFX", PlaySFX );
+			runner.AddCommandHandler<string, float>("PlayEffect", PlayEffect );
+			// runner.AddCommandHandler<string>("StopAudio", StopAudio );
+			// runner.AddCommandHandler("StopAudioAll", StopAudioAll );
 
             runner.AddCommandHandler<string,float,float,float>("Fade", SetFade );
 			runner.AddCommandHandler<float>("FadeIn", SetFadeIn );
@@ -80,75 +82,41 @@ public class VNFunctionManager : DialogueViewBase
 
 		#region YarnCommands
 
-		/// <summary>PlayAudio( soundName,volume,"loop" )...
-		/// PlayAudio(soundName,1.0) plays soundName once at 100% volume...
-		/// if third parameter was word "loop" it would loop "volume" is a
-		/// number from 0.0 to 1.0 "loop" is the word "loop" (or "true"),
-		/// which tells the sound to loop over and over</summary>
-		///
-		/// TODO: REDO WITH FMOD
-		public void PlayAudio(string soundName, float volume = 1, string loop = "") {
-			
-			var audioClip = FetchAsset<AudioClip>(soundName);
-			// detect volume setting
-			
-            if ( volume <= 0.01f ) {
-                Debug.LogWarningFormat(this, "VN Manager is playing sound {0} at very low volume ({1}), just so you know", soundName, volume );
-            }
-			
-			// detect loop setting
-			bool shouldLoop = loop.Contains("loop") || loop.Contains("true");			
-			
-			// instantiate AudioSource and configure it (don't use
-			// AudioSource.PlayOneShot because we also want the option to
-			// use <<StopAudio>> and interrupt it)
-			var newAudioSource = Instantiate<AudioSource>( genericAudioSource, genericAudioSource.transform.parent );
-			newAudioSource.name = audioClip.name;
-			newAudioSource.clip = audioClip;
-			newAudioSource.volume *= volume;
-			newAudioSource.loop = shouldLoop;
-			newAudioSource.Play();
-			sounds.Add(newAudioSource);
-
-			// if it doesn't loop, let's set a max lifetime for this sound
-			if ( shouldLoop == false ) {
-				StartCoroutine( SetDestroyTime( newAudioSource, audioClip.length ) );
-			}
-		}
-
-		/// <summary>stops sound playback based on sound name, whether it's
-		/// looping or not</summary>
-		public void StopAudio(string soundName) {
-			
-			// let's just do this in a sloppy way for now, and also assume
-			// there's only one object like it
-			AudioSource toDestroy = null;
-			foreach ( var audioObject in sounds ) {
-				if (audioObject.name == soundName) {
-					toDestroy = audioObject;
+		public void PlayEffect(string effectName, float intensity = 2)
+		{
+			switch (effectName.ToLower())
+			{
+				case ("shock"): //slam sfx, screen shake & flash
+				{
+					break;
+				}
+				case ("revelation"): //Vibe sfx, possible screenshake
+				{
+					break;
+				}
+				case ("energy"): //ding + screenshake in PW
+				{
+					break;
+				}
+				case ("emphasis"): //splash sfx, screen shake
+				{
+					break;
+				}
+				case ("failure"): //oops, I'm wrong, oof (SFX + screenshake)
+				{
 					break;
 				}
 			}
-
-			// double-check there's any audioSource to destroy tho, because
-			// it might have been destroyed already
-			if ( toDestroy != null ) {
-				CleanDestroy<AudioSource>( toDestroy.gameObject );
-			} else {
-				Debug.LogWarningFormat(this, "VN Manager tried to <<StopAudio {0}>> but couldn't find any sound \"{0}\" currently playing. Double-check the name, or maybe it already stopped.", soundName );
-			}
 		}
 
-		/// <summary>stops all currently playing sounds, doesn't actually
-		/// take any parameters</summary>
-		public void StopAudioAll() {
-			var toStop = new List<AudioSource>();
-			foreach (var audioSrc in sounds ) {
-				toStop.Add( audioSrc );
-			}
-			foreach ( var stopThis in toStop ) {
-				StopAudio( stopThis.name );
-			}
+		/// <summary>PlayAudio( soundName )...
+		/// plays oneshot sound effect</summary>
+		///
+		public void PlaySFX(string soundName) {
+			
+			// var audioClip = FetchAsset<AudioClip>(soundName);
+			string eventString = "event:/SFX/" + soundName;
+			FMODUnity.RuntimeManager.PlayOneShot(eventString);
 		}
 
 		/// <summary>typical screen fade effect, good for transitions?
@@ -195,13 +163,54 @@ public class VNFunctionManager : DialogueViewBase
 		}
 
 		//SPRITE OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM
-		#region Sprite Functions
+
+		#region Deprecated Functions
 		  //
 		// /// <summary>changes background image</summary>
 		// public void DoSceneChange(string spriteName) {
 		// 	bgImage.sprite = FetchAsset<Sprite>( spriteName );
 		// }
-  //
+		//
+			
+		// /// <summary>stops sound playback based on sound name, whether it's
+		// /// looping or not</summary>
+		// public void StopSFX(string soundName) {
+		// 	
+		// 	// let's just do this in a sloppy way for now, and also assume
+		// 	// there's only one object like it
+		// 	AudioSource toDestroy = null;
+		// 	foreach ( var audioObject in sounds ) {
+		// 		EventDescription desc;
+		// 		string evtName;
+		// 		audioObject.getDescription(out desc);
+		// 		desc.getPath();
+		// 		if (FMOD.Studio.EventDescription( audioObject == soundName) {
+		// 			toDestroy = audioObject;
+		// 			break;
+		// 		}
+		// 	}
+		//
+		// 	// double-check there's any audioSource to destroy tho, because
+		// 	// it might have been destroyed already
+		// 	if ( toDestroy != null ) {
+		// 		CleanDestroy<AudioSource>( toDestroy.gameObject );
+		// 	} else {
+		// 		Debug.LogWarningFormat(this, "VN Manager tried to <<StopAudio {0}>> but couldn't find any sound \"{0}\" currently playing. Double-check the name, or maybe it already stopped.", soundName );
+		// 	}
+		// }
+		//
+		// /// <summary>stops all currently playing sounds, doesn't actually
+		// /// take any parameters</summary>
+		// public void StopAudioAll() {
+		// 	var toStop = new List<AudioSource>();
+		// 	foreach (var audioSrc in sounds ) {
+		// 		toStop.Add( audioSrc );
+		// 	}
+		// 	foreach ( var stopThis in toStop ) {
+		// 		StopAudio( stopThis.name );
+		// 	}
+		// }
+  
 		// /// <summary>
 		// /// SetActor(actorName,spriteName,positionX,positionY,color) main
 		// /// function for moving / adjusting characters</summary>
@@ -457,8 +466,8 @@ public class VNFunctionManager : DialogueViewBase
 		// CleanDestroy also removes any references to the gameObject from
 		// sprites or sounds
 		void CleanDestroy<T>( GameObject destroyThis ) {
-			if ( typeof(T) == typeof(AudioSource) ) {
-				sounds.Remove( destroyThis.GetComponent<AudioSource>() );
+			if ( typeof(T) == typeof(EventInstance) ) {
+				sounds.Remove( destroyThis.GetComponent<EventInstance>() );
 			} else if ( typeof(T) == typeof(Image) ) {
 				sprites.Remove( destroyThis.GetComponent<Image>() );
 			}

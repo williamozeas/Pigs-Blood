@@ -79,7 +79,6 @@ GameObject:
   - component: {fileID: 2250274391191440140}
   - component: {fileID: 1007142502785880530}
   - component: {fileID: 8517922602376601813}
-  - component: {fileID: 196537197346992399}
   - component: {fileID: 449640207234642200}
   - component: {fileID: 6013262533182749022}
   - component: {fileID: 7236028986619255655}
@@ -119,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa7e33f7560241f8910d193a64d2967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runner: {fileID: 196537197346992399}
+  runner: {fileID: 8517922602376601813}
   loadSprites: []
   loadAudio:
   - {fileID: 8300000, guid: bd755ecaa60ee496d8bef5955a7dc20d, type: 3}
@@ -146,41 +145,6 @@ MonoBehaviour:
   yarnProject: {fileID: 7545569452688597077, guid: 3bad2d6a8a3ad48b286d8284de61d587,
     type: 3}
   _variableStorage: {fileID: 0}
-  dialogueViews:
-  - {fileID: 6405619918323516763}
-  - {fileID: 2208582824940892335}
-  startNode: Start
-  startAutomatically: 1
-  runSelectedOptionAsLine: 0
-  lineProvider: {fileID: 7236028986619255655}
-  verboseLogging: 1
-  onNodeStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onNodeComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onDialogueComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onCommand:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &196537197346992399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522360974067825010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yarnProject: {fileID: 7545569452688597077, guid: 3bad2d6a8a3ad48b286d8284de61d587,
-    type: 3}
-  _variableStorage: {fileID: 449640207234642200}
   dialogueViews:
   - {fileID: 6405619918323516763}
   - {fileID: 2208582824940892335}
