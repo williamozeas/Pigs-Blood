@@ -2,7 +2,7 @@
 tags:
 position: 32,-250
 ---
-Wolf: You're not getting anything out of me.
+Wolf: You're not getting <style="emph">anything</style> out of me.
 
 <<jump Default>>
 ===
@@ -18,7 +18,7 @@ position: 19,-127
 -> Accuse
     -> You lied about...!
         <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
-    -> You know who's behind this!
+    -> You know <style="imp">who's behind this!</style>
         <<jump Pick_Evidence>>
 -> Review
     Triggering review.... #review
@@ -28,10 +28,12 @@ tags:
 position: -79,10
 ---
 <<if visited("Question_1") == true>>
+    <<wait 0.5>>
     Wolf: Again? Did you forget what I said the first time?
 <<else>>
     Wolf: Wow. Great question, Sherlock.
 <<endif>>
+<<PlayAudio Airball>>
 Boy: Alright, smart guy.
 <<jump Default>>
 ===
