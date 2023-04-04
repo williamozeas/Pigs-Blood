@@ -1,5 +1,69 @@
 ﻿title: Wolf1
 tags:
+position: 14,-239
+---
+Wolf: Well well, a little piggy comes to pay a visit to the big bad wolf.
+Boy: Can it Wolf, We got a list of evidence a mile long. This is only a formality. But if you answer my questions, maybe we can let you off a bit easier this time.
+Wolf: You're not getting <style="emph">anything</style> out of me.
+
+<<jump Wolf_Q1_Start>>
+===
+title: Wolf_Q1_Start
+tags:
+position: 13,-67
+---
+-> Question
+    -> This is a new low, even for you. Selling illicit drugs to kids? What's with the shift here Wolf?
+        <<jump Wolf_1_Question_1>>
+    -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
+        <<jump Wolf_1_Question_2>>
+-> Accuse
+    -> You lied about...!
+        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
+    -> You know <style="imp">who's behind this!</style>
+        <<jump Pick_Evidence>>
+-> Review
+    Triggering review.... #review
+===
+title: Wolf_Q1_Question_1
+tags:
+position: -184,72
+---
+<<if visited("Wolf_Q1_Question_1") == true>>
+    <<wait 0.5>>
+    Wolf: Again? Did you forget what I said the first time?
+<<else>>
+    Wolf: Wow. Great question, Sherlock. Money, Power whatever really...
+<<endif>>
+<<PlayAudio Airball>>
+Boy: Alright, smart ass.
+<<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
+    <<jump Wolf_Q2_Start>>
+<<else>>
+    <<jump Wolf_Q1_Start>>
+<<endif>>
+===
+title: Wolf_Q1_Question_2
+tags:
+position: 224,71
+---
+<<if visited("Wolf_Q1_Question_2") == true>>
+    <<wait 0.5>>
+    Wolf: Again? Did you forget what I said the first time?
+<<else>>
+    Wolf: Simple, law of supply and demand. Demand for this stuff went up, so 
+    Boy: You're getting 10 to life.
+    Wolf: Fuck.
+<<endif>>
+
+<<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
+    <<jump Wolf_Q2_Start>>
+<<else>>
+    <<jump Wolf_Q1_Start>>
+<<endif>>
+===
+title: Wolf_Q2_Start
+position: 17,287
 ---
 
 ===
