@@ -6,9 +6,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 
-public class VNFunctionManager : DialogueViewBase
+public class YarnCommandManager : DialogueViewBase
 {
-    [SerializeField] DialogueRunner runner;
+		[SerializeField] DialogueRunner runner;
 
 		[Header("Assets"), Tooltip("you can manually assign various assets here if you don't want to use /Resources/ folder")]
 		public List<Sprite> loadSprites = new List<Sprite>();
@@ -54,6 +54,9 @@ public class VNFunctionManager : DialogueViewBase
             runner.AddCommandHandler<string,float,float,float>("Fade", SetFade );
 			runner.AddCommandHandler<float>("FadeIn", SetFadeIn );
 			runner.AddCommandHandler<string,string,float>("CamOffset", SetCameraOffset );
+			
+			runner.AddCommandHandler<string>("AddCharacter", AddCharacter);
+			runner.AddCommandHandler<string>("RemoveCharacter", RemoveCharacter);
 
 			// adds all Resources to internal lists / one big pile... it
 			// will scan inside all subfolders too! note: but when
@@ -162,7 +165,21 @@ public class VNFunctionManager : DialogueViewBase
 			StartCoroutine( MoveCoroutine( parent, newPos, moveTime ) );
 		}
 
-		//SPRITE OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM
+		public void AddCharacter(string characterName)
+		{
+			Characters characterEnum = CharacterManager.GetCharacterEnum(characterName);
+			Character character = CharacterManager.Instance.GetCharacter(characterEnum);
+			character.FadeIn();
+		}
+
+		public void RemoveCharacter(string characterName)
+		{
+			Characters characterEnum = CharacterManager.GetCharacterEnum(characterName);
+			Character character = CharacterManager.Instance.GetCharacter(characterEnum);
+			character.FadeOut();
+		}
+
+		//SPRITE & Audio OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM
 
 		#region Deprecated Functions
 		  //
