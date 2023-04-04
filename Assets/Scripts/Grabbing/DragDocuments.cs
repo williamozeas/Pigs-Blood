@@ -16,7 +16,7 @@ public class DragDocuments : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (GameManager.Instance.PlayerState == PlayerState.Review && Input.GetMouseButtonDown(0))
         {
             RaycastHit raycastHit;
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);

@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f328081ce832a4332ba9cfefc52a6482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DontDestroy: 0
+  DontDestroy: 1
+  playerState: 0
 --- !u!114 &3986627737244228511
 MonoBehaviour:
   m_ObjectHideFlags: 0

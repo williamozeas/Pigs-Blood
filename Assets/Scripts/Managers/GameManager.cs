@@ -2,12 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum GameState
 {
     MainMenu,
-    Review,
+    Prepare,
     Interrogation
+}
+
+public enum PlayerState
+{
+    Talk,
+    Review
 }
 
 public class GameManager : Singleton<GameManager>
@@ -18,12 +25,19 @@ public class GameManager : Singleton<GameManager>
         set { SetGameState(value); }
         get { return _gamestate; }
     }
-    
-    
+
+    [SerializeField] private PlayerState playerState = PlayerState.Talk;
+    public PlayerState PlayerState 
+    {
+        set { SetPlayerState(value); }
+        get { return playerState; }
+    }
+
     public static event Action Advance;
     public static event Action StartInterrogation;
-    public static event Action StartReview;
+    public static event Action StartPrepare;
     public static event Action GoToMainMenu;
+    public static event Action<PlayerState> ChangePlayerState;
     
     // Start is called before the first frame update
     void Start()
@@ -47,9 +61,9 @@ public class GameManager : Singleton<GameManager>
                 GoToMainMenu?.Invoke();
                 break;
             }
-            case (GameState.Review):
+            case (GameState.Prepare):
             {
-                StartReview?.Invoke();
+                StartPrepare?.Invoke();
                 break;
             }
             case (GameState.Interrogation):
@@ -60,6 +74,12 @@ public class GameManager : Singleton<GameManager>
         }
 
         _gamestate = newGameState;
+    }
+    
+    private void SetPlayerState(PlayerState value)
+    {
+        playerState = value;
+        ChangePlayerState?.Invoke(playerState);
     }
 
     public static void TriggerAdvance()

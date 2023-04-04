@@ -25,8 +25,8 @@ position: 19,-127
     -> You know <style="imp">who's behind this!</style>
         <<jump Pick_Evidence>>
 -> Review
-    <<RemoveCharacter Wolf>>
-    Triggering review.... #review
+    <<RemoveCharacter Wolf>> //this should be removed eventually but it's here for the example
+    <<Review>>
 ===
 title: Question_1
 tags:
