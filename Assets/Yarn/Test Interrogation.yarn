@@ -2,6 +2,8 @@
 tags:
 position: 32,-250
 ---
+Boy: Bring him in.
+<<AddCharacter Wolf>>
 Wolf: You're not getting <style="emph">anything</style> out of me.
 
 <<jump Default>>
@@ -21,6 +23,7 @@ position: 19,-127
     -> You know <style="imp">who's behind this!</style>
         <<jump Pick_Evidence>>
 -> Review
+    <<RemoveCharacter Wolf>>
     Triggering review.... #review
 ===
 title: Question_1
