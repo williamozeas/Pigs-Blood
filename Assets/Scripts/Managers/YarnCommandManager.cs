@@ -48,6 +48,8 @@ public class YarnCommandManager : DialogueViewBase
 
 			runner.AddCommandHandler<string>("PlaySFX", PlaySFX );
 			runner.AddCommandHandler<string, float>("PlayEffect", PlayEffect );
+			runner.AddCommandHandler<string>("SetMusic", SetMusic);
+			runner.AddCommandHandler("StopMusic", StopMusic);
 			// runner.AddCommandHandler<string>("StopAudio", StopAudio );
 			// runner.AddCommandHandler("StopAudioAll", StopAudioAll );
 
@@ -192,6 +194,16 @@ public class YarnCommandManager : DialogueViewBase
 		public void Review()
 		{
 			GameManager.Instance.PlayerState = PlayerState.Review;
+		}
+
+		public void SetMusic(string name)
+		{
+			AudioManager.Instance.SetMusic(name);
+		}
+
+		public void StopMusic()
+		{
+			AudioManager.Instance.StopMusic();
 		}
 
 		//SPRITE & Audio OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM

@@ -1,0 +1,55 @@
+﻿title: Start
+tags:
+position: 32,-250
+---
+<<SetMusic MainTheme>>
+Boy: Bring him in.
+<<SetPose Wolf CheckedOut>>
+<<AddCharacter Wolf>>
+Wolf: You're not getting <style="emph">anything</style> out of me.
+
+<<jump Default>>
+===
+title: Default
+tags:
+position: 19,-127
+---
+<<SetPose Wolf CheckedOut>>
+-> Question
+    -> Question 1
+        <<jump Question_1>>
+    -> Question 2
+        <<jump Question_2>>
+-> Accuse
+    -> You lied about...!
+        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
+    -> You know <style="imp">who's behind this!</style>
+        <<jump Pick_Evidence>>
+-> Review
+    <<RemoveCharacter Wolf>> //this should be removed eventually but it's here for the example
+    <<Review>>
+===
+title: Question_1
+tags:
+position: -79,10
+---
+<<if visited("Question_1") == true>>
+    <<wait 0.5>>
+    Wolf: Again? Did you forget what I said the first time?
+<<else>>
+    <<SetPose Wolf Flippant>>
+    Wolf: Wow. Great question, Sherlock.
+<<endif>>
+<<PlayAudio Airball>>
+Boy: Alright, smart guy.
+<<jump Default>>
+===
+title: Question_2
+tags:
+position: 129,12
+---
+Wolf: You really got me with that one.
+Boy: You're getting 10 to life.
+Wolf: Fuck.
+<<jump Default>>
+===
