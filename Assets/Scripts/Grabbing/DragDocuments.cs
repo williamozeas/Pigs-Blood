@@ -5,11 +5,12 @@ using UnityEngine;
 public class DragDocuments : MonoBehaviour
 {
     IGrabbable grabbedObject;
+    private Camera mainCam;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainCam = Camera.main;
     }
 
     // Update is called once per frame
@@ -18,7 +19,7 @@ public class DragDocuments : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit raycastHit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out raycastHit, 10f))
             {
@@ -26,9 +27,9 @@ public class DragDocuments : MonoBehaviour
                 {
                     if (raycastHit.collider.gameObject.TryGetComponent(out IGrabbable grabbableObject))
                     {
-                        Vector3 screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+                        Vector3 screenPoint = mainCam.WorldToScreenPoint(gameObject.transform.position);
  
-                        Vector3 offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+                        Vector3 offset = gameObject.transform.position - mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
                         grabbableObject.Grabbed(gameObject, offset);
                         grabbedObject = grabbableObject;
