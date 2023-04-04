@@ -3,6 +3,7 @@ tags:
 position: 32,-250
 ---
 Boy: Bring him in.
+<<SetPose Wolf CheckedOut>>
 <<AddCharacter Wolf>>
 Wolf: You're not getting <style="emph">anything</style> out of me.
 
@@ -12,8 +13,9 @@ title: Default
 tags:
 position: 19,-127
 ---
--> Questioni
-    -> Question 1333
+<<SetPose Wolf CheckedOut>>
+-> Question
+    -> Question 1
         <<jump Question_1>>
     -> Question 2
         <<jump Question_2>>
@@ -34,6 +36,7 @@ position: -79,10
     <<wait 0.5>>
     Wolf: Again? Did you forget what I said the first time?
 <<else>>
+    <<SetPose Wolf Flippant>>
     Wolf: Wow. Great question, Sherlock.
 <<endif>>
 <<PlayAudio Airball>>

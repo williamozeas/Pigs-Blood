@@ -57,6 +57,7 @@ public class YarnCommandManager : DialogueViewBase
 			
 			runner.AddCommandHandler<string>("AddCharacter", AddCharacter);
 			runner.AddCommandHandler<string>("RemoveCharacter", RemoveCharacter);
+			runner.AddCommandHandler<string, string>("SetPose", SetPose);
 
 			// adds all Resources to internal lists / one big pile... it
 			// will scan inside all subfolders too! note: but when
@@ -177,6 +178,13 @@ public class YarnCommandManager : DialogueViewBase
 			Characters characterEnum = CharacterManager.GetCharacterEnum(characterName);
 			Character character = CharacterManager.Instance.GetCharacter(characterEnum);
 			character.FadeOut();
+		}
+
+		public void SetPose(string characterName, string pose)
+		{
+			Characters characterEnum = CharacterManager.GetCharacterEnum(characterName);
+			Character character = CharacterManager.Instance.GetCharacter(characterEnum);
+			character.TriggerPose(pose);
 		}
 
 		//SPRITE & Audio OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM

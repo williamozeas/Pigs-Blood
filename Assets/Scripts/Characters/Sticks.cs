@@ -18,6 +18,6 @@ public class Sticks : Character
 
     public override void TriggerPose(string pose)
     {
-        
+        base.TriggerPose(pose);
     }
 }
