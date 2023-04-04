@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public enum GameState
@@ -38,17 +39,14 @@ public class GameManager : Singleton<GameManager>
     public static event Action StartPrepare;
     public static event Action GoToMainMenu;
     public static event Action<PlayerState> ChangePlayerState;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public override void Awake()
     {
-        
+        base.Awake();
+        if (SceneManager.GetActiveScene().name == "Interrogation" && SceneManager.sceneCount == 1)
+        {
+            SceneManager.LoadScene("Documents", LoadSceneMode.Additive);
+        }
     }
     
     public void SetGameState(GameState newGameState)

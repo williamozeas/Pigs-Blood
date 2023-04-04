@@ -29,13 +29,17 @@ public class CameraManager : Singleton<CameraManager>
     {
         if (newState == PlayerState.Review)
         {
-            docsCam.enabled = true;
-            talkCam.enabled = false;
+            if(docsCam)
+                docsCam.enabled = true;
+            if(talkCam)
+                talkCam.enabled = false;
         }
         else
         {
-            docsCam.enabled = false;
-            talkCam.enabled = true;
+            if(docsCam)
+                docsCam.enabled = false;
+            if(talkCam)
+                talkCam.enabled = true;
         }
     }
 }
