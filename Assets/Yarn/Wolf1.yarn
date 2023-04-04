@@ -14,9 +14,9 @@ position: 13,-67
 ---
 -> Question
     -> This is a new low, even for you. Selling illicit drugs to kids? What's with the shift here Wolf?
-        <<jump Wolf_1_Question_1>>
+        <<jump Wolf_Q1_Question_1>>
     -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
-        <<jump Wolf_1_Question_2>>
+        <<jump Wolf_Q1_Question_2>>
 -> Accuse
     -> You lied about...!
         <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
@@ -51,9 +51,10 @@ position: 224,71
     <<wait 0.5>>
     Wolf: Again? Did you forget what I said the first time?
 <<else>>
-    Wolf: Simple, law of supply and demand. Demand for this stuff went up, so 
-    Boy: You're getting 10 to life.
-    Wolf: Fuck.
+    Wolf: Simple, law of supply and demand. Demand for this stuff went up, so everyone came to the only supply: Me.
+    Boy: What are you even calling this stuff? Every person we've talked to has a different name for it.
+    Wolf: Pixie Dust, name is stupid I know..
+    Boy: But didn't you...
 <<endif>>
 
 <<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
