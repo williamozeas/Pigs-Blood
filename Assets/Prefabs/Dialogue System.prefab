@@ -751,7 +751,7 @@ MonoBehaviour:
   onCharacterTyped:
     m_PersistentCalls:
       m_Calls: []
-  typewriterEffectSpeed: 120
+  typewriterEffectSpeed: 60
   continueButton: {fileID: 5751657642555124461}
   holdTime: 1
   autoAdvance: 0
