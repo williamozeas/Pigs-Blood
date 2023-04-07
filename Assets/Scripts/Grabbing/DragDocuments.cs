@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DragDocuments : MonoBehaviour
 {
-    IGrabbable grabbedObject;
+    GrabbableAbstract grabbedObject;
     private Camera mainCam;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class DragDocuments : MonoBehaviour
             {
                 if (raycastHit.transform != null)
                 {
-                    if (raycastHit.collider.gameObject.TryGetComponent(out IGrabbable grabbableObject))
+                    if (raycastHit.collider.gameObject.TryGetComponent(out GrabbableAbstract grabbableObject))
                     {
                         Vector3 screenPoint = mainCam.WorldToScreenPoint(gameObject.transform.position);
  
