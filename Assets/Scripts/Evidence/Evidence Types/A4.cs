@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabbableA4 : GrabbableAbstract
+public class A4 : EvidenceAbstract
 {
     protected override void Awake ()
     {

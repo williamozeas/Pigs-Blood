@@ -16,7 +16,8 @@ public enum PlayerState
 {
     Talk,
     Review,
-    ChooseEvidence
+    ChooseEvidence,
+    Inspecting
 }
 
 public class GameManager : Singleton<GameManager>

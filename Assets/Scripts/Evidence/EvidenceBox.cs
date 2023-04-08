@@ -9,10 +9,10 @@ public class EvidenceBox : MonoBehaviour
     {
         if (isColliding) return;
         isColliding = true;
-        GrabbableAbstract doc = other.gameObject.GetComponent<GrabbableAbstract>();
+        EvidenceAbstract doc = other.gameObject.GetComponent<EvidenceAbstract>();
         if (doc)
         {
-            GameManager.Instance.YarnCommandManager.RespondToEvidence(doc.id);
+            doc.OnPresent();
         }
 
         StartCoroutine(Reset());
