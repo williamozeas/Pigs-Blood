@@ -193,17 +193,17 @@ position: -751,186
     <<Review>>
 ===
 title: Wolf_Q3_Question_1
-position: -690,-168
+position: -1012,251
 ---
 
 ===
 title: Wolf_Q3_Question_2
-position: -680,-158
+position: -751,352
 ---
 
 ===
 title: Wolf_Q3_Question_3
-position: -670,-148
+position: -493,247
 ---
 Wolf: OI that crossed a line.
 Wolf: Are you insinuating I went out to give drugs to someone?
@@ -212,12 +212,12 @@ Wolf: Look, I may be a criminal at times. But I am a good parent. I would never 
 Wolf: I'd never do something to endanger my kids. I'd go through hell to protect them.
 ===
 title: Wolf_Q3_Accusation_Default
-position: -660,-138
+position: -248,180
 ---
 
 ===
 title: Wolf_Q3_Accusation_Correct
-position: -650,-128
+position: -260,413
 ---
 
 ===
