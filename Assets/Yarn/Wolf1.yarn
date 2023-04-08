@@ -143,19 +143,26 @@ Boy: Mhmm...I see...
 ===
 title: Wolf_Q2_Accusation_Correct
 tags:
+position: -233,-214
 ---
-Wolf: Not paper 1!!! nooooooo
-Boy: Heh. More like the boy who made the wolf cry amirite
-Boy: *puts shades on*
-<<jump Default>>
+Boy: You claim that you were at home all day, yet we have this footage showing you on Main. 
+Wolf: How do you know that's me? The quality on that photo is atrocious
+Boy: The owner of the shop witnessed you walk by as well. Wolves are an uncommon sight lately.
+//Wolf: Yeah with how badly we get treated around here thats no suprise
+<<jump Wolf_Q3>>
 ===
 
 title:  Wolf_Q2_Accusation_Default
 tags:
-position: 37,-312
+position: -231,-426
 ---
 Wolf: And thats relevant how? 
 Wolf: You're losing your edge kid.
 Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump Wolf_Q2_Start>>
+===
+title: Wolf_Q3
+position: -751,20
+---
+
 ===
