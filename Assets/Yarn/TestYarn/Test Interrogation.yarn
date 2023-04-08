@@ -2,6 +2,7 @@
 tags:
 position: 32,-250
 ---
+<<SetMusic Chill>>
 Boy: Bring him in.
 <<SetPose Wolf CheckedOut>>
 <<AddCharacter Wolf>>
@@ -14,6 +15,7 @@ tags:
 position: 19,-127
 ---
 <<SetPose Wolf CheckedOut>>
+<<SetMusic Chill>>
 -> Question
     -> Question 1
         <<jump Question_1>>
@@ -24,6 +26,10 @@ position: 19,-127
         <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
     -> You know <style="imp">who's behind this!</style>
         <<jump Pick_Evidence>>
+    -> This evidence proves you wrong!
+        <<ResetEvidenceResponses>>
+        <<SetEvidenceResponse testPaper_1 TestPaper1Response>>
+        <<PromptEvidence DefaultResponse>>
 -> Review
     <<RemoveCharacter Wolf>> //this should be removed eventually but it's here for the example
     <<Review>>
@@ -50,5 +56,24 @@ position: 129,12
 Wolf: You really got me with that one.
 Boy: You're getting 10 to life.
 Wolf: Fuck.
+<<jump Default>>
+===
+title: TestPaper1Response
+tags:
+---
+<<StopMusic>>
+Wolf: Not paper 1!!! nooooooo
+<<SetMusic Tense>>
+Boy: Heh. More like the boy who made the wolf cry amirite
+Boy: *puts shades on*
+<<StopMusic>>
+<<jump Default>>
+===
+title: DefaultResponse
+tags:
+---
+Wolf: What is that???? A test paper 2???? 
+Wolf: You gotta do better, man.
+Boy: <style="int">(Shit. He's good.)</style>
 <<jump Default>>
 ===

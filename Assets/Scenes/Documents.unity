@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dbb1e1441ca4dc4846cef4343568e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: testPaper_1
 --- !u!1 &694502340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 532325001934962036, guid: 273cf036778834c698a49dd16dba0095,
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8dbb1e1441ca4dc4846cef4343568e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: testPaper_2
 --- !u!54 &965917898
 Rigidbody:
   m_ObjectHideFlags: 0

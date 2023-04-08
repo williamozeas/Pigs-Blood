@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7cc73c27-dd96-4f93-bcbe-fcbcb1409c08}">
+		<property name="assetPath">
+			<value>Tense?.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>80.236190476190473</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a0ea6df-e6b6-4150-8eec-71b8014833b9}</destination>
+		</relationship>
+	</object>
+</objects>
