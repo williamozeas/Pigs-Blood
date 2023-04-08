@@ -12,18 +12,23 @@ title: Wolf_Q1_Start
 tags:
 position: -749,-923
 ---
--> Question
-    -> This is a new low, even for you. Selling illicit drugs to kids? What's with the shift here Wolf?
-        <<jump Wolf_Q1_Question_1>>
-    -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
-        <<jump Wolf_Q1_Question_2>>
--> Accuse
-    -> You lied about...!
-        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
-    -> You know <style="imp">who's behind this!</style>
-        <<jump Pick_Evidence>>
--> Review
-    Triggering review.... #review
+<<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
+    <<jump Wolf_2>>
+<<else>>
+    -> Question
+        -> This is a new low, even for you. Selling illicit drugs to kids? What's with the shift here Wolf?
+            <<jump Wolf_Q1_Question_1>>
+        -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
+            <<jump Wolf_Q1_Question_2>>
+    -> Accuse
+        -> You lied about...!
+            <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
+        -> You know <style="imp">who's behind this!</style>
+            <<jump Pick_Evidence>>
+    -> Review
+        Triggering review.... #review
+<<endif>>
+
 ===
 title: Wolf_Q1_Question_1
 tags:
@@ -37,11 +42,8 @@ position: -946,-784
 <<endif>>
 <<PlayAudio Airball>>
 Boy: Alright, smart ass.
-<<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
-    <<jump Wolf_2>>
-<<else>>
-    <<jump Wolf_Q1_Start>>
-<<endif>>
+<<jump Wolf_Q1_Start>>
+
 ===
 title: Wolf_Q1_Question_2
 tags:
@@ -54,14 +56,10 @@ position: -538,-785
     Wolf: Simple, law of supply and demand. Demand for this stuff went up, so everyone came to the only supply: Me.
     Boy: What are you even calling this stuff? Every person we've talked to has a different name for it.
     Wolf: Pixie Dust, name is stupid I know..
-    Boy: But didn't you...
+    Boy: But didn't you...ah whatever
 <<endif>>
+<<jump Wolf_Q1_Start>>
 
-<<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
-    <<jump Wolf_2>>
-<<else>>
-    <<jump Wolf_Q1_Start>>
-<<endif>>
 ===
 title: Wolf_2
 position: -745,-569
@@ -89,4 +87,19 @@ position: -745,-405
         <<jump Pick_Evidence>>
 -> Review
     Triggering review.... #review
+===
+title: Wolf_Q2_Question_1
+position: -938,-242
+---
+
+===
+title: Wolf_Q2_Question_2
+position: -474,-244
+---
+
+===
+title: Wolf_Q2_Question_3
+position: -708,-74
+---
+
 ===
