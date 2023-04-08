@@ -6,7 +6,7 @@ position: 32,-250
 Boy: Bring him in.
 <<SetPose Wolf CheckedOut>>
 <<AddCharacter Wolf>>
-Wolf: You're not getting <style="emph">anything</style> out of me.
+Wolf: You're not getting <style="emph">anything</style> out of me. jksfdkfsd jsdfj sdf jsdfjjs dkfjk fdjs kfjs dkfjsdf sdjfks
 
 <<jump Default>>
 ===
@@ -45,7 +45,7 @@ position: -79,10
     <<SetPose Wolf Flippant>>
     Wolf: Wow. Great question, Sherlock.
 <<endif>>
-<<PlayAudio Airball>>
+<<PlaySFX Airball>>
 Boy: Alright, smart guy.
 <<jump Default>>
 ===
