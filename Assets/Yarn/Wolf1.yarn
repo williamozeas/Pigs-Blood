@@ -64,6 +64,7 @@ position: -538,-785
 title: Wolf_2
 position: -745,-569
 ---
+->Continue 
 Boy: Alright Wolf, I have a few more questions for you. 
 Wolf: Sure, not like I can go anywhere. Can ya hurry this up, I have a shift in a few hours?
 Boy: Depends on how you answer these questions Wolf, don't lie or mouth off and it will be done sooner.
@@ -78,7 +79,7 @@ position: -745,-405
         <<jump Wolf_Q2_Question_1>>
     -> Temp question 2? <<if visited("Wolf_Q2_Question_1") == true>>
         <<jump Wolf_Q2_Question_2>>
-    -> Temp question 3?
+    -> Temp question 3?<<if visited("Wolf_Q2_Question_1") == true>>
         <<jump Wolf_Q2_Question_3>>
 -> Accuse
     -> You lied about...!
@@ -89,17 +90,17 @@ position: -745,-405
     Triggering review.... #review
 ===
 title: Wolf_Q2_Question_1
-position: -938,-242
+position: -1002,-284
 ---
 
 ===
 title: Wolf_Q2_Question_2
-position: -474,-244
+position: -490,-292
 ---
 
 ===
 title: Wolf_Q2_Question_3
-position: -708,-74
+position: -743,-171
 ---
 
 ===
