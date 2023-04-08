@@ -27,7 +27,7 @@ public class CameraManager : Singleton<CameraManager>
 
     private void OnChangePlayerState(PlayerState newState)
     {
-        if (newState == PlayerState.Review)
+        if (newState == PlayerState.Review || newState == PlayerState.ChooseEvidence)
         {
             if(docsCam)
                 docsCam.enabled = true;
