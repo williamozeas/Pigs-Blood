@@ -4,6 +4,8 @@ public enum DocType{A4}
 
 public abstract class GrabbableAbstract : MonoBehaviour
 {
+    public string id;
+
     protected DocType type;
 
     protected Rigidbody rb;
