@@ -164,5 +164,60 @@ Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for 
 title: Wolf_Q3
 position: -751,20
 ---
+Boy: So lets try that again Wolf.
+Boy: Where else did you go yesterday?
+Wolf: I went on a walk after the kids bankrupted me. Wanted to get some fresh air
+<<jump Wolf_Q3_Start>>
+===
+title: Wolf_Q3_Start
+position: -751,186
+---
+<<SetPose Wolf CheckedOut>>
+-> Question
+    -> You remember roughly your route?
+        <<jump Wolf_Q3_Question_1>>
+    -> Were you walking anywhere in particular? 
+        <<jump Wolf_Q3_Question_2>>
+    -> Did you talk with anyone or give anything to anyone while out? 
+        <<jump Wolf_Q3_Question_3>>
+-> Accuse
+    -> You lied about...!
+        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
+    -> You know <style="imp">who's behind this!</style>
+        <<jump Pick_Evidence>>
+    -> This evidence proves you wrong!
+        <<ResetEvidenceResponses>>
+        <<SetEvidenceResponse Wolf_MetroPass Wolf_Q3_Accusation_Correct>>
+        <<PromptEvidence Wolf_Q3_Accusation_Default>>
+-> Review
+    <<Review>>
+===
+title: Wolf_Q3_Question_1
+position: -690,-168
+---
+
+===
+title: Wolf_Q3_Question_2
+position: -680,-158
+---
+
+===
+title: Wolf_Q3_Question_3
+position: -670,-148
+---
+Wolf: OI that crossed a line.
+Wolf: Are you insinuating I went out to give drugs to someone?
+Boy: You said it, not me.
+Wolf: Look, I may be a criminal at times. But I am a good parent. I would never ever have drugs at home. 
+Wolf: I'd never do something to endanger my kids. I'd go through hell to protect them.
+===
+title: Wolf_Q3_Accusation_Default
+position: -660,-138
+---
+
+===
+title: Wolf_Q3_Accusation_Correct
+position: -650,-128
+---
 
 ===
