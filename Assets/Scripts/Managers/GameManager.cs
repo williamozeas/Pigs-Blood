@@ -15,7 +15,8 @@ public enum GameState
 public enum PlayerState
 {
     Talk,
-    Review
+    Review,
+    ChooseEvidence
 }
 
 public class GameManager : Singleton<GameManager>
@@ -33,6 +34,7 @@ public class GameManager : Singleton<GameManager>
         set { SetPlayerState(value); }
         get { return playerState; }
     }
+    public YarnCommandManager YarnCommandManager { get; private set; }
 
     public static event Action Advance;
     public static event Action StartInterrogation;
@@ -83,5 +85,10 @@ public class GameManager : Singleton<GameManager>
     public static void TriggerAdvance()
     {
         Advance?.Invoke();
+    }
+
+    public void SetYarnCommandManager(YarnCommandManager ycm)
+    {
+        YarnCommandManager = ycm;
     }
 }
