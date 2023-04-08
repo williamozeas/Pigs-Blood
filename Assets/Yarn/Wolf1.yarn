@@ -1,6 +1,6 @@
-﻿title: Wolf1
+﻿title: Wolf_1
 tags:
-position: 14,-239
+position: -748,-1095
 ---
 Wolf: Well well, a little piggy comes to pay a visit to the big bad wolf.
 Boy: Can it Wolf, We got a list of evidence a mile long. This is only a formality. But if you answer my questions, maybe we can let you off a bit easier this time.
@@ -10,7 +10,7 @@ Wolf: You're not getting <style="emph">anything</style> out of me.
 ===
 title: Wolf_Q1_Start
 tags:
-position: 13,-67
+position: -749,-923
 ---
 -> Question
     -> This is a new low, even for you. Selling illicit drugs to kids? What's with the shift here Wolf?
@@ -27,7 +27,7 @@ position: 13,-67
 ===
 title: Wolf_Q1_Question_1
 tags:
-position: -184,72
+position: -946,-784
 ---
 <<if visited("Wolf_Q1_Question_1") == true>>
     <<wait 0.5>>
@@ -38,14 +38,14 @@ position: -184,72
 <<PlayAudio Airball>>
 Boy: Alright, smart ass.
 <<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
-    <<jump Wolf_Q2_Start>>
+    <<jump Wolf_2>>
 <<else>>
     <<jump Wolf_Q1_Start>>
 <<endif>>
 ===
 title: Wolf_Q1_Question_2
 tags:
-position: 224,71
+position: -538,-785
 ---
 <<if visited("Wolf_Q1_Question_2") == true>>
     <<wait 0.5>>
@@ -58,13 +58,35 @@ position: 224,71
 <<endif>>
 
 <<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
-    <<jump Wolf_Q2_Start>>
+    <<jump Wolf_2>>
 <<else>>
     <<jump Wolf_Q1_Start>>
 <<endif>>
 ===
-title: Wolf_Q2_Start
-position: 17,287
+title: Wolf_2
+position: -745,-569
 ---
+Boy: Alright Wolf, I have a few more questions for you. 
+Wolf: Sure, not like I can go anywhere. Can ya hurry this up, I have a shift in a few hours?
+Boy: Depends on how you answer these questions Wolf, don't lie or mouth off and it will be done sooner.
 
+<<jump Wolf_Q2_Start>>
+===
+title: Wolf_Q2_Start
+position: -745,-405
+---
+-> Question
+    -> Temp question 1?
+        <<jump Wolf_Q2_Question_1>>
+    -> Temp question 2? <<if visited("Wolf_Q2_Question_1") == true>>
+        <<jump Wolf_Q2_Question_2>>
+    -> Temp question 3?
+        <<jump Wolf_Q2_Question_3>>
+-> Accuse
+    -> You lied about...!
+        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
+    -> You know <style="imp">who's behind this!</style>
+        <<jump Pick_Evidence>>
+-> Review
+    Triggering review.... #review
 ===
