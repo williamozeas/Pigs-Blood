@@ -2,6 +2,9 @@
 tags:
 position: -748,-1095
 ---
+<<SetMusic Chill>>
+<<SetPose Wolf Flippant>>
+<<AddCharacter Wolf>>
 Wolf: Well well, a little piggy comes to pay a visit to the big bad wolf.
 Boy: Can it Wolf, We got a list of evidence a mile long. This is only a formality. But if you answer my questions, maybe we can let you off a bit easier this time.
 Wolf: You're not getting <style="emph">anything</style> out of me.
@@ -12,6 +15,7 @@ title: Wolf_Q1_Start
 tags:
 position: -749,-923
 ---
+<<SetPose Wolf CheckedOut>>
 <<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
     <<jump Wolf_2>>
 <<else>>
@@ -22,11 +26,15 @@ position: -749,-923
             <<jump Wolf_Q1_Question_2>>
     -> Accuse
         -> You lied about...!
-            <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
+        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
         -> You know <style="imp">who's behind this!</style>
             <<jump Pick_Evidence>>
+        -> This evidence proves you wrong!
+            <<ResetEvidenceResponses>>
+            //<<SetEvidenceResponse testPaper_1 TestPaper1Response>>
+            <<PromptEvidence Wolf_Q1_Accusation_Default>>
     -> Review
-        Triggering review.... #review
+        <<Review>>
 <<endif>>
 
 ===
@@ -34,6 +42,7 @@ title: Wolf_Q1_Question_1
 tags:
 position: -946,-784
 ---
+<<SetPose Wolf Flippant>>
 <<if visited("Wolf_Q1_Question_1") == true>>
     <<wait 0.5>>
     Wolf: Again? Did you forget what I said the first time?
@@ -49,7 +58,9 @@ title: Wolf_Q1_Question_2
 tags:
 position: -538,-785
 ---
+<<SetPose Wolf CheckedOut>>
 <<if visited("Wolf_Q1_Question_2") == true>>
+    <<SetPose Wolf Flippant>>
     <<wait 0.5>>
     Wolf: Again? Did you forget what I said the first time?
 <<else>>
@@ -61,10 +72,20 @@ position: -538,-785
 <<jump Wolf_Q1_Start>>
 
 ===
+title:  Wolf_Q1_Accusation_Default
+tags:
+position: -323,-926
+---
+Wolf: And thats relevant how? 
+Wolf: You're losing your edge kid
+Boy: <style="int">(Get it together, you need to pay better attention)</style>
+//Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+<<jump Wolf_Q1_Start>>
+===
 title: Wolf_2
 position: -745,-569
 ---
-->Continue 
+<<SetPose Wolf CheckedOut>>
 Boy: Alright Wolf, I have a few more questions for you. 
 Wolf: Sure, not like I can go anywhere. Can ya hurry this up, I have a shift in a few hours?
 Boy: Depends on how you answer these questions Wolf, don't lie or mouth off and it will be done sooner.
@@ -74,6 +95,7 @@ Boy: Depends on how you answer these questions Wolf, don't lie or mouth off and 
 title: Wolf_Q2_Start
 position: -745,-405
 ---
+<<SetPose Wolf CheckedOut>>
 -> Question
     -> Temp question 1?
         <<jump Wolf_Q2_Question_1>>
@@ -86,8 +108,12 @@ position: -745,-405
         <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
     -> You know <style="imp">who's behind this!</style>
         <<jump Pick_Evidence>>
+    -> This evidence proves you wrong!
+        <<ResetEvidenceResponses>>
+        <<SetEvidenceResponse testPaper_1 TestPaper1Response>>
+        <<PromptEvidence Wolf_Q2_Accusation_Default>>
 -> Review
-    Triggering review.... #review
+    <<Review>>
 ===
 title: Wolf_Q2_Question_1
 position: -1002,-284
@@ -103,4 +129,22 @@ title: Wolf_Q2_Question_3
 position: -743,-171
 ---
 
+===
+title: Wolf_Q2_Accusation_Correct
+tags:
+---
+Wolf: Not paper 1!!! nooooooo
+Boy: Heh. More like the boy who made the wolf cry amirite
+Boy: *puts shades on*
+<<jump Default>>
+===
+
+title:  Wolf_Q2_Accusation_Default
+tags:
+position: 37,-312
+---
+Wolf: What is that???? A test paper 2???? 
+Wolf: You gotta do better, man.
+Boy: <style="int">(Shit. He's good.)</style>
+<<jump Default>>
 ===
