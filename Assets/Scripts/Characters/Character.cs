@@ -4,16 +4,16 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    protected MeshRenderer[] renderers;
+    protected Renderer[] renderers;
     protected Animator animator;
     
     // Start is called before the first frame update
     protected void Awake()
     {
-        renderers = GetComponentsInChildren<MeshRenderer>();
+        renderers = GetComponentsInChildren<Renderer>();
         if (animator == null)
             animator = GetComponent<Animator>();
-        foreach (MeshRenderer renderer in renderers)
+        foreach (Renderer renderer in renderers)
         {
             renderer.enabled = false;
         }
@@ -41,7 +41,7 @@ public abstract class Character : MonoBehaviour
     public virtual void FadeIn()
     {
         //TODO: Make actual fade
-        foreach (MeshRenderer renderer in renderers)
+        foreach (Renderer renderer in renderers)
         {
             renderer.enabled = true;
         }
@@ -50,7 +50,7 @@ public abstract class Character : MonoBehaviour
     public virtual void FadeOut()
     {
         //TODO: Make actual fade
-        foreach (MeshRenderer renderer in renderers)
+        foreach (Renderer renderer in renderers)
         {
             renderer.enabled = false;
         }
