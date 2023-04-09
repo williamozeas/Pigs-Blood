@@ -70,4 +70,12 @@ public class Notebook : EvidenceAbstract, IStatementHolder
         Debug.Log("Got statement with ID: " + id);
         GameManager.Instance.YarnCommandManager.RespondToEvidence(statement.ID);
     }
+
+    public void ResetNotebook()
+    {
+        for (int i = statements.Count - 1; i > 0; i--)
+        {
+            Destroy(statements[i]);
+        }
+    }
 }

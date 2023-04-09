@@ -24,7 +24,6 @@ public class Statement : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.enabled = false;
-        // button.onClick.AddListener(OnSelect);
         SetDisplayText(display);
     }
 
