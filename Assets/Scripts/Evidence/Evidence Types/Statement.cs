@@ -16,22 +16,21 @@ public class Statement : MonoBehaviour
     [SerializeField] private string display;
 
     private Button button;
-    private TextMeshProUGUI label;
-    private IStatementHolder holder;
+    [SerializeField] private TextMeshProUGUI label;
+    public IStatementHolder holder;
 
     // Start is called before the first frame update
     void Start()
     {
         button = GetComponent<Button>();
-        label = button.GetComponentInChildren<TextMeshProUGUI>();
         button.enabled = false;
-        button.onClick.AddListener(OnSelect);
+        // button.onClick.AddListener(OnSelect);
         SetDisplayText(display);
     }
 
     public void OnSelect()
     {
-        Debug.Log("AAAA");
+        Debug.Log("aaa");
         holder.OnSelectStatement(this);
     }
 

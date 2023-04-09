@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public enum DocType{A4}
+public enum DocType{ A4, Notebook }
 
 public abstract class EvidenceAbstract : MonoBehaviour
 {
     public string id;
 
+    public DocType Type => type;
     protected DocType type;
 
     protected Rigidbody rb;

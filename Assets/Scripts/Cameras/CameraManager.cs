@@ -27,19 +27,27 @@ public class CameraManager : Singleton<CameraManager>
 
     private void OnChangePlayerState(PlayerState newState)
     {
-        if (newState == PlayerState.Review || newState == PlayerState.ChooseEvidence)
+        switch (newState)
         {
-            if(docsCam)
-                docsCam.enabled = true;
-            if(talkCam)
-                talkCam.enabled = false;
-        }
-        else
-        {
-            if(docsCam)
-                docsCam.enabled = false;
-            if(talkCam)
-                talkCam.enabled = true;
+            case PlayerState.Review:
+            case PlayerState.ChooseEvidence:
+            case PlayerState.Inspecting:
+            {
+                if(docsCam)
+                    docsCam.enabled = true;
+                if(talkCam)
+                    talkCam.enabled = false;
+                break;
+            }
+            default:
+            case PlayerState.Talk:
+            {
+                if(docsCam)
+                    docsCam.enabled = false;
+                if(talkCam)
+                    talkCam.enabled = true;
+                break;
+            }
         }
     }
 }

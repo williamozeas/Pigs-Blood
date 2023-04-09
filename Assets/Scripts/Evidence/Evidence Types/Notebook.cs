@@ -12,10 +12,21 @@ public class Notebook : EvidenceAbstract, IStatementHolder
     private List<Statement> statements;
     private Canvas canvas;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        type = DocType.Notebook;
+        
+    }
+
     //TODO: clear statements on new interrogation
     protected void Start()
     {
         statements = GetComponentsInChildren<Statement>().ToList();
+        foreach (Statement statement in statements)
+        {
+            statement.holder = this;
+        }
         canvas = GetComponentInChildren<Canvas>();
         canvas.worldCamera = Camera.main;
     }
@@ -42,6 +53,8 @@ public class Notebook : EvidenceAbstract, IStatementHolder
         Statement newStatement = Instantiate(statementPrefab, pages[pageIndex]).GetComponent<Statement>();
         newStatement.ID = ID;
         newStatement.Display = display;
+        newStatement.holder = this;
+        statements.Add(newStatement);
     }
     
     private void SetStatementsActive(bool active)

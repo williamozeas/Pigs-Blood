@@ -78,6 +78,7 @@ public class YarnCommandManager : DialogueViewBase
 		runner.AddCommandHandler("ResetEvidenceResponses", ResetEvidenceResponses);
 		runner.AddCommandHandler<string, string>("SetEvidenceResponse", SetEvidenceResponse);
 		runner.AddCommandHandler<string>("PromptEvidence", PromptEvidence);
+		runner.AddCommandHandler<string, string>("AddStatement", AddStatement);
 
 		// adds all Resources to internal lists / one big pile... it
 		// will scan inside all subfolders too! note: but when
@@ -205,6 +206,12 @@ public class YarnCommandManager : DialogueViewBase
 		Characters characterEnum = CharacterManager.GetCharacterEnum(characterName);
 		Character character = CharacterManager.Instance.GetCharacter(characterEnum);
 		character.TriggerPose(pose);
+	}
+
+	public void AddStatement(string id, string display)
+	{
+		Notebook nb = (Notebook)EvidenceManager.Instance.GetEvidenceByType(DocType.Notebook);
+		nb.AddStatement(id, display);
 	}
 
 	public void ResetEvidenceResponses()

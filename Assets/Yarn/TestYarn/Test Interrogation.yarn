@@ -44,6 +44,7 @@ position: -79,10
 <<else>>
     <<SetPose Wolf Flippant>>
     Wolf: Wow. Great question, Sherlock.
+    <<AddStatement st_sherlock "Wolf thinks I'm Sherlock">>
 <<endif>>
 <<PlaySFX Airball>>
 Boy: Alright, smart guy.
