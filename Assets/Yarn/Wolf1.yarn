@@ -30,10 +30,6 @@ position: -749,-923
         -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
             <<jump Wolf_Q1_Question_2>>
     -> Accuse
-        -> You lied about...!
-        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
-        -> You know <style="imp">who's behind this!</style>
-            <<jump Pick_Evidence>>
         -> This evidence proves you wrong!
             <<ResetEvidenceResponses>>
             //<<SetEvidenceResponse testPaper_1 TestPaper1Response>>
@@ -107,10 +103,6 @@ position: -745,-405
     -> What games did you play?<<if visited("Wolf_Q2_Question_1") == true>>
         <<jump Wolf_Q2_Question_3>>
 -> Accuse
-    -> You lied about...!
-        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
-    -> You know <style="imp">who's behind this!</style>
-        <<jump Pick_Evidence>>
     -> This evidence proves you wrong!
         <<ResetEvidenceResponses>>
         <<SetEvidenceResponse Wolf_CCTV_Image Wolf_Q2_Accusation_Correct>>
@@ -187,10 +179,6 @@ position: -751,186
     -> Did you talk with anyone or give anything to anyone while out? <<if visited("Wolf_Q3_Question_2") == true && visited("Wolf_Q3_Question_1") == true >>
         <<jump Wolf_Q3_Question_3>>
 -> Accuse
-    -> You lied about...!
-        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
-    -> You know <style="imp">who's behind this!</style>
-        <<jump Pick_Evidence>>
     -> This evidence proves you wrong!
         <<ResetEvidenceResponses>>
         <<SetEvidenceResponse Wolf_MetroPass Wolf_Q3_Accusation_Correct>>
@@ -261,10 +249,6 @@ position: -747,700
     -> And whats the name of this farm? <<if visited("Wolf_Q4_Question_1") == true >>
         <<jump Wolf_Q4_Question_2>>
 -> Accuse
-    -> You lied about...!
-        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
-    -> You know <style="imp">who's behind this!</style>
-        <<jump Pick_Evidence>>
     -> This evidence proves you wrong!
         <<ResetEvidenceResponses>>
         <<SetEvidenceResponse Wolf_Wallet Wolf_Q4_Accusation_Correct>>
