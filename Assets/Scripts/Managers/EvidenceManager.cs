@@ -6,6 +6,7 @@ using UnityEngine;
 public class EvidenceManager : Singleton<EvidenceManager>
 {
     private List<EvidenceAbstract> evidence;
+    [SerializeField] private Transform resetPoint;
 
     public override void Awake()
     {
@@ -21,5 +22,10 @@ public class EvidenceManager : Singleton<EvidenceManager>
     public EvidenceAbstract GetEvidenceByID(string id)
     {
         return evidence.Find((evidence => evidence.id == id));
+    }
+
+    public void ResetEvidence(EvidenceAbstract evidenceToReset)
+    {
+        evidenceToReset.transform.position = resetPoint.position;
     }
 }

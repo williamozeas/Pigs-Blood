@@ -7,6 +7,8 @@ using UnityEngine;
 public class EvidenceBox : MonoBehaviour
 {
     private bool isColliding = false;
+    private bool ignoring = false;
+    
     private Transform[] borders;
     private Collider coll;
 
@@ -50,7 +52,7 @@ public class EvidenceBox : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (isColliding) return;
+        if (isColliding || ignoring) return;
         isColliding = true;
         EvidenceAbstract doc = other.gameObject.GetComponent<EvidenceAbstract>();
         if (doc)
@@ -67,6 +69,13 @@ public class EvidenceBox : MonoBehaviour
         isColliding = false;
     }
 
+    IEnumerator IgnoreCollisions(float time)
+    {
+        ignoring = true;
+        yield return new WaitForSeconds(time);
+        ignoring = false;
+    }
+
     void SetActiveState(bool newState)
     {
         foreach (Transform obj in borders)
@@ -75,6 +84,7 @@ public class EvidenceBox : MonoBehaviour
                 obj.gameObject.SetActive(newState);
         }
 
+        StartCoroutine(IgnoreCollisions(1f));
         coll.enabled = newState;
     }
 }

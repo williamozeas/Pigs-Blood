@@ -22,10 +22,11 @@ public class DragDocuments : MonoBehaviour
             RaycastHit raycastHit;
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
             
-            if (Physics.Raycast(ray, out raycastHit, 10f))
+            if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
             {
                 if (raycastHit.transform != null)
                 {
+                    Debug.Log(raycastHit.transform.name);
                     if (raycastHit.collider.gameObject.TryGetComponent(out EvidenceAbstract grabbableObject))
                     {
                         Vector3 screenPoint = mainCam.WorldToScreenPoint(gameObject.transform.position);
