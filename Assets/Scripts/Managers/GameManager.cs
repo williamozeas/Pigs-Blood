@@ -51,7 +51,19 @@ public class GameManager : Singleton<GameManager>
             SceneManager.LoadScene("Documents", LoadSceneMode.Additive);
         }
     }
-    
+
+    private void Update()
+    {
+        //DEBUG
+        if (PlayerState == PlayerState.Review)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                PlayerState = PlayerState.Talk;
+            }
+        }
+    }
+
     public void SetGameState(GameState newGameState)
     {
         // Debug.Log("");
@@ -76,9 +88,26 @@ public class GameManager : Singleton<GameManager>
 
         _gamestate = newGameState;
     }
-    
+
+    private string currentTalkNode;
     private void SetPlayerState(PlayerState value)
     {
+        switch (value)
+        {
+            case (PlayerState.Review):
+            {
+                currentTalkNode = YarnCommandManager.Runner.CurrentNodeName;
+                break;
+            }
+            case (PlayerState.Talk):
+            {
+                if (playerState == PlayerState.Review)
+                {
+                    YarnCommandManager.Runner.StartDialogue(currentTalkNode);
+                }
+                break;
+            }
+        }
         playerState = value;
         ChangePlayerState?.Invoke(playerState);
     }

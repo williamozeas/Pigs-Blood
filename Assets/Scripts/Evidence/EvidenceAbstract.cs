@@ -15,6 +15,8 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
     private PlayerState prevState;
 
+    private Vector3 offset;
+
     protected virtual void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -27,7 +29,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
         {
             float distanceToScreen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
             Vector3 posMove = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distanceToScreen ));
-            transform.position = new Vector3( posMove.x, transform.position.y, posMove.z );
+            transform.position = new Vector3( posMove.x + offset.x, transform.position.y, posMove.z  + offset.z);
         }
     }
     
@@ -37,12 +39,13 @@ public abstract class EvidenceAbstract : MonoBehaviour
         grabbed = false;
     }
 
-    public virtual void Grabbed(GameObject grabber, Vector3 offset)
+    public virtual void Grabbed(GameObject grabber, Vector3 newOffset)
     {
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
         transform.position += new Vector3(0f, .3f, 0f);
         rb.useGravity = false;
         grabbed = true;
+        offset = newOffset;
     }
 
     //put this here so that we can do things like make the player select a specific statement in the notebook etc.

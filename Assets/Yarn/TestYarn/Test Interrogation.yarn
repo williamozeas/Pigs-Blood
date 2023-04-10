@@ -31,7 +31,7 @@ position: 19,-127
         <<SetEvidenceResponse testPaper_1 TestPaper1Response>>
         <<PromptEvidence DefaultResponse>>
 -> Review
-    <<RemoveCharacter Wolf>> //this should be removed eventually but it's here for the example
+    //<<RemoveCharacter Wolf>> //this should be removed eventually but it's here for the example
     <<Review>>
 ===
 title: Question_1

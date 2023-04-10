@@ -30,9 +30,9 @@ public class DragDocuments : MonoBehaviour
                     {
                         Vector3 screenPoint = mainCam.WorldToScreenPoint(gameObject.transform.position);
                 
-                        Vector3 offset = gameObject.transform.position - mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-                
-                        grabbableObject.Grabbed(gameObject, offset);
+                        Vector3 offset = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z)) - transform.position;
+
+                        grabbableObject.Grabbed(gameObject, Vector3.zero);
                         grabbedObject = grabbableObject;
                     }
                 }
