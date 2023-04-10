@@ -40,7 +40,8 @@ public class DragDocuments : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonUp(0) && grabbedObject != null)
+        if ((GameManager.Instance.PlayerState == PlayerState.Review || GameManager.Instance.PlayerState == PlayerState.ChooseEvidence)
+            &&Input.GetMouseButtonUp(0) && grabbedObject != null )
         {
             grabbedObject.Dropped();
             grabbedObject = null;

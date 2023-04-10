@@ -17,9 +17,18 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
     private Vector3 offset;
 
+    private Vector3 inspectPos = new Vector3(0f, 5.38f, -4.81f);
+    private Quaternion inspectRot = Quaternion.Euler(-10f, 0f, 0f);
+
+    private Vector3 lastPos;
+    private Quaternion lastRot;
+
+    bool wasTransitioning;
+
     protected virtual void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        wasTransitioning = false;
     }
 
     // Update is called once per frame
@@ -27,9 +36,33 @@ public abstract class EvidenceAbstract : MonoBehaviour
     {
         if (grabbed)
         {
-            float distanceToScreen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-            Vector3 posMove = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distanceToScreen ));
-            transform.position = new Vector3( posMove.x + offset.x, transform.position.y, posMove.z  + offset.z);
+            float mouseY = Input.mousePosition.y;
+
+            if (mouseY > 0.15f * Screen.height)
+            {
+                if (wasTransitioning){
+                    transform.position = lastPos;
+                    transform.rotation = lastRot;
+                    wasTransitioning = false;
+                }
+                float distanceToScreen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+                Vector3 posMove = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, mouseY, distanceToScreen ));
+                transform.position = new Vector3( posMove.x + offset.x, transform.position.y, posMove.z  + offset.z);
+
+                lastPos = transform.position;
+                lastRot = transform.rotation;
+            } else if (mouseY <= 0.15f * Screen.height && mouseY > 0.05f * Screen.height)
+            {
+                wasTransitioning = true;
+                float newX = (Input.mousePosition.x - (Screen.width / 2f))/ Screen.width * 2.5f;
+                Vector3 slerpWith = new Vector3(newX, lastPos.y, lastPos.z);
+                transform.position = Vector3.Slerp(slerpWith, inspectPos, (.15f * Screen.height- mouseY) / (.1f * Screen.height));
+                transform.rotation = Quaternion.Slerp(lastRot, inspectRot, (.15f * Screen.height- mouseY) / (.1f * Screen.height));
+            } else
+            {
+                transform.position = inspectPos;
+                transform.rotation = inspectRot;
+            }
         }
     }
     
