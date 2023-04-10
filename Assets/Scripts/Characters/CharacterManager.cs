@@ -25,7 +25,7 @@ public class CharacterManager : Singleton<CharacterManager>
     private List<Character> activeCharacters;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Wolf = GetComponentInChildren<Wolf>();
         Straw = GetComponentInChildren<Straw>();
