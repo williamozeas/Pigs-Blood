@@ -46,9 +46,11 @@ position: -946,-784
 <<SetPose Wolf Flippant>>
 <<if visited("Wolf_Q1_Question_1") == true>>
     <<wait 0.5>>
-    Wolf: Again? Did you forget what I said the first time?
+    Wolf: Again? Did you forget what I said the first time? Check that little book of yours.
 <<else>>
+    //Isn't wolf trying to deny he sells drugs?
     Wolf: Wow. Great question, Sherlock. Money, Power whatever really...
+    <<AddStatement wolf_q1_drugs "Wolf sells drugs for the money and power">>
 <<endif>>
 Boy: Alright, smart ass.
 <<jump Wolf_Q1_Start>>
@@ -117,6 +119,7 @@ Wolf: I was spending time with my kids.
 Boy: Uh huh...
 Wolf: They had a day off from school so they wanted to play board games.
 Boy: Hmmm..
+<<AddStatement wolf_q2_boardgames "Wolf played board games with his kids">>
 <<jump Wolf_Q2_Start>>
 ===
 title: Wolf_Q2_Question_2
