@@ -96,7 +96,10 @@ public class GameManager : Singleton<GameManager>
         {
             case (PlayerState.Review):
             {
-                currentTalkNode = YarnCommandManager.Runner.CurrentNodeName;
+                if (playerState == PlayerState.Talk)
+                {
+                    currentTalkNode = YarnCommandManager.Runner.CurrentNodeName;
+                }
                 break;
             }
             case (PlayerState.Talk):

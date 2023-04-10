@@ -62,6 +62,8 @@ public abstract class EvidenceAbstract : MonoBehaviour
             {
                 transform.position = inspectPos;
                 transform.rotation = inspectRot;
+                Inspect();
+                grabbed = false;
             }
         }
     }
@@ -70,6 +72,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
     {
         rb.useGravity = true;
         grabbed = false;
+        lastRot = Quaternion.identity;
     }
 
     public virtual void Grabbed(GameObject grabber, Vector3 newOffset)
@@ -90,6 +93,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
     //bring item up for closer inspection
     public virtual void Inspect()
     {
+        Debug.Log("in");
         prevState = GameManager.Instance.PlayerState;
         GameManager.Instance.PlayerState = PlayerState.Inspecting;
     }

@@ -47,5 +47,16 @@ public class DragDocuments : MonoBehaviour
             grabbedObject.Dropped();
             grabbedObject = null;
         }
+
+        if (GameManager.Instance.PlayerState == PlayerState.Inspecting && Input.GetKeyDown("d"))
+        {
+            Debug.Log("aaa");
+            grabbedObject.UnInspect();
+            Debug.Log("bbb");
+            grabbedObject.Dropped();
+            Debug.Log("ccc");
+            grabbedObject = null;
+            Debug.Log("ddd");
+        }
     }
 }
