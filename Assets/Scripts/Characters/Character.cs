@@ -12,7 +12,7 @@ public abstract class Character : MonoBehaviour
     {
         renderers = GetComponentsInChildren<Renderer>();
         if (animator == null)
-            animator = GetComponent<Animator>();
+            animator = GetComponentInChildren<Animator>();
         foreach (Renderer renderer in renderers)
         {
             renderer.enabled = false;
