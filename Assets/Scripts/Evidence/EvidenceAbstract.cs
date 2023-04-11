@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public enum DocType{ A4, Notebook }
@@ -17,7 +18,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
     private Vector3 offset;
 
-    private Vector3 inspectPos = new Vector3(0f, 5.38f, -4.81f);
+    private Vector3 inspectPos = new Vector3(0f, 5.33f, -4.75f);
     private Quaternion inspectRot = Quaternion.Euler(-10f, 0f, 0f);
 
     private Vector3 lastPos;
@@ -52,7 +53,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
                 lastPos = transform.position;
                 lastRot = transform.rotation;
             } else if (mouseY <= 0.15f * Screen.height && mouseY > 0.05f * Screen.height)
-            {
+            { //left in so that you can partially transition in cuz that's cool but will run automatically on Inspect()
                 wasTransitioning = true;
                 float newX = (Input.mousePosition.x - (Screen.width / 2f))/ Screen.width * 2.5f;
                 Vector3 slerpWith = new Vector3(newX, lastPos.y, lastPos.z);
@@ -60,8 +61,6 @@ public abstract class EvidenceAbstract : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(lastRot, inspectRot, (.15f * Screen.height- mouseY) / (.1f * Screen.height));
             } else
             {
-                transform.position = inspectPos;
-                transform.rotation = inspectRot;
                 Inspect();
                 grabbed = false;
             }
@@ -93,7 +92,10 @@ public abstract class EvidenceAbstract : MonoBehaviour
     //bring item up for closer inspection
     public virtual void Inspect()
     {
-        Debug.Log("in");
+        rb.useGravity = false;
+        transform.position = inspectPos;
+        transform.rotation = inspectRot;
+        rb.velocity = Vector3.zero;
         prevState = GameManager.Instance.PlayerState;
         GameManager.Instance.PlayerState = PlayerState.Inspecting;
     }
@@ -102,5 +104,10 @@ public abstract class EvidenceAbstract : MonoBehaviour
     public virtual void UnInspect()
     {
         GameManager.Instance.PlayerState = prevState;
+    }
+
+    protected virtual IEnumerator MoveToInspect()
+    {
+        yield return null;
     }
 }

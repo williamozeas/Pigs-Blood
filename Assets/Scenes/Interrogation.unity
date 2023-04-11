@@ -5782,6 +5782,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8517922602376601813, guid: fe758d2578e924949a58776c2f5fb87f,
+        type: 3}
+      propertyPath: yarnProject
+      value: 
+      objectReference: {fileID: 7545569452688597077, guid: 33f5e867ee62c44adbc8dfdc330189ec,
+        type: 3}
     - target: {fileID: 8746637547433104018, guid: fe758d2578e924949a58776c2f5fb87f,
         type: 3}
       propertyPath: m_RaycastTarget

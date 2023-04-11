@@ -66,8 +66,7 @@ public class YarnCommandManager : DialogueViewBase
 		// runner.AddCommandHandler<string>("StopAudio", StopAudio );
 		// runner.AddCommandHandler("StopAudioAll", StopAudioAll );
 
-        runner.AddCommandHandler<string,float,float,float>("Fade", SetFade );
-		runner.AddCommandHandler<float>("FadeIn", SetFadeIn );
+        // runner.AddCommandHandler<float,float,float>("FadeToColor", SetFade );
 		runner.AddCommandHandler<string,string,float>("CamOffset", SetCameraOffset );
 		
 		runner.AddCommandHandler<string>("AddCharacter", AddCharacter);
