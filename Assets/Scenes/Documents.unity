@@ -372,6 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 874772868}
   - component: {fileID: 874772871}
+  - component: {fileID: 874772872}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -406,6 +407,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &874772872
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874772867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &990882235
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +870,7 @@ GameObject:
   - component: {fileID: 1721814878}
   - component: {fileID: 1721814877}
   - component: {fileID: 1721814879}
+  - component: {fileID: 1721814880}
   m_Layer: 0
   m_Name: DocsCam
   m_TagString: Untagged
@@ -923,6 +942,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36bab967cccc04d08ba7cf392089fefc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1721814880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721814876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579b8a3c26862426b85a6e898ab9917e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1817344794

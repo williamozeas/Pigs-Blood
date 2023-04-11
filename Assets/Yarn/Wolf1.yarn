@@ -11,8 +11,11 @@ position: -748,-1095
 <<SetPose Wolf Flippant>>
 <<AddCharacter Wolf>>
 Wolf: Well, well. A little piggy comes to pay a visit to the big bad wolf.
+<<PlayEffect energy>>
 Boy: Can it Wolf, We got a list of evidence a mile long. This is only a formality. But if you answer my questions, maybe we can let you off a bit easier this time.
+<<PlayEffect emphasis>>
 Wolf: You're not getting <style="emph">anything</style> out of me.
+<<PlayEffect failure>>
 
 <<jump Wolf_Q1_Start>>
 ===

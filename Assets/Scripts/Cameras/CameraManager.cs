@@ -8,11 +8,14 @@ public class CameraManager : Singleton<CameraManager>
 {
     public CinemachineVirtualCamera talkCam;
     public CinemachineVirtualCamera docsCam;
+    public List<CinemachineShake> shakers = new List<CinemachineShake>();
     
     // Start is called before the first frame update
     void Start()
     {
         OnChangePlayerState(GameManager.Instance.PlayerState);
+        shakers.Add(talkCam.GetComponent<CinemachineShake>());
+        shakers.Add(docsCam.GetComponent<CinemachineShake>());
     }
 
     private void OnEnable()
@@ -23,6 +26,11 @@ public class CameraManager : Singleton<CameraManager>
     private void OnDisable()
     {
         GameManager.ChangePlayerState -= OnChangePlayerState;
+    }
+
+    public void Shake(float intensity, float time)
+    {
+        shakers.ForEach(shaker => shaker.ShakeCamera(intensity, time));
     }
 
     private void OnChangePlayerState(PlayerState newState)

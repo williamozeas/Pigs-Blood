@@ -115,22 +115,32 @@ public class YarnCommandManager : DialogueViewBase
 		{
 			case ("shock"): //slam sfx, screen shake & flash
 			{
+				CameraManager.Instance.Shake(5f, 2f);
 				break;
 			}
 			case ("revelation"): //Vibe sfx, possible screenshake
 			{
+				CameraManager.Instance.Shake(1f, 0.5f);
 				break;
 			}
 			case ("energy"): //ding + screenshake in PW
 			{
+				CameraManager.Instance.Shake(2f, 0.8f);
 				break;
 			}
 			case ("emphasis"): //splash sfx, screen shake
 			{
+				CameraManager.Instance.Shake(4f, 1f);
 				break;
 			}
 			case ("failure"): //oops, I'm wrong, oof (SFX + screenshake)
 			{
+				CameraManager.Instance.Shake(2f, 1f);
+				break;
+			}
+			default:
+			{
+				Debug.Log("Unknown Effect played!");
 				break;
 			}
 		}

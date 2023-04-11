@@ -123,27 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &114988165 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 532325001934962036, guid: 273cf036778834c698a49dd16dba0095,
-    type: 3}
-  m_PrefabInstance: {fileID: 532325001690359987}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &114988172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114988165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0180cf1f72767450491ecf057b7c6d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DontDestroy: 0
-  talkCam: {fileID: 0}
-  docsCam: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +413,7 @@ GameObject:
   - component: {fileID: 837022904}
   - component: {fileID: 837022903}
   - component: {fileID: 837022905}
+  - component: {fileID: 837022906}
   m_Layer: 0
   m_Name: TalkCam
   m_TagString: Untagged
@@ -505,6 +485,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6fb1af2c2c56485d946ca56afb43385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &837022906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837022902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579b8a3c26862426b85a6e898ab9917e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1509524844
@@ -5329,6 +5321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1886892858}
   - component: {fileID: 1886892860}
+  - component: {fileID: 1886892861}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -5363,6 +5356,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1886892861
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886892857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &532325001690359987
 PrefabInstance:
   m_ObjectHideFlags: 0
