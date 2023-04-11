@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraManager : Singleton<CameraManager>
 {
+    public ScreenFlashImage flash;
     public CinemachineVirtualCamera talkCam;
     public CinemachineVirtualCamera docsCam;
     public List<CinemachineShake> shakers = new List<CinemachineShake>();
@@ -31,6 +33,11 @@ public class CameraManager : Singleton<CameraManager>
     public void Shake(float intensity, float time)
     {
         shakers.ForEach(shaker => shaker.ShakeCamera(intensity, time));
+    }
+
+    public void Flash(float attack, float sustain, float release, Color flashColor, float delay = 0)
+    {
+        flash.Flash(attack, sustain, release, flashColor, delay);
     }
 
     private void OnChangePlayerState(PlayerState newState)

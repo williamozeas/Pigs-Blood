@@ -116,26 +116,41 @@ public class YarnCommandManager : DialogueViewBase
 			case ("shock"): //slam sfx, screen shake & flash
 			{
 				CameraManager.Instance.Shake(5f, 2f);
+				CameraManager.Instance.Flash(0, 0.1f, 0.6f, Color.white);
+				CameraManager.Instance.Flash(0, 0.1f, 0.5f, Color.white, 0.3f);
 				break;
 			}
-			case ("revelation"): //Vibe sfx, possible screenshake
+			case ("interesting"): //Vibe sfx, possible screenshake
 			{
-				CameraManager.Instance.Shake(1f, 0.5f);
+				CameraManager.Instance.Shake(2f, 0.8f);
 				break;
 			}
 			case ("energy"): //ding + screenshake in PW
 			{
-				CameraManager.Instance.Shake(2f, 0.8f);
+				CameraManager.Instance.Shake(1f, 0.5f);
+				CameraManager.Instance.Flash(0, 0.05f, 0f, Color.white);
 				break;
 			}
 			case ("emphasis"): //splash sfx, screen shake
 			{
 				CameraManager.Instance.Shake(4f, 1f);
+				CameraManager.Instance.Flash(0.1f, 0.1f, 0.3f, Color.white);
 				break;
 			}
 			case ("failure"): //oops, I'm wrong, oof (SFX + screenshake)
 			{
-				CameraManager.Instance.Shake(2f, 1f);
+				CameraManager.Instance.Shake(3f, 0.8f);
+				break;
+			}
+			case ("ToWhite"):
+			{
+				CameraManager.Instance.Flash(0.5f, 0, -1f, Color.white);
+				break;
+			}
+			case ("Reveal"):
+			{
+				CameraManager.Instance.Shake(4f, 1f);
+				CameraManager.Instance.Flash(0, 0, 0, Color.white);
 				break;
 			}
 			default:
