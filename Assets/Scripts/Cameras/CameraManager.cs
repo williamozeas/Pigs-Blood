@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CameraManager : Singleton<CameraManager>
 {
     public ScreenFlashImage flash;
+    public Camera mainCam;
     public CinemachineVirtualCamera talkCam;
     public CinemachineVirtualCamera docsCam;
     public List<CinemachineShake> shakers = new List<CinemachineShake>();
@@ -15,6 +16,7 @@ public class CameraManager : Singleton<CameraManager>
     // Start is called before the first frame update
     void Start()
     {
+        mainCam = Camera.main;
         OnChangePlayerState(GameManager.Instance.PlayerState);
         shakers.Add(talkCam.GetComponent<CinemachineShake>());
         shakers.Add(docsCam.GetComponent<CinemachineShake>());
