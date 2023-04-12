@@ -63,7 +63,8 @@ public class EvidenceManager : Singleton<EvidenceManager>
             }
 
         }
-
+        
+        //exiting inspect by clicking off
         if (GameManager.Instance.PlayerState == PlayerState.Inspecting && Input.GetMouseButtonDown(0))
         {
             RaycastHit raycastHit;

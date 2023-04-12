@@ -68,7 +68,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
                 lastPos = transform.position;
                 lastRot = transform.rotation;
-            } else if (mouseY <= 0.15f * Screen.height && mouseY > 0.05f * Screen.height)
+            } else if (mouseY <= 0.15f * Screen.height && mouseY > 0.09f * Screen.height)
             { //left in so that you can partially transition in cuz that's cool but will run automatically on Inspect()
                 wasTransitioning = true;
                 float newX = (Input.mousePosition.x - (Screen.width / 2f))/ Screen.width * 2.5f;
@@ -76,6 +76,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
                 float percent = EasingFunction.EaseOutQuad(0, 1, (.15f * Screen.height- mouseY) / (.1f * Screen.height));
                 transform.position = Vector3.Slerp(slerpWith, inspectPos, percent);
                 transform.rotation = Quaternion.Slerp(lastRot, inspectRot, percent);
+                CameraManager.Instance.SetPaniniProjectionTransitionInspect(percent);
             } else
             {
                 Inspect(0f);

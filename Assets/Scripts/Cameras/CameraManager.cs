@@ -5,11 +5,14 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class CameraManager : Singleton<CameraManager>
 {
-    public float transitionTime = 1.3f;
+    public float camTransitionTime = 1.2f;
+    public float reviewPaniniProj = 0.15f;
+    public float inspectTransitionTime = 0.6f;
     
     [HideInInspector] public ScreenFlashImage flash;
     [HideInInspector] public Camera mainCam;
@@ -62,16 +65,28 @@ public class CameraManager : Singleton<CameraManager>
         {
             case PlayerState.Review:
             case PlayerState.ChooseEvidence:
-            case PlayerState.Inspecting:
             {
                 if(docsCam)
                     docsCam.enabled = true;
                 if(talkCam)
                     talkCam.enabled = false;
-                
-                if (paniniProjection && paniniProjection.distance.value > 0)
+
+                float transitionTimeFinal = camTransitionTime;
+                if (GameManager.Instance.PlayerState == PlayerState.Inspecting)
                 {
-                    StartCoroutine(ChangePaniniProjection(0, transitionTime));
+                    transitionTimeFinal = inspectTransitionTime;
+                }
+                if (paniniProjection)
+                {
+                    StartCoroutine(ChangePaniniProjection(reviewPaniniProj, transitionTimeFinal));
+                }
+                break;
+            }
+            case PlayerState.Inspecting:
+            {
+                if (paniniProjection)
+                {
+                    StartCoroutine(ChangePaniniProjection(0.03f, inspectTransitionTime));
                 }
                 break;
             }
@@ -85,9 +100,8 @@ public class CameraManager : Singleton<CameraManager>
                 
                 if (paniniProjection && paniniProjection.distance.value < startPaniniProjectionDistance)
                 {
-                    StartCoroutine(ChangePaniniProjection(startPaniniProjectionDistance, transitionTime));
+                    StartCoroutine(ChangePaniniProjection(startPaniniProjectionDistance, camTransitionTime));
                 }
-                break;
                 break;
             }
         }
@@ -99,13 +113,22 @@ public class CameraManager : Singleton<CameraManager>
         float startDistance = paniniProjection.distance.value;
         while (timeElapsed < time)
         {
-            float newDistance = EasingFunction.EaseOutQuad(startDistance, targetDistance, timeElapsed / time);
-            paniniProjection.distance.value = newDistance;
-            Debug.Log(newDistance);
+            SetPaniniProjectionTransition(startDistance, targetDistance, timeElapsed / time);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
 
         paniniProjection.distance.value = targetDistance;
+    }
+
+    private void SetPaniniProjectionTransition(float start, float end, float percent)
+    {
+        float newDistance = EasingFunction.EaseOutQuad(start, end, percent);
+        paniniProjection.distance.value = newDistance;
+    }
+
+    public void SetPaniniProjectionTransitionInspect(float percent)
+    {
+        SetPaniniProjectionTransition(reviewPaniniProj, 0.05f, percent);
     }
 }

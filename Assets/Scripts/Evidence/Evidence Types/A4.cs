@@ -69,7 +69,7 @@ public class A4 : EvidenceAbstract
         float timeElapsed = 0;
         while (timeElapsed < time)
         {
-            float percent = EasingFunction.EaseOutCubic(0, 1, timeElapsed / time);
+            float percent = EasingFunction.EaseInOutQuad(0, 1, timeElapsed / time);
 
             //Flip Corner
             if (currentPage == 1)

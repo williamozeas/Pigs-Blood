@@ -111,8 +111,8 @@ public class GameManager : Singleton<GameManager>
                 break;
             }
         }
+        ChangePlayerState?.Invoke(value);
         playerState = value;
-        ChangePlayerState?.Invoke(playerState);
     }
 
     public static void TriggerAdvance()
