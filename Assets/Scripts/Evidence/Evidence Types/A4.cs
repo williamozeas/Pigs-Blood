@@ -29,10 +29,7 @@ public class A4 : FlippableEvidence<A4Page>
     
     public override void Populate()
     {
-        foreach (A4Page page in pages)
-        {
-            Destroy(page.gameObject);
-        }
+        base.Populate();
         // foreach (string pageText in pagesText)
         for(int i = 0; i < pagesText.Count; i++)
         {
@@ -73,6 +70,7 @@ public class A4 : FlippableEvidence<A4Page>
         Transform nextPage = pages[currentPage + 1].transform;
         
         float timeElapsed = 0;
+        float totalAngleRotated = 0;
         while (timeElapsed < time)
         {
             float percent = EasingFunction.EaseInOutQuad(0, 1, timeElapsed / time);
@@ -84,22 +82,27 @@ public class A4 : FlippableEvidence<A4Page>
             }
             
             //Flip front page
+            // flippingPage.localPosition = Vector3.Slerp(frontPos, backPos, percent);
+            // flippingPage.GetChild(0).localRotation = Quaternion.Euler(-360f * percent, 0f, 0f);
+            float angleToRotate = -360f * percent - totalAngleRotated; 
+            flippingPage.Rotate(new Vector3(angleToRotate, 0f, 0f));
             flippingPage.localPosition = Vector3.Slerp(frontPos, backPos, percent);
-            flippingPage.GetChild(0).localRotation = Quaternion.Euler(-360f * percent, 0f, 0f);
-
+            totalAngleRotated = -360f * percent;
+            
             //Bring back page up
-            nextPage.localPosition = Vector3.Slerp(backPos, frontPos, percent);
+            float upPercent = EasingFunction.EaseOutQuint(0, 1, timeElapsed / time);
+            nextPage.localPosition = Vector3.Slerp(backPos, frontPos, upPercent);
 
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        // flippingPage.
+        
         if (currentPage == 0)
         {
             cornerT.GetChild(0).localRotation = cornerBackRot;
         }
         flippingPage.localPosition = backPos;
-        flippingPage.GetChild(0).localRotation = pageBackRot;
+        // flippingPage.GetChild(0).localRotation = pageBackRot;
 
         nextPage.localPosition = frontPos;
     }
@@ -111,6 +114,7 @@ public class A4 : FlippableEvidence<A4Page>
         Transform lastPage = pages[currentPage].transform;
 
         float timeElapsed = 0;
+        float totalAngleRotated = 0;
         while (timeElapsed < time)
         {
             float percent = EasingFunction.EaseOutCubic(1, 0, timeElapsed / time);
@@ -122,11 +126,16 @@ public class A4 : FlippableEvidence<A4Page>
             }
             
             //Flip front page
+            // flippingPage.localPosition = Vector3.Slerp(frontPos, backPos, percent);
+            // flippingPage.GetChild(0).localRotation = Quaternion.Euler(-360f * percent, 0f, 0f);
+            float angleToRotate = -360f * percent - totalAngleRotated; 
+            flippingPage.Rotate(new Vector3(angleToRotate, 0f, 0f));
             flippingPage.localPosition = Vector3.Slerp(frontPos, backPos, percent);
-            flippingPage.GetChild(0).localRotation = Quaternion.Euler(-360f * percent, 0f, 0f);
+            totalAngleRotated = -360f * percent;
 
             //Bring back page down
-            lastPage.localPosition = Vector3.Slerp(backPos, frontPos, percent);
+            float downPercent = EasingFunction.EaseInQuint(1, 0, timeElapsed / time);
+            lastPage.localPosition = Vector3.Slerp(backPos, frontPos, downPercent);
 
             timeElapsed += Time.deltaTime;
             yield return null;
@@ -136,7 +145,7 @@ public class A4 : FlippableEvidence<A4Page>
             cornerT.GetChild(0).localRotation = frontRot;
         }
         flippingPage.localPosition = frontPos;
-        flippingPage.GetChild(0).localRotation = frontRot;
+        // flippingPage.GetChild(0).localRotation = frontRot;
 
         lastPage.localPosition = backPos;
     }

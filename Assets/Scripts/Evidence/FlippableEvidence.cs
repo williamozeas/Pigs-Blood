@@ -24,6 +24,15 @@ public abstract class FlippableEvidence<T> : EvidenceAbstract, IFlippable where 
             FlipLeft();
         }
     }
+
+    public override void Populate()
+    {
+        foreach (T page in pages)
+        {
+            Destroy(page.gameObject);
+        }
+        pages.Clear();
+    }
     
     public override void Inspect (float time = 1f)
     {
