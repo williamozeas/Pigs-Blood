@@ -78,4 +78,9 @@ public class Notebook : EvidenceAbstract, IStatementHolder
             Destroy(statements[i]);
         }
     }
+    
+    public override void Populate()
+    {
+        
+    }
 }
