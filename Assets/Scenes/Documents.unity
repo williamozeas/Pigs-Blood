@@ -1312,8 +1312,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6628756995907269693, guid: eeea8248225254c8596999a3126195f3,
         type: 3}
-      propertyPath: currentPage
-      value: 1
+      propertyPath: pagesText.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628756995907269693, guid: eeea8248225254c8596999a3126195f3,
+        type: 3}
+      propertyPath: pagesText.Array.data[2]
+      value: Test Page 3
       objectReference: {fileID: 0}
     - target: {fileID: 6636702889730351040, guid: eeea8248225254c8596999a3126195f3,
         type: 3}
@@ -1337,10 +1342,30 @@ PrefabInstance:
       propertyPath: id
       value: Wolf_MetroPass
       objectReference: {fileID: 0}
+    - target: {fileID: 6636702889796475815, guid: eeea8248225254c8596999a3126195f3,
+        type: 3}
+      propertyPath: pagesText.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636702889796475815, guid: eeea8248225254c8596999a3126195f3,
+        type: 3}
+      propertyPath: pagesText.Array.data[0]
+      value: Temp Metro Pass
+      objectReference: {fileID: 0}
     - target: {fileID: 6636702891348846105, guid: eeea8248225254c8596999a3126195f3,
         type: 3}
       propertyPath: id
       value: Wolf_CCTV_Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636702891348846105, guid: eeea8248225254c8596999a3126195f3,
+        type: 3}
+      propertyPath: pagesText.Array.data[0]
+      value: CCTV_Image!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636702891348846105, guid: eeea8248225254c8596999a3126195f3,
+        type: 3}
+      propertyPath: pagesText.Array.data[1]
+      value: CCTV_Image 2
       objectReference: {fileID: 0}
     - target: {fileID: 6636702891416019582, guid: eeea8248225254c8596999a3126195f3,
         type: 3}

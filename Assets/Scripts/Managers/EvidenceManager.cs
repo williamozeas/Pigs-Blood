@@ -70,21 +70,17 @@ public class EvidenceManager : Singleton<EvidenceManager>
             RaycastHit raycastHit;
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
             
-            if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("RCorner"), QueryTriggerInteraction.Ignore))
+            //raycast for corners
+            if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("Corner"), QueryTriggerInteraction.Ignore))
             {
                 if (raycastHit.transform != null && inspectedObject)
                 {
-                    //flip right
-                    inspectedObject.TryFlip(true);
+                    EvidenceCorner corner = raycastHit.collider.GetComponent<EvidenceCorner>();
+                    Debug.Log(corner);
+                    corner.OnClick();
                 }
-            } else if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("LCorner"), QueryTriggerInteraction.Ignore))
-            {
-                if (raycastHit.transform != null && inspectedObject)
-                {
-                    //flip left
-                    inspectedObject.TryFlip(false);
-                }
-            } else if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
+            } 
+            else if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
             {
                 if (raycastHit.transform != null && inspectedObject && raycastHit.transform.gameObject != inspectedObject.gameObject)
                 {

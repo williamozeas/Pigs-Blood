@@ -124,7 +124,8 @@ public class CameraManager : Singleton<CameraManager>
     private void SetPaniniProjectionTransition(float start, float end, float percent)
     {
         float newDistance = EasingFunction.EaseOutQuad(start, end, percent);
-        paniniProjection.distance.value = newDistance;
+        if(paniniProjection)
+            paniniProjection.distance.value = newDistance;
     }
 
     public void SetPaniniProjectionTransitionInspect(float percent)

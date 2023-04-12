@@ -3,6 +3,10 @@ using UnityEngine;
 
 public enum DocType{ A4, Notebook }
 
+public enum PageDirection {
+    Left, Right
+}
+
 public abstract class EvidenceAbstract : MonoBehaviour
 {
     public string id;
@@ -27,19 +31,17 @@ public abstract class EvidenceAbstract : MonoBehaviour
     bool wasTransitioning;
     private Camera mainCam;
 
-    public int totalPages;
-    public int currentPage;
-
     protected virtual void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         wasTransitioning = false;
+        
+        Populate();
     }
     
     void Start()
     {
         mainCam = Camera.main;
-        currentPage = 1;
     }
 
     // Update is called once per frame
@@ -150,26 +152,5 @@ public abstract class EvidenceAbstract : MonoBehaviour
     {
         Dropped();
         GameManager.Instance.PlayerState = prevState;
-    }
-
-    public virtual void TryFlip(bool flippingRight)
-    {
-        if (flippingRight && currentPage < totalPages)
-        {
-            FlipRight();
-        } else if (!flippingRight && currentPage > 0)
-        {
-            FlipLeft();
-        }
-    }
-
-    public virtual void FlipRight()
-    {
-        
-    }
-
-    public virtual void FlipLeft()
-    {
-        
     }
 }
