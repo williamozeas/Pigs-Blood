@@ -7,7 +7,7 @@ using UnityEngine;
 public class EvidenceManager : Singleton<EvidenceManager>
 {
     private List<EvidenceAbstract> currentEvidence;
-    private Dictionary<string, GameObject> evidenceDict;
+    private Dictionary<string, GameObject> evidenceDict = new Dictionary<string, GameObject>();
     [SerializeField] private Transform resetPoint;
     EvidenceAbstract grabbedObject;
     private EvidenceAbstract inspectedObject;
