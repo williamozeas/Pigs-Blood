@@ -15,6 +15,8 @@ public class A4 : EvidenceAbstract
     private Quaternion cornerBackRot = Quaternion.Euler(-180f, 0f, 0f);
     private Quaternion pageBackRot = Quaternion.Euler(-360f, 0f, 0f);
 
+    [TextArea(3, 10)] public List<string> pages;
+    
     protected override void Awake ()
     {
         base.Awake();
@@ -134,5 +136,10 @@ public class A4 : EvidenceAbstract
         flippingPage.GetChild(0).localRotation = frontRot;
 
         lastPage.localPosition = backPos;
+    }
+
+    public override void Populate()
+    {
+        
     }
 }

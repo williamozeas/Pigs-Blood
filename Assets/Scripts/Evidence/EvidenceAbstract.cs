@@ -83,6 +83,12 @@ public abstract class EvidenceAbstract : MonoBehaviour
         }
     }
     
+    //Set up UI from current values of variables
+    public virtual void Populate()
+    {
+        
+    }
+    
     public virtual void Dropped()
     {
         rb.useGravity = true;

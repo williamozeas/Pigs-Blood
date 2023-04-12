@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class EvidenceManager : Singleton<EvidenceManager>
 {
-    private List<EvidenceAbstract> evidence;
+    private List<EvidenceAbstract> currentEvidence;
+    private Dictionary<string, GameObject> evidenceDict;
     [SerializeField] private Transform resetPoint;
     EvidenceAbstract grabbedObject;
     private EvidenceAbstract inspectedObject;
@@ -14,7 +16,19 @@ public class EvidenceManager : Singleton<EvidenceManager>
     public override void Awake()
     {
         base.Awake();
-        evidence = GetComponentsInChildren<EvidenceAbstract>().ToList();
+        currentEvidence = GetComponentsInChildren<EvidenceAbstract>().ToList();
+        string[] evidenceGuids = AssetDatabase.FindAssets("t:prefab", new string[] { "Assets/Prefabs/PremadeEvidence" });
+        foreach (string guid in evidenceGuids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            GameObject evidence = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            EvidenceAbstract evClass = evidence.GetComponent<EvidenceAbstract>();
+            if (!evClass)
+            {
+                Debug.LogError("Invalid evidence loaded!");
+            }
+            evidenceDict.Add(evClass.name, evidence);
+        }
     }
     
     // Start is called before the first frame update
@@ -85,18 +99,28 @@ public class EvidenceManager : Singleton<EvidenceManager>
         inspectedObject = newlyGrabbed;
     }
 
-    public EvidenceAbstract GetEvidenceByType(DocType type)
+    public EvidenceAbstract GetCurrentEvidenceByType(DocType type)
     {
-        return evidence.Find((evidence => evidence.Type == type));
+        return currentEvidence.Find((evidence => evidence.Type == type));
     }
     
     public EvidenceAbstract GetEvidenceByID(string id)
     {
-        return evidence.Find((evidence => evidence.id == id));
+        return currentEvidence.Find((evidence => evidence.id == id));
     }
 
     public void ResetEvidence(EvidenceAbstract evidenceToReset)
     {
         evidenceToReset.transform.position = resetPoint.position;
+    }
+
+    public GameObject GetEvidencePrefabByID(string id)
+    {
+        GameObject prefab;
+        if (!evidenceDict.TryGetValue(id, out prefab))
+        {
+            Debug.LogError("Invalid evidence ID gotten: " + id);
+        }
+        return prefab;
     }
 }
