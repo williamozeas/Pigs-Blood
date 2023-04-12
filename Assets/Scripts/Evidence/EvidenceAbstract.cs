@@ -1,6 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public enum DocType{ A4, Notebook }
+
+public enum PageDirection {
+    Left, Right
+}
 
 public abstract class EvidenceAbstract : MonoBehaviour
 {
@@ -17,18 +22,26 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
     private Vector3 offset;
 
-    private Vector3 inspectPos = new Vector3(0f, 5.38f, -4.81f);
+    private Vector3 inspectPos = new Vector3(0f, 5.33f, -4.75f);
     private Quaternion inspectRot = Quaternion.Euler(-10f, 0f, 0f);
 
     private Vector3 lastPos;
     private Quaternion lastRot;
 
     bool wasTransitioning;
+    private Camera mainCam;
 
     protected virtual void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         wasTransitioning = false;
+        
+        Populate();
+    }
+    
+    void Start()
+    {
+        mainCam = Camera.main;
     }
 
     // Update is called once per frame
@@ -37,6 +50,12 @@ public abstract class EvidenceAbstract : MonoBehaviour
         if (grabbed)
         {
             float mouseY = Input.mousePosition.y;
+            
+            if((GameManager.Instance.PlayerState == PlayerState.Review || GameManager.Instance.PlayerState == PlayerState.ChooseEvidence)
+               && Input.GetMouseButtonUp(0))
+            {
+                Dropped();
+            }
 
             if (mouseY > 0.15f * Screen.height)
             {
@@ -45,27 +64,32 @@ public abstract class EvidenceAbstract : MonoBehaviour
                     transform.rotation = lastRot;
                     wasTransitioning = false;
                 }
-                float distanceToScreen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-                Vector3 posMove = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, mouseY, distanceToScreen ));
+                float distanceToScreen = CameraManager.Instance.mainCam.WorldToScreenPoint(gameObject.transform.position).z;
+                Vector3 posMove = CameraManager.Instance.mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, mouseY, distanceToScreen ));
                 transform.position = new Vector3( posMove.x + offset.x, transform.position.y, posMove.z  + offset.z);
 
                 lastPos = transform.position;
                 lastRot = transform.rotation;
-            } else if (mouseY <= 0.15f * Screen.height && mouseY > 0.05f * Screen.height)
-            {
+            } else if (mouseY <= 0.15f * Screen.height && mouseY > 0.09f * Screen.height)
+            { //left in so that you can partially transition in cuz that's cool but will run automatically on Inspect()
                 wasTransitioning = true;
                 float newX = (Input.mousePosition.x - (Screen.width / 2f))/ Screen.width * 2.5f;
                 Vector3 slerpWith = new Vector3(newX, lastPos.y, lastPos.z);
-                transform.position = Vector3.Slerp(slerpWith, inspectPos, (.15f * Screen.height- mouseY) / (.1f * Screen.height));
-                transform.rotation = Quaternion.Slerp(lastRot, inspectRot, (.15f * Screen.height- mouseY) / (.1f * Screen.height));
+                float percent = EasingFunction.EaseOutQuad(0, 1, (.15f * Screen.height- mouseY) / (.1f * Screen.height));
+                transform.position = Vector3.Slerp(slerpWith, inspectPos, percent);
+                transform.rotation = Quaternion.Slerp(lastRot, inspectRot, percent);
+                CameraManager.Instance.SetPaniniProjectionTransitionInspect(percent);
             } else
             {
-                transform.position = inspectPos;
-                transform.rotation = inspectRot;
-                Inspect();
-                grabbed = false;
+                Inspect(0f);
             }
         }
+    }
+    
+    //Set up UI from current values of variables
+    public virtual void Populate()
+    {
+        
     }
     
     public virtual void Dropped()
@@ -91,16 +115,42 @@ public abstract class EvidenceAbstract : MonoBehaviour
     }
 
     //bring item up for closer inspection
-    public virtual void Inspect()
+    public virtual void Inspect(float time = 1f)
     {
-        Debug.Log("in");
+        grabbed = false;
+        EvidenceManager.Instance.SetInspectedObject(this);
+        lastPos = transform.position;
+        lastRot = transform.rotation;
+        rb.useGravity = false;
+        rb.velocity = Vector3.zero;
+        StartCoroutine(InspectAnim(time));
+
         prevState = GameManager.Instance.PlayerState;
         GameManager.Instance.PlayerState = PlayerState.Inspecting;
+    }
+
+    private IEnumerator InspectAnim(float time)
+    {
+        float timeElapsed = 0;
+        while (timeElapsed < time)
+        {
+            wasTransitioning = true;
+            float newX = (Input.mousePosition.x - (Screen.width / 2f))/ Screen.width * 2.5f;
+            Vector3 slerpWith = new Vector3(newX, lastPos.y, lastPos.z);
+            float percent = EasingFunction.EaseOutCubic(0, 1, timeElapsed / time);
+            transform.position = Vector3.Slerp(slerpWith, inspectPos, percent);
+            transform.rotation = Quaternion.Slerp(lastRot, inspectRot, percent);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = inspectPos;
+        transform.rotation = inspectRot;
     }
     
     //put item back (center of table?)
     public virtual void UnInspect()
     {
+        Dropped();
         GameManager.Instance.PlayerState = prevState;
     }
 }
