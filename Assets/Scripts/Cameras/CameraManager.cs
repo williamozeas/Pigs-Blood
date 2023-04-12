@@ -3,15 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class CameraManager : Singleton<CameraManager>
 {
-    public ScreenFlashImage flash;
-    public Camera mainCam;
-    public CinemachineVirtualCamera talkCam;
-    public CinemachineVirtualCamera docsCam;
-    public List<CinemachineShake> shakers = new List<CinemachineShake>();
+    public float transitionTime = 1.3f;
+    
+    [HideInInspector] public ScreenFlashImage flash;
+    [HideInInspector] public Camera mainCam;
+    [HideInInspector] public CinemachineVirtualCamera talkCam;
+    [HideInInspector] public CinemachineVirtualCamera docsCam;
+    [HideInInspector] public Volume volume;
+    [HideInInspector] public List<CinemachineShake> shakers = new List<CinemachineShake>();
+
+    private PaniniProjection paniniProjection;
+    private float startPaniniProjectionDistance;
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +28,12 @@ public class CameraManager : Singleton<CameraManager>
         OnChangePlayerState(GameManager.Instance.PlayerState);
         shakers.Add(talkCam.GetComponent<CinemachineShake>());
         shakers.Add(docsCam.GetComponent<CinemachineShake>());
+        if (!volume.profile.TryGet<PaniniProjection>(out paniniProjection))
+        {
+            Debug.Log("Get Panini Projection failed");
+        }
+
+        startPaniniProjectionDistance = paniniProjection.distance.value;
     }
 
     private void OnEnable()
@@ -54,6 +68,11 @@ public class CameraManager : Singleton<CameraManager>
                     docsCam.enabled = true;
                 if(talkCam)
                     talkCam.enabled = false;
+                
+                if (paniniProjection && paniniProjection.distance.value > 0)
+                {
+                    StartCoroutine(ChangePaniniProjection(0, transitionTime));
+                }
                 break;
             }
             default:
@@ -63,8 +82,30 @@ public class CameraManager : Singleton<CameraManager>
                     docsCam.enabled = false;
                 if(talkCam)
                     talkCam.enabled = true;
+                
+                if (paniniProjection && paniniProjection.distance.value < startPaniniProjectionDistance)
+                {
+                    StartCoroutine(ChangePaniniProjection(startPaniniProjectionDistance, transitionTime));
+                }
+                break;
                 break;
             }
         }
+    }
+
+    private IEnumerator ChangePaniniProjection(float targetDistance, float time)
+    {
+        float timeElapsed = 0;
+        float startDistance = paniniProjection.distance.value;
+        while (timeElapsed < time)
+        {
+            float newDistance = EasingFunction.EaseOutQuad(startDistance, targetDistance, timeElapsed / time);
+            paniniProjection.distance.value = newDistance;
+            Debug.Log(newDistance);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        paniniProjection.distance.value = targetDistance;
     }
 }
