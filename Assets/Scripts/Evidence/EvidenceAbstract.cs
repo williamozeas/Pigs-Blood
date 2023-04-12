@@ -27,6 +27,9 @@ public abstract class EvidenceAbstract : MonoBehaviour
     bool wasTransitioning;
     private Camera mainCam;
 
+    public int totalPages;
+    public int currentPage;
+
     protected virtual void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -36,6 +39,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
+        currentPage = 1;
     }
 
     // Update is called once per frame
@@ -139,5 +143,26 @@ public abstract class EvidenceAbstract : MonoBehaviour
     {
         Dropped();
         GameManager.Instance.PlayerState = prevState;
+    }
+
+    public virtual void TryFlip(bool flippingRight)
+    {
+        if (flippingRight && currentPage < totalPages)
+        {
+            FlipRight();
+        } else if (!flippingRight && currentPage > 0)
+        {
+            FlipLeft();
+        }
+    }
+
+    public virtual void FlipRight()
+    {
+        
+    }
+
+    public virtual void FlipLeft()
+    {
+        
     }
 }

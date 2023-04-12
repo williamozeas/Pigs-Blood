@@ -55,7 +55,21 @@ public class EvidenceManager : Singleton<EvidenceManager>
             RaycastHit raycastHit;
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
             
-            if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("RCorner"), QueryTriggerInteraction.Ignore))
+            {
+                if (raycastHit.transform != null && inspectedObject)
+                {
+                    //flip right
+                    inspectedObject.TryFlip(true);
+                }
+            } else if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("LCorner"), QueryTriggerInteraction.Ignore))
+            {
+                if (raycastHit.transform != null && inspectedObject)
+                {
+                    //flip left
+                    inspectedObject.TryFlip(false);
+                }
+            } else if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
             {
                 if (raycastHit.transform != null && inspectedObject && raycastHit.transform.gameObject != inspectedObject.gameObject)
                 {
