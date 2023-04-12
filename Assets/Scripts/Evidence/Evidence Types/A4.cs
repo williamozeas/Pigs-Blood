@@ -75,16 +75,20 @@ public class A4 : FlippableEvidence<A4Page>
         {
             float percent = EasingFunction.EaseInOutQuad(0, 1, timeElapsed / time);
 
+            Debug.Log(currentPage);
+
+            float angleToRotate = -360f * percent - totalAngleRotated; 
+
             //Flip Corner
-            if (currentPage == 0)
+            if (currentPage == 1)
             {
-                cornerT.GetChild(0).localRotation = Quaternion.Euler(-180f * percent, 0f, 0f);
+                cornerT.GetChild(0).Rotate(new Vector3(angleToRotate / 2f, 0f, 0f));
             }
             
             //Flip front page
             // flippingPage.localPosition = Vector3.Slerp(frontPos, backPos, percent);
             // flippingPage.GetChild(0).localRotation = Quaternion.Euler(-360f * percent, 0f, 0f);
-            float angleToRotate = -360f * percent - totalAngleRotated; 
+            
             flippingPage.Rotate(new Vector3(angleToRotate, 0f, 0f));
             flippingPage.localPosition = Vector3.Slerp(frontPos, backPos, percent);
             totalAngleRotated = -360f * percent;
@@ -97,10 +101,7 @@ public class A4 : FlippableEvidence<A4Page>
             yield return null;
         }
         
-        if (currentPage == 0)
-        {
-            cornerT.GetChild(0).localRotation = cornerBackRot;
-        }
+        cornerT.GetChild(0).localRotation = cornerBackRot;
         flippingPage.localPosition = backPos;
         // flippingPage.GetChild(0).localRotation = pageBackRot;
 
@@ -119,16 +120,19 @@ public class A4 : FlippableEvidence<A4Page>
         {
             float percent = EasingFunction.EaseOutCubic(1, 0, timeElapsed / time);
 
+            float angleToRotate = -360f * percent - totalAngleRotated;
+
+            Debug.Log(angleToRotate);
+
             //Flip Corner
-            if (currentPage > 0)
+            if (currentPage == 0)
             {
-                cornerT.GetChild(0).localRotation = Quaternion.Euler(-180f * percent, 0f, 0f);
+                cornerT.GetChild(0).Rotate(new Vector3(angleToRotate / 2f, 0f, 0f));
             }
             
             //Flip front page
             // flippingPage.localPosition = Vector3.Slerp(frontPos, backPos, percent);
             // flippingPage.GetChild(0).localRotation = Quaternion.Euler(-360f * percent, 0f, 0f);
-            float angleToRotate = -360f * percent - totalAngleRotated; 
             flippingPage.Rotate(new Vector3(angleToRotate, 0f, 0f));
             flippingPage.localPosition = Vector3.Slerp(frontPos, backPos, percent);
             totalAngleRotated = -360f * percent;
@@ -143,6 +147,9 @@ public class A4 : FlippableEvidence<A4Page>
         if (currentPage == 0)
         {
             cornerT.GetChild(0).localRotation = frontRot;
+        } else
+        {
+            cornerT.GetChild(0).localRotation = cornerBackRot;
         }
         flippingPage.localPosition = frontPos;
         // flippingPage.GetChild(0).localRotation = frontRot;
