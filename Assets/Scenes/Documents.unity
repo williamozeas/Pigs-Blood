@@ -1340,7 +1340,7 @@ PrefabInstance:
     - target: {fileID: 6636702889796475815, guid: eeea8248225254c8596999a3126195f3,
         type: 3}
       propertyPath: id
-      value: Wolf_MetroPass
+      value: Test
       objectReference: {fileID: 0}
     - target: {fileID: 6636702889796475815, guid: eeea8248225254c8596999a3126195f3,
         type: 3}
@@ -1350,7 +1350,7 @@ PrefabInstance:
     - target: {fileID: 6636702889796475815, guid: eeea8248225254c8596999a3126195f3,
         type: 3}
       propertyPath: pagesText.Array.data[0]
-      value: Temp Metro Pass
+      value: test
       objectReference: {fileID: 0}
     - target: {fileID: 6636702891348846105, guid: eeea8248225254c8596999a3126195f3,
         type: 3}

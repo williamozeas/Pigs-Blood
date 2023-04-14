@@ -22,8 +22,8 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
     private Vector3 offset;
 
-    private Vector3 inspectPos = new Vector3(0f, 5.33f, -4.75f);
-    private Quaternion inspectRot = Quaternion.Euler(-10f, 0f, 0f);
+    [SerializeField] protected Vector3 inspectPos = new Vector3(0f, 5.33f, -4.75f);
+    [SerializeField] protected Quaternion inspectRot = Quaternion.Euler(-10f, 0f, 0f);
 
     private Vector3 lastPos;
     private Quaternion lastRot;
