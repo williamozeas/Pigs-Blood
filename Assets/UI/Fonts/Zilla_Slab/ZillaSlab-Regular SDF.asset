@@ -2788,16 +2788,16 @@ MonoBehaviour:
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 11400000, guid: f3afdb3e295044d41b85022782ff1e56, type: 2}
+    italicTypeface: {fileID: 11400000, guid: 46d97cf7e973b4639a0dc3a6dde9125c, type: 2}
   - regularTypeface: {fileID: 0}
-    italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
-    italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
-    italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
-    italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 0}
-    italicTypeface: {fileID: 0}
+    italicTypeface: {fileID: 11400000, guid: 8206546f745e149468fbc26d117bc1fe, type: 2}
+  - regularTypeface: {fileID: 11400000, guid: 9f13e1fb5f95943d199ea477bf49f154, type: 2}
+    italicTypeface: {fileID: 11400000, guid: 82cf8394165fa4038a4d0ba30629342a, type: 2}
+  - regularTypeface: {fileID: 11400000, guid: 4374109129dde412cb8a5ddcd0790492, type: 2}
+    italicTypeface: {fileID: 11400000, guid: ab6fa317aad374e128ff381666fd433e, type: 2}
+  - regularTypeface: {fileID: 11400000, guid: b15952e583ca74eafa2214d0edea8f21, type: 2}
+    italicTypeface: {fileID: 11400000, guid: 7c1bd6a2165804cc58809bbfbfdc5bf7, type: 2}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}
