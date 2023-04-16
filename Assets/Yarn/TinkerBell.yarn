@@ -1,8 +1,8 @@
-﻿title: TinkerBell
+﻿title: StartTinkerBell
 tags:
 position: -749,-1282
 ---
-
+<<jump TinkerBell_1>>
 ===
 title: TinkerBell_1
 tags:
@@ -13,6 +13,10 @@ position: -748,-1095
 <<AddCharacter TinkerBell>>
 Boy: Ah, so you must be TinkerBell.
 TinkerBell: Oh so you're the Wolf Boy huh? Bit scruffier and scrawnier than I expected.
+Boy: And you're much more....flamboyant than I expected.
+<<SetPose TinkerBell Annoyed>>
+TinkerBell: Flamboyant? I hope you're just as bad at interrogating as you are complimenting people.
+Boy: That wasnt...ugh
 
 <<jump TinkerBell_Q1_Start>>
 ===
@@ -21,18 +25,20 @@ tags:
 position: -749,-923
 ---
 <<SetPose TinkerBell CheckedOut>>
-<<if visited("TinkerBell_Q1_Question_2") == true && visited("TinkerBell_Q1_Question_1") == true >>
+<<if visited("TinkerBell_Q1_Question_3") == true && visited("TinkerBell_Q1_Question_1") == true >>
     <<jump TinkerBell_Q2>>
 <<else>>
     -> Question
-        -> This is a new low, even for you. Selling illicit drugs to kids? What's with the shift here TinkerBell?
+        -> So, describe your day yesterday.
             <<jump TinkerBell_Q1_Question_1>>
-        -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
+        -> Can you elaborate on the inventory management? <<if visited("TinkerBell_Q1_Question_1") == true >>
             <<jump TinkerBell_Q1_Question_2>>
+        -> What do you mean by dispute? <<if visited("TinkerBell_Q1_Question_1") == true >>
+            <<jump TinkerBell_Q1_Question_3>>
     -> Accuse
         -> This evidence proves you wrong!
             <<ResetEvidenceResponses>>
-            //<<SetEvidenceResponse testPaper_1 TestPaper1Response>>
+            //<<SetEvidenceResponse TinkerBell_Pig_Info TinkerBell_Q1_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q1_Accusation_Default>>
     -> Review
         <<Review>>
@@ -46,13 +52,14 @@ position: -946,-784
 <<SetPose TinkerBell Flippant>>
 <<if visited("TinkerBell_Q1_Question_1") == true>>
     <<wait 0.5>>
-    TinkerBell: Again? Did you forget what I said the first time? Check that little book of yours.
+    TinkerBell: You already asked me that, aren't you taking notes on this?
+    <<jump TinkerBell_Q1_Start>>
 <<else>>
-    //Isn't TinkerBell trying to deny he sells drugs?
-    TinkerBell: Wow. Great question, Sherlock. Money, Power whatever really...
-    <<AddStatement TinkerBell_q1_drugs "TinkerBell sells drugs for the money and power">>
+    TinkerBell: Well, lets see..
+    TinkerBell: I had to pay my employees for the month and did  some book balancing as well as manage inventory.
+    TinkerBell: Did an inventory run for the club, took a couple of hours to get everything. Had to deal with a troublesome client that had been harrassing some staff as well.
+    <<AddStatement TinkerBell_q1_alibi "TinkerBell did inventory and restocked. She also had to deal with some client issues. ">>
 <<endif>>
-Boy: Alright, smart ass.
 <<jump TinkerBell_Q1_Start>>
 
 ===
@@ -64,32 +71,159 @@ position: -538,-785
 <<if visited("TinkerBell_Q1_Question_2") == true>>
     <<SetPose TinkerBell Flippant>>
     <<wait 0.5>>
-    TinkerBell: Again? Did you forget what I said the first time?
-    Boy: I'm asking the questions here.
+    TinkerBell: Again? Are you even listening?
+    Boy: Quiet, I'm asking the questions here.
 <<endif>>
-TinkerBell: Simple, law of supply and demand. Demand for this stuff went up, so everyone came to the only supply: Me.
-Boy: What are you even calling this stuff? Every person we've talked to has a different name for it.
-TinkerBell: Pixie Dust, name is stupid I know..
-Boy: But didn't you...ah whatever
+TinkerBell: Not much to elaborate on unless you want me to bore you to death with finacial records, return estimates and projected usage rates.
+Boy: You do that yourself? I would have guessed the boss wouldn't want to get her hands dirty with all that.
+TinkerBell: Gives me something to do, and honestly it's rather relaxing. And besides, less hands involved means less potential product disappearance.
+Boy: What kind of stuff would be disappearing at a club?
+TinkerBell: Mostly booze and the like. I worry mostly about any of the stage effects going missing. 
+Boy: Hmm..I see
+
 <<jump TinkerBell_Q1_Start>>
 
+===
+title: TinkerBell_Q1_Question_3
+position: -746,-638
+---
+<<SetPose TinkerBell Flippant>>
+<<if visited("TinkerBell_Q1_Question_1") == true>>
+    <<wait 0.5>>
+    TinkerBell: Am I going crazy? I could have sworn you wrote that down.
+    <<jump TinkerBell_Q1_Start>>
+<<else>>
+    TinkerBell: I can't really get into the details, since I doubt they would be happy if I explained the full story.
+    TinkerBell: This client has a tendency to put everything on a tab every time they come in. Well, this was the third time they left it open at the end of the night without paying.
+    TinkerBell: So you know, I showed up at his house and asked him to pay me then and there or he wouldn't be allowed back ever again.
+    Boy: That worked? 
+    TinkerBell: Of course, and besides he works for one of the places we get inventory from. I just threatened to go to a competitior instead.
+    Boy: Huh, interesting. 
+    <<AddStatement TinkerBell_q1_client "TinkerBell had some type of dispute with a long standing client about non-payment ">>
+<<endif>>
+<<jump TinkerBell_Q1_Start>>
 ===
 title:  TinkerBell_Q1_Accusation_Default
 tags:
-position: -323,-926
+position: -354,-979
 ---
-TinkerBell: And thats relevant how? 
-TinkerBell: You're losing your edge kid
+TinkerBell: And that matters how exactly? 
+TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
+Boy: Not happening, I'm fine
 Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q1_Start>>
 ===
+// title: TinkerBell_Q1_Accusation_Correct
+// position: -260,413
+// ---
+// Boy: We noticed you had a metro card in your wallet when we booked you.
+// Boy: We had a chat with the metro authority, and they report this card was used yesterday at King Log station, not far from your residence.
+// Boy: So Wolf, tell me. Where did you go?
+// Wolf: I...You....
+// Boy: You better cooperate Wolf
+// Wolf: Fine, I went out to do some errands. 
+//<<jump TinkerBell_Q2>>
+//===
 title: TinkerBell_Q2
-position: -745,-569
+position: -223,-802
+---
+Boy: Alright TinkerBell, let's shift gears a bit. Do you have any connection to the Pig Family?
+TinkerBell: I worked a bit with Momua Pig during prohibition when they smuggled moonshine. I was a bartender at one of the speakeasys they delivered to.
+TinkerBell: Is that what this is about? Statute of limitations is way past by now.
+
+
+<<jump TinkerBell_Q2_Start>>
+===
+title: TinkerBell_Q2_Start
+tags:
+position: -749,-923
 ---
 <<SetPose TinkerBell CheckedOut>>
-Boy: Alright TinkerBell, I have a few more questions for you. 
-TinkerBell: Sure, not like I can go anywhere. Can ya hurry this up, I have a shift in a few hours?
-Boy: Depends on how you answer these questions TinkerBell, don't lie or mouth off and it will be done sooner.
+<<if visited("TinkerBell_Q2_Question_3") == true && visited("TinkerBell_Q2_Question_1") == true >>
+    <<jump TinkerBell_Q2>>
+<<else>>
+    -> Question
+        -> So, describe your day yesterday.
+            <<jump TinkerBell_Q2_Question_1>>
+        -> Can you elaborate on the inventory management? <<if visited("TinkerBell_Q2_Question_1") == true >>
+            <<jump TinkerBell_Q2_Question_2>>
+        -> What do you mean by dispute? <<if visited("TinkerBell_Q2_Question_1") == true >>
+            <<jump TinkerBell_Q2_Question_3>>
+    -> Accuse
+        -> This evidence proves you wrong!
+            <<ResetEvidenceResponses>>
+            //<<SetEvidenceResponse TinkerBell_Pig_Info TinkerBell_Q2_Accusation_Correct>>
+            <<PromptEvidence TinkerBell_Q2_Accusation_Default>>
+    -> Review
+        <<Review>>
+<<endif>>
 
+===
+title: TinkerBell_Q2_Question_1
+tags:
+position: -946,-784
+---
+<<SetPose TinkerBell Flippant>>
+<<if visited("TinkerBell_Q2_Question_1") == true>>
+    <<wait 0.5>>
+    TinkerBell: You already asked me that, aren't you taking notes on this?
+    <<jump TinkerBell_Q2_Start>>
+<<else>>
+    TinkerBell: Well, lets see..
+    TinkerBell: I had to pay my employees for the month and did  some book balancing as well as manage inventory.
+    TinkerBell: Did an inventory run for the club, took a couple of hours to get everything. Had to deal with a troublesome client that had been harrassing some staff as well.
+    <<AddStatement TinkerBell_q2_alibi "TinkerBell did inventory and restocked. She also had to deal with some client issues. ">>
+<<endif>>
+<<jump TinkerBell_Q2_Start>>
+
+===
+title: TinkerBell_Q2_Question_2
+tags:
+position: -538,-785
+---
+<<SetPose TinkerBell CheckedOut>>
+<<if visited("TinkerBell_Q2_Question_2") == true>>
+    <<SetPose TinkerBell Flippant>>
+    <<wait 0.5>>
+    TinkerBell: Again? Are you even listening?
+    Boy: Quiet, I'm asking the questions here.
+<<endif>>
+TinkerBell: Not much to elaborate on unless you want me to bore you to death with finacial records, return estimates and projected usage rates.
+Boy: You do that yourself? I would have guessed the boss wouldn't want to get her hands dirty with all that.
+TinkerBell: Gives me something to do, and honestly it's rather relaxing. And besides, less hands involved means less potential product disappearance.
+Boy: What kind of stuff would be disappearing at a club?
+TinkerBell: Mostly booze and the like. I worry mostly about any of the stage effects going missing. 
+Boy: Hmm..I see
+
+<<jump TinkerBell_Q2_Start>>
+
+===
+title: TinkerBell_Q2_Question_3
+position: -746,-638
+---
+<<SetPose TinkerBell Flippant>>
+<<if visited("TinkerBell_Q2_Question_1") == true>>
+    <<wait 0.5>>
+    TinkerBell: Am I going crazy? I could have sworn you wrote that down.
+    <<jump TinkerBell_Q2_Start>>
+<<else>>
+    TinkerBell: I can't really get into the details, since I doubt they would be happy if I explained the full story.
+    TinkerBell: This client has a tendency to put everything on a tab every time they come in. Well, this was the third time they left it open at the end of the night without paying.
+    TinkerBell: So you know, I showed up at his house and asked him to pay me then and there or he wouldn't be allowed back ever again.
+    Boy: That worked? 
+    TinkerBell: Of course, and besides he works for one of the places we get inventory from. I just threatened to go to a competitior instead.
+    Boy: Huh, interesting. 
+    <<AddStatement TinkerBell_q2_client "TinkerBell had some type of dispute with a long standing client about non-payment ">>
+<<endif>>
+<<jump TinkerBell_Q2_Start>>
+===
+title:  TinkerBell_Q2_Accusation_Default
+tags:
+position: -354,-979
+---
+TinkerBell: And that matters how exactly? 
+TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
+Boy: Not happening, I'm fine
+Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q2_Start>>
 ===
