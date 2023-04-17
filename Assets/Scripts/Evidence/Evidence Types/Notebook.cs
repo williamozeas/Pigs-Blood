@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Notebook : EvidenceAbstract, IStatementHolder
+public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
 {
     [SerializeField] private GameObject statementPrefab;
     [SerializeField] private int statementsPerPage = 5;

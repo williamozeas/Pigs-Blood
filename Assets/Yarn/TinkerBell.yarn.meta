@@ -10,5 +10,5 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
   LastImportHadImplicitStringIDs: 0
   LastImportHadAnyStrings: 0
-  isSuccessfullyParsed: 1
+  isSuccessfullyParsed: 0
   parseErrorMessages: []

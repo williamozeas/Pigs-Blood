@@ -239,9 +239,9 @@ position: -757,-330
     <<jump TinkerBell_Q3>>
 <<else>>
     -> Question
-        -> 
+        -> temp
             <<jump TinkerBell_Q3_Question_1>>
-        ->
+        -> temp
             <<jump TinkerBell_Q3_Question_2>>
     -> Accuse
         -> This evidence proves you wrong!
