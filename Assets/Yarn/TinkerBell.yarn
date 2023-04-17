@@ -206,7 +206,7 @@ Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for 
 <<jump TinkerBell_Q2_Start>>
 ===
 title: TinkerBell_Q2_Accusation_Correct
-position: -260,413
+position: -419,128
 ---
 Boy: We had a chat with the pigs the other day. They had talked about how they had a meeting with a buisness associate. 
 TinkerBell: Um...ok, that matters to me how?
@@ -215,7 +215,7 @@ TinkerBell: I..what? No, I never...
 <<jump TinkerBell_Q3>>
 ===
 title: TinkerBell_Q3
-position: -760,-518
+position: -752,239
 ---
 <<AddCharacter MatchGirl>>
 MatchGirl: Oi, kid.
@@ -232,30 +232,28 @@ MatchGirl: Alright, have fun I guess.
 ===
 title: TinkerBell_Q3_Start
 tags:
-position: -757,-330
+position: -758,481
 ---
+<<declare $reviewCompleted = false as bool>>
 <<SetPose TinkerBell CheckedOut>>
-<<if visited("TinkerBell_Q3_Question_3") == true && visited("TinkerBell_Q3_Question_1") == true >>
-    <<jump TinkerBell_Q3>>
-<<else>>
     -> Question
-        -> temp
+        -> Why all the Hydrogen Peroxide? <<if $reviewCompleted == true>>
             <<jump TinkerBell_Q3_Question_1>>
-        -> temp
+        -> Why is this still here then? <<if $reviewCompleted == true && visited("TinkerBell_Q3_Question_1") == true>>
             <<jump TinkerBell_Q3_Question_2>>
     -> Accuse
         -> This evidence proves you wrong!
             <<ResetEvidenceResponses>>
-            <<SetEvidenceResponse TinkerBell_Pig_Info TinkerBell_Q3_Accusation_Correct>>
+            <<SetEvidenceResponse TinkerBell_Fullbody_Mugshot TinkerBell_Q3_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q3_Accusation_Default>>
     -> Review
+        <<set $reviewCompleted to true>>
         <<Review>>
-<<endif>>
 
 ===
 title: TinkerBell_Q3_Question_1
 tags:
-position: -1054,-207
+position: -960,684
 ---
 <<SetPose TinkerBell Flippant>>
 <<if visited("TinkerBell_Q3_Question_1") == true>>
@@ -263,37 +261,40 @@ position: -1054,-207
     TinkerBell: You already asked me that, aren't you taking notes on this?
     <<jump TinkerBell_Q3_Start>>
 <<else>>
-    TinkerBell: Oh the boys? I've worked with them on occasion.
-    Boy: How so?
-    TinkerBell: Well, they've made some one off pyrotechnics for me and the club. Sometimes you can not find mass produced ones in the right styles and colors.
-    <<AddStatement TinkerBell_q3_alibi "TinkerBell has had contact with the victim and his brothers ">>
+    TinkerBell: The what? 
+    Boy: Says here on the catalog from the search that we found a 5 gallon bucket of 70% hydrogen peroxide.
+    Boy: Ok first of all, who the hell sold you gallons of industrial grade hydrogen peroxide? And second why the hell do you have it?
+    TinkerBell: Well first, I got it from one of those bulk restaurant supply places. 
+    Boy: But why do you need that much to begin with? What are you even doing with it?
+    TinkerBell: Impatient much? As I was saying before being <style="emph">so rudely</style> interrupted, I use it in the club for cleaning.
+    Boy: Cleaning in general?
+    TinkerBell: Sort of, we dilute it down and use if to clean bodily fluids that show up. Unfortunately it has a tendency to discolor and bleach things if not diluted enough.
+    Boy: I see.
+    <<AddStatement TinkerBell_Q3_Peroxide "TinkerBell uses high grade hydrogen peroxide for cleaning bodily fluids, but it has a tendency to bleach cloth if not diluted enough. ">>
 <<endif>>
 <<jump TinkerBell_Q3_Start>>
 
 ===
 
 title: TinkerBell_Q3_Question_2
-position: -751,6
+position: -541,694
 ---
-<<SetPose TinkerBell Flippant>>
-<<if visited("TinkerBell_Q3_Question_1") == true>>
+<<if visited("TinkerBell_Q3_Question_2") == true>>
+    <<SetPose TinkerBell Flippant>>
     <<wait 0.5>>
-    TinkerBell: Am I going crazy? I could have sworn you wrote that down.
-    <<jump TinkerBell_Q3_Start>>
-<<else>>
-    TinkerBell: Hmm...honestly I don't fully remember. Gimme a sec..
-    TinkerBell: OH, right the glitter throwing orb job!
-    Boy: I'm sorry, the what??
-    TinkerBell: Its another custom I ordered for the Red Hot Chili Pipers show. Its a massive sphere that hangs over the crowd and blows smoke and sparkles all over.
-    Boy: Right...so when did you chat with them last about this?
-    TinkerBell: 2 days ago.
-    <<AddStatement TinkerBell_q3_client "TinkerBell has mentioned she spoke with the pigs recently.  ">>
+    TinkerBell: Again? Are you even listening?
+    Boy: Quiet, I'm asking the questions here.
 <<endif>>
+    TinkerBell: I mean, is it that important why its in my car? I think its pretty irrelevant.
+    Boy: Just answer the question.
+    TinkerBell: I must have forgotten it after doing the inventory run.
+    Boy: How could you have forgotten it? Report says it was sitting in the passenger footwell.
+    TinkerBell: I just forgot OK? I did not know that having stuff in your car was a crime now.
 <<jump TinkerBell_Q3_Start>>
 ===
 title:  TinkerBell_Q3_Accusation_Default
 tags:
-position: -412,-12
+position: -439,435
 ---
 TinkerBell: And that matters how exactly? 
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
@@ -301,12 +302,13 @@ Boy: Not happening, I'm fine
 Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q3_Start>>
 ===
+
 title: TinkerBell_Q3_Accusation_Correct
-position: -260,413
+position: -347,613
 ---
 Boy: We had a chat with the pigs the other day. They had talked about how they had a meeting with a buisness associate. 
 TinkerBell: Um...ok, that matters to me how?
 Boy: The incident we are investigating happened the same day as your chat with a troublesome client. Were you referring to the pigs?
 TinkerBell: I..what? No, I never...
-<<jump TinkerBell_Q3>>
+<<jump TinkerBell_Q4_Start>>
 ===

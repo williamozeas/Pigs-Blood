@@ -1,5 +1,300 @@
 ﻿title: Pigs
 tags:
+position: 122,-203
+---
+
+<<jump Pigs_Q1_Start>>
+
+//PIGS Q1
+===
+title: Pigs_Q1_Start
+tags:
+position: 123,-136
+---
+<<if visited("Pigs_Q1_Question_2") == true && visited("Pigs_Q1_Question_1") == true >>
+    <<jump Pigs_Q2_Start>>
+<<else>>
+    -> Question
+        -> Temp
+            <<jump Pigs_Q1_Question_1>>
+        -> Temp2
+            <<jump Pigs_Q1_Question_2>>
+    -> Accuse
+        -> This evidence proves you wrong!
+            <<ResetEvidenceResponses>>
+            //<<SetEvidenceResponse testPaper_1 TestPaper1Response>>
+            <<PromptEvidence Pigs_Q1_Accusation_Default>>
+    -> Review
+        <<Review>>
+<<endif>>
+===
+title: Pigs_Q1_Question_1
+tags:
+position: 60,-13
+---
+
+<<jump Pigs_Q1_Start>>
+===
+title: Pigs_Q1_Question_2
+tags:
+position: -127,-18
+---
+
+<<jump Pigs_Q1_Start>>
+===
+title: Pigs_Q1_Accusation_Default
+tags:
+position: 331,-153
+---
+
+<<jump Pigs_Q1_Start>>
+
+
+//PIGS Q2
+===
+title: Pigs_Q2_Start
+tags:
+position: 123,141
+---
+-> Question
+    -> Temp 1
+        <<jump Pigs_Q2_Question_1>>
+    -> Temp 2
+        <<jump Pigs_Q2_Question_2>>
+-> Accuse
+    -> This evidence proves you wrong!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetEvidenceResponse TEMP Pigs_Q2_Accusation_Correct>>
+        <<PromptEvidence Pigs_Q2_Accusation_Default>>
+-> Review
+    <<Review>>
+===
+title: Pigs_Q2_Question_1
+tags:
+position: 71,226
+---
+
+<<jump Pigs_Q2_Start>>
+===
+title: Pigs_Q2_Question_2
+tags:
+position: -138,219
+---
+
+<<jump Pigs_Q2_Start>>
+===
+title: Pigs_Q2_Accusation_Default
+tags:
+position: 348,109
+---
+
+<<jump Pigs_Q2_Start>>
+===
+title: Pigs_Q2_Accusation_Correct
+tags:
+position: 350,186
+---
+
+<<jump Pigs_Q3_Start>>
+
+//PIGS Q3
+===
+title: Pigs_Q3_Start
+tags:
+position: 124,340
+---
+-> Question
+    -> Temp 1
+        <<jump Pigs_Q3_Question_1>>
+    -> Temp 2
+        <<jump Pigs_Q3_Question_2>>
+-> Accuse
+    -> This evidence proves you wrong!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetEvidenceResponse TEMP Pigs_Q3_Accusation_Correct>>
+        <<PromptEvidence Pigs_Q3_Accusation_Default>>
+-> Review
+    <<Review>>
+===
+title: Pigs_Q3_Question_1
+tags:
+position: 54,440
+---
+
+<<jump Pigs_Q3_Start>>
+===
+title: Pigs_Q3_Question_2
+tags:
+position: -149,435
+---
+
+<<jump Pigs_Q3_Start>>
+===
+title: Pigs_Q3_Accusation_Default
+tags:
+position: 350,333
+---
+
+<<jump Pigs_Q3_Start>>
+===
+title: Pigs_Q3_Accusation_Correct
+tags:
+position: 353,432
+---
+
+<<jump Pigs_Q4_Start>>
+
+
+//PIGS Q4
+===
+title: Pigs_Q4_Start
+tags:
+position: 125,558
+---
+-> Question
+    -> Temp 1
+        <<jump Pigs_Q4_Question_1>>
+    -> Temp 2
+        <<jump Pigs_Q4_Question_2>>
+-> Accuse
+    -> This evidence proves you wrong!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetEvidenceResponse TEMP Pigs_Q4_Accusation_Correct>>
+        <<PromptEvidence Pigs_Q4_Accusation_Default>>
+-> Review
+    <<Review>>
+===
+title: Pigs_Q4_Question_1
+tags:
+position: 16,629
+---
+
+<<jump Pigs_Q4_Start>>
+===
+title: Pigs_Q4_Question_2
+tags:
+position: -189,621
+---
+
+<<jump Pigs_Q4_Start>>
+===
+title: Pigs_Q4_Accusation_Default
+tags:
+position: 354,544
+---
+
+<<jump Pigs_Q4_Start>>
+===
+title: Pigs_Q4_Accusation_Correct
+tags:
+position: 367,620
+---
+
+<<jump Pigs_Q5_Start>>
+
+//PIGS Q5
+===
+title: Pigs_Q5_Start
+tags:
+position: 112,787
+---
+-> Question
+    -> Temp 1
+        <<jump Pigs_Q5_Question_1>>
+    -> Temp 2
+        <<jump Pigs_Q5_Question_2>>
+-> Accuse
+    -> This evidence proves you wrong!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetEvidenceResponse TEMP Pigs_Q5_Accusation_Correct>>
+        <<PromptEvidence Pigs_Q5_Accusation_Default>>
+-> Review
+    <<Review>>
+===
+title: Pigs_Q5_Question_1
+tags:
+position: 41,881
+---
+
+<<jump Pigs_Q5_Start>>
+===
+title: Pigs_Q5_Question_2
+tags:
+position: -159,875
+---
+
+<<jump Pigs_Q5_Start>>
+===
+title: Pigs_Q5_Accusation_Default
+tags:
+position: 354,773
+---
+
+<<jump Pigs_Q5_Start>>
+===
+title: Pigs_Q5_Accusation_Correct
+tags:
+position: 363,884
+---
+
+<<jump Pigs_Q6_Start>>
+
+//PIGS Q6
+===
+title: Pigs_Q6_Start
+tags:
+position: 112,787
+---
+-> Question
+    -> Temp 1
+        <<jump Pigs_Q6_Question_1>>
+    -> Temp 2
+        <<jump Pigs_Q6_Question_2>>
+-> Accuse
+    -> This evidence proves you wrong!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetEvidenceResponse TEMP Pigs_Q6_Accusation_Correct>>
+        <<PromptEvidence Pigs_Q6_Accusation_Default>>
+-> Review
+    <<Review>>
+===
+title: Pigs_Q6_Question_1
+tags:
+position: 41,881
+---
+
+<<jump Pigs_Q6_Start>>
+===
+title: Pigs_Q6_Question_2
+tags:
+position: -159,875
+---
+
+<<jump Pigs_Q6_Start>>
+===
+title: Pigs_Q6_Accusation_Default
+tags:
+position: 354,773
+---
+
+<<jump Pigs_Q6_Start>>
+===
+title: Pigs_Q6_Accusation_Correct
+tags:
+position: 363,884
+---
+
+<<jump Pigs_Ending>>
+
+===
+title: Pigs_Ending
+tags:
+position: 122,1049
 ---
 
 ===
