@@ -277,14 +277,14 @@ position: -159,875
 
 <<jump Pigs_Q6_Start>>
 ===
-title: Pigs_Q5_Accusation_Default
+title: Pigs_Q6_Accusation_Default
 tags:
 position: 354,773
 ---
 
 <<jump Pigs_Q6_Start>>
 ===
-title: Pigs_Q5_Accusation_Correct
+title: Pigs_Q6_Accusation_Correct
 tags:
 position: 363,884
 ---

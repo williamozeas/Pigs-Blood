@@ -22,7 +22,7 @@ public class A4 : FlippableEvidence<A4Page>
         type = DocType.A4;
         if (pagesText.Count == 0)
         {
-            pagesText.Add(id);
+            pagesText.Add(id); 
         }
         base.Awake();
     }
