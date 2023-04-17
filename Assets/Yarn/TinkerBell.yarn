@@ -279,20 +279,17 @@ position: -960,684
 title: TinkerBell_Q3_Question_2
 position: -541,694
 ---
-<<SetPose TinkerBell Flippant>>
-<<if visited("TinkerBell_Q3_Question_1") == true>>
+<<if visited("TinkerBell_Q3_Question_2") == true>>
+    <<SetPose TinkerBell Flippant>>
     <<wait 0.5>>
-    TinkerBell: Am I going crazy? I could have sworn you wrote that down.
-    <<jump TinkerBell_Q3_Start>>
-<<else>>
-    TinkerBell: Hmm...honestly I don't fully remember. Gimme a sec..
-    TinkerBell: OH, right the glitter throwing orb job!
-    Boy: I'm sorry, the what??
-    TinkerBell: Its another custom I ordered for the Red Hot Chili Pipers show. Its a massive sphere that hangs over the crowd and blows smoke and sparkles all over.
-    Boy: Right...so when did you chat with them last about this?
-    TinkerBell: 2 days ago.
-    <<AddStatement TinkerBell_q3_client "TinkerBell has mentioned she spoke with the pigs recently.  ">>
+    TinkerBell: Again? Are you even listening?
+    Boy: Quiet, I'm asking the questions here.
 <<endif>>
+    TinkerBell: I mean, is it that important why its in my car? I think its pretty irrelevant.
+    Boy: Just answer the question.
+    TinkerBell: I must have forgotten it after doing the inventory run.
+    Boy: How could you have forgotten it? Report says it was sitting in the passenger footwell.
+    TinkerBell: I just forgot OK? I did not know that having stuff in your car was a crime now.
 <<jump TinkerBell_Q3_Start>>
 ===
 title:  TinkerBell_Q3_Accusation_Default
