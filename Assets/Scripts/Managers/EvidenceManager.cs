@@ -120,4 +120,25 @@ public class EvidenceManager : Singleton<EvidenceManager>
         }
         return prefab;
     }
+
+    public void LoadEvidence(string id)
+    {
+        GameObject prefab = GetEvidencePrefabByID(id);
+        float x = Random.Range(-2f, 2f);
+        float z = Random.Range(-3.2f, -5f);
+        Vector3 position = new Vector3(x, 3.6f, z);
+        Quaternion rotation = Quaternion.Euler(0f, Random.Range(-30f, 30f), 0f);
+        GameObject newEvidence = Instantiate(prefab, position, rotation, transform);
+        currentEvidence.Add(newEvidence.GetComponent<EvidenceAbstract>());
+    }
+
+    public void RemoveEvidence(string id)
+    {
+        EvidenceAbstract evidenceToRemove = GetEvidenceByID(id);
+        if (evidenceToRemove)
+        {
+            currentEvidence.Remove(evidenceToRemove);
+            Destroy(evidenceToRemove.gameObject);
+        }
+    }
 }

@@ -45,16 +45,16 @@ public class Notebook : EvidenceAbstract, IStatementHolder
 
     public void AddStatement(string ID, string display)
     {
-        int pageIndex = statements.Count % statementsPerPage;
-        if (pageIndex >= pages.Count)
-        {
-            Debug.LogError("Not enough pages to hold all these statements!");
-        }
-        Statement newStatement = Instantiate(statementPrefab, pages[pageIndex]).GetComponent<Statement>();
-        newStatement.ID = ID;
-        newStatement.Display = display;
-        newStatement.holder = this;
-        statements.Add(newStatement);
+        // int pageIndex = statements.Count % statementsPerPage;
+        // if (pageIndex >= pages.Count)
+        // {
+        //     Debug.LogError("Not enough pages to hold all these statements!");
+        // }
+        // Statement newStatement = Instantiate(statementPrefab, pages[pageIndex]).GetComponent<Statement>();
+        // newStatement.ID = ID;
+        // newStatement.Display = display;
+        // newStatement.holder = this;
+        // statements.Add(newStatement);
     }
     
     private void SetStatementsActive(bool active)

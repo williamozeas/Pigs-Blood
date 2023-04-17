@@ -29,7 +29,8 @@ public abstract class FlippableEvidence<T> : EvidenceAbstract, IFlippable where 
     {
         foreach (T page in pages)
         {
-            Destroy(page.gameObject);
+            if(page != null)
+                Destroy(page.gameObject);
         }
         pages.Clear();
     }

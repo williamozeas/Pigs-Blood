@@ -80,6 +80,8 @@ public class YarnCommandManager : DialogueViewBase
 		runner.AddCommandHandler<string>("PromptEvidence", PromptEvidence);
 		runner.AddCommandHandler<string, string>("AddStatement", AddStatement);
 		runner.AddCommandHandler("ResetStatements", ResetStatements);
+		runner.AddCommandHandler<string>("LoadEvidence", LoadEvidence);
+		runner.AddCommandHandler<string>("RemoveEvidence", RemoveEvidence);
 
 		// adds all Resources to internal lists / one big pile... it
 		// will scan inside all subfolders too! note: but when
@@ -278,6 +280,16 @@ public class YarnCommandManager : DialogueViewBase
 	public void StopMusic()
 	{
 		AudioManager.Instance.StopMusic();
+	}
+
+	public void LoadEvidence(string id)
+	{
+		EvidenceManager.Instance.LoadEvidence(id);
+	}
+
+	public void RemoveEvidence(string id)
+	{
+		EvidenceManager.Instance.RemoveEvidence(id);
 	}
 
 	//SPRITE & Audio OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM
