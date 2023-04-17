@@ -28,13 +28,11 @@ public abstract class EvidenceAbstract : MonoBehaviour
     private Vector3 lastPos;
     private Quaternion lastRot;
 
-    bool wasTransitioning;
     private Camera mainCam;
 
     protected virtual void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        wasTransitioning = false;
         
         Populate();
     }
@@ -59,11 +57,6 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
             if (mouseY > 0.15f * Screen.height)
             {
-                if (wasTransitioning){
-                    transform.position = lastPos;
-                    transform.rotation = lastRot;
-                    wasTransitioning = false;
-                }
                 float distanceToScreen = CameraManager.Instance.mainCam.WorldToScreenPoint(gameObject.transform.position).z;
                 Vector3 posMove = CameraManager.Instance.mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, mouseY, distanceToScreen ));
                 transform.position = new Vector3( posMove.x + offset.x, transform.position.y, posMove.z  + offset.z);
@@ -72,7 +65,6 @@ public abstract class EvidenceAbstract : MonoBehaviour
                 lastRot = transform.rotation;
             } else if (mouseY <= 0.15f * Screen.height && mouseY > 0.09f * Screen.height)
             { //left in so that you can partially transition in cuz that's cool but will run automatically on Inspect()
-                wasTransitioning = true;
                 float newX = (Input.mousePosition.x - (Screen.width / 2f))/ Screen.width * 2.5f;
                 Vector3 slerpWith = new Vector3(newX, lastPos.y, lastPos.z);
                 float percent = EasingFunction.EaseOutQuad(0, 1, (.15f * Screen.height- mouseY) / (.1f * Screen.height));
@@ -134,7 +126,6 @@ public abstract class EvidenceAbstract : MonoBehaviour
         float timeElapsed = 0;
         while (timeElapsed < time)
         {
-            wasTransitioning = true;
             float newX = (Input.mousePosition.x - (Screen.width / 2f))/ Screen.width * 2.5f;
             Vector3 slerpWith = new Vector3(newX, lastPos.y, lastPos.z);
             float percent = EasingFunction.EaseOutCubic(0, 1, timeElapsed / time);
@@ -152,5 +143,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
     {
         Dropped();
         GameManager.Instance.PlayerState = prevState;
+        float randTorque = Random.Range(-1f, 1f);
+        rb.AddTorque(Vector3.up * randTorque, ForceMode.VelocityChange);
     }
 }
