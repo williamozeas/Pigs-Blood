@@ -265,7 +265,12 @@ position: -960,684
     Boy: Says here on the catalog from the search that we found a 5 gallon bucket of 70% hydrogen peroxide.
     Boy: Ok first of all, who the hell sold you gallons of industrial grade hydrogen peroxide? And second why the hell do you have it?
     TinkerBell: Well first, I got it from one of those bulk restaurant supply places. 
-    <<AddStatement TinkerBell_Q3_Peroxide "TinkerBell has had contact with the victim and his brothers ">>
+    Boy: But why do you need that much to begin with? What are you even doing with it?
+    TinkerBell: Impatient much? As I was saying before being <style="emph">so rudely</style> interrupted, I use it in the club for cleaning.
+    Boy: Cleaning in general?
+    TinkerBell: Sort of, we dilute it down and use if to clean bodily fluids that show up. Unfortunately it has a tendency to discolor and bleach things if not diluted enough.
+    Boy: I see.
+    <<AddStatement TinkerBell_Q3_Peroxide "TinkerBell uses high grade hydrogen peroxide for cleaning bodily fluids, but it has a tendency to bleach cloth if not diluted enough. ">>
 <<endif>>
 <<jump TinkerBell_Q3_Start>>
 
@@ -274,20 +279,17 @@ position: -960,684
 title: TinkerBell_Q3_Question_2
 position: -541,694
 ---
-<<SetPose TinkerBell Flippant>>
-<<if visited("TinkerBell_Q3_Question_1") == true>>
+<<if visited("TinkerBell_Q3_Question_2") == true>>
+    <<SetPose TinkerBell Flippant>>
     <<wait 0.5>>
-    TinkerBell: Am I going crazy? I could have sworn you wrote that down.
-    <<jump TinkerBell_Q3_Path2_Start>>
-<<else>>
-    TinkerBell: Hmm...honestly I don't fully remember. Gimme a sec..
-    TinkerBell: OH, right the glitter throwing orb job!
-    Boy: I'm sorry, the what??
-    TinkerBell: Its another custom I ordered for the Red Hot Chili Pipers show. Its a massive sphere that hangs over the crowd and blows smoke and sparkles all over.
-    Boy: Right...so when did you chat with them last about this?
-    TinkerBell: 2 days ago.
-    <<AddStatement TinkerBell_q3_client "TinkerBell has mentioned she spoke with the pigs recently.  ">>
+    TinkerBell: Again? Are you even listening?
+    Boy: Quiet, I'm asking the questions here.
 <<endif>>
+    TinkerBell: I mean, is it that important why its in my car? I think its pretty irrelevant.
+    Boy: Just answer the question.
+    TinkerBell: I must have forgotten it after doing the inventory run.
+    Boy: How could you have forgotten it? Report says it was sitting in the passenger footwell.
+    TinkerBell: I just forgot OK? I did not know that having stuff in your car was a crime now.
 <<jump TinkerBell_Q3_Start>>
 ===
 title:  TinkerBell_Q3_Accusation_Default
