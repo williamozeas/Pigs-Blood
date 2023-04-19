@@ -119,28 +119,33 @@ public class YarnCommandManager : DialogueViewBase
 				CameraManager.Instance.Shake(5f, 2f);
 				CameraManager.Instance.Flash(0, 0.1f, 0.6f, Color.white);
 				CameraManager.Instance.Flash(0, 0.1f, 0.5f, Color.white, 0.3f);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Shock");
 				break;
 			}
 			case ("interesting"): //Vibe sfx, possible screenshake
 			{
 				CameraManager.Instance.Shake(2f, 0.8f);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Interesting");
 				break;
 			}
 			case ("energy"): //ding + screenshake in PW
 			{
 				CameraManager.Instance.Shake(1f, 0.5f);
 				CameraManager.Instance.Flash(0, 0.05f, 0f, Color.white);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Energy");
 				break;
 			}
 			case ("emphasis"): //splash sfx, screen shake
 			{
 				CameraManager.Instance.Shake(4f, 1f);
 				CameraManager.Instance.Flash(0.1f, 0.1f, 0.3f, Color.white);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Emphasis");
 				break;
 			}
 			case ("failure"): //oops, I'm wrong, oof (SFX + screenshake)
 			{
 				CameraManager.Instance.Shake(3f, 0.8f);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Failure");
 				break;
 			}
 			case ("ToWhite"):
