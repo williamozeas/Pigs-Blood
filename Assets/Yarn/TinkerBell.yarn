@@ -306,9 +306,89 @@ Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for 
 title: TinkerBell_Q3_Accusation_Correct
 position: -347,613
 ---
-Boy: We had a chat with the pigs the other day. They had talked about how they had a meeting with a buisness associate. 
-TinkerBell: Um...ok, that matters to me how?
-Boy: The incident we are investigating happened the same day as your chat with a troublesome client. Were you referring to the pigs?
-TinkerBell: I..what? No, I never...
+TinkerBell: Um...why are you showing me my mugshot? 
+Boy: Just out of curiosity, what's up with your boots?
+TinkerBell: What do you mean about my boo....ts...
+TinkerBell: Is this a lighting trick why the hell are they colored weird?
+Boy: Did you by chance have an encounter with your bucket of peroxide?
+TinkerBell: What? No I...god damn it my poor boots...they're ruined.
 <<jump TinkerBell_Q4_Start>>
+===
+title: TinkerBell_Q4_Start
+tags:
+position: -758,481
+---
+<<SetPose TinkerBell CheckedOut>>
+    -> Question
+        -> What's with the bat? 
+            <<jump TinkerBell_Q4_Question_1>>
+        -> Do you expect me to belive that? <<if visited("TinkerBell_Q4_Question_1") == true>>
+            <<jump TinkerBell_Q4_Question_2>>
+    -> Accuse
+        -> This evidence proves you wrong!
+            <<ResetEvidenceResponses>>
+            <<SetEvidenceResponse TinkerBell_Pig_Autopsy TinkerBell_Q4_Accusation_Correct>>
+            <<PromptEvidence TinkerBell_Q4_Accusation_Default>>
+    -> Review
+        <<set $reviewCompleted to true>>
+        <<Review>>
+
+===
+title: TinkerBell_Q4_Question_1
+tags:
+position: -960,684
+---
+<<SetPose TinkerBell Flippant>>
+<<if visited("TinkerBell_Q4_Question_1") == true>>
+    <<wait 0.5>>
+    TinkerBell: You already asked me that, aren't you taking notes on this?
+    <<jump TinkerBell_Q4_Start>>
+<<else>>
+    TinkerBell: I'm not really sure what you're talking about.
+    Boy: I have to wonder, why do you have a bat in your car as well?
+    TinkerBell: I play softball, why do you keep thinking everything in my car is suspicious?
+    Boy: Just many things are beginning to click, and I wonder if you recognize how deep of a hole you are digging youself.
+    TinkerBell: You haven't even told me why I am here, I have no clue why you have me here.
+    <<AddStatement TinkerBell_Q4_Bat "TinkerBell has a baseball bat in her car, she claims it's for softball">>
+<<endif>>
+<<jump TinkerBell_Q4_Start>>
+
+===
+
+title: TinkerBell_Q4_Question_2
+position: -541,694
+---
+<<if visited("TinkerBell_Q4_Question_2") == true>>
+    <<wait 0.5>>
+    TinkerBell: You already asked me that, aren't you taking notes on this?
+    <<jump TinkerBell_Q4_Start>>
+<<endif>>
+    TinkerBell: Its for softball, I swear to Jupiter.
+    TinkerBell: Why won't you believe me?
+    Boy: If its for sport reasons, why does it say "Gaslight" on it?
+    TinkerBell: Am I not allowed to personalize? Why are you maike me out to be a criminal?
+    Boy: Why does it also appear to be bleached? Paints all splotchy, Is it just personalized like that too?
+    TinkerBell: I...
+     <<AddStatement TinkerBell_Q4_Bat2 "Baseball bat has Gaslight engraved on it. The paint is extremely splotchy, as if it had been bleached ">>
+<<jump TinkerBell_Q4_Start>>
+===
+title:  TinkerBell_Q4_Accusation_Default
+tags:
+position: -439,435
+---
+TinkerBell: And that matters how exactly? 
+TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
+Boy: Not happening, I'm fine
+Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+<<jump TinkerBell_Q4_Start>>
+===
+
+title: TinkerBell_Q4_Accusation_Correct
+position: -347,613
+---
+Boy: TinkerBell, do you recognize why I am questioning you?
+TinkerBell: I..I don't know.
+Boy: This is the autopsy report for PIG NAME HERE. His brothers mentioned that he had been planning to meet with you.
+Boy: Their interrogations heavily implied that you were responsible. Yours so far has only strengthened our theory.
+TinkerBell: He's....he....I...killed him?
 ===
