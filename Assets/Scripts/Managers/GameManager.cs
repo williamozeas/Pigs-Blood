@@ -124,4 +124,9 @@ public class GameManager : Singleton<GameManager>
     {
         YarnCommandManager = ycm;
     }
+
+    public void SetCurrentNode(string node)
+    {
+        currentTalkNode = node;
+    }
 }

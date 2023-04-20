@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Wolf_MetroPass
+  canBeClickedOff: 1
   inspectPos: {x: 0, y: 5.33, z: -4.75}
   inspectRot: {x: -0.08715574, y: 0, z: 0, w: 0.9961947}
 --- !u!65 &8788904168440826045
@@ -64,8 +65,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.33, y: 0.2, z: 3.62}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.923943, y: 0.20000002, z: 8.298553}
+  m_Center: {x: -0.03314942, y: 0, z: -0.1009199}
 --- !u!54 &8788904168440826044
 Rigidbody:
   m_ObjectHideFlags: 0

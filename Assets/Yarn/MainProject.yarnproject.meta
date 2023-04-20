@@ -14,8 +14,18 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: 94c77e8afe0944b58ac51ddc4038d4ef, type: 3}
   - {fileID: 6391573757903218779, guid: 5356bac7785d24f539bd022aeffe976b, type: 3}
   - {fileID: 6391573757903218779, guid: 9027ace75d69a4d7396150ece2e31281, type: 3}
+  - {fileID: 6391573757903218779, guid: 6578eaa783e764ba6a5fe4837a21f3df, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $reviewCompleted
+    typeName: Bool
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: 
+    isImplicit: 0
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 94c77e8afe0944b58ac51ddc4038d4ef,
+      type: 3}
   defaultLanguage: en-US
   languagesToSourceAssets: []
   useAddressableAssets: 0

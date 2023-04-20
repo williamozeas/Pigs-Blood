@@ -1,8 +1,7 @@
-﻿title: Start
+﻿title: Wolf_Start
 ---
-MatchGirl: Test.
+<<wait 1>>
 <<jump Wolf_1>>
-
 //Q1
 ===
 
@@ -10,7 +9,7 @@ title: Wolf_1
 tags:
 position: -748,-1095
 ---
-<<SetMusic Chill>>
+<<SetMusic Questions>>
 <<SetPose Wolf Flippant>>
 <<AddCharacter Wolf>>
 <<AddStatement testStatement "Test statement">>

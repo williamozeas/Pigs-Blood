@@ -75,6 +75,7 @@ public class YarnCommandManager : DialogueViewBase
 		runner.AddCommandHandler<string, string>("SetPose", SetPose);
 		
 		runner.AddCommandHandler("Review", Review);
+		runner.AddCommandHandler<string>("ReviewWithDestination", ReviewWithDestination);
 		
 		runner.AddCommandHandler("ResetEvidenceResponses", ResetEvidenceResponses);
 		runner.AddCommandHandler<string, string>("SetEvidenceResponse", SetEvidenceResponse);
@@ -296,6 +297,12 @@ public class YarnCommandManager : DialogueViewBase
 	public void Review()
 	{
 		GameManager.Instance.PlayerState = PlayerState.Review;
+	}
+	
+	public void ReviewWithDestination(string returnNode)
+	{
+		Review();
+		GameManager.Instance.SetCurrentNode(returnNode);
 	}
 
 	public void SetMusic(string name)
