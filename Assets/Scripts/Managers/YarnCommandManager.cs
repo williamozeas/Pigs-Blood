@@ -11,6 +11,7 @@ public class YarnCommandManager : DialogueViewBase
 	public class EvidenceResponse
 	{
 		public string evidence;
+		public string statement = "";
 		public string node; //node to jump to
 	}
 
@@ -78,6 +79,8 @@ public class YarnCommandManager : DialogueViewBase
 		runner.AddCommandHandler("ResetEvidenceResponses", ResetEvidenceResponses);
 		runner.AddCommandHandler<string, string>("SetEvidenceResponse", SetEvidenceResponse);
 		runner.AddCommandHandler<string>("PromptEvidence", PromptEvidence);
+		runner.AddCommandHandler<string, string, string>("SetStatementResponse", SetStatementResponse);
+		runner.AddCommandHandler<string>("PromptStatement", PromptStatement);
 		runner.AddCommandHandler<string, string>("AddStatement", AddStatement);
 		runner.AddCommandHandler("ResetStatements", ResetStatements);
 		runner.AddCommandHandler<string>("LoadEvidence", LoadEvidence);
@@ -266,9 +269,24 @@ public class YarnCommandManager : DialogueViewBase
 		evidenceResponses.Add(response);
 	}
 
+	public void SetStatementResponse(string statement, string evidence, string node)
+	{
+		EvidenceResponse response = new EvidenceResponse();
+		response.statement = statement;
+		response.evidence = evidence;
+		response.node = node;
+		evidenceResponses.Add(response);
+	}
+
 	public void PromptEvidence(string defaultResponseNode)
 	{
 		defaultResponse = defaultResponseNode;
+		GameManager.Instance.PlayerState = PlayerState.ChooseEvidence;
+	}
+
+	public void PromptStatement(string proofResponse)
+	{
+		defaultResponse = proofResponse;
 		GameManager.Instance.PlayerState = PlayerState.ChooseEvidence;
 	}
 	
@@ -529,8 +547,18 @@ public class YarnCommandManager : DialogueViewBase
     {
 	    GameManager.Instance.PlayerState = PlayerState.Talk;
 	    EvidenceResponse response = evidenceResponses.Find(response => evidence == response.evidence);
+	    List<EvidenceResponse> statementResponses = evidenceResponses.FindAll(response => evidence == response.statement);
 	    string node;
-	    if (response == null)
+	    if (statementResponses.Count > 0) //statement given
+	    {
+		    node = defaultResponse; //default response will be at the proof node
+		    foreach (var statementResponse in statementResponses)
+		    {
+			    //set up correct responses
+			    SetEvidenceResponse(statementResponse.evidence, statementResponse.node);
+		    }
+	    }
+	    else if (response == null)
 	    {
 		    node = defaultResponse;
 	    }

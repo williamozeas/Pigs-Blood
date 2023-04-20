@@ -31,7 +31,7 @@ position: -749,-923
         -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
             <<jump Wolf_Q1_Question_2>>
     -> Accuse
-        -> This evidence proves you wrong!
+        -> You're lying about this statement!
             <<ResetEvidenceResponses>>
             //<<SetEvidenceResponse testPaper_1 TestPaper1Response>>
             <<PromptEvidence Wolf_Q1_Accusation_Default>>
@@ -106,10 +106,14 @@ position: -745,-405
     -> What games did you play?<<if visited("Wolf_Q2_Question_1") == true>>
         <<jump Wolf_Q2_Question_3>>
 -> Accuse
-    -> This evidence proves you wrong!
+    -> You committed the murder!
         <<ResetEvidenceResponses>>
-        <<SetEvidenceResponse Wolf_CCTV_Image Wolf_Q2_Accusation_Correct>>
+        // <<SetEvidenceResponse Wolf_CCTV_Image Wolf_Q2_Accusation_Correct>>
         <<PromptEvidence Wolf_Q2_Accusation_Default>>
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        <<SetStatementResponse Wolf_Q2_Home_All_Day Wolf_CCTV_Image Wolf_Q2_Accusation_Correct>>
+        <<PromptStatement Wolf_Q2_Accusation_Proof>>
 -> Review
     <<Review>>
 ===
@@ -120,7 +124,7 @@ Wolf: I was spending time with my kids.
 Boy: Uh huh...
 Wolf: They had a day off from school so they wanted to play board games.
 Boy: Hmmm..
-<<AddStatement wolf_q2_boardgames "Wolf played board games with his kids">>
+<<AddStatement Wolf_q2_boardgames "Wolf played board games with his kids.">>
 <<jump Wolf_Q2_Start>>
 ===
 title: Wolf_Q2_Question_2
@@ -129,6 +133,7 @@ position: -490,-292
 Wolf: hmm...I took the trash out and got the mail.
 Wolf: Think that was it, was a pretty uneventful day
 Boy: I see..
+<<AddStatement Wolf_Q2_Home_All_Day "Wolf stayed home all day.">>
 <<jump Wolf_Q2_Start>>
 ===
 title: Wolf_Q2_Question_3
@@ -142,6 +147,13 @@ Wolf: We played Financial Syndicate, took forever to finish.
 Wolf: Pretty sure Linus was cheating with how many doubles he rolled. Kid nearly bankrupted me twice.
 Boy: Mhmm...I see...
 <<jump Wolf_Q2_Start>>
+===
+title: Wolf_Q2_Accusation_Proof
+tags:
+position: -233,-214
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Wolf_Q2_Accusation_Default>>
 ===
 title: Wolf_Q2_Accusation_Correct
 tags:
@@ -183,7 +195,7 @@ position: -751,186
     -> Did you talk with anyone or give anything to anyone while out? <<if visited("Wolf_Q3_Question_2") == true && visited("Wolf_Q3_Question_1") == true >>
         <<jump Wolf_Q3_Question_3>>
 -> Accuse
-    -> This evidence proves you wrong!
+    -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         <<SetEvidenceResponse Wolf_MetroPass Wolf_Q3_Accusation_Correct>>
         <<PromptEvidence Wolf_Q3_Accusation_Default>>
@@ -253,7 +265,7 @@ position: -747,700
     -> And whats the name of this farm? <<if visited("Wolf_Q4_Question_1") == true >>
         <<jump Wolf_Q4_Question_2>>
 -> Accuse
-    -> This evidence proves you wrong!
+    -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         <<SetEvidenceResponse Wolf_Wallet Wolf_Q4_Accusation_Correct>>
         <<PromptEvidence Wolf_Q4_Accusation_Default>>
