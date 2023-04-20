@@ -97,7 +97,7 @@ position: -746,-638
     TinkerBell: This client has a tendency to put everything on a tab every time they come in. Well, this was the third time they left it open at the end of the night without paying.
     TinkerBell: So you know, I showed up at his house and asked him to pay me then and there or he wouldn't be allowed back ever again.
     Boy: That worked? 
-    TinkerBell: Of course, and besides he works for one of the places we get inventory from. I just threatened to go to a competitior instead.
+    TinkerBell: Of course, and besides he works for one of the places we get inventory from. I just threatened to go to a competitor instead.
     Boy: Huh, interesting. 
     <<AddStatement TinkerBell_q1_client "TinkerBell had some type of dispute with a long standing client about non-payment ">>
 <<endif>>
@@ -322,7 +322,7 @@ position: -758,481
     -> Question
         -> What's with the bat? 
             <<jump TinkerBell_Q4_Question_1>>
-        -> Do you expect me to belive that? <<if visited("TinkerBell_Q4_Question_1") == true>>
+        -> Do you expect me to believe that? <<if visited("TinkerBell_Q4_Question_1") == true>>
             <<jump TinkerBell_Q4_Question_2>>
     -> Accuse
         -> This evidence proves you wrong!
@@ -330,7 +330,6 @@ position: -758,481
             <<SetEvidenceResponse TinkerBell_Pig_Autopsy TinkerBell_Q4_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q4_Accusation_Default>>
     -> Review
-        <<set $reviewCompleted to true>>
         <<Review>>
 
 ===
@@ -390,5 +389,141 @@ Boy: TinkerBell, do you recognize why I am questioning you?
 TinkerBell: I..I don't know.
 Boy: This is the autopsy report for PIG NAME HERE. His brothers mentioned that he had been planning to meet with you.
 Boy: Their interrogations heavily implied that you were responsible. Yours so far has only strengthened our theory.
-TinkerBell: He's....he....I...killed him?
+TinkerBell: He's....he....I...killed him? No..nonononono..
+TinkerBell: Oh my gods oh my gods the boss is going to kill me...oh crap crap crap
+Boy: Relax, the boss isn't here. While we can not look past the murder, we can get you a reduced sentence and protect you if you help us.
+TinkerBell: I..ok..I'll help you.
+<<jump TinkerBell_Q5_Start>>
+===
+title: TinkerBell_Q5_Start
+tags:
+position: -758,481
+---
+<<SetPose TinkerBell Panic>>
+<<if visited("TinkerBell_Q5_Question_1") == true && visited("TinkerBell_Q5_Question_2") == true && visited("TinkerBell_Q5_Question_3") == true  && visited("TinkerBell_Q5_Question_4") == true>>
+<<jump TinkerBell_Q6>>
+<<endif>>
+    -> Question
+        -> The boss? 
+            <<jump TinkerBell_Q5_Question_1>>
+        -> What was your intended goal?
+            <<jump TinkerBell_Q5_Question_2>>
+        -> What do you know of this new boss? <<if visited("TinkerBell_Q5_Question_1") == true>>
+            <<jump TinkerBell_Q5_Question_3>>
+        -> Can you describe the series of events? <<if visited("TinkerBell_Q5_Question_2") == true>>
+            <<jump TinkerBell_Q5_Question_4>>
+    -> Accuse
+        -> This evidence proves you wrong!
+            <<ResetEvidenceResponses>>
+            //<<SetEvidenceResponse TinkerBell_Pig_Autopsy TinkerBell_Q5_Accusation_Correct>>
+            <<PromptEvidence TinkerBell_Q5_Accusation_Default>>
+    -> Review
+
+        <<Review>>
+
+===
+title: TinkerBell_Q5_Question_1
+tags:
+position: -960,684
+---
+//<<SetPose TinkerBell Flippant>>
+<<if visited("TinkerBell_Q5_Question_1") == true>>
+    <<wait 0.5>>
+    TinkerBell: You already asked...oh gods I'm so dead.
+    <<jump TinkerBell_Q5_Start>>
+<<else>>
+Boy: You mean Wolf? Hes in our custody at this moment so you don't need to worry
+TinkerBell: “Who?”
+Boy: Wolf..Isn't he the new boss?
+TinkerBell: I…don't know I've never met him and he only recently took charge around here…
+TinkerBell: Oh gods I'm dead I'm so dead I just had to rough him up a bit
+
+    <<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
+<<endif>>
+<<jump TinkerBell_Q5_Start>>
+
+===
+
+title: TinkerBell_Q5_Question_2
+position: -541,694
+---
+<<if visited("TinkerBell_Q5_Question_2") == true>>
+    <<wait 0.5>>
+    TinkerBell: You already asked me..that, oh gods the boss is going to rip me apart.
+    <<jump TinkerBell_Q5_Start>>
+<<endif>>
+    TinkerBell: I just..I
+    Boy: Take your time, you're safe here. The boss is not here now
+    TinkerBell: I...was just supposed to rough him up a bit.
+    Boy: Why?
+    TinkerBell: They..were behind in..production. They only delivered half of what they promised. I..was supposed to threaten them for behind behind
+     <<AddStatement TinkerBell_Q5_OrginalGoal "Pigs were supposed to deliver more Pixie Dust than they did. TinkerBell was sent by boss to intimidate the Pigs.">>
+<<jump TinkerBell_Q5_Start>>
+===
+title: TinkerBell_Q5_Question_3
+tags:
+position: -960,684
+---
+//<<SetPose TinkerBell Flippant>>
+<<if visited("TinkerBell_Q5_Question_3") == true>>
+    <<wait 0.5>>
+    TinkerBell: You just..asked me that...
+    <<jump TinkerBell_Q5_Start>>
+<<else>>
+    TinkerBell: I..dont know much. He's new in the area. 
+    Boy: Did he take over from anyone or is this his own group.
+    TinkerBell: He made it all himself, and he invited me to join after the Pigs recommended me.
+    Boy: Have you ever seen him? Do you know what he looks like? Body shape? Anything?
+    TinkerBell: Never his face...he always wears a mask. I'm not sure about body shape, I've only ever seen him in a trenchcoat and hat.
+    Boy: Any distinguishing features or mannerisms? 
+    TinkerBell: He...he mentions fire sometimes...that if the pigs burned us we'll burn them back..
+    TinkerBell: But I think thats a common phrase..
+    <<AddStatement TinkerBell_Q5_Boss2 "Boss seems to like trenchcoats and hats. Very cautious with identifiers May have an affinity for fire based metaphors?">>
+<<endif>>
+<<jump TinkerBell_Q5_Start>>
+
+===
+title: TinkerBell_Q5_Question_4
+tags:
+position: -960,684
+---
+//<<SetPose TinkerBell Flippant>>
+<<if visited("TinkerBell_Q5_Question_4") == true>>
+    <<wait 0.5>>
+    TinkerBell: You already asked me about..that.
+    <<jump TinkerBell_Q5_Start>>
+<<else>>
+    TinkerBell: I went to their farm, with the intent of asking about the missing product. 
+    TinkerBell: Only one of the pigs was in the house. We had a chat about what had been going on, 
+    TinkerBell: He promised me that they'd get it done soon, and I told him as I walked away that they were only going to be paid for the amount they delivered.
+    Boy: I presume he did not take that well.
+    TinkerBell: He swung at me, so I beat him with the bat.
+    Boy: Why did you have the bat? 
+    TinkerBell: Intimidation mostly.
+    Boy: Didn't the boss ask you to rough him up though?
+    TinkerBell: He did, I had no intention of going through with it until he swung at me.
+    Boy: What state was he in when you left?
+    TinkerBell: He was unconscious on the floor, his head was bleeding. I figured his brothers would find him in a minute or two.
+    Boy: But they didn't. He bled to death before they found him
+    <<AddStatement TinkerBell_Q5_Timeline "TinkerBell arrived at the farm, had a conversation with the victim. Victim got agitated and attacked TinkerBell, TinkerBell beat him until he was unconcious and fled">>
+<<endif>>
+<<jump TinkerBell_Q5_Start>>
+
+===
+title:  TinkerBell_Q5_Accusation_Default
+tags:
+position: -439,435
+---
+TinkerBell: And why does that matter now?
+TinkerBell: 
+Boy: Not happening, I'm fine
+Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+<<jump TinkerBell_Q5_Start>>
+===
+
+title: TinkerBell_Q6
+position: -619,764
+---
+Boy: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
+Boy: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
 ===
