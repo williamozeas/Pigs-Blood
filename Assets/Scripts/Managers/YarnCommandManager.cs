@@ -288,6 +288,9 @@ public class YarnCommandManager : DialogueViewBase
 	{
 		defaultResponse = proofResponse;
 		GameManager.Instance.PlayerState = PlayerState.ChooseEvidence;
+		EvidenceAbstract notebook = EvidenceManager.Instance.GetCurrentEvidenceByType(DocType.Notebook);
+		notebook.canBeClickedOff = false;
+		notebook.OnPresent();
 	}
 	
 	public void Review()

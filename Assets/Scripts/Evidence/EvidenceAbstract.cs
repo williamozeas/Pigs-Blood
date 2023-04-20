@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum DocType{ A4, Notebook }
 
@@ -12,6 +13,8 @@ public abstract class EvidenceAbstract : MonoBehaviour
     public string id;
 
     public DocType Type => type;
+    //used to prevent notebook from being clicked out of on present
+    [HideInInspector] public bool canBeClickedOff = true; 
     protected DocType type;
 
     protected Rigidbody rb;
@@ -142,6 +145,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
     public virtual void UnInspect()
     {
         Dropped();
+        canBeClickedOff = true;
         GameManager.Instance.PlayerState = prevState;
         float randTorque = Random.Range(-1f, 1f);
         rb.AddTorque(Vector3.up * randTorque, ForceMode.VelocityChange);

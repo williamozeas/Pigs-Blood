@@ -82,7 +82,9 @@ public class EvidenceManager : Singleton<EvidenceManager>
             } 
             else if (Physics.Raycast(ray, out raycastHit, 10f, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
             {
-                if (raycastHit.transform != null && inspectedObject && raycastHit.transform.gameObject != inspectedObject.gameObject)
+                if (raycastHit.transform != null && inspectedObject && 
+                    raycastHit.transform.gameObject != inspectedObject.gameObject && 
+                    inspectedObject.canBeClickedOff == true)
                 {
                     inspectedObject.UnInspect();
                     inspectedObject = null;
