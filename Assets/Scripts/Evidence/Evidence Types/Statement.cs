@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class Statement : MonoBehaviour
+public class Statement : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string ID;
     public string Display
@@ -36,6 +37,7 @@ public class Statement : MonoBehaviour
     public void SetButtonEnabled(bool newEnabled)
     {
         button.enabled = newEnabled;
+        label.color = Color.black;
     }
 
     private void SetDisplayText(string text)
@@ -44,5 +46,20 @@ public class Statement : MonoBehaviour
         display = text;
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (button.enabled)
+        {
+            label.color = new Color((float)232/255, (float)70/255, (float)21/255);
+        }
+    }
+    
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (button.enabled)
+        {
+            label.color = Color.black;
+        }
+    }
     
 }

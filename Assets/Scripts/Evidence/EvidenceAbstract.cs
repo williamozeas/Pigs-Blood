@@ -20,6 +20,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
     protected Rigidbody rb;
 
     protected bool grabbed;
+    protected bool inspected;
 
     private PlayerState prevState;
 
@@ -119,6 +120,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
         StartCoroutine(InspectAnim(time));
+        inspected = true;
 
         prevState = GameManager.Instance.PlayerState;
         GameManager.Instance.PlayerState = PlayerState.Inspecting;
@@ -145,9 +147,15 @@ public abstract class EvidenceAbstract : MonoBehaviour
     public virtual void UnInspect()
     {
         Dropped();
+        inspected = false;
         canBeClickedOff = true;
         GameManager.Instance.PlayerState = prevState;
         float randTorque = Random.Range(-1f, 1f);
         rb.AddTorque(Vector3.up * randTorque, ForceMode.VelocityChange);
+    }
+
+    public bool IsInspected()
+    {
+        return inspected;
     }
 }

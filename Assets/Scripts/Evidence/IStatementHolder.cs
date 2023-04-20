@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IStatementHolder
 {
     public void OnSelectStatement(Statement statement);
+    public bool IsInspected();
 }

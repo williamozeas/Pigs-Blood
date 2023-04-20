@@ -370,7 +370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: notebook
-  inspectPos: {x: 0, y: 5.33, z: -4.75}
+  canBeClickedOff: 1
+  inspectPos: {x: 0, y: 5.7, z: -4.82}
   inspectRot: {x: -0.08715574, y: 0, z: 0, w: 0.9961947}
   currentPage: 0
   pages:
