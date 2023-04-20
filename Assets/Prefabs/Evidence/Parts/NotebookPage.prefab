@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93d012244be74a84bb5cac463d9f122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pageColumn: {fileID: 1534759129043665284}
+  statements: []
 --- !u!1 &1080149698121210761
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,11 +464,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6401487813805431973, guid: 750db543537c0427fb29322ce60bbf6c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8682882459528435768, guid: 750db543537c0427fb29322ce60bbf6c,
         type: 3}

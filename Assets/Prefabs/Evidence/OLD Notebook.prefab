@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 8433156504965722801}
   - component: {fileID: 8433156504965722804}
   m_Layer: 0
-  m_Name: Notebook 1
+  m_Name: OLD Notebook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

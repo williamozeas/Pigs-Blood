@@ -1,4 +1,4 @@
-﻿title: StartWolf
+﻿title: Start
 ---
 <<jump Wolf_1>>
 ===
@@ -10,6 +10,7 @@ position: -748,-1095
 <<SetMusic Chill>>
 <<SetPose Wolf Flippant>>
 <<AddCharacter Wolf>>
+<<AddStatement testStatement "Test statement">>
 Wolf: Well, well. A little piggy comes to pay a visit to the big bad wolf.
 Boy: Can it Wolf, We got a list of evidence a mile long. This is only a formality. But if you answer my questions, maybe we can let you off a bit easier this time.
 Wolf: You're not getting <style="emph">anything</style> out of me.

@@ -7,7 +7,11 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
 {
     [SerializeField] private GameObject statementPrefab;
     [SerializeField] private int statementsPerPage = 5;
-    [SerializeField] private List<Transform> pages = new List<Transform>();
+    // [SerializeField] private List<Transform> pages = new List<Transform>();
+    //note: pages already exists in parent class
+
+    private NotebookPage currentRightPage;
+    private NotebookPage currentLeftPage;
     
     private List<Statement> statements;
     private Canvas canvas;
@@ -17,12 +21,12 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
         base.Awake();
         type = DocType.Notebook;
         
+        statements = GetComponentsInChildren<Statement>().ToList();
     }
 
     //TODO: clear statements on new interrogation
     protected void Start()
     {
-        statements = GetComponentsInChildren<Statement>().ToList();
         foreach (Statement statement in statements)
         {
             statement.holder = this;
@@ -45,16 +49,18 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
 
     public void AddStatement(string ID, string display)
     {
-        // int pageIndex = statements.Count % statementsPerPage;
-        // if (pageIndex >= pages.Count)
-        // {
-        //     Debug.LogError("Not enough pages to hold all these statements!");
-        // }
-        // Statement newStatement = Instantiate(statementPrefab, pages[pageIndex]).GetComponent<Statement>();
-        // newStatement.ID = ID;
-        // newStatement.Display = display;
-        // newStatement.holder = this;
-        // statements.Add(newStatement);
+        NotebookPage pageToAdd = pages.Last();
+        if (pageToAdd.statements.Count >= statementsPerPage)
+        {
+            Debug.LogError("Not enough pages to hold all these statements!");
+            //TODO: Add new page! & set pageToAdd
+        }
+        Statement newStatement = Instantiate(statementPrefab, pageToAdd.pageColumn).GetComponent<Statement>();
+        newStatement.ID = ID;
+        newStatement.Display = display;
+        newStatement.holder = this;
+        statements.Add(newStatement);
+        pageToAdd.statements.Add(newStatement);
     }
     
     private void SetStatementsActive(bool active)
@@ -67,7 +73,8 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
 
     public void OnSelectStatement(Statement statement)
     {
-        Debug.Log("Got statement with ID: " + id);
+        Debug.Log("Got statement with ID: " + statement.ID);
+        UnInspect();
         GameManager.Instance.YarnCommandManager.RespondToEvidence(statement.ID);
     }
 
