@@ -49,6 +49,10 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
 
     public void AddStatement(string ID, string display)
     {
+        if (statements.Find(statement => statement.ID == ID))
+        {
+            return;
+        }
         NotebookPage pageToAdd = pages.Last();
         if (pageToAdd.statements.Count >= statementsPerPage)
         {
