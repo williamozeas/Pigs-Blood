@@ -1,6 +1,10 @@
 ﻿title: Start
 tags:
 ---
+<<LoadEvidence Wolf_MetroPass>>
+<<LoadEvidence Wolf_ArrestReport>>
+<<LoadEvidence Wolf_CCTV>>
+<<LoadEvidence Wolf_Profile>>
 <<SetMusic Chill>>
 Boy: <style="int">One dead, blunt force trauma.</style> 
 Boy: <style="int">Side of the head. Two of the victim's brothers on the scene.</style> 
@@ -42,24 +46,24 @@ Matches: You finished? That was fast.
 Boy: The power of speed-reading.
 <<PlayEffect Failure>>
 Matches: We don't need speed-readers, we need speed-comprehenders.
-Matches: Tell me, how did the wolf get to the scene?
+Matches: Tell me, how old is our friend the wolf?
 <<ResetEvidenceResponses>>
-<<SetEvidenceResponse Wolf_MetroPass Intro_Q1_Success>>
+<<SetEvidenceResponse Wolf_Profile Intro_Q1_Success>>
 <<PromptEvidence Intro_Q1_Failure>>
 Boy: <style="int"> Drop evidence into the red box to present it.</style>
 ===
 title: Intro_Q1_Failure
 ---
 <<PlayEffect Failure>>
-Matches: No! We found a certain card on him when we got him. Try again!
+Matches: No! Try looking at his profile.
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_MetroPass Intro_Q1_Success>>
 <<PromptEvidence Intro_Q1_Failure>>
 ===
 title: Intro_Q1_Success
 ---
-Boy: He took the metro. We found this card in his wallet.
-Matches: Glad to see you're paying attention. Even if your workspace is as organized as a burning building.
+Boy: He's 39. Says so right on his report.
+Matches: Glad my work writing those isn't in vain. Even if your workspace is as organized as a burning building.
 Boy: Very funny. I have my methods. Besides, have I let you down yet?
 Matches: Of course not. You're as good a detective as we've ever seen here. Though, I'll be watching from the next room if you need help.
 <<StopMusic>>

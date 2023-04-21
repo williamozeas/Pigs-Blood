@@ -27,7 +27,7 @@ public class EvidenceManager : Singleton<EvidenceManager>
             {
                 Debug.LogError("Invalid evidence loaded!");
             }
-            evidenceDict.Add(evClass.name, evidence);
+            evidenceDict.Add(evClass.id, evidence);
         }
     }
     

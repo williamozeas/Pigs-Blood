@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8788904168440826045}
   - component: {fileID: 8788904168440826044}
   m_Layer: 0
-  m_Name: MetroCard
+  m_Name: Wolf_MetroPass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,6 +174,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8788904168440826047}
     m_Modifications:
+    - target: {fileID: 2329925881820227049, guid: 95ebfd06e3d1d4997a1f406e7fbda5bd,
+        type: 3}
+      propertyPath: m_text
+      value: 'Found in Wolf''s wallet.
+
+        Used one time on day of murder.'
+      objectReference: {fileID: 0}
     - target: {fileID: 7843604982655958005, guid: 95ebfd06e3d1d4997a1f406e7fbda5bd,
         type: 3}
       propertyPath: m_Name

@@ -80,9 +80,14 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
 
     public void ResetNotebook()
     {
-        for (int i = statements.Count - 1; i > 0; i--)
+        for (int i = statements.Count - 1; i >= 0; i--)
         {
-            Destroy(statements[i]);
+            Destroy(statements[i].gameObject);
+        }
+        statements.Clear();
+        foreach (var page in pages)
+        {
+            page.statements.Clear();
         }
     }
     

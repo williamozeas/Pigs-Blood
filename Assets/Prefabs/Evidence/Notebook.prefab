@@ -380,7 +380,7 @@ MonoBehaviour:
   bl_corner: {fileID: 1936928953027573686}
   statementPrefab: {fileID: 8700011588109859900, guid: 4f3d84f12dbc144bcbbf25e9b10cabd2,
     type: 3}
-  statementsPerPage: 5
+  statementsPerPage: 7
 --- !u!1001 &1322697000781714446
 PrefabInstance:
   m_ObjectHideFlags: 0
