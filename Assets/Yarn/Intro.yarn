@@ -60,7 +60,7 @@ title: Intro_Q1_Success
 ---
 Boy: He took the metro. We found this card in his wallet.
 Matches: Glad to see you're paying attention. Even if your workspace is as organized as a burning building.
-Boy: Very funny. I have my methods. Have I let you down yet?
+Boy: Very funny. I have my methods. Besides, have I let you down yet?
 Matches: Of course not. You're as good a detective as we've ever seen here. Though, I'll be watching from the next room if you need help.
 <<StopMusic>>
 <<wait 1>>

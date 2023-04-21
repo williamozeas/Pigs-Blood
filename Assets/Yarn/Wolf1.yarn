@@ -1,6 +1,7 @@
 ﻿title: Wolf_Start
 ---
 <<wait 1>>
+<<AddCharacter Wolf>>
 <<jump Wolf_1>>
 //Q1
 ===
@@ -9,14 +10,28 @@ title: Wolf_1
 tags:
 position: -748,-1095
 ---
-<<SetMusic Questions>>
-<<SetPose Wolf Flippant>>
-<<AddCharacter Wolf>>
-<<AddStatement testStatement "Test statement">>
+<<SetPose Wolf CheckedOut>>
 Wolf: Well, well. A little piggy comes to pay a visit to the big bad wolf.
-Boy: Can it Wolf, We got a list of evidence a mile long. This is only a formality. But if you answer my questions, maybe we can let you off a bit easier this time.
+<<PlayEffect Emphasis>>
+Boy: Can it, Wolf. We've got a list of evidence a mile long. 
+Wolf: I can see that. Anyone ever tell you that your organization skills are terrible?
+Boy: Anyone ever tell you that your following-the-law skills are terrible?
+<<PlayEffect Failure>>
+Wolf: Wow. You really got me with that one. Besides, my following-the-law skills are up to par - I think <style="emph">you</style> need to work on <style="emph">your</style> idea of what "breaking the law" is.
+Wolf: What am I even in here for? Walking too slowly?
+<<PlayEffect Emphasis>>
+Boy: One of the Pigs brothers was found dead.
+<<wait 0.7>>
+<<SetPose Wolf Flippant>>
+<<PlayEffect Interesting>>
+Wolf: ...
+Boy: Not so cocky now.
+Wolf: ...You've got nothing on me. You can't.
+Boy: I wouldn't be so sure of that. If I were you, I'd talk on this one.
+<<PlayEffect Emphasis>>
 Wolf: You're not getting <style="emph">anything</style> out of me.
 
+<<SetMusic Questions>>
 <<jump Wolf_Q1_Start>>
 ===
 title: Wolf_Q1_Start
