@@ -60,7 +60,7 @@ title: Intro_Q1_Failure
 <<PlayEffect Failure>>
 Matches: No! Try looking at his profile.
 <<ResetEvidenceResponses>>
-<<SetEvidenceResponse Wolf_MetroPass Intro_Q1_Success>>
+<<SetEvidenceResponse Wolf_Profile Intro_Q1_Success>>
 <<PromptEvidence Intro_Q1_Failure>>
 ===
 title: Intro_Q1_Success
