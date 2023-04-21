@@ -555,6 +555,7 @@ public class YarnCommandManager : DialogueViewBase
 
     public void RespondToEvidence(string evidence)
     {
+	    Runner.Stop();
 	    GameManager.Instance.PlayerState = PlayerState.Talk;
 	    EvidenceResponse response = evidenceResponses.Find(response => evidence == response.evidence);
 	    List<EvidenceResponse> statementResponses = evidenceResponses.FindAll(response => evidence == response.statement);
