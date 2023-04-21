@@ -223,7 +223,7 @@ Boy: What? I'm kinda in the middle of something.
 MatchGirl: I'm aware, just finished the search of her car. Here's the file for you, some real gems in there for you.
 <<LoadEvidence TinkerBell_Search_Data>>
 TinkerBell: Are you judging the stuff in my car? Rude. 
-MatchGirl: Quiet down chartreuse hoe. //BETTER INSULT GOES HERE MAYBE?
+MatchGirl: Quiet down chartreuse bonnie. //BETTER INSULT GOES HERE MAYBE?
 MatchGirl: Alright, have fun I guess.
 <<RemoveCharacter MatchGirl>>
 
