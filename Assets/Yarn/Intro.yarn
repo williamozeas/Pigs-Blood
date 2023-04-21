@@ -28,7 +28,10 @@ Boy: <style="int">It turns out a penchant for crying wolf is a lot more useful w
 Matches: HEY! You're doing it again!
 <<PlayEffect Failure>>
 Boy: Um. Yeah! I'm fine.
-Matches: I picked up this wolf fleeing from the scene. I believe you two are acquainted? I wrote a profile on him, should be in your evidence... pile.
+Matches: I picked up this wolf fleeing from the scene. I believe you two are acquainted? I wrote a profile on him, should be in your evidence... 
+<<wait 1>>
+<<PlayEffect Failure>>
+Matches: ...pile.
 Boy: Yeah. He's broken a few rules here and there. Should be easy enough.
 Matches: Alright, well, this is a bit more than a few rules. This is a murder.
 Matches: We need you at your best for this. Have you looked over the evidence?

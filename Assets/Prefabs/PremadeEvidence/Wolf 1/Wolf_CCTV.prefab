@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Temp Desc
+  m_text: "The Wolf, spotted on \nCCTV at 10 AM. Clean coat."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd33b899c44134d7c8eb9aa20fdd5b8d, type: 2}
   m_sharedMaterial: {fileID: -433023134799265929, guid: dd33b899c44134d7c8eb9aa20fdd5b8d,
@@ -94,11 +94,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 8.2
   m_fontSizeBase: 15
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 8
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Wolf_CCTV
+  canBeClickedOff: 1
   inspectPos: {x: 0, y: 5.72, z: -4.82}
   inspectRot: {x: -0.08715574, y: 0, z: 0, w: 0.9961947}
 --- !u!1 &7703845858328575557

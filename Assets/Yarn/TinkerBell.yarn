@@ -8,7 +8,7 @@ title: TinkerBell_1
 tags:
 position: -748,-1095
 ---
-<<SetMusic Chill>>
+<<SetMusic Questions>>
 //<<SetPose TinkerBell Flippant>>
 <<AddCharacter TinkerBell>>
 Boy: Ah, so you must be TinkerBell.

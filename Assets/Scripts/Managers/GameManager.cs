@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using Yarn.Unity;
 
 public enum GameState
 {
@@ -54,13 +55,17 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        //DEBUG
+        //TODO: Make button?
         if (PlayerState == PlayerState.Review)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                YarnCommandManager.Runner.Stop();
                 PlayerState = PlayerState.Talk;
             }
+        } else if (PlayerState == PlayerState.Talk)
+        {
+            
         }
     }
 

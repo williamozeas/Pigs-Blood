@@ -125,6 +125,8 @@ position: -745,-405
         <<jump Wolf_Q2_Question_2>>
     -> What games did you play?<<if visited("Wolf_Q2_Question_1") == true>>
         <<jump Wolf_Q2_Question_3>>
+    -> Back
+        <<jump Wolf_Q2_Start>>
 -> Accuse
     -> You committed the murder!
         <<ResetEvidenceResponses>>
@@ -135,6 +137,8 @@ position: -745,-405
         <<SetStatementResponse Wolf_Q2_Home_All_Day Wolf_CCTV Wolf_Q2_Accusation_Correct>>
         <<SetStatementResponse Wolf_Q2_Home_All_Day Wolf_MetroPass Wolf_Q2_Accusation_Correct_MetroPass>>
         <<PromptStatement Wolf_Q2_Accusation_Proof>>
+    -> Back
+        <<jump Wolf_Q2_Start>>
 -> Review
     <<Review>>
 ===
@@ -156,6 +160,7 @@ Boy: And why were you spending time with them?
 <<PlayEffect Energy>>
 Wolf: Wh- Because they're my kids?
 Boy: Shouldn't they have been at school?
+<<SetPose Wolf CheckedOut>>
 Wolf: Oh... They had a day off from school, so they wanted to play board games.
 Boy: And why did they have school off?
 Wolf: I don't- Some sort of holiday, I don't keep track of these things.
@@ -171,6 +176,9 @@ Boy: And when was that?
 <<SetPose Wolf Flippant>>
 Wolf: Do you want a fucking itinerary?
 Boy: Answer the question.
+<<SetPose Wolf CheckedOut>>
+<<PlayEffect Energy>>
+<<wait 1>>
 Wolf: I don't know. Some time around noon.
 Boy: And you never left the house besides that.
 <<wait 1>>
@@ -223,10 +231,11 @@ position: -233,-214
 <<StopMusic>>
 <<wait 1>>
 Boy: You claim that you were at home all day, yet found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
-Wolf: N-no I...
+Wolf: N-no, I...
 Boy: We also have this CCTV footage showing you on Main.
 Wolf: What makes you think that's me? The quality on that photo is atrocious.
-Boy: You're literally wearing the same shirt as you are in the photo.
+Boy: You're literally wearing the same clothes as you are in the photo.
+Boy: <style="int">(...or lack thereof.)</style>
 Wolf: ...
 <<PlayEffect Emphasis>>
 Boy: So, Wolf, why are you lying to me? Are you hiding something?
@@ -270,11 +279,15 @@ position: -751,186
         <<jump Wolf_Q3_Question_2>>
     -> Did you talk with anyone or give anything to anyone while out? <<if visited("Wolf_Q3_Question_2") == true >>
         <<jump Wolf_Q3_Question_3>>
+    -> Back
+        <<jump Wolf_Q3_Start>>
 -> Accuse
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         <<SetStatementResponse Wolf_Q3_Metro Wolf_MetroPass Wolf_Q3_Accusation_Correct>>
         <<PromptStatement Wolf_Q3_Accusation_Proof>>
+    -> Back
+        <<jump Wolf_Q3_Start>>
 -> Review
     <<Review>>
 ===
@@ -371,11 +384,15 @@ position: -747,700
         <<jump Wolf_Q4_Question_1>>
     -> What happened at the farm? <<if visited("Wolf_Q4_Question_1") == true >>
         <<jump Wolf_Q4_Question_2>>
+    -> Back
+        <<jump Wolf_Q4_Start>>
 -> Accuse
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         <<SetStatementResponse Wolf_Q4_NothingHappened Wolf_CCTV Wolf_Q4_Accusation_Correct>>
         <<PromptStatement Wolf_Q4_Accusation_Proof>>
+    -> Back
+        <<jump Wolf_Q4_Start>>
 -> Review
     <<Review>>
 ===
