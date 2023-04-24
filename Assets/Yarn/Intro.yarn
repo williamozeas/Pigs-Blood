@@ -30,7 +30,7 @@ Matches: HEY! You're doing it again!
 Boy: Um. Yeah! I'm fine.
 Matches: I picked up this wolf fleeing from the scene. I believe you two are acquainted? I wrote a profile on him, should be in your evidence... 
 <<wait 1>>
-<<PlayEffect Failure>>
+<<PlayEffect Interesting>>
 Matches: ...pile.
 Boy: Yeah. He's broken a few rules here and there. Should be easy enough.
 Matches: Alright, well, this is a bit more than a few rules. This is a murder.
@@ -52,7 +52,7 @@ Matches: Tell me, how old is our friend the wolf?
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_Profile Intro_Q1_Success>>
 <<PromptEvidence Intro_Q1_Failure>>
-Boy: <style="int">(Drop evidence into the red box to present it.)</style>
+Boy: <style="int">(Drop the evidence that shows the wolf's age into the box.)</style>
 ===
 title: Intro_Q1_Failure
 ---

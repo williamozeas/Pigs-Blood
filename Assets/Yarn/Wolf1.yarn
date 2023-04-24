@@ -297,8 +297,8 @@ title: Wolf_Q3_Question_1
 position: -1012,251
 ---
 Boy: You got groceries?
-Wolf: Yep. Rode the metro to Colmar and back to get them this morning.
-<<AddStatement Wolf_Q3_Metro "Wolf rode the metro to Colmar and back to get groceries this morning.">>
+Wolf: Yep. Rode the metro to Colmar to get them this morning.
+<<AddStatement Wolf_Q3_Groceries "Wolf went to the grocery store.">>
 Boy: What did you get?
 Wolf: Uh- I got spaghetti and meat sauce, chicken, bread, some fruit for my kids, um...
 <<wait 0.5>>
@@ -336,8 +336,13 @@ title: Wolf_Q3_Question_4
 position: -504,245
 ---
 Boy: And when did you go out to get groceries?
-Wolf: It was real early in the morning. I must have taken the metro there around... 8 AM?
-
+Wolf: It was early in the morning. I must have taken the metro there around... 9 AM?
+Boy: And when did you come back? 
+Wolf: Around 10:30.
+Boy: Fast shopper.
+<<PlayEffect Interesting>>
+Wolf: ...
+<<AddStatement Wolf_Q3_Metro "Wolf took the metro at 9 AM and 10:20 AM this morning.">>
 <<jump Wolf_Q3_Start>>
 ===
 title: Wolf_Q3_Accusation_Proof
@@ -452,7 +457,7 @@ position: -254,1026
 Wolf: It's... the picture of me?
 Boy: Yes. Notice anything?
 Wolf: No...?
-Boy: Those red stains on your jacket. They're not there in the picture.
+Boy: Those red stains on your fur. They're not there in the picture.
 Wolf: Red stai-?
 <<PlayEffect Shock>>
 <<wait 1>>
