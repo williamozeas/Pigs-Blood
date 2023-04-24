@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DontDestroy: 0
+  evidenceDatabase: {fileID: 11400000, guid: 3cf522c4b60144f1f89e47136584c9ba, type: 2}
   resetPoint: {fileID: 2435325947122371855}
 --- !u!1001 &1525962863671321675
 PrefabInstance:

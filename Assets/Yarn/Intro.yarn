@@ -6,9 +6,9 @@ tags:
 <<LoadEvidence Wolf_CCTV>>
 <<LoadEvidence Wolf_Profile>>
 <<SetMusic Chill>>
-Boy: <style="int">One dead, blunt force trauma.</style> 
-Boy: <style="int">Side of the head. Two of the victim's brothers on the scene.</style> 
-Boy: <style="int">One wolf visited the scene a few minutes before the body was found.</style> 
+Boy: <style="int">(One dead, blunt force trauma.)</style> 
+Boy: <style="int">(Side of the head. Two of the victim's brothers on the scene.)</style> 
+Boy: <style="int">(One wolf visited the scene a few minutes before the body was found.)</style> 
 <<AddCharacter MatchGirl>>
 Matches: Hey, Boy.
 Boy: <style="int">One wolf picked up near the scene. Resisted arrest.</style> 
@@ -22,8 +22,8 @@ Boy: W-woah! Matches!
 Matches: You're up as soon as you're ready. You alright?
 Boy: Yeah... Right as rain.
 Matches: You sure? You've just been staring into space for the past five minutes.
-Boy: <style="int">This is the Little Match Girl, my partner in... stopping crime. Together, we've set successful arrest records over the past two years.</style>
-Boy: <style="int">It turns out a penchant for crying wolf is a lot more useful when they keep committing crimes.</style>
+Boy: <style="int">(This is the Little Match Girl, my partner in... stopping crime. Together, we've set successful arrest records over the past two years.)</style>
+Boy: <style="int">(It turns out a penchant for crying wolf is a lot more useful when they keep committing crimes.)</style>
 <<PlayEffect Emphasis>>
 Matches: HEY! You're doing it again!
 <<PlayEffect Failure>>
@@ -39,8 +39,7 @@ Boy: Uh. Definitely.
 <<PlayEffect Failure>>
 Matches: ...Convincing. Have another look.
 <<ReviewWithDestination Intro_DoneReviewing>>
-Boy: <style="int">Click and drag your mouse to inspect evidence. Drag evidence to the bottom of the screen to inspect it.</style>
-Boy: <style="int">Use ESC to finish.</style>
+Boy: <style="int">(Click and drag your mouse to inspect evidence. Drag evidence to the bottom of the screen to inspect it. Use ESC to finish.)</style>
 ===
 title: Intro_DoneReviewing
 ---
@@ -53,7 +52,7 @@ Matches: Tell me, how old is our friend the wolf?
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_Profile Intro_Q1_Success>>
 <<PromptEvidence Intro_Q1_Failure>>
-Boy: <style="int"> Drop evidence into the red box to present it.</style>
+Boy: <style="int">(Drop evidence into the red box to present it.)</style>
 ===
 title: Intro_Q1_Failure
 ---

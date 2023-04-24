@@ -7,6 +7,7 @@ using UnityEngine;
 public class EvidenceManager : Singleton<EvidenceManager>
 {
     private List<EvidenceAbstract> currentEvidence;
+    [SerializeField] private EvidenceDatabase evidenceDatabase;
     private Dictionary<string, GameObject> evidenceDict = new Dictionary<string, GameObject>();
     [SerializeField] private Transform resetPoint;
     EvidenceAbstract grabbedObject;
@@ -17,17 +18,17 @@ public class EvidenceManager : Singleton<EvidenceManager>
     {
         base.Awake();
         currentEvidence = GetComponentsInChildren<EvidenceAbstract>().ToList();
-        string[] evidenceGuids = AssetDatabase.FindAssets("t:prefab", new string[] { "Assets/Prefabs/PremadeEvidence" });
-        foreach (string guid in evidenceGuids)
+        // string[] evidenceGuids = AssetDatabase.FindAssets("t:prefab", new string[] { "Assets/Prefabs/PremadeEvidence" });
+        foreach (EvidenceAbstract evidence in evidenceDatabase.EvidenceList)
         {
-            string path = AssetDatabase.GUIDToAssetPath(guid);
-            GameObject evidence = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            // string path = AssetDatabase.GUIDToAssetPath(guid);
+            // GameObject evidence = AssetDatabase.LoadAssetAtPath<GameObject>(path);
             EvidenceAbstract evClass = evidence.GetComponent<EvidenceAbstract>();
             if (!evClass)
             {
                 Debug.LogError("Invalid evidence loaded!");
             }
-            evidenceDict.Add(evClass.id, evidence);
+            evidenceDict.Add(evClass.id, evidence.gameObject);
         }
     }
     

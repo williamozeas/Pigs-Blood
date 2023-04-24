@@ -277,6 +277,8 @@ position: -751,186
         <<jump Wolf_Q3_Question_1>>
     -> A walk? 
         <<jump Wolf_Q3_Question_2>>
+    -> When did you get groceries? <<if visited("Wolf_Q3_Question_1") == true >>
+        <<jump Wolf_Q3_Question_4>>
     -> Did you talk with anyone or give anything to anyone while out? <<if visited("Wolf_Q3_Question_2") == true >>
         <<jump Wolf_Q3_Question_3>>
     -> Back
@@ -328,6 +330,14 @@ Boy: You said it, not me.
 Wolf: How dare you! I have kids at home, I would never-
 Boy: Let's calm down.
 Wolf: Grrr...
+<<jump Wolf_Q3_Start>>
+===
+title: Wolf_Q3_Question_4
+position: -504,245
+---
+Boy: And when did you go out to get groceries?
+Wolf: It was real early in the morning. I must have taken the metro there around... 8 AM?
+
 <<jump Wolf_Q3_Start>>
 ===
 title: Wolf_Q3_Accusation_Proof
@@ -474,7 +484,7 @@ Wolf: ...
 <<PlayEffect Failure>>
 Boy: Nothing?
 Wolf: ...
-Boy: <style="int">(Damn. Is there any way I can prove something happened to Wolf during the crime? Has he changed in any way?)</style>
+Boy: <style="int">(Damn. Is there any way I can prove something happened to Wolf at the farm? Did something about him change?)</style>
 <<jump Wolf_Q4_Start>>
 ===
 title: Wolf_Q5
