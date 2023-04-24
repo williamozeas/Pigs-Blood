@@ -110,7 +110,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
         GameManager.Instance.YarnCommandManager.RespondToEvidence(id);
         float x = Random.Range(-2f, 2f);
         float z = Random.Range(-3.8f, -5f);
-        Vector3 position = new Vector3(x, 3f, z);
+        Vector3 position = new Vector3(x, 3.6f, z);
         StartCoroutine(MoveToPos(position, 1.5f));
     }
 
@@ -128,6 +128,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
         prevState = GameManager.Instance.PlayerState;
         GameManager.Instance.PlayerState = PlayerState.Inspecting;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     private IEnumerator InspectAnim(float time)
@@ -157,6 +158,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
         GameManager.Instance.PlayerState = prevState;
         float randTorque = Random.Range(-1f, 1f);
         rb.AddTorque(Vector3.up * randTorque, ForceMode.VelocityChange);
+        rb.constraints = RigidbodyConstraints.None;
     }
 
     public bool IsInspected()
