@@ -130,7 +130,7 @@ position: -745,-405
 -> Accuse
     -> You committed the murder!
         <<ResetEvidenceResponses>>
-        // <<SetEvidenceResponse Wolf_CCTV_Image Wolf_Q2_Accusation_Correct>>
+        // <<SetEvidenceResponse Wolf_CCTV Wolf_Q2_Accusation_Correct>>
         <<PromptEvidence Wolf_Q2_Accusation_Default>>
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>

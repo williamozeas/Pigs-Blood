@@ -2,43 +2,116 @@
 tags:
 position: 122,-203
 ---
+<<wait 2>>
+<<AddCharacter MatchGirl>>
+<<SetMusic Chill>>
+Matches: So that's it.
+<<wait 2>>
+Shepherd: Damn.
+Matches: Her trial's being scheduled as we speak.
+Shepherd: ...
+Matches: She'll face punishment for her crimes, we can be sure of that.
+Shepherd: ...
+Matches: Drug dealing, assault, now murder...
+Shepherd: <style="int">(So was it him?)</style>
+Matches: ...we've stopped some evil today.
+Shepherd: <style="int">(Can we prove it?)</int>
+Matches: Shepherd?
+<<PlayEffect Interesting>>
+<<StopMusic>>
+Shepherd: ...we're not done here.
+Matches: No?
+<<SetMusic Trepidation>>
+Shepherd: We haven't stopped anything. Not while whoever's in charge of this whole thing is still out there.
+Matches: ...
+Matches: You think it's the wolf?
+Shepherd: Maybe.
+Matches: Hm... We know he was there, and the timeframe matches up with Tinker Bell's testimony.
+Matches: Plus, he lied about his movements. Why would he do that unless he had something to hide?
+Shepherd: Is he still here?
+Matches: Yep, he's been festering in the jail since you two last talked.
+<<PlayEffect Energy>>
+Shepherd: I want to talk to him again.
+Matches: I had a feeling this would happen. I sent a few detectives down to his home once Tinker Bell mentioned a third party.
+Shepherd: Find anything? 
+Matches: They're still there. I'll let you know as soon as they get back.
+Shepherd: Thanks.
+Matches: In addition, I've gotten all the evidence from the first interrogation here.
+//TODO: REMOVE EVIDENCE, ADD ADD'L EVIDENCE
+<<LoadEvidence Wolf_MetroPass>>
+<<LoadEvidence Wolf_ArrestReport>>
+<<LoadEvidence Wolf_CCTV>>
+<<LoadEvidence Wolf_Profile>>
+Shepherd: Thanks.
+Matches: He wasn't that great a liar the first time around, but that could have been a façade.
+Matches: If he really is the mastermind behind a drug ring, he'll be a tough nut to crack. Be on your toes.
+Shepherd: Alright, I'll be on the lookout. 
+Matches: Good luck.
+Shepherd: Bring him in.
+<<RemoveCharacter MatchGirl>>
+<<wait 2>>
+<<AddCharacter Wolf>>
+<<SetPose Wolf CheckedOut>>
+Wolf: ...
+Shepherd: So we meet again.
+Wolf: Mm.
+Shepherd: Not so talkative now, huh? A night in the slammer tends to do that.
+<<wait 1>>
+<<PlayEffect Interesting>>
+Wolf: ...
+Shepherd: ...Alright then.
 
 <<jump Wolf2_Q1_Start>>
-
 //Wolf2 Q1
 ===
 title: Wolf2_Q1_Start
 tags:
 position: 123,-136
 ---
-<<if visited("Wolf2_Q1_Question_2") == true && visited("Wolf2_Q1_Question_1") == true >>
-    <<jump Wolf2_Q2_Start>>
-<<else>>
-    -> Question
-        -> Temp
-            <<jump Wolf2_Q1_Question_1>>
-        -> Temp2
-            <<jump Wolf2_Q1_Question_2>>
-    -> Accuse
-        -> You're lying about this statement!
-            <<ResetEvidenceResponses>>
-            <<SetStatementResponse STATEMENT EVIDENCE Wolf2_Q1_Accusation_Correct>>
-            <<PromptStatement Wolf2_Q1_Accusation_Proof>>
-    -> Review
-        <<Review>>
-<<endif>>
+<<SetMusic Questions>>
+-> Question
+    -> Where were you yesterday morning?
+        <<jump Wolf2_Q1_Question_1>>
+    -> Why so quiet? <<if visited("Wolf2_Q1_Question_1") == true>>
+        <<jump Wolf2_Q1_Question_2>>
+-> Accuse
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        <<SetStatementResponse Wolf2_StayedHome Wolf_MetroPass Wolf2_Q1_Accusation_Correct>>
+        <<SetStatementResponse Wolf2_StayedHome Wolf_CCTV Wolf2_Q1_Accusation_Correct>>
+        <<PromptStatement Wolf2_Q1_Accusation_Proof>>
+-> Review
+    <<Review>>
 ===
 title: Wolf2_Q1_Question_1
 tags:
 position: 60,-13
 ---
-
+Shepherd: Where were you yesterday morning?
+Wolf: ...
+Shepherd: ...Hello?
+Wolf: ...
+<<PlayEffect Energy>>
+Wolf: I already told you. I stayed home all day.
+Shepherd: <style="int">(...Hm.)</style>
+<<AddStatement Wolf2_StayedHome "Wolf stayed home all day.">>
 <<jump Wolf2_Q1_Start>>
 ===
 title: Wolf2_Q1_Question_2
 tags:
 position: -127,-18
 ---
+Shepherd: Why are you so quiet?
+Wolf: I'm not being quiet.
+Shepherd: ...
+Wolf: ...
+Shepherd: Where's your usual sass?
+Wolf: What?
+Shepherd: You know, the insults, the talking back. You've been here so many times. Why the shutting up now?
+Wolf: ...
+Shepherd: Scared you're going to be booked for something big this time?
+Wolf: I'm not a fucking jester. If you're interrogating me for entertainment, go look somewhere else.
+Shepherd: <style="int">(...Okay.)</int>
 
 <<jump Wolf2_Q1_Start>>
 ===
@@ -46,13 +119,18 @@ title: Wolf2_Q1_Accusation_Proof
 tags:
 position: 516,-150
 ---
-Wolf: Yeah? and what's your proof?
+Wolf: ...
 <<PromptEvidence Wolf2_Q1_Accusation_Default>>
 ===
 title: Wolf2_Q1_Accusation_Default
 tags:
 position: 331,-153
 ---
+Wolf: ...
+<<wait 2>>
+<<PlayEffect Failure>>
+Shepherd: Okay. Let's try that again.
+Shepherd: <style="int">("This is the same thing he said the first time. And I'll prove him wrong just as easily as I did then.")</style>
 
 <<jump Wolf2_Q1_Start>>
 ===
@@ -60,6 +138,20 @@ title: Wolf2_Q1_Accusation_Correct
 tags:
 position: 334,-37
 ---
+<<StopMusic>>
+Shepherd: Wolf, we've been over this.
+Wolf: ...
+Shepherd: You weren't at home yesterday morning. We have a picture of you out and about, plus a record of your metro card being used.
+Wolf: ...
+<<PlayEffect Emphasis>>
+Shepherd: Are you just going to sit there and stare at me?
+<<wait 2>>
+<<PlayEffect Interesting>>
+Wolf: Groceries.
+Shepherd: ...What?
+Wolf: I went out and got groceries, then I took a walk.
+Shepherd: <style="int">(...)</style>
+Shepherd: <style="int">(No, you didn't.)</style>
 
 <<jump Wolf2_Q2_Start>>
 
@@ -71,15 +163,15 @@ tags:
 position: 123,141
 ---
 -> Question
-    -> Temp 1
+    -> Groceries?
         <<jump Wolf2_Q2_Question_1>>
-    -> Temp 2
+    -> A walk?
         <<jump Wolf2_Q2_Question_2>>
 -> Accuse
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Wolf2_Q2_Accusation_Correct>>
+        <<SetStatementResponse Wolf2_Metro EVIDENCE Wolf2_Q2_Accusation_Correct>>
         <<PromptStatement Wolf2_Q2_Accusation_Proof>>
 -> Review
     <<Review>>
@@ -88,13 +180,53 @@ title: Wolf2_Q2_Question_1
 tags:
 position: 71,226
 ---
-
+Shepherd: You went out and bought groceries?
+Wolf: Yes. I took the metro there at around 9, and took it back around 10:15.
+<<AddStatement Wolf2_Metro "Wolf took the metro at 9, then again at 10:15">>
+Shepherd: ...
+Shepherd: <style="int">(What is he up to?)</style>
+Shepherd: Wolf, we've been over this.
+Wolf: ...
+Shepherd: You're lying. Again.
+Wolf: I went to the grocery store.
+Shepherd: Wolf, please cooperate.
+Wolf: I said, I went.
+<<PlayEffect Shock>>
+Wolf: To the <style="emph">GOD DAMNED GROCERY STORE</style>.
+<<AddStatement Wolf2_Groceries "Wolf went to the grocery store.">>
+Shepherd: Woah, woah! Alright, I get the message.
+Shepherd: <style="int">Someone's not having a good day.</style>
 <<jump Wolf2_Q2_Start>>
 ===
 title: Wolf2_Q2_Question_2
 tags:
 position: -138,219
 ---
+Shepherd: You say you went on a walk afterwards?
+<<AddStatement Wolf2_Groceries "Wolf went on a walk">>
+Wolf: Yes.
+Shepherd: And why did you do that?
+<<wait 1>>
+Wolf: You don't care.
+Shepherd: What?
+Wolf: You don't give two shits.
+Shepherd: Excuse me?
+Wolf: Who cares why I went on a walk? 
+Wolf: Because I wanted some fresh air? Is that what you want to hear?
+Shepherd: I-
+<<PlayEffect Energy>>
+Wolf: Because I wanted to stretch my legs?
+<<PlayEffect Emphasis>>
+Wolf: Because I don't get enough exercise?
+<<PlayEffect Energy>>
+Wolf: Because I got into an argument and wanted to blow off steam?
+<<PlayEffect Emphasis>>
+Wolf: Because I really fucking love the smell of car exhaust?
+<<PlayEffect Shock>>
+Wolf: Because I wanted to MURDER someone?
+Shepherd: Jesus, Wolf. Calm down.
+Wolf: Get off my ass. You don't care.
+Shepherd: <style="int">("Sheesh.")</style>
 
 <<jump Wolf2_Q2_Start>>
 ===
@@ -102,21 +234,24 @@ title: Wolf2_Q2_Accusation_Proof
 tags:
 position: 534,183
 ---
-Wolf: Yeah? and what's your proof?
+Wolf: ...You're full of shit.
 <<PromptEvidence Wolf2_Q2_Accusation_Default>>
 ===
 title: Wolf2_Q2_Accusation_Default
 tags:
 position: 348,109
 ---
-
+Wolf: Is this funny to you?
+<<PlayEffect Failure>>
+Shepherd: <style="int">("Damn.")</style>
+Shepherd: <style="int">("I should know this. There's no way he took the metro to the store and back.")</style>
 <<jump Wolf2_Q2_Start>>
 ===
 title: Wolf2_Q2_Accusation_Correct
 tags:
 position: 350,186
 ---
-
+Shepherd: Test
 <<jump Wolf2_Q3_Start>>
 
 //Wolf2 Q3
