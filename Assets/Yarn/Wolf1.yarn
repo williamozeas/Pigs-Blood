@@ -13,21 +13,21 @@ position: -748,-1095
 <<SetPose Wolf CheckedOut>>
 Wolf: Well, well. A little piggy comes to pay a visit to the big bad wolf.
 <<PlayEffect Emphasis>>
-Boy: Can it, Wolf. We've got a list of evidence a mile long. 
+Shepherd: Can it, Wolf. We've got a list of evidence a mile long. 
 Wolf: I can see that. Anyone ever tell you that your organization skills are terrible?
-Boy: Anyone ever tell you that your following-the-law skills are terrible?
+Shepherd: Anyone ever tell you that your following-the-law skills are terrible?
 <<PlayEffect Failure>>
 Wolf: Wow. You really got me with that one. Besides, my following-the-law skills are up to par - I think <style="emph">you</style> need to work on <style="emph">your</style> idea of what "breaking the law" is.
 Wolf: What am I even in here for? Walking too slowly?
 <<PlayEffect Emphasis>>
-Boy: One of the Pigs brothers was found dead.
+Shepherd: One of the Pigs brothers was found dead.
 <<wait 0.7>>
 <<SetPose Wolf Flippant>>
 <<PlayEffect Interesting>>
 Wolf: ...
-Boy: Not so cocky now.
+Shepherd: Not so cocky now.
 Wolf: ...You've got nothing on me. You can't.
-Boy: I wouldn't be so sure of that. If I were you, I'd talk on this one.
+Shepherd: I wouldn't be so sure of that. If I were you, I'd talk on this one.
 <<PlayEffect Emphasis>>
 Wolf: You're not getting <style="emph">anything</style> out of me.
 
@@ -70,7 +70,7 @@ Wolf: You're not getting <style="emph">anything</style> out of me.
 //     Wolf: Wow. Great question, Sherlock. Money, Power whatever really...
 //     <<AddStatement wolf_q1_drugs "Wolf sells drugs for the money and power">>
 // <<endif>>
-// Boy: Alright, smart ass.
+// Shepherd: Alright, smart ass.
 // <<jump Wolf_Q1_Start>>
 
 // ===
@@ -83,12 +83,12 @@ Wolf: You're not getting <style="emph">anything</style> out of me.
 //     <<SetPose Wolf Flippant>>
 //     <<wait 0.5>>
 //     Wolf: Again? Did you forget what I said the first time?
-//     Boy: I'm asking the questions here.
+//     Shepherd: I'm asking the questions here.
 // <<endif>>
 // Wolf: Simple, law of supply and demand. Demand for this stuff went up, so everyone came to the only supply: Me.
-// Boy: What are you even calling this stuff? Every person we've talked to has a different name for it.
+// Shepherd: What are you even calling this stuff? Every person we've talked to has a different name for it.
 // Wolf: Pixie Dust, name is stupid I know..
-// Boy: But didn't you...ah whatever
+// Shepherd: But didn't you...ah whatever
 // <<jump Wolf_Q1_Start>>
 
 // ===
@@ -98,7 +98,7 @@ Wolf: You're not getting <style="emph">anything</style> out of me.
 // ---
 // Wolf: And thats relevant how? 
 // Wolf: You're losing your edge kid
-// Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+// Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 // <<jump Wolf_Q1_Start>>
 
 
@@ -108,9 +108,9 @@ title: Wolf_Q2
 position: -745,-569
 ---
 <<SetPose Wolf CheckedOut>>
-Boy: Alright Wolf, I have a few more questions for you. 
+Shepherd: Alright Wolf, I have a few more questions for you. 
 Wolf: Sure, not like I can go anywhere. Can ya hurry this up, I have a shift in a few hours?
-Boy: Depends on how you answer these questions Wolf, don't lie or mouth off and it will be done sooner.
+Shepherd: Depends on how you answer these questions Wolf, don't lie or mouth off and it will be done sooner.
 
 <<jump Wolf_Q2_Start>>
 ===
@@ -145,26 +145,26 @@ position: -745,-405
 title: Wolf_Q2_Question_1
 position: -1002,-284
 ---
-Boy: Where were you yesterday?
+Shepherd: Where were you yesterday?
 Wolf: I was spending time with my kids.
-Boy: Your kids?
+Shepherd: Your kids?
 Wolf: Yes, my kids.
-Boy: What are their names?
+Shepherd: What are their names?
 <<SetPose Wolf Flippant>>
 <<PlayEffect Emphasis>>
 Wolf: Are you serious?
-Boy: Can you answer the question or not?
+Shepherd: Can you answer the question or not?
 Wolf: My kids' names are... Linus and Sophia.
 <<AddStatement Wolf_q2_kidsnames "Wolf has two kids named Linus and Sophia.">>
-Boy: And why were you spending time with them?
+Shepherd: And why were you spending time with them?
 <<PlayEffect Energy>>
 Wolf: Wh- Because they're my kids?
-Boy: Shouldn't they have been at school?
+Shepherd: Shouldn't they have been at school?
 <<SetPose Wolf CheckedOut>>
 Wolf: Oh... They had a day off from school, so they wanted to play board games.
-Boy: And why did they have school off?
+Shepherd: And why did they have school off?
 Wolf: I don't- Some sort of holiday, I don't keep track of these things.
-Boy: Uh huh.
+Shepherd: Uh huh.
 <<AddStatement Wolf_q2_boardgames "Wolf played board games with his kids.">>
 <<jump Wolf_Q2_Start>>
 ===
@@ -172,15 +172,15 @@ title: Wolf_Q2_Question_2
 position: -490,-292
 ---
 Wolf: I took the trash out and got the mail.
-Boy: And when was that?
+Shepherd: And when was that?
 <<SetPose Wolf Flippant>>
 Wolf: Do you want a fucking itinerary?
-Boy: Answer the question.
+Shepherd: Answer the question.
 <<SetPose Wolf CheckedOut>>
 <<PlayEffect Energy>>
 <<wait 1>>
 Wolf: I don't know. Some time around noon.
-Boy: And you never left the house besides that.
+Shepherd: And you never left the house besides that.
 <<wait 1>>
 Wolf: ...No.
 <<AddStatement Wolf_Q2_Home_All_Day "Wolf stayed home all day.">>
@@ -191,11 +191,11 @@ position: -743,-171
 ---
 <<SetPose Wolf Flippant>>
 Wolf: What kinda question is that? How the hell is that relevant? 
-Boy: Just answer the question Wolf.
+Shepherd: Just answer the question Wolf.
 Wolf: Fine, Whatever.
 Wolf: We played Financial Syndicate, took forever to finish. 
 Wolf: Pretty sure Linus was cheating with how many doubles he rolled. Kid nearly bankrupted me twice.
-Boy: Mhmm...I see...
+Shepherd: Mhmm...I see...
 <<AddStatement Wolf_Q2_Financial_Syndicate "Wolf played Financial Syndicate with his kids.">>
 <<jump Wolf_Q2_Start>>
 ===
@@ -212,15 +212,15 @@ position: -233,-214
 ---
 <<StopMusic>>
 <<wait 1>>
-Boy: You claim that you were at home all day, yet we have this CCTV footage showing you on Main. 
+Shepherd: You claim that you were at home all day, yet we have this CCTV footage showing you on Main. 
 Wolf: What makes you think that's me? The quality on that photo is atrocious.
-Boy: You're literally wearing the same clothes as you are in the photo.
-Boy: <style="int">(...or lack thereof.)</style>
+Shepherd: You're literally wearing the same clothes as you are in the photo.
+Shepherd: <style="int">(...or lack thereof.)</style>
 Wolf: ...
-Boy: In addition, we found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
+Shepherd: In addition, we found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
 Wolf: N-no, I...
 <<PlayEffect Emphasis>>
-Boy: So, Wolf, why are you lying to me? Are you hiding something?
+Shepherd: So, Wolf, why are you lying to me? Are you hiding something?
 Wolf: No, I just... I forgot. I bought some groceries, a-and I took a walk.
 <<jump Wolf_Q3>>
 ===
@@ -230,15 +230,15 @@ position: -233,-214
 ---
 <<StopMusic>>
 <<wait 1>>
-Boy: You claim that you were at home all day, yet found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
+Shepherd: You claim that you were at home all day, yet found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
 Wolf: N-no, I...
-Boy: We also have this CCTV footage showing you on Main.
+Shepherd: We also have this CCTV footage showing you on Main.
 Wolf: What makes you think that's me? The quality on that photo is atrocious.
-Boy: You're literally wearing the same clothes as you are in the photo.
-Boy: <style="int">(...or lack thereof.)</style>
+Shepherd: You're literally wearing the same clothes as you are in the photo.
+Shepherd: <style="int">(...or lack thereof.)</style>
 Wolf: ...
 <<PlayEffect Emphasis>>
-Boy: So, Wolf, why are you lying to me? Are you hiding something?
+Shepherd: So, Wolf, why are you lying to me? Are you hiding something?
 Wolf: No, I just... I forgot. I bought some groceries, a-and I took a walk.
 <<jump Wolf_Q3>>
 ===
@@ -248,9 +248,9 @@ position: -231,-426
 ---
 Wolf: And that's relevant how? 
 <<PlayEffect Failure>>
-Boy: ...
+Shepherd: ...
 Wolf: That's what I thought. 
-Boy: <style="int">(He's obviously lying about his movements. I just have to prove he was somewhere he never mentioned being.)</style>
+Shepherd: <style="int">(He's obviously lying about his movements. I just have to prove he was somewhere he never mentioned being.)</style>
 <<jump Wolf_Q2_Start>>
 
 
@@ -263,7 +263,7 @@ position: -751,20
 <<AddStatement Wolf_q2_kidsnames "Wolf has two kids named Linus and Sophia.">>
 <<AddStatement Wolf_q2_boardgames "Wolf played board games with his kids.">>
 
-Boy: Groceries and a walk, huh? 
+Shepherd: Groceries and a walk, huh? 
 Wolf: You heard me.
 <<jump Wolf_Q3_Start>>
 ===
@@ -296,28 +296,28 @@ position: -751,186
 title: Wolf_Q3_Question_1
 position: -1012,251
 ---
-Boy: You got groceries?
+Shepherd: You got groceries?
 Wolf: Yep. Rode the metro to Colmar to get them this morning.
 <<AddStatement Wolf_Q3_Groceries "Wolf went to the grocery store.">>
-Boy: What did you get?
+Shepherd: What did you get?
 Wolf: Uh- I got spaghetti and meat sauce, chicken, bread, some fruit for my kids, um...
 <<wait 0.5>>
 Wolf: F-fruit gummies.
 <<AddStatement Wolf_Q3_Gummies "Wolf bought fruit gummies at the grocery store.">>
-Boy: What a diverse diet.
+Shepherd: What a diverse diet.
 Wolf: ...
 <<jump Wolf_Q3_Start>>
 ===
 title: Wolf_Q3_Question_2
 position: -751,352
 ---
-Boy: Why did you take a walk?
+Shepherd: Why did you take a walk?
 Wolf: I went on a walk after the kids bankrupted me. Wanted to get some fresh air.
 Wolf: That must be when the CCTV camera got me.
 <<AddStatement Wolf_Q3_CCTV "The CCTV camera caught wolf taking a walk after playing board games.">>
-Boy: That CCTV camera's on Main Street. Pretty long walk, wouldn't you say?
+Shepherd: That CCTV camera's on Main Street. Pretty long walk, wouldn't you say?
 Wolf: What can I say? I'm a fast walker.
-Boy: <style="int">(Not fast enough, apparently.)</style>
+Shepherd: <style="int">(Not fast enough, apparently.)</style>
 <<jump Wolf_Q3_Start>>
 ===
 title: Wolf_Q3_Question_3
@@ -325,21 +325,21 @@ position: -504,245
 ---
 <<SetPose Wolf Flippant>>
 Wolf: Are you insinuating I went out to give drugs to someone?
-Boy: You said it, not me.
+Shepherd: You said it, not me.
 <<PlayEffect Emphasis>>
 Wolf: How dare you! I have kids at home, I would never-
-Boy: Let's calm down.
+Shepherd: Let's calm down.
 Wolf: Grrr...
 <<jump Wolf_Q3_Start>>
 ===
 title: Wolf_Q3_Question_4
 position: -504,245
 ---
-Boy: And when did you go out to get groceries?
+Shepherd: And when did you go out to get groceries?
 Wolf: It was early in the morning. I must have taken the metro there around... 9 AM?
-Boy: And when did you come back? 
+Shepherd: And when did you come back? 
 Wolf: Around 10:30.
-Boy: Fast shopper.
+Shepherd: Fast shopper.
 <<PlayEffect Interesting>>
 Wolf: ...
 <<AddStatement Wolf_Q3_Metro "Wolf took the metro at 9 AM and 10:20 AM this morning.">>
@@ -357,25 +357,25 @@ position: -248,180
 ---
 Wolf: I don't see how that proves anything.
 <<PlayEffect Failure>>
-Boy: Well, you see, uh...
+Shepherd: Well, you see, uh...
 <<wait 1>>
 Wolf: You're losing your edge. Too many donuts?
-Boy: <style="int">(He's still lying. There's no way he walked all the way to where we caught him)</style>
+Shepherd: <style="int">(He's still lying. There's no way he walked all the way to where we caught him)</style>
 <<jump Wolf_Q3_Start>>
 ===
 title: Wolf_Q3_Accusation_Correct
 position: -260,413
 ---
 <<StopMusic>>
-Boy: We noticed you had a metro card in your wallet when we booked you.
-Boy: We had a chat with the metro authority, and they report this card was used this morning at King Log station, not far from your residence.
+Shepherd: We noticed you had a metro card in your wallet when we booked you.
+Shepherd: We had a chat with the metro authority, and they report this card was used this morning at King Log station, not far from your residence.
 Wolf: Yeah. That's from when I got the groceries.
-Boy: The pass was only used once.
+Shepherd: The pass was only used once.
 Wolf: So? That's not-
 <<SetPose Wolf Flippant>>
 <<PlayEffect Interesting>>
 Wolf: Oh.
-Boy: You're lying again. I've half a mind to get you indicted this instant.
+Shepherd: You're lying again. I've half a mind to get you indicted this instant.
 Wolf: Wait, wait. Okay, I might have lied. But I just went out to do an errand. I swear.
 <<SetMusic Questions>>
 <<jump Wolf_Q4>>
@@ -416,16 +416,16 @@ position: -960,815
 ---
 Wolf: I.. uh.. went to go get strawberries for my kids. They really like this one farm outside the city.
 Wolf: They grow this one variety that are super juicy but last like 2 days tops. My kids adore them, and my wife makes jam out of the left over ones.
-Boy: And what is the name of this farm?
+Shepherd: And what is the name of this farm?
 Wolf: It's called... Uhhhhh... The name escapes me at the moment.
-Boy: Wolf, don't lie to me. You know what it's called.
+Shepherd: Wolf, don't lie to me. You know what it's called.
 <<PlayEffect Failure>>
 Wolf: N-no...
 <<PlayEffect Energy>>
-Boy: It's the Three Pigs' Strawberry Farm, isn't it.
+Shepherd: It's the Three Pigs' Strawberry Farm, isn't it.
 Wolf: ...
 <<PlayEffect Emphasis>>
-Boy: The location of the murder.
+Shepherd: The location of the murder.
 <<SetMusic Trepidation>>
 <<AddStatement Wolf_Q4_Location "Wolf went to the three Pigs' farm.">>
 <<jump Wolf_Q4_Start>>
@@ -433,14 +433,14 @@ Boy: The location of the murder.
 title: Wolf_Q4_Question_2
 position: -745,928
 ---
-Boy: What happened at the farm?
+Shepherd: What happened at the farm?
 Wolf: Nothing. I swear. I talked to one of the pigs, he picked me some strawberries, and I left!
-Boy: Was there anything suspicious about the pig?
+Shepherd: Was there anything suspicious about the pig?
 Wolf: No! Nothing!
-Boy: Anything strange you notice about the farm?
+Shepherd: Anything strange you notice about the farm?
 Wolf: No, nothing at all. Nothing happened!
 <<AddStatement Wolf_Q4_NothingHappened "Nothing happened to Wolf at the farm.">>
-Boy: I see.
+Shepherd: I see.
 <<jump Wolf_Q4_Start>>
 ===
 title: Wolf_Q4_Accusation_Proof
@@ -455,31 +455,31 @@ position: -254,1026
 ---
 <<StopMusic>>
 Wolf: It's... the picture of me?
-Boy: Yes. Notice anything?
+Shepherd: Yes. Notice anything?
 Wolf: No...?
-Boy: Those red stains on your fur. They're not there in the picture.
+Shepherd: Those red stains on your fur. They're not there in the picture.
 Wolf: Red stai-?
 <<PlayEffect Shock>>
 <<wait 1>>
 Wolf: GAH!
 <<SetMusic Trepidation>>
-Boy: What exactly are those stains, Wolf?
+Shepherd: What exactly are those stains, Wolf?
 Wolf: They... I don't know, i-it must-
 <<PlayEffect Emphasis>>
 Wolf: STRAWBERRIES! It's strawberry juice! They must have gotten on me when I-
-Boy: Sorry, Wolf. I don't think you bought any berries at all. After all, where did they go?
+Shepherd: Sorry, Wolf. I don't think you bought any berries at all. After all, where did they go?
 <<PlayEffect Energy>>
 Wolf: I-I must have dropped them when you guys pulled up, maybe some g-got on my coat-
-Boy: You've lied enough today.
+Shepherd: You've lied enough today.
 <<SetPose Wolf Sad>>
 <<PlayEffect Emphasis>>
 Wolf: I...I'm not lying. You have to believe me.
 <<StopMusic>>
-Boy: Sorry, Wolf. I don't. Matches?
+Shepherd: Sorry, Wolf. I don't. Matches?
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
 Matches: Yes?
-Boy: Arrest this wolf.
+Shepherd: Arrest this wolf.
 <<jump Wolf_Q5>>
 ===
 title: Wolf_Q4_Accusation_Default
@@ -487,9 +487,9 @@ position: -300,744
 ---
 Wolf: ...
 <<PlayEffect Failure>>
-Boy: Nothing?
+Shepherd: Nothing?
 Wolf: ...
-Boy: <style="int">(Damn. Is there any way I can prove something happened to Wolf at the farm? Did something about him change?)</style>
+Shepherd: <style="int">(Damn. Is there any way I can prove something happened to Wolf at the farm? Did something about him change?)</style>
 <<jump Wolf_Q4_Start>>
 ===
 title: Wolf_Q5
@@ -499,12 +499,12 @@ position: -751,1141
 <<AddCharacter Wolf>>
 <<PlayEffect Energy>>
 Wolf: N-no! Wait! I have proof!
-Boy: And what is this proof?
+Shepherd: And what is this proof?
 Wolf: I have a receipt, I have it somewhere, just let me go and I'll-
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
 Matches: He's lying to you. You should know that.
-Boy: I do...?
+Shepherd: I do...?
 
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_ArrestReport Wolf_Q5_Accusation_Correct>>
@@ -520,41 +520,41 @@ title: Wolf_Q5_Accusation_Correct
 ---
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
-Boy: According to the arrest report, you had no such receipt.
+Shepherd: According to the arrest report, you had no such receipt.
 Wolf: Wh-...
 <<wait 1.5>>
 Wolf: You dirty cop bastards. You're gonna get what's coming to you. 
-Boy: One too many lies, huh?
+Shepherd: One too many lies, huh?
 <<PlayEffect Emphasis>>
 Wolf: I mean it! You'll <style="emph">pay!</style>
-Boy: Don't come back unless you feel like telling the truth!
+Shepherd: Don't come back unless you feel like telling the truth!
 <<RemoveCharacter Wolf>>
 <<wait 2>>
 <<AddCharacter MatchGirl>>
-Boy: Wow. I didn't know he had that in him.
+Shepherd: Wow. I didn't know he had that in him.
 Matches: I did. 
-Boy: What did you do with him?
+Shepherd: What did you do with him?
 Matches: I put him in the jail until we get some more testimony.
 <<wait 1>>
 <<SetMusic Chill>>
-Boy: *sigh*
-Boy: You think he did it?
+Shepherd: *sigh*
+Shepherd: You think he did it?
 Matches: I do.
-Boy: At the very least he was involved. 
+Shepherd: At the very least he was involved. 
 Matches: Why else would he lie so much?
-Boy: I don't know.
+Shepherd: I don't know.
 <<wait 2>>
-Boy: Matches?
+Shepherd: Matches?
 Matches: Yeah?
-Boy: Sometimes I feel bad for them.
+Shepherd: Sometimes I feel bad for them.
 Matches: Don't. It's easier that way.
-Boy: ...
+Shepherd: ...
 Matches: He did something bad, and he has to pay for it.
 Matches: Besides, think of the pig who died. We've gotta make it up to his friends, his family.
-Boy: Right.
+Shepherd: Right.
 Matches: Speaking of... we've got them lined up in the next room. 
-Boy: Them?
+Shepherd: Them?
 Matches: The brothers, the ones who worked at the farm?
-Boy: Right.
+Shepherd: Right.
 Matches: I wrote up the profiles as always, plus got all the relevant evidence. Feel free to peruse.
 ===

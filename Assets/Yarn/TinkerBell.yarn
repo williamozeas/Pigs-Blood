@@ -11,12 +11,12 @@ position: -748,-1095
 <<SetMusic Questions>>
 //<<SetPose TinkerBell Flippant>>
 <<AddCharacter TinkerBell>>
-Boy: Ah, so you must be TinkerBell.
-TinkerBell: Oh so you're the Wolf Boy huh? Bit scruffier and scrawnier than I expected.
-Boy: And you're much more....flamboyant than I expected.
+Shepherd: Ah, so you must be TinkerBell.
+TinkerBell: Oh so you're the Wolf Shepherd huh? Bit scruffier and scrawnier than I expected.
+Shepherd: And you're much more....flamboyant than I expected.
 <<SetPose TinkerBell Annoyed>>
 TinkerBell: Flamboyant? I hope you're just as bad at interrogating as you are complimenting people.
-Boy: That wasnt...ugh
+Shepherd: That wasnt...ugh
 
 <<jump TinkerBell_Q1_Start>>
 ===
@@ -72,14 +72,14 @@ position: -596,-733
     <<SetPose TinkerBell Flippant>>
     <<wait 0.5>>
     TinkerBell: Again? Are you even listening?
-    Boy: Quiet, I'm asking the questions here.
+    Shepherd: Quiet, I'm asking the questions here.
 <<endif>>
 TinkerBell: Not much to elaborate on unless you want me to bore you to death with finacial records, return estimates and projected usage rates.
-Boy: You do that yourself? I would have guessed the boss wouldn't want to get her hands dirty with all that.
+Shepherd: You do that yourself? I would have guessed the boss wouldn't want to get her hands dirty with all that.
 TinkerBell: Gives me something to do, and honestly it's rather relaxing. And besides, less hands involved means less potential product disappearance.
-Boy: What kind of stuff would be disappearing at a club?
+Shepherd: What kind of stuff would be disappearing at a club?
 TinkerBell: Mostly booze and the like. I worry mostly about any of the stage effects going missing. 
-Boy: Hmm..I see
+Shepherd: Hmm..I see
 
 <<jump TinkerBell_Q1_Start>>
 
@@ -96,9 +96,9 @@ position: -746,-638
     TinkerBell: I can't really get into the details, since I doubt they would be happy if I explained the full story.
     TinkerBell: This client has a tendency to put everything on a tab every time they come in. Well, this was the third time they left it open at the end of the night without paying.
     TinkerBell: So you know, I showed up at his house and asked him to pay me then and there or he wouldn't be allowed back ever again.
-    Boy: That worked? 
+    Shepherd: That worked? 
     TinkerBell: Of course, and besides he works for one of the places we get inventory from. I just threatened to go to a competitor instead.
-    Boy: Huh, interesting. 
+    Shepherd: Huh, interesting. 
     <<AddStatement TinkerBell_q1_client "TinkerBell had some type of dispute with a long standing client about non-payment ">>
 <<endif>>
 <<jump TinkerBell_Q1_Start>>
@@ -109,25 +109,25 @@ position: -370,-921
 ---
 TinkerBell: And that matters how exactly? 
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
-Boy: Not happening, I'm fine
-Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+Shepherd: Not happening, I'm fine
+Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q1_Start>>
 ===
 // title: TinkerBell_Q1_Accusation_Correct
 // position: -260,413
 // ---
-// Boy: We noticed you had a metro card in your wallet when we booked you.
-// Boy: We had a chat with the metro authority, and they report this card was used yesterday at King Log station, not far from your residence.
-// Boy: So Wolf, tell me. Where did you go?
+// Shepherd: We noticed you had a metro card in your wallet when we booked you.
+// Shepherd: We had a chat with the metro authority, and they report this card was used yesterday at King Log station, not far from your residence.
+// Shepherd: So Wolf, tell me. Where did you go?
 // Wolf: I...You....
-// Boy: You better cooperate Wolf
+// Shepherd: You better cooperate Wolf
 // Wolf: Fine, I went out to do some errands. 
 //<<jump TinkerBell_Q2>>
 //===
 title: TinkerBell_Q2
 position: -760,-518
 ---
-Boy: Alright TinkerBell, let's shift gears a bit. Do you have any connection to the Pig Family?
+Shepherd: Alright TinkerBell, let's shift gears a bit. Do you have any connection to the Pig Family?
 TinkerBell: I worked a bit with Momua Pig during prohibition when they smuggled moonshine. I was a bartender at one of the speakeasys they delivered to.
 TinkerBell: Is that what this is about? Statute of limitations is way past by now.
 
@@ -168,7 +168,7 @@ position: -1054,-207
     <<jump TinkerBell_Q2_Start>>
 <<else>>
     TinkerBell: Oh the boys? I've worked with them on occasion.
-    Boy: How so?
+    Shepherd: How so?
     TinkerBell: Well, they've made some one off pyrotechnics for me and the club. Sometimes you can not find mass produced ones in the right styles and colors.
     <<AddStatement TinkerBell_q2_alibi "TinkerBell has had contact with the victim and his brothers ">>
 <<endif>>
@@ -187,9 +187,9 @@ position: -751,6
 <<else>>
     TinkerBell: Hmm...honestly I don't fully remember. Gimme a sec..
     TinkerBell: OH, right the glitter throwing orb job!
-    Boy: I'm sorry, the what??
+    Shepherd: I'm sorry, the what??
     TinkerBell: Its another custom I ordered for the Red Hot Chili Pipers show. Its a massive sphere that hangs over the crowd and blows smoke and sparkles all over.
-    Boy: Right...so when did you chat with them last about this?
+    Shepherd: Right...so when did you chat with them last about this?
     TinkerBell: 2 days ago.
     <<AddStatement TinkerBell_q2_client "TinkerBell has mentioned she spoke with the pigs recently.  ">>
 <<endif>>
@@ -201,16 +201,16 @@ position: -412,-12
 ---
 TinkerBell: And that matters how exactly? 
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
-Boy: Not happening, I'm fine
-Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+Shepherd: Not happening, I'm fine
+Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q2_Start>>
 ===
 title: TinkerBell_Q2_Accusation_Correct
 position: -419,128
 ---
-Boy: We had a chat with the pigs the other day. They had talked about how they had a meeting with a buisness associate. 
+Shepherd: We had a chat with the pigs the other day. They had talked about how they had a meeting with a buisness associate. 
 TinkerBell: Um...ok, that matters to me how?
-Boy: The incident we are investigating happened the same day as your chat with a troublesome client. Were you referring to the pigs?
+Shepherd: The incident we are investigating happened the same day as your chat with a troublesome client. Were you referring to the pigs?
 TinkerBell: I..what? No, I never...
 <<jump TinkerBell_Q3>>
 ===
@@ -219,7 +219,7 @@ position: -752,239
 ---
 <<AddCharacter MatchGirl>>
 MatchGirl: Oi, kid.
-Boy: What? I'm kinda in the middle of something.
+Shepherd: What? I'm kinda in the middle of something.
 MatchGirl: I'm aware, just finished the search of her car. Here's the file for you, some real gems in there for you.
 <<LoadEvidence TinkerBell_Search_Data>>
 TinkerBell: Are you judging the stuff in my car? Rude. 
@@ -262,14 +262,14 @@ position: -960,684
     <<jump TinkerBell_Q3_Start>>
 <<else>>
     TinkerBell: The what? 
-    Boy: Says here on the catalog from the search that we found a 5 gallon bucket of 70% hydrogen peroxide.
-    Boy: Ok first of all, who the hell sold you gallons of industrial grade hydrogen peroxide? And second why the hell do you have it?
+    Shepherd: Says here on the catalog from the search that we found a 5 gallon bucket of 70% hydrogen peroxide.
+    Shepherd: Ok first of all, who the hell sold you gallons of industrial grade hydrogen peroxide? And second why the hell do you have it?
     TinkerBell: Well first, I got it from one of those bulk restaurant supply places. 
-    Boy: But why do you need that much to begin with? What are you even doing with it?
+    Shepherd: But why do you need that much to begin with? What are you even doing with it?
     TinkerBell: Impatient much? As I was saying before being <style="emph">so rudely</style> interrupted, I use it in the club for cleaning.
-    Boy: Cleaning in general?
+    Shepherd: Cleaning in general?
     TinkerBell: Sort of, we dilute it down and use if to clean bodily fluids that show up. Unfortunately it has a tendency to discolor and bleach things if not diluted enough.
-    Boy: I see.
+    Shepherd: I see.
     <<AddStatement TinkerBell_Q3_Peroxide "TinkerBell uses high grade hydrogen peroxide for cleaning bodily fluids, but it has a tendency to bleach cloth if not diluted enough. ">>
 <<endif>>
 <<jump TinkerBell_Q3_Start>>
@@ -283,12 +283,12 @@ position: -541,694
     <<SetPose TinkerBell Flippant>>
     <<wait 0.5>>
     TinkerBell: Again? Are you even listening?
-    Boy: Quiet, I'm asking the questions here.
+    Shepherd: Quiet, I'm asking the questions here.
 <<endif>>
     TinkerBell: I mean, is it that important why its in my car? I think its pretty irrelevant.
-    Boy: Just answer the question.
+    Shepherd: Just answer the question.
     TinkerBell: I must have forgotten it after doing the inventory run.
-    Boy: How could you have forgotten it? Report says it was sitting in the passenger footwell.
+    Shepherd: How could you have forgotten it? Report says it was sitting in the passenger footwell.
     TinkerBell: I just forgot OK? I did not know that having stuff in your car was a crime now.
 <<jump TinkerBell_Q3_Start>>
 ===
@@ -298,8 +298,8 @@ position: -430,310
 ---
 TinkerBell: And that matters how exactly? 
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
-Boy: Not happening, I'm fine
-Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+Shepherd: Not happening, I'm fine
+Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q3_Start>>
 ===
 
@@ -307,10 +307,10 @@ title: TinkerBell_Q3_Accusation_Correct
 position: -751,715
 ---
 TinkerBell: Um...why are you showing me my mugshot? 
-Boy: Just out of curiosity, what's up with your boots?
+Shepherd: Just out of curiosity, what's up with your boots?
 TinkerBell: What do you mean about my boo....ts...
 TinkerBell: Is this a lighting trick why the hell are they colored weird?
-Boy: Did you by chance have an encounter with your bucket of peroxide?
+Shepherd: Did you by chance have an encounter with your bucket of peroxide?
 TinkerBell: What? No I...god damn it my poor boots...they're ruined.
 <<jump TinkerBell_Q4_Start>>
 ===
@@ -344,9 +344,9 @@ position: -970,1027
     <<jump TinkerBell_Q4_Start>>
 <<else>>
     TinkerBell: I'm not really sure what you're talking about.
-    Boy: I have to wonder, why do you have a bat in your car as well?
+    Shepherd: I have to wonder, why do you have a bat in your car as well?
     TinkerBell: I play softball, why do you keep thinking everything in my car is suspicious?
-    Boy: Just many things are beginning to click, and I wonder if you recognize how deep of a hole you are digging youself.
+    Shepherd: Just many things are beginning to click, and I wonder if you recognize how deep of a hole you are digging youself.
     TinkerBell: You haven't even told me why I am here, I have no clue why you have me here.
     <<AddStatement TinkerBell_Q4_Bat "TinkerBell has a baseball bat in her car, she claims it's for softball">>
 <<endif>>
@@ -364,9 +364,9 @@ position: -558,1008
 <<endif>>
     TinkerBell: Its for softball, I swear to Jupiter.
     TinkerBell: Why won't you believe me?
-    Boy: If its for sport reasons, why does it say "Gaslight" on it?
+    Shepherd: If its for sport reasons, why does it say "Gaslight" on it?
     TinkerBell: Am I not allowed to personalize? Why are you maike me out to be a criminal?
-    Boy: Why does it also appear to be bleached? Paints all splotchy, Is it just personalized like that too?
+    Shepherd: Why does it also appear to be bleached? Paints all splotchy, Is it just personalized like that too?
     TinkerBell: I...
      <<AddStatement TinkerBell_Q4_Bat2 "Baseball bat has Gaslight engraved on it. The paint is extremely splotchy, as if it had been bleached ">>
 <<jump TinkerBell_Q4_Start>>
@@ -377,21 +377,21 @@ position: -304,1008
 ---
 TinkerBell: And that matters how exactly? 
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
-Boy: Not happening, I'm fine
-Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+Shepherd: Not happening, I'm fine
+Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q4_Start>>
 ===
 
 title: TinkerBell_Q4_Accusation_Correct
 position: -767,1109
 ---
-Boy: TinkerBell, do you recognize why I am questioning you?
+Shepherd: TinkerBell, do you recognize why I am questioning you?
 TinkerBell: I..I don't know.
-Boy: This is the autopsy report for PIG NAME HERE. His brothers mentioned that he had been planning to meet with you.
-Boy: Their interrogations heavily implied that you were responsible. Yours so far has only strengthened our theory.
+Shepherd: This is the autopsy report for PIG NAME HERE. His brothers mentioned that he had been planning to meet with you.
+Shepherd: Their interrogations heavily implied that you were responsible. Yours so far has only strengthened our theory.
 TinkerBell: He's....he....I...killed him? No..nonononono..
 TinkerBell: Oh my gods oh my gods the boss is going to kill me...oh crap crap crap
-Boy: Relax, the boss isn't here. While we can not look past the murder, we can get you a reduced sentence and protect you if you help us.
+Shepherd: Relax, the boss isn't here. While we can not look past the murder, we can get you a reduced sentence and protect you if you help us.
 TinkerBell: I..ok..I'll help you.
 <<jump TinkerBell_Q5_Start>>
 ===
@@ -432,9 +432,9 @@ position: -1061,1423
     TinkerBell: You already asked...oh gods I'm so dead.
     <<jump TinkerBell_Q5_Start>>
 <<else>>
-Boy: You mean Wolf? Hes in our custody at this moment so you don't need to worry
+Shepherd: You mean Wolf? Hes in our custody at this moment so you don't need to worry
 TinkerBell: “Who?”
-Boy: Wolf..Isn't he the new boss?
+Shepherd: Wolf..Isn't he the new boss?
 TinkerBell: I…don't know I've never met him and he only recently took charge around here…
 TinkerBell: Oh gods I'm dead I'm so dead I just had to rough him up a bit
 
@@ -453,9 +453,9 @@ position: -374,1432
     <<jump TinkerBell_Q5_Start>>
 <<endif>>
     TinkerBell: I just..I
-    Boy: Take your time, you're safe here. The boss is not here now
+    Shepherd: Take your time, you're safe here. The boss is not here now
     TinkerBell: I...was just supposed to rough him up a bit.
-    Boy: Why?
+    Shepherd: Why?
     TinkerBell: They..were behind in..production. They only delivered half of what they promised. I..was supposed to threaten them for behind behind
      <<AddStatement TinkerBell_Q5_OrginalGoal "Pigs were supposed to deliver more Pixie Dust than they did. TinkerBell was sent by boss to intimidate the Pigs.">>
 <<jump TinkerBell_Q5_Start>>
@@ -471,11 +471,11 @@ position: -991,1605
     <<jump TinkerBell_Q5_Start>>
 <<else>>
     TinkerBell: I..dont know much. He's new in the area. 
-    Boy: Did he take over from anyone or is this his own group.
+    Shepherd: Did he take over from anyone or is this his own group.
     TinkerBell: He made it all himself, and he invited me to join after the Pigs recommended me.
-    Boy: Have you ever seen him? Do you know what he looks like? Body shape? Anything?
+    Shepherd: Have you ever seen him? Do you know what he looks like? Body shape? Anything?
     TinkerBell: Never his face...he always wears a mask. I'm not sure about body shape, I've only ever seen him in a trenchcoat and hat.
-    Boy: Any distinguishing features or mannerisms? 
+    Shepherd: Any distinguishing features or mannerisms? 
     //TinkerBell: He...he mentions fire sometimes...that if the pigs burned us we'll burn them back..
     //TinkerBell: But I think thats a common phrase..
     TinkerBell: Not that I can think of
@@ -497,15 +497,15 @@ position: -512,1601
     TinkerBell: I went to their farm, with the intent of asking about the missing product. 
     TinkerBell: Only one of the pigs was in the house. We had a chat about what had been going on, 
     TinkerBell: He promised me that they'd get it done soon, and I told him as I walked away that they were only going to be paid for the amount they delivered.
-    Boy: I presume he did not take that well.
+    Shepherd: I presume he did not take that well.
     TinkerBell: He swung at me, so I beat him with the bat.
-    Boy: Why did you have the bat? 
+    Shepherd: Why did you have the bat? 
     TinkerBell: Intimidation mostly.
-    Boy: Didn't the boss ask you to rough him up though?
+    Shepherd: Didn't the boss ask you to rough him up though?
     TinkerBell: He did, I had no intention of going through with it until he swung at me.
-    Boy: What state was he in when you left?
+    Shepherd: What state was he in when you left?
     TinkerBell: He was unconscious on the floor, his head was bleeding. I figured his brothers would find him in a minute or two.
-    Boy: But they didn't. He bled to death before they found him
+    Shepherd: But they didn't. He bled to death before they found him
     <<AddStatement TinkerBell_Q5_Timeline "TinkerBell arrived at the farm, had a conversation with the victim. Victim got agitated and attacked TinkerBell, TinkerBell beat him until he was unconcious and fled">>
 <<endif>>
 <<jump TinkerBell_Q5_Start>>
@@ -517,14 +517,14 @@ position: -382,1279
 ---
 TinkerBell: And why does that matter now?
 TinkerBell: 
-Boy: Not happening, I'm fine
-Boy: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+Shepherd: Not happening, I'm fine
+Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q5_Start>>
 ===
 
 title: TinkerBell_Q6
 position: -774,1745
 ---
-Boy: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
-Boy: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
+Shepherd: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
+Shepherd: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
 ===
