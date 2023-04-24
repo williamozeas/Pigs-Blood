@@ -390,9 +390,11 @@ TinkerBell: I..I don't know.
 Shepherd: This is the autopsy report for PIG NAME HERE. His brothers mentioned that he had been planning to meet with you.
 Shepherd: Their interrogations heavily implied that you were responsible. Yours so far has only strengthened our theory.
 TinkerBell: He's....he....I...killed him? No..nonononono..
-TinkerBell: Oh my gods oh my gods the boss is going to kill me...oh crap crap crap
-Shepherd: Relax, the boss isn't here. While we can not look past the murder, we can get you a reduced sentence and protect you if you help us.
-TinkerBell: I..ok..I'll help you.
+TinkerBell: Oh my gods oh my gods the boss is going to kill me...he'll find and kill me. I need to leave the country, go somewhere he won't find me.
+TinkerBell: Oh woe! Woe on me, for I have murdered a friend!
+Shepherd: TinkerBell, drop the act. You clearly had no problem beating someone near to death. I think you know you killed him, and you just want to get out of this. 
+TinkerBell: Ugh, fine. I'll get you information, guarentee my safety and get me a plea deal and we'll talk.
+Shepherd: 
 <<jump TinkerBell_Q5_Start>>
 ===
 title: TinkerBell_Q5_Start
@@ -429,14 +431,15 @@ position: -1061,1423
 //<<SetPose TinkerBell Flippant>>
 <<if visited("TinkerBell_Q5_Question_1") == true>>
     <<wait 0.5>>
-    TinkerBell: You already asked...oh gods I'm so dead.
-    <<jump TinkerBell_Q5_Start>>
+    TinkerBell: You already asked, each dumb question makes me want to answer less.
 <<else>>
-Shepherd: You mean Wolf? Hes in our custody at this moment so you don't need to worry
+Shepherd: You mean Wolf? Hes in our custody at this moment.
 TinkerBell: “Who?”
 Shepherd: Wolf..Isn't he the new boss?
-TinkerBell: I…don't know I've never met him and he only recently took charge around here…
+TinkerBell: I don't know, I've never really talked to him and he only recently took charge around here.
 TinkerBell: Oh gods I'm dead I'm so dead I just had to rough him up a bit
+Shepherd: Oh not this act again, we are working on the plea so can you just drop the act?
+TinkerBell: Maybe, I don't know yet.
 
     <<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
 <<endif>>
@@ -449,14 +452,14 @@ position: -374,1432
 ---
 <<if visited("TinkerBell_Q5_Question_2") == true>>
     <<wait 0.5>>
-    TinkerBell: You already asked me..that, oh gods the boss is going to rip me apart.
+    TinkerBell: You already asked me that, my time is valuable you know?
     <<jump TinkerBell_Q5_Start>>
 <<endif>>
     TinkerBell: I just..I
     Shepherd: Take your time, you're safe here. The boss is not here now
     TinkerBell: I...was just supposed to rough him up a bit.
     Shepherd: Why?
-    TinkerBell: They..were behind in..production. They only delivered half of what they promised. I..was supposed to threaten them for behind behind
+    TinkerBell: They were behind in production. They only delivered half of what they promised. And so, they did need to answer for their shortcomings
      <<AddStatement TinkerBell_Q5_OrginalGoal "Pigs were supposed to deliver more Pixie Dust than they did. TinkerBell was sent by boss to intimidate the Pigs.">>
 <<jump TinkerBell_Q5_Start>>
 ===
@@ -467,10 +470,10 @@ position: -991,1605
 //<<SetPose TinkerBell Flippant>>
 <<if visited("TinkerBell_Q5_Question_3") == true>>
     <<wait 0.5>>
-    TinkerBell: You just..asked me that...
+    TinkerBell: You already asked me that, my time is valuable you know?
     <<jump TinkerBell_Q5_Start>>
 <<else>>
-    TinkerBell: I..dont know much. He's new in the area. 
+    TinkerBell: I dont know much. He's new in the area. 
     Shepherd: Did he take over from anyone or is this his own group.
     TinkerBell: He made it all himself, and he invited me to join after the Pigs recommended me.
     Shepherd: Have you ever seen him? Do you know what he looks like? Body shape? Anything?
@@ -494,7 +497,7 @@ position: -512,1601
     TinkerBell: You already asked me about..that.
     <<jump TinkerBell_Q5_Start>>
 <<else>>
-    TinkerBell: I went to their farm, with the intent of asking about the missing product. 
+    TinkerBell: I went to their farm with the boss, with the intent of asking about the missing product. 
     TinkerBell: Only one of the pigs was in the house. We had a chat about what had been going on, 
     TinkerBell: He promised me that they'd get it done soon, and I told him as I walked away that they were only going to be paid for the amount they delivered.
     Shepherd: I presume he did not take that well.
@@ -503,9 +506,11 @@ position: -512,1601
     TinkerBell: Intimidation mostly.
     Shepherd: Didn't the boss ask you to rough him up though?
     TinkerBell: He did, I had no intention of going through with it until he swung at me.
+    Shepherd: Uh huh..
     Shepherd: What state was he in when you left?
     TinkerBell: He was unconscious on the floor, his head was bleeding. I figured his brothers would find him in a minute or two.
-    Shepherd: But they didn't. He bled to death before they found him
+    Shepherd: But they didn't. He bled to death before they found him.
+    
     <<AddStatement TinkerBell_Q5_Timeline "TinkerBell arrived at the farm, had a conversation with the victim. Victim got agitated and attacked TinkerBell, TinkerBell beat him until he was unconcious and fled">>
 <<endif>>
 <<jump TinkerBell_Q5_Start>>
@@ -516,8 +521,6 @@ tags:
 position: -382,1279
 ---
 TinkerBell: And why does that matter now?
-TinkerBell: 
-Shepherd: Not happening, I'm fine
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<jump TinkerBell_Q5_Start>>
 ===
@@ -527,4 +530,5 @@ position: -774,1745
 ---
 Shepherd: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
 Shepherd: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
+
 ===
