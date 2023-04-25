@@ -474,9 +474,12 @@ TinkerBell: Who?
 <<PlayEffect interesting>>
 Shepherd: Wolf..Isn't he the new boss?
 TinkerBell: I don't know, I've never really talked to him and he only recently took charge around here.
+<<wait 1>>
 TinkerBell: Oh gods I'm dead I'm so dead I just had to rough him up a bit
+<<PlayEffect shock>>
 Shepherd: Oh not this act again, we are working on the plea so can you just drop the act?
 TinkerBell: Maybe, I don't know yet.
+
 <<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
 <<endif>>
 <<jump TinkerBell_Q5_Start>>
@@ -497,7 +500,7 @@ position: -374,1432
     TinkerBell: I was just supposed to rough him up a bit after the boss left.
     Shepherd: Why?
     TinkerBell: They were behind in production. They only delivered half of what they promised. And so, they did need to answer for their shortcomings. Would have been happier if he did not die however.
-     <<AddStatement TinkerBell_Q5_OrginalGoal "Pigs were supposed to deliver more Pixie Dust than they did. TinkerBell was sent by boss to intimidate the Pigs.">>
+     <<AddStatement TinkerBell_Q5_OrginalGoal "Pigs were supposed to deliver more Pixie Dust than they did. TinkerBell was sent by boss to intimidate the Pigs. The Boss also left before TinkerBell attacked the pig">>
 <<jump TinkerBell_Q5_Start>>
 ===
 title: TinkerBell_Q5_Question_3
