@@ -108,6 +108,10 @@ public abstract class EvidenceAbstract : MonoBehaviour
     public virtual void OnPresent()
     {
         GameManager.Instance.YarnCommandManager.RespondToEvidence(id);
+        float x = Random.Range(-2f, 2f);
+        float z = Random.Range(-3.8f, -5f);
+        Vector3 position = new Vector3(x, 3.6f, z);
+        StartCoroutine(MoveToPos(position, 1.5f));
     }
 
     //bring item up for closer inspection
@@ -124,6 +128,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
 
         prevState = GameManager.Instance.PlayerState;
         GameManager.Instance.PlayerState = PlayerState.Inspecting;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     private IEnumerator InspectAnim(float time)
@@ -141,6 +146,7 @@ public abstract class EvidenceAbstract : MonoBehaviour
         }
         transform.position = inspectPos;
         transform.rotation = inspectRot;
+        rb.velocity = Vector3.zero;
     }
     
     //put item back (center of table?)
@@ -152,10 +158,28 @@ public abstract class EvidenceAbstract : MonoBehaviour
         GameManager.Instance.PlayerState = prevState;
         float randTorque = Random.Range(-1f, 1f);
         rb.AddTorque(Vector3.up * randTorque, ForceMode.VelocityChange);
+        rb.constraints = RigidbodyConstraints.None;
     }
 
     public bool IsInspected()
     {
         return inspected;
+    }
+
+    private IEnumerator MoveToPos(Vector3 pos, float time)
+    {
+        rb.useGravity = false;
+        float timeElapsed = 0;
+        Vector3 start = transform.position;
+        while (timeElapsed < time)
+        {
+            float percent = EasingFunction.EaseInOutCubic(0, 1, timeElapsed / time);
+
+            transform.position = Vector3.Lerp(start, pos, percent);
+            
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        rb.useGravity = true;
     }
 }

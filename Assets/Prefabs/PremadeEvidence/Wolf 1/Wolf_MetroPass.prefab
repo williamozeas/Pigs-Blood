@@ -177,9 +177,10 @@ PrefabInstance:
     - target: {fileID: 2329925881820227049, guid: 95ebfd06e3d1d4997a1f406e7fbda5bd,
         type: 3}
       propertyPath: m_text
-      value: 'Found in Wolf''s wallet.
+      value: 'Metro card found in Wolf''s wallet.
 
-        Used one time on day of murder.'
+        Used once on day of murder
+        at 10:22.'
       objectReference: {fileID: 0}
     - target: {fileID: 7843604982655958005, guid: 95ebfd06e3d1d4997a1f406e7fbda5bd,
         type: 3}
