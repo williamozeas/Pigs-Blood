@@ -5,7 +5,7 @@ position: 122,-203
 <<wait 2>>
 <<AddCharacter MatchGirl>>
 <<SetMusic Chill>>
-Matches: So that's it.
+Matches: So that's it then.
 <<wait 2>>
 Shepherd: Damn.
 Matches: Her trial's being scheduled as we speak.
