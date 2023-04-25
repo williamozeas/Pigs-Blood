@@ -172,6 +172,7 @@ public class YarnCommandManager : DialogueViewBase
 			{
 				CameraManager.Instance.Shake(4f, 1f);
 				CameraManager.Instance.Flash(0, 0, 0, Color.white);
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Shock");
 				break;
 			}
 			default:

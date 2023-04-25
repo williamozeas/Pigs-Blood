@@ -5,7 +5,7 @@ position: 122,-203
 <<wait 2>>
 <<AddCharacter MatchGirl>>
 <<SetMusic Chill>>
-Matches: So that's it then.
+Matches: So that's it, then.
 <<wait 2>>
 Shepherd: Damn.
 Matches: Her trial's being scheduled as we speak.
@@ -108,7 +108,7 @@ Shepherd: ...
 Wolf: ...
 Shepherd: Where's your usual sass?
 Wolf: What?
-Shepherd: You know, the insults, the talking back. You've been here so many times. Why the shutting up now?
+Shepherd: You know, the insults, the talking back. You've been here so many times. Why shut up now?
 Wolf: ...
 Shepherd: Scared you're going to be booked for something big this time?
 Wolf: I'm not a fucking jester. If you're interrogating me for entertainment, go look somewhere else.
@@ -830,14 +830,6 @@ Wolf: ...
 Wolf: Please, just take me away...
 
 <<jump Wolf2_Q4_Start>>
-===
-title: Wolf2_Q4_Question_2
-tags:
-position: -189,621
----
-
-<<jump Wolf2_Q4_Start>>
-===
 title: Wolf2_Q4_Accusation_Proof
 tags:
 position: 536,544
@@ -894,80 +886,194 @@ Wolf: No! Please! Don't!
 Shepherd: It's okay. You're with the police now, we can-
 Wolf: No! I can't!
 Shepherd: If you just tell us who is blackmailing you...
-Wolf: I...
+Wolf: I don't kn-!
+<<wait 1>>
+<<PlayEffect Interesting>>
 Wolf: ...no.
-Wolf: I won't... tell you... anything.
-Shepherd: <style="int">(Looks like I'm right. But why won't he talk?)</int>
+Wolf: Search my cell. You won't find anything.
+Shepherd: <style="int">(Looks like I'm right. And it sounds like he doesn't know who blackmailed him - meaning it was probably a letter.)</int>
 Shepherd: <style="int">(How can I prove he's being blackmailed? I should get some details straight in my head to figure this out.)</int>
 <<jump Wolf2_Q5_1>>
 ===
 title: Wolf2_Q5_1
 ---
-Shepherd: <style="int">(Let's see... First of all, )</int>
-<<jump Wolf2_Q5>>
-
-
-// <<jump Wolf2_Q6_Start>>
-
-//Wolf2 Q6
+Shepherd: <style="int">(Let's see... First of all, when was Wolf blackmailed?)</int>
+-> Before the murder
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(Hmmm... I don't think so.)</int>
+    Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</int>
+    <<jump Wolf2_Q5_1>>
+-> After the murder, before the arrest
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(Hmmm... I don't think so.)</int> 
+    Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</int>
+    <<jump Wolf2_Q5_1>>
+-> After the arrest, before the first interrogation
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(Hmmm... I don't think so.)</int> 
+    Shepherd: <style="int">(Wolf wasn't acting this way during the first interrogation. I don't think he was blackmailed then.)</int>
+    <<jump Wolf2_Q5_1>>
+-> After the first interrogation
+    <<PlayEffect Interesting>>
+    Shepherd: <style="int">(It must have been after the first interrogation.)</int> 
+    Shepherd: <style="int">(He only started acting strange during this interrogation.)</int> 
+<<jump Wolf2_Q5_2>>
 ===
-title: Wolf2_Q6_Start
-tags:
-position: 111,994
+title: Wolf2_Q5_2
 ---
--> Question
-    -> Temp 1
-        <<jump Wolf2_Q6_Question_1>>
-    -> Temp 2
-        <<jump Wolf2_Q6_Question_2>>
--> Accuse
-    -> You're lying about this statement!
-        <<ResetEvidenceResponses>>
-        //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Wolf2_Q6_Accusation_Correct>>
-        <<PromptStatement Wolf2_Q6_Accusation_Proof>>
--> Review
-    <<Review>>
-===
-title: Wolf2_Q6_Question_1
-tags:
-position: 49,1112
----
+Shepherd: <style="int">(Now, where was Wolf blackmailed?)</int> 
+-> At his home
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(No... That can't be it.)</int>
+    Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</int>
+    <<jump Wolf2_Q5_2>>
+-> In his cell
+    Shepherd: <style="int">(He must have been blackmailed in his cell.)</int> 
+    Shepherd: <style="int">(Does that mean...?)</int> 
+-> In the interrogation room 
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(No... That can't be it.)</int>
+    Shepherd: <style="int">(I've been here the whole time he's been in this room. He can't have been blackmailed here.)</int>
+    <<jump Wolf2_Q5_2>>
 
-<<jump Wolf2_Q6_Start>>
+Shepherd: <style="int">(...I have a bad feeling about this.)</int> 
+<<jump Wolf2_Q5_3>>
 ===
-title: Wolf2_Q6_Question_2
-tags:
-position: -168,1117
+title: Wolf2_Q5_3
 ---
-
-<<jump Wolf2_Q6_Start>>
+Shepherd: <style="int">(So, where is the blackmail letter now?)</int> 
+-> At his home
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(No... That can't be it.)</int>
+    Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</int>
+    <<jump Wolf2_Q5_3>>
+-> In his cell
+    Shepherd: <style="int">(Hm... It does make sense for him to leave it in his cell. However...)</int> 
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(He just told me to search his cell. There's no way he would do that if the letter is there.)</int> 
+    <<jump Wolf2_Q5_3>>
+-> In the interrogation room //shoutout to TGAA1 where witnesses pass around an object between each other while at the witness stand that was awesome
+    Shepherd: Matches, hold him still. I want to check his pockets.
+    <<RemoveCharacter Wolf>>
+    <<AddCharacter MatchGirl>>
+    Matches: ...Alright.
+    <<RemoveCharacter MatchGirl>>
+    <<AddCharacter Wolf>>
+    Wolf: No! Don't! I'll...
+Shepherd: Hold him!
+<<PlayEffect ToWhite>>
+<<wait 1>>
+<<PlayEffect DramaticReveal>>
+Shepherd: Got it. 
+<<PlayEffect Emphasis>>
+Wolf: No! Please! They threatened my kids! They...
+<<PlayEffect Emphasis>>
+Wolf: Please, don't do this!
+Shepherd: Let's see here...
+<<LoadEvidence Wolf_BlackmailLetter>>
+<<ReviewWithDestination Wolf2_Q5_DoneReviewing>>
 ===
-title: Wolf2_Q6_Accusation_Proof
-tags:
-position: 518,1092
+title: Wolf2_Q5_DoneReviewing
 ---
-Wolf: Yeah? and what's your proof?
+<<StopMusic>>
+Shepherd: ...
+Shepherd: Where did you get this?
+<<wait 1>>
+Wolf: ...
+Shepherd: Wolf, all we can do now is find who is behind it all.
+<<wait 1>>
+Wolf: ...
+<<PlayEffect Emphasis>>
+Shepherd: We can't do it without you.
+<<wait 1>>
+Wolf: ...
+<<PlayMusic Chill>>
+Shepherd: Wolf.
+Shepherd: You're doing this to protect your family, but...
+<<PlayEffect Interesting>>
+Shepherd: Would they really be fine without you?
+<<wait 2>>
+Shepherd: If you go to prison here, your kids will look at you...
+Shepherd: ...and they'll see a criminal.
+Wolf: ...gh...
+<<wait 1>>
+Wolf: ...Everyone already sees me that way.
+<<wait 1>>
+Wolf: ...What are two more pairs of eyes?
+Shepherd: Wolf...
+<<wait 2>>
+Shepherd: <style="int">(Shit.)</int>
+Shepherd: I'm sorry. For seeing you that way myself.
+<<wait 2>>
+Wolf: I found it in my cell this morning.
+Shepherd: Did you see who gave it to you?
+Wolf: No. I t-think it came in through the high window. 
+Shepherd: Who knows you're in jail?
+Wolf: Only my family, I talked to them with my phone call...
+<<wait 1>>
+Shepherd: <style="int">(I don't want to believe it, but...)</style>
+<<PlayEffect Energy>>
+Shepherd: ...It must be someone on the inside. Otherwise, how could they have known your cell?
+Shepherd: Blackmailing someone while they're in jail. That takes some guts.
+Wolf: Do you know who it is? Any clues?
+<<StopMusic>>
+Shepherd: Now that you mention it, something about this letter seems... familiar.
+<<wait 2>>
+<<PlayEffect Energy>>
+Shepherd: <style="int">(Oh no.)</style>
+<<PlayEffect Emphasis>>
+Shepherd: Wolf, I know who did this to you.
+Wolf: Y-you do?
+Shepherd: I do.
+Shepherd: Thank you for trusting me, Wolf. You've blown the case wide open.
+Shepherd: Yes, something about this note <style="imp">matches</style> another piece of evidence.
+Shepherd: And it gives away exactly who's behind this.
+Shepherd: That matching piece of evidence is...
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_Profile Wolf2_Q6_Accusation_Correct>>
 <<PromptEvidence Wolf2_Q6_Accusation_Default>>
 ===
 title: Wolf2_Q6_Accusation_Default
 tags:
 position: 328,1092
 ---
-
-<<jump Wolf2_Q6_Start>>
+Shepherd: <style="int">(No, that's not it.)</style>
+Shepherd: <style="int">(I need to take a closer look and compare the note to other pieces of evidence.)</style>
+Shepherd: <style="int">(Any similarity could give me a clue.)</style>
+Shepherd: That matching piece of evidence is...
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_Profile Wolf2_Q6_Accusation_Correct>>
+<<PromptEvidence Wolf2_Q6_Accusation_Default>>
 ===
 title: Wolf2_Q6_Accusation_Correct
 tags:
 position: 337,1203
 ---
+Wolf: M-my profile? Me?
+Shepherd: Yes, your profile.
+Wolf: But I- all that's written there are details about me!
+Shepherd: It's not about what's written there.
+Shepherd: It's about how it's written.
+<<PlayEffect Interesting>>
+Wolf: ...
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+<<PlayEffect Energy>>
+Matches: ...!
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+Shepherd: <style="int">(This is it. I can't turn back from this.)</style>
+Shepherd: <style="int">(I can hardly believe it myself, but...)</style>
+Shepherd: <style="int">(I can't turn away from the truth.)</style>
+Shepherd: <style="int">(No matter how hard it is to face.)</style>
+<<wait 1>>
+Shepherd: That's right. The handwriting on this note exactly matches that on the profiles.
+Shepherd: Profiles written by my partner...
+<<PlayEffect>>
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+Shepherd: The Little Match Girl.
 
-<<jump Wolf2_Ending>>
 
-===
-title: Wolf2_Ending
-tags:
-position: 58,1403
----
-
+<<jump MatchGirl>>
 ===
