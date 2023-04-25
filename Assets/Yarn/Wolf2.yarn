@@ -683,8 +683,16 @@ Shepherd: If that's the case, where did you get your current clothing?
 <<PlayEffect Emphasis>>
 Wolf: Why do you care so fucking much?! I did it! Let me rot away in a cell somewhere! Please!
 Shepherd: <style="int">(What is going on with him?)</style>
+<<ResetStatements>>
 Wolf: I ran the drug ring, I dealt with the pigs, I met with Tinker Bell, I told her to kill the pig, I came back to the scene...
+<<AddStatement Wolf_Q3_RanTheDrugRing "Wolf ran the drug ring.">>
+<<AddStatement Wolf_Q3_DealtWithThePigs "Wolf dealt with the pigs.">>
+<<AddStatement Wolf_Q3_MetWithTB "Wolf met with Tinker Bell.">>
+<<AddStatement Wolf_Q3_ToldTBToKill "Wolf told Tinker Bell to kill the pig.">>
+<<AddStatement Wolf_Q3_CameBackToTheScene "Wolf came back to the scene.">>
 Wolf: Match Girl! Take me away, I did it!
+<<PlayEffect Interesting>>
+Shepherd: <style="int">(...?)</style>
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
 Matches: Shepherd.
@@ -720,20 +728,65 @@ Wolf: Huh?!
 <<AddCharacter MatchGirl>>
 <<PlayEffect Energy>>
 Matches: What?!
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
 Shepherd: Wolf, this statement you just made contradicts the evidence!
 <<ResetEvidenceResponses>>
-
-
-Shepherd: I'm sorry, but you've lied too much for you to believe you anymore.
+<<SetStatementResponse Wolf_Q3_ToldTBToKill TinkerBell_Testimony Wolf2_Q3_Statement_Correct>>
+<<PromptStatement Wolf2_Q3_Statement_Proof>>
+===
+title: Wolf2_Q3_Statement_Proof
+---
+Shepherd: And that statement contradicts with this evidence!
+<<PromptEvidence Wolf2_Q3_Statement_Default>>
+===
+title: Wolf2_Q3_Statement_Default
+---
+<<PlayEffect Failure>>
+Shepherd: <style="int">(No... That's not it.)</style>
+Shepherd: <style="int">(Something Wolf just said contradicts what we know about what happened at the farm...)</style>
+===
+title: Wolf2_Q3_Statement_Correct
+---
+<<StopMusic>>
+Shepherd: Wolf... I don't know why you're lying.
+Wolf: ...Please...
+Shepherd: But there's no way you're the boss.
+Shepherd: Matches, can you remind me exactly what orders the boss gave to Tinker Bell?
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+Matches: The boss? They told her to...
+<<PlayEffect Energy>>
+Matches: Oh.
+Shepherd: Exactly. The boss wanted Tinker Bell to rough up the pig.
+<<PlayEffect Emphasis>>
+Shepherd: Not kill him, as our friend the Wolf said.
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+<<PlayEffect Energy>>
+Wolf: ...!
+Shepherd: So, Wolf! For the last time...
+<<PlayEffect Emphasis>>
+Shepherd: What are you hiding?
+<<wait 1>>
 Wolf: ...
 Shepherd: Please, tell me the truth.
 <<PlayEffect Interesting>>
+<<SetMusic Trepidation>>
 Wolf: Why...
 Shepherd: <style="int">(...?)</style>
 Wolf: Why... me...?
+Shepherd: Wolf...? What's happening?
+Wolf: No, no, no, please...!
+<<PlayEffect Emphasis>>
+Wolf: Just lock me up! Take me away! Please!!
+Shepherd: Wolf. Whatever is happening to you, you're in safe hands. You can tell us.
+<<PlayEffect Interesting>>
+Wolf: N-no, I'm not... Someone... No...
+Shepherd: <style="int">(Something is preventing Wolf from speaking...)</style>
+Shepherd: <style="int">(Could it be...?)</style>
 
 <<jump Wolf2_Q4_Start>>
-
 
 //Wolf2 Q4
 ===
@@ -742,15 +795,22 @@ tags:
 position: 125,558
 ---
 -> Question
-    -> Temp 1
+    -> What's wrong?
         <<jump Wolf2_Q4_Question_1>>
-    -> Temp 2
-        <<jump Wolf2_Q4_Question_2>>
 -> Accuse
+    -> You're trying to infiltrate a prison!
+        <<jump Wolf2_Q4_Accusation_Prison>>
+    -> You're protecting the real culprit!
+        <<jump Wolf2_Q4_Accusation_Culprit>>
+    -> You're being blackmailed!
+        Wolf: N-no! I'm not-
+        Wolf: There's nothing to blackmail me with...!
+        Shepherd: <style="int">(I wouldn't be too sure about that...)</style>
+        <<ResetEvidenceResponses>>
+        <<SetEvidenceResponse Wolf_FamilyPortrait Wolf2_Q4_Accusation_Blackmailed>>
+        <<PromptEvidence >>
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
-        //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Wolf2_Q4_Accusation_Correct>>
         <<PromptStatement Wolf2_Q4_Accusation_Proof>>
 -> Review
     <<Review>>
@@ -759,6 +819,15 @@ title: Wolf2_Q4_Question_1
 tags:
 position: 16,629
 ---
+Shepherd: Wolf. What's wrong?
+<<PlayEffect Interesting>>
+Wolf: N-no...
+<<PlayEffect Emphasis>>
+Shepherd: Tell us!
+Wolf: I c-can't!!
+Shepherd: Can't, or won't?
+Wolf: ...
+Wolf: Please, just take me away...
 
 <<jump Wolf2_Q4_Start>>
 ===
@@ -773,20 +842,62 @@ title: Wolf2_Q4_Accusation_Proof
 tags:
 position: 536,544
 ---
-Wolf: Yeah? and what's your proof?
+Shepherd: <style="int">(And my proof...)</style>
 <<PromptEvidence Wolf2_Q4_Accusation_Default>>
+===
+title: Wolf2_Q4_Accusation_Prison
+tags:
+position: 354,544
+---
+<<PlayEffect Emphasis>>
+Shepherd: You're trying to infiltrate the prison, aren't you!
+Wolf: What...?
+Shepherd: You're a spy! Or something!
+Wolf: ...I'll be a spy, or a murderer, or whatever you want. Just close this case...
+Shepherd: <style="int">(Damn, looks like that was wrong...)</style>
+<<jump Wolf2_Q4_Start>>
+===
+title: Wolf2_Q4_Accusation_Culprit
+tags:
+position: 354,544
+---
+<<PlayEffect Emphasis>>
+Shepherd: You're trying to cover for the true culprit, aren't you?
+Shepherd: Who is it? Your friend? Your family?
+Wolf: ...no. I don't... It's just me.
+Shepherd: <style="int">(Hm... He doesn't seem worried, he seems terrified.)</style>
+Shepherd: <style="int">(I'd better take a different approach.)</style>
+<<jump Wolf2_Q4_Start>>
 ===
 title: Wolf2_Q4_Accusation_Default
 tags:
 position: 354,544
 ---
-
+<<PlayEffect Emphasis>>
+Shepherd: This evidence proves it!
+Wolf: ...
+<<PlayEffect Failure>>
+Shepherd: <style="int">(Damn. No reaction.)</style>
 <<jump Wolf2_Q4_Start>>
 ===
-title: Wolf2_Q4_Accusation_Correct
+title: Wolf2_Q4_Accusation_Blackmailed
 tags:
 position: 367,620
 ---
+Shepherd: Wolf, you do have something you can be blackmailed with.
+Shepherd: Something you hold near and dear to your heart.
+<<PlayEffect Energy>>
+Wolf: ...!
+Shepherd: Your family.
+<<PlayEffect Emphasis>>
+Wolf: No! Please! Don't!
+Shepherd: It's okay. You're with the police now, we can-
+Wolf: No! I can't!
+Shepherd: If you just tell us who is blackmailing you...
+Wolf: I...
+Wolf: ...no.
+Wolf: I won't... tell you... anything...
+Shepherd: 
 
 <<jump Wolf2_Q5_Start>>
 
