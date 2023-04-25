@@ -2,6 +2,7 @@
 tags:
 position: -749,-1282
 ---
+<<SetMusic Chill>>
 <<jump TinkerBell_1>>
 ===
 title: TinkerBell_1
@@ -16,6 +17,7 @@ TinkerBell: Oh so you're the Wolf Shepherd huh? Bit scruffier and scrawnier than
 Shepherd: And you're much more....flamboyant than I expected.
 <<SetPose TinkerBell Annoyed>>
 TinkerBell: Flamboyant? I hope you're just as bad at interrogating as you are complimenting people.
+<<PlayEffect shock>>
 Shepherd: That wasnt...ugh
 
 <<jump TinkerBell_Q1_Start>>
@@ -25,6 +27,7 @@ tags:
 position: -749,-923
 ---
 <<SetPose TinkerBell CheckedOut>>
+<<SetMusic Questions>>
 <<if visited("TinkerBell_Q1_Question_3") == true && visited("TinkerBell_Q1_Question_1") == true >>
     <<jump TinkerBell_Q2>>
 <<else>>
@@ -128,6 +131,7 @@ title: TinkerBell_Q2
 position: -760,-518
 ---
 Shepherd: Alright TinkerBell, let's shift gears a bit. Do you have any connection to the Pig Family?
+<<PlayEffect interesting>>
 TinkerBell: I worked a bit with Momua Pig during prohibition when they smuggled moonshine. I was a bartender at one of the speakeasys they delivered to.
 TinkerBell: Is that what this is about? Statute of limitations is way past by now.
 
@@ -139,6 +143,7 @@ tags:
 position: -757,-330
 ---
 <<SetPose TinkerBell CheckedOut>>
+<<SetMusic Questions>>
 <<if visited("TinkerBell_Q2_Question_3") == true && visited("TinkerBell_Q2_Question_1") == true >>
     <<jump TinkerBell_Q2>>
 <<else>>
@@ -170,6 +175,7 @@ position: -1054,-207
     TinkerBell: Oh the boys? I've worked with them on occasion.
     Shepherd: How so?
     TinkerBell: Well, they've made some one off pyrotechnics for me and the club. Sometimes you can not find mass produced ones in the right styles and colors.
+    <<PlayEffect interesting>>
     <<AddStatement TinkerBell_q2_alibi "TinkerBell has had contact with the victim and his brothers ">>
 <<endif>>
 <<jump TinkerBell_Q2_Start>>
@@ -186,7 +192,9 @@ position: -751,6
     <<jump TinkerBell_Q2_Start>>
 <<else>>
     TinkerBell: Hmm...honestly I don't fully remember. Gimme a sec..
+    <<wait 1>>
     TinkerBell: OH, right the glitter throwing orb job!
+    <<PlayEffect shock>>
     Shepherd: I'm sorry, the what??
     TinkerBell: Its another custom I ordered for the Red Hot Chili Pipers show. Its a massive sphere that hangs over the crowd and blows smoke and sparkles all over.
     Shepherd: Right...so when did you chat with them last about this?
@@ -211,6 +219,7 @@ position: -419,128
 Shepherd: We had a chat with the pigs the other day. They had talked about how they had a meeting with a buisness associate. 
 TinkerBell: Um...ok, that matters to me how?
 Shepherd: The incident we are investigating happened the same day as your chat with a troublesome client. Were you referring to the pigs?
+<<PlayEffect shock>>
 TinkerBell: I..what? No, I never...
 <<jump TinkerBell_Q3>>
 ===
@@ -221,9 +230,11 @@ position: -752,239
 MatchGirl: Oi, kid.
 Shepherd: What? I'm kinda in the middle of something.
 MatchGirl: I'm aware, just finished the search of her car. Here's the file for you, some real gems in there for you.
+<<PlayEffect Energy>>
 <<LoadEvidence TinkerBell_Search_Data>>
 TinkerBell: Are you judging the stuff in my car? Rude. 
 MatchGirl: Quiet down chartreuse bonnie. //BETTER INSULT GOES HERE MAYBE?
+<<PlayEffect shock>>
 MatchGirl: Alright, have fun I guess.
 <<RemoveCharacter MatchGirl>>
 
@@ -235,6 +246,7 @@ tags:
 position: -758,481
 ---
 <<declare $reviewCompleted = false as bool>>
+<<SetMusic Questions>>
 <<SetPose TinkerBell CheckedOut>>
     -> Question
         -> Why all the Hydrogen Peroxide? <<if $reviewCompleted == true>>
@@ -261,11 +273,13 @@ position: -960,684
     TinkerBell: You already asked me that, aren't you taking notes on this?
     <<jump TinkerBell_Q3_Start>>
 <<else>>
+    <<PlayEffect interesting>>
     TinkerBell: The what? 
     Shepherd: Says here on the catalog from the search that we found a 5 gallon bucket of 70% hydrogen peroxide.
     Shepherd: Ok first of all, who the hell sold you gallons of industrial grade hydrogen peroxide? And second why the hell do you have it?
     TinkerBell: Well first, I got it from one of those bulk restaurant supply places. 
     Shepherd: But why do you need that much to begin with? What are you even doing with it?
+    <<PlayEffect Energy>>
     TinkerBell: Impatient much? As I was saying before being <style="emph">so rudely</style> interrupted, I use it in the club for cleaning.
     Shepherd: Cleaning in general?
     TinkerBell: Sort of, we dilute it down and use if to clean bodily fluids that show up. Unfortunately it has a tendency to discolor and bleach things if not diluted enough.
@@ -309,8 +323,10 @@ position: -751,715
 TinkerBell: Um...why are you showing me my mugshot? 
 Shepherd: Just out of curiosity, what's up with your boots?
 TinkerBell: What do you mean about my boo....ts...
+<<PlayEffect shock>>
 TinkerBell: Is this a lighting trick why the hell are they colored weird?
 Shepherd: Did you by chance have an encounter with your bucket of peroxide?
+<<PlayEffect interesting>>
 TinkerBell: What? No I...god damn it my poor boots...they're ruined.
 <<jump TinkerBell_Q4_Start>>
 ===
@@ -318,6 +334,7 @@ title: TinkerBell_Q4_Start
 tags:
 position: -763,955
 ---
+<<SetMusic Questions>>
 <<SetPose TinkerBell CheckedOut>>
     -> Question
         -> What's with the bat? 
@@ -347,6 +364,7 @@ position: -970,1027
     Shepherd: I have to wonder, why do you have a bat in your car as well?
     TinkerBell: I play softball, why do you keep thinking everything in my car is suspicious?
     Shepherd: Just many things are beginning to click, and I wonder if you recognize how deep of a hole you are digging youself.
+    <<PlayEffect interesting>>
     TinkerBell: You haven't even told me why I am here, I have no clue why you have me here.
     <<AddStatement TinkerBell_Q4_Bat "TinkerBell has a baseball bat in her car, she claims it's for softball">>
 <<endif>>
@@ -365,6 +383,7 @@ position: -558,1008
     TinkerBell: Its for softball, I swear to Jupiter.
     TinkerBell: Why won't you believe me?
     Shepherd: If its for sport reasons, why does it say "Gaslight" on it?
+    <<PlayEffect shock>>
     TinkerBell: Am I not allowed to personalize? Why are you maike me out to be a criminal?
     Shepherd: Why does it also appear to be bleached? Paints all splotchy, Is it just personalized like that too?
     TinkerBell: I...
@@ -385,23 +404,32 @@ Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place
 title: TinkerBell_Q4_Accusation_Correct
 position: -767,1109
 ---
+<<PlayEffect Emphasis>>
 Shepherd: TinkerBell, do you recognize why I am questioning you?
 TinkerBell: I..I don't know.
 Shepherd: This is the autopsy report for PIG NAME HERE. His brothers mentioned that he had been planning to meet with you.
 Shepherd: Their interrogations heavily implied that you were responsible. Yours so far has only strengthened our theory.
+<<PlayEffect shock>>
 TinkerBell: He's....he....I...killed him? No..nonononono..
 TinkerBell: Oh my gods oh my gods the boss is going to kill me...he'll find and kill me. I need to leave the country, go somewhere he won't find me.
+<<PlayEffect Energy>>
 TinkerBell: Oh woe! Woe on me, for I have murdered a friend!
 Shepherd: TinkerBell, drop the act. You clearly had no problem beating someone near to death. I think you know you killed him, and you just want to get out of this. 
 TinkerBell: Ugh, fine. I'll get you information, guarentee my safety and get me a plea deal and we'll talk.
-Shepherd: 
+Shepherd: You're unbearable, fine I'll get legal working on that.
+<<PlayEffect ToWhite>>
+<<wait 5>>
+<<PlayEffect Reveal>>
+Shepherd: Alright, legal's working on it now, you gonna cooperate?
+TinkerBell: I suppose
 <<jump TinkerBell_Q5_Start>>
 ===
 title: TinkerBell_Q5_Start
 tags:
 position: -777,1287
 ---
-<<SetPose TinkerBell Panic>>
+<<SetMusic Questions>>
+<<SetPose TinkerBell Smug>>
 <<if visited("TinkerBell_Q5_Question_1") == true && visited("TinkerBell_Q5_Question_2") == true && visited("TinkerBell_Q5_Question_3") == true  && visited("TinkerBell_Q5_Question_4") == true>>
 <<jump TinkerBell_Q6>>
 <<endif>>
@@ -434,14 +462,14 @@ position: -1061,1423
     TinkerBell: You already asked, each dumb question makes me want to answer less.
 <<else>>
 Shepherd: You mean Wolf? Hes in our custody at this moment.
-TinkerBell: “Who?”
+TinkerBell: Who?
+<<PlayEffect interesting>>
 Shepherd: Wolf..Isn't he the new boss?
 TinkerBell: I don't know, I've never really talked to him and he only recently took charge around here.
 TinkerBell: Oh gods I'm dead I'm so dead I just had to rough him up a bit
 Shepherd: Oh not this act again, we are working on the plea so can you just drop the act?
 TinkerBell: Maybe, I don't know yet.
-
-    <<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
+<<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
 <<endif>>
 <<jump TinkerBell_Q5_Start>>
 
@@ -455,11 +483,12 @@ position: -374,1432
     TinkerBell: You already asked me that, my time is valuable you know?
     <<jump TinkerBell_Q5_Start>>
 <<endif>>
-    TinkerBell: I just..I
-    Shepherd: Take your time, you're safe here. The boss is not here now
-    TinkerBell: I...was just supposed to rough him up a bit.
+    TinkerBell: My goal? To rise up and become the queen of crime in this hellhole of a city.
+    Shepherd: <int> Hmm, wonder if Matches could grab me that bat from TinkerBell's car? <int>
+    Shepherd: You know what I mean, why did you go kill the pig?
+    TinkerBell: I was just supposed to rough him up a bit after the boss left.
     Shepherd: Why?
-    TinkerBell: They were behind in production. They only delivered half of what they promised. And so, they did need to answer for their shortcomings
+    TinkerBell: They were behind in production. They only delivered half of what they promised. And so, they did need to answer for their shortcomings. Would have been happier if he did not die however.
      <<AddStatement TinkerBell_Q5_OrginalGoal "Pigs were supposed to deliver more Pixie Dust than they did. TinkerBell was sent by boss to intimidate the Pigs.">>
 <<jump TinkerBell_Q5_Start>>
 ===
@@ -481,7 +510,7 @@ position: -991,1605
     Shepherd: Any distinguishing features or mannerisms? 
     //TinkerBell: He...he mentions fire sometimes...that if the pigs burned us we'll burn them back..
     //TinkerBell: But I think thats a common phrase..
-    TinkerBell: Not that I can think of
+    TinkerBell: Not that I can think of.
     <<AddStatement TinkerBell_Q5_Boss2 "Boss seems to like trenchcoats and hats. Very cautious with identifiers May have an affinity for fire based metaphors?">>
 <<endif>>
 <<jump TinkerBell_Q5_Start>>
@@ -501,6 +530,7 @@ position: -512,1601
     TinkerBell: Only one of the pigs was in the house. We had a chat about what had been going on, 
     TinkerBell: He promised me that they'd get it done soon, and I told him as I walked away that they were only going to be paid for the amount they delivered.
     Shepherd: I presume he did not take that well.
+    <<PlayEffect interesting>>
     TinkerBell: He swung at me, so I beat him with the bat.
     Shepherd: Why did you have the bat? 
     TinkerBell: Intimidation mostly.
@@ -510,6 +540,7 @@ position: -512,1601
     Shepherd: What state was he in when you left?
     TinkerBell: He was unconscious on the floor, his head was bleeding. I figured his brothers would find him in a minute or two.
     Shepherd: But they didn't. He bled to death before they found him.
+    TinkerBell: Unfortunate.
     
     <<AddStatement TinkerBell_Q5_Timeline "TinkerBell arrived at the farm, had a conversation with the victim. Victim got agitated and attacked TinkerBell, TinkerBell beat him until he was unconcious and fled">>
 <<endif>>
@@ -528,6 +559,7 @@ Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place
 title: TinkerBell_Q6
 position: -774,1745
 ---
+<<PlayEffect Shock>>
 Shepherd: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
 Shepherd: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
 
