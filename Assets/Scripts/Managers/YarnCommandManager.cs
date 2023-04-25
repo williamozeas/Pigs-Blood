@@ -153,12 +153,22 @@ public class YarnCommandManager : DialogueViewBase
 				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Failure");
 				break;
 			}
-			case ("ToWhite"):
+			case ("towhite"):
 			{
 				CameraManager.Instance.Flash(0.5f, 0, -1f, Color.white);
 				break;
 			}
-			case ("Reveal"):
+			case ("toblack"):
+			{
+				CameraManager.Instance.Flash(0.5f, 0, -1f, Color.black);
+				break;
+			}
+			case ("reveal"):
+			{
+				CameraManager.Instance.Flash(0, 0, 0, Color.white);
+				break;
+			}
+			case ("dramaticreveal"):
 			{
 				CameraManager.Instance.Shake(4f, 1f);
 				CameraManager.Instance.Flash(0, 0, 0, Color.white);

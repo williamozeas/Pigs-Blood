@@ -5,7 +5,7 @@ position: 122,-203
 <<wait 2>>
 <<AddCharacter MatchGirl>>
 <<SetMusic Chill>>
-Matches: So that's it.
+Matches: So that's it then.
 <<wait 2>>
 Shepherd: Damn.
 Matches: Her trial's being scheduled as we speak.
@@ -896,65 +896,18 @@ Wolf: No! I can't!
 Shepherd: If you just tell us who is blackmailing you...
 Wolf: I...
 Wolf: ...no.
-Wolf: I won't... tell you... anything...
-Shepherd: 
-
-<<jump Wolf2_Q5_Start>>
-
-//Wolf2 Q5
+Wolf: I won't... tell you... anything.
+Shepherd: <style="int">(Looks like I'm right. But why won't he talk?)</int>
+Shepherd: <style="int">(How can I prove he's being blackmailed? I should get some details straight in my head to figure this out.)</int>
+<<jump Wolf2_Q5_1>>
 ===
-title: Wolf2_Q5_Start
-tags:
-position: 112,787
+title: Wolf2_Q5_1
 ---
--> Question
-    -> Temp 1
-        <<jump Wolf2_Q5_Question_1>>
-    -> Temp 2
-        <<jump Wolf2_Q5_Question_2>>
--> Accuse
-    -> You're lying about this statement!
-        <<ResetEvidenceResponses>>
-        //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Wolf2_Q5_Accusation_Correct>>
-        <<PromptStatement Wolf2_Q5_Accusation_Proof>>
--> Review
-    <<Review>>
-===
-title: Wolf2_Q5_Question_1
-tags:
-position: 41,881
----
+Shepherd: <style="int">(Let's see... First of all, )</int>
+<<jump Wolf2_Q5>>
 
-<<jump Wolf2_Q5_Start>>
-===
-title: Wolf2_Q5_Question_2
-tags:
-position: -159,875
----
 
-<<jump Wolf2_Q5_Start>>
-===
-title: Wolf2_Q5_Accusation_Proof
-tags:
-position: 533,773
----
-Wolf: Yeah? and what's your proof?
-<<PromptEvidence Wolf2_Q5_Accusation_Default>>
-===
-title: Wolf2_Q5_Accusation_Default
-tags:
-position: 354,773
----
-
-<<jump Wolf2_Q5_Start>>
-===
-title: Wolf2_Q5_Accusation_Correct
-tags:
-position: 363,884
----
-
-<<jump Wolf2_Q6_Start>>
+// <<jump Wolf2_Q6_Start>>
 
 //Wolf2 Q6
 ===
