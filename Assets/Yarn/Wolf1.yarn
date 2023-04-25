@@ -342,7 +342,7 @@ Wolf: Around 10:30.
 Shepherd: Fast shopper.
 <<PlayEffect Interesting>>
 Wolf: ...
-<<AddStatement Wolf_Q3_Metro "Wolf took the metro at 9 AM and 10:20 AM this morning.">>
+<<AddStatement Wolf_Q3_Metro "Wolf took the metro at 9 AM and 10:40 AM this morning.">>
 <<jump Wolf_Q3_Start>>
 ===
 title: Wolf_Q3_Accusation_Proof
@@ -368,9 +368,9 @@ position: -260,413
 ---
 <<StopMusic>>
 Shepherd: We noticed you had a metro card in your wallet when we booked you.
-Shepherd: We had a chat with the metro authority, and they report this card was used this morning at King Log station, not far from your residence.
+Shepherd: We had a chat with the metro authority, and they report this card was used this morning.
 Wolf: Yeah. That's from when I got the groceries.
-Shepherd: The pass was only used once.
+Shepherd: The pass was only used once, at around 10:40 AM.
 Wolf: So? That's not-
 <<SetPose Wolf Flippant>>
 <<PlayEffect Interesting>>

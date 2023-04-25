@@ -94,6 +94,15 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
             page.statements.Clear();
         }
     }
+
+    public void RemoveStatement(string idToRemove)
+    {
+        statements.RemoveAll(statement => statement.ID == idToRemove);
+        foreach (var page in pages)
+        {
+            page.statements.RemoveAll(statement => statement.ID == idToRemove);
+        }
+    }
     
     public override void Populate()
     {

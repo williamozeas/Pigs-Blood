@@ -32,7 +32,7 @@ Shepherd: Is he still here?
 Matches: Yep, he's been festering in the jail since you two last talked.
 <<PlayEffect Energy>>
 Shepherd: I want to talk to him again.
-Matches: I had a feeling this would happen. I sent a few detectives down to his home once Tinker Bell mentioned a third party.
+Matches: I had a feeling this would happen. I sent a few detectives to his house and around the farm once Tinker Bell mentioned a third party.
 Shepherd: Find anything? 
 Matches: They're still there. I'll let you know as soon as they get back.
 Shepherd: Thanks.
@@ -394,18 +394,34 @@ position: 124,340
 -> Question
     -> Where were you yesterday?
         <<jump Wolf2_Q3_Question_1>>
-    -> What did you talk about with Tinker Bell? <<if visited("Wolf2_Q3_Question_1") == true>>
-        <<jump Wolf2_Q3_Question_3>>
-    -> What was it like at the farm? <<if visited("Wolf2_Q3_Question_1") == true>>
-        <<jump Wolf2_Q3_Question_4>>
-    -> How did you get to the crime scene? <<if visited("Wolf2_Q3_Question_1") == true>>
+    -> What happened at the farm? <<if visited("Wolf2_Q3_Question_1") == true>>
         <<jump Wolf2_Q3_Question_2>>
+    -> What did you do in between the farm and your arrest? <<if visited("Wolf2_Q3_Question_1") == true>>
+        <<jump Wolf2_Q3_Question_3>>
+    -> Why did you come back to the scene of the crime? <<if visited("Wolf2_Q3_Question_1") == true>>
+        <<jump Wolf2_Q3_Question_4>>
+    -> You changed clothes? <<if visited("Wolf2_Q3_Question_3") == true>>
+        <<jump Wolf2_Q3_Question_5>>
 -> Accuse
+    -> Your statements contradict each other!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<if visited("Wolf2_Q3_Accusation_Correct_MetroPass") == true && visited("Wolf2_Q3_Accusation_Correct_Car") == false>>
+            //Second contradiction
+            <<SetStatementResponse Wolf2_Q3_FakedMetro Wolf_CarStatement Wolf2_Q3_Accusation_Correct_CCTV>>
+            <<PromptStatement Wolf2_Q3_Accusation_Contradict>>
+        <<endif>>
+        <<PromptStatement Wolf2_Q3_Accusation_Proof>>
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT Wolf_CCTV Wolf2_Q3_Accusation_Correct_CCTV>>
-        <<SetStatementResponse STATEMENT Wolf_MetroPass Wolf2_Q3_Accusation_Correct_MetroPass>>
+        <<if visited("Wolf2_Q3_Accusation_Correct_Car") == true>>
+            //Third contradiction
+            <<SetStatementResponse Wolf2_Q3_DidntChangeClothes Wolf_CCTV Wolf2_Q3_Accusation_Correct_CCTV>>
+        <<elseif visited("Wolf2_Q3_Accusation_Correct_MetroPass") == false>>
+            //First contradiction
+            <<SetStatementResponse Wolf2_Q3_SeeKids Wolf_MetroPass Wolf2_Q3_Accusation_Correct_MetroPass>>
+        <<endif>>
         <<PromptStatement Wolf2_Q3_Accusation_Proof>>
 -> Review
     <<Review>>
@@ -416,14 +432,9 @@ position: 54,440
 ---
 <<PlayEffect Energy>>
 Shepherd: For the last time, where were you yesterday?
-Wolf: I woke up at 9 and went to the strawberry farm at around 10:30. Met Tinker Bell there. Left.
-<<AddStatement Wolf2_Q3_ArrivalTime "Wolf arrived at the farm at around 10:30.">>
-Wolf: I started walking back to the farm to see what had happened, and that's when I got arrested by you all.
-Shepherd: Did you do anything between leaving the scene and walking back to the scene.
-Wolf: Nope, I 
-
-
-
+Wolf: I woke up at 9 and drove to the strawberry farm at around 10. Met Tinker Bell there. Left.
+<<AddStatement Wolf2_Q3_Arrival "Wolf drove to the farm at 10.">>
+Wolf: I started walking back to the farm to see what had happened, and that's when I got arrested by you people.
 Shepherd: I thought you were arrested running away from the scene?
 Wolf: The police car was coming from the direction of the scene. I took off in the opposite direction.
 <<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested wolf came from the crime scene.">>
@@ -438,6 +449,20 @@ title: Wolf2_Q3_Question_2
 tags:
 position: -149,435
 ---
+Shepherd: What happened at the farm?
+Wolf: I already told you. I just talked to Tinker Bell, then left.
+Shepherd: Wolf. Cooperate with me. What did you talk about?
+<<PlayEffect Interesting>>
+Wolf: ...None of your business.
+Shepherd: It certainly is my business. Why not tell me if you've already confessed? Are you hiding something?
+<<wait 1>>
+Wolf: No. It's just not important. We talked about distribution.
+Shepherd: And not about the pigs? Surely you must have mentioned them.
+<<PlayEffect Failure>>
+Wolf: ...Yes, of course. It's just not important.
+<<AddStatement Wolf2_Q3_TinkerBellConversation "Wolf talked about distribution and the pigs with Tinker Bell.">>
+Shepherd: <style="int">(He's being evasive on this point. I can't call him out on this point until he says something more concrete, though.)</style>
+Shepherd: <style="int">(I should find somewhere else to attack.)</style>
 
 <<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested wolf came from the crime scene.">>
 <<jump Wolf2_Q3_Start>>
@@ -446,6 +471,92 @@ title: Wolf2_Q3_Question_3
 tags:
 position: -149,435
 ---
+Shepherd: What did you do in between leaving the farm and getting arrested?
+<<if visited("Wolf2_Q3_Accusation_Correct_MetroPass") == false>>
+    Wolf: Nothing much. Drove my car back to my house.
+    Shepherd: And why did you go back to your house?
+    Wolf: ...
+    Shepherd: ...Hello?
+    Wolf: ...I just wanted to see my kids.
+    <<AddStatement Wolf2_Q3_SeeKids "Wolf wanted to see his kids, so he drove home in his car.">>
+    Shepherd: And did you?
+    <<PlayEffect Interesting>>
+    Wolf: ...No. They were at school.
+    Shepherd: When we last talked, you said that your kids had the day off!
+    Wolf: I lied. Is that so surprising?
+    <<wait 0.8>>
+    Shepherd: I suppose not. Did you do anything else at your house?
+    Wolf: Not much. Got a snack and changed into new clothes.
+    Shepherd: <style="int">(New clothes? I should question him about that more.)</style>
+<<else>>
+    <<PlayEffect Energy>>
+    Wolf: I drove to the metro station and swiped my card to give myself an alibi.
+    Wolf: Then, I walked back to the farm. Happy?
+    Shepherd: Why not drive?
+    Wolf: Tinker Bell had seen my car. I didn't want to her to see that I had come back to check on her handiwork.
+    Shepherd: You're her boss. Surely she wouldn't mind seeing you?
+    Wolf: Bosses can't show that they doubt their underlings!
+    Shepherd: Hm... And that is your car?
+    Wolf: Yes, it's mine. 
+    Shepherd: <style="int">(Hm... This checks out with the new evidence.)</style>
+<<endif>>
+<<jump Wolf2_Q3_Start>>
+===
+title: Wolf2_Q3_Question_4
+tags:
+position: -149,435
+---
+Shepherd: So, why did you try to return to the scene of the crime? You had gotten away with it!
+Wolf: ...
+Wolf: I didn't trust Tinker Bell. I had to make sure she did it.
+<<AddStatement Wolf2_Q3_ChangeClothes "Wolf went back to the scene of the crime because he didn't trust Tinker Bell.">>
+Shepherd: Why didn't you trust her?
+Wolf: I don't trust anybody.
+Shepherd: How edgy.
+Wolf: I don't care what you think of me. Doesn't change where I'm headed.
+Shepherd: You seem awfully determined to go to prison.
+<<PlayEffect Energy>>
+Wolf: What, now you're trying to convince me to <style="emph">not</style> say I'm guilty?
+Wolf: After all this time trying to catch me out on little mistakes, now that you've got me you're trying to set me free?
+Shepherd: I'm just trying to make sure I have the right guy.
+Wolf: Seems to me like you just like arguing.
+
+<<jump Wolf2_Q3_Start>>
+===
+title: Wolf2_Q3_Question_5
+tags:
+position: -149,435
+---
+<<if visited("Wolf2_Q3_Accusation_Correct_Car" == false)>>
+    Shepherd: You changed clothes? What were you wearing?
+    <<wait 0.8>>
+    <<PlayEffect Energy>>
+    Wolf: You have the report right there. Says an overcoat, black pants, mask, gloves, the works.
+    Shepherd: Quite the outfit.
+    Wolf: How else am I supposed to stay anonymous?
+    Shepherd: ...And you changed into your current outfit?
+    <<PlayEffect Failure>>
+    Wolf: I don't like shirts.
+    Shepherd: I can see that. So you just changed into your current pants?
+    Wolf: Yeah. I didn't want to be wearing an overcoat near a crime scene, not a good look.
+    Shepherd: Why didn't you just bring a change of clothes with you?
+    <<wait 1.5>>
+    Wolf: ...I just didn't. Can we move to the next question now?
+    <<AddStatement Wolf2_Q3_ChangeClothes "Wolf got his new clothes from his home.">>
+<<else>>
+    Shepherd: So did you change clothes?
+    Wolf: No. Like I said, I didn't have time to go home, and I forgot to bring a change.
+    Shepherd: Are you sure?
+    <<PlayEffect Emphasis>>
+    Wolf: Of course I'm sure! Why the hell do you care so much about what I'm wearing?
+    Shepherd: You're not wearing an overcoat or black pants now.
+    Wolf: You people took them when you arrested me!
+    Shepherd: I don't see that in the evidence.
+    <<wait 1>>
+    Wolf: Well, then someone took them for themselves! Fuck if I know! 
+    Shepherd: <style="int">(So he didn't change clothes, huh? I'm not sure about that.)</style>
+<<endif>>
+    
 
 <<jump Wolf2_Q3_Start>>
 ===
@@ -456,39 +567,170 @@ position: 543,331
 Wolf: Yeah? and what's your proof?
 <<PromptEvidence Wolf2_Q3_Accusation_Default>>
 ===
+title: Wolf2_Q3_Accusation_Contradict
+tags:
+position: 543,331
+---
+Wolf: Yeah? And what's the other statement?
+<<PromptStatement Wolf2_Q3_Accusation_Default>>
+===
 title: Wolf2_Q3_Accusation_Default
 tags:
 position: 350,333
 ---
-
+Wolf: What are you trying to say? I already confessed!
+<<PlayEffect Failure>>
+<<if visited("Wolf2_Q3_Accusation_Correct_Car") == true>>
+    Shepherd: <style="int">(...Darn. Still, with this new evidence, his story seems to contradict the evidence. I've just got to think!)</style>
+<<elseif visited("Wolf2_Q3_Accusation_Correct_MetroPass") == true>>
+    Shepherd: <style="int">(...Darn. Still, with this new evidence, I can't help feeling like some of Wolf's statements contradict each other...)</style>
+<<else>>
+    Shepherd: <style="int">(...Darn. Wolf's order of events seems tight, but I can't help feeling there's an inconsistency with the evidence...)</style>
+<<endif>>
+<<jump Wolf2_Q3_Start>>
+===
+title: Wolf2_Q3_Accusation_Correct_MetroPass
+tags:
+position: 353,432
+---
+<<StopMusic>>
+<<PlayEffect Emphasis>>
+Shepherd: Wolf, you're lying.
+<<PlayEffect Energy>>
+Wolf: Oh?
+Shepherd: You didn't go home. Or at least, you didn't drive there.
+Shepherd: Your metro pass was used once on the day of the crime. If you're driving everywhere, why take the train?
+Wolf: ...I-I...
+Shepherd: In fact, you took the metro at 10:40. That's about ten minutes after Tinker Bell said the boss left the farm.
+Shepherd: So, why did you take the metro?
+Wolf: That's...
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+<<PlayEffect Energy>>
+Matches: I think I can shed some light on the subject, Shepherd.
+Shepherd: Matches?
+Matches: The boys just got back to the station, and guess what they found?
+<<PlayEffect Interesting>>
+Matches: The car. It matches Tinker Bell's description, and was found abandoned on the side of the road.
+Shepherd: Oh, really?
+Matches: Really. I've got a picture here of the interior of the car.
+<<LoadEvidence Wolf_Car_Photo>> //GET EVIDENCE
+Shepherd: And where was this found?
+<<PlayEffect Energy>>
+Matches: Get this: it was abandoned near the metro station!
+Matches: It turns out that the boss did go to the station after all. And that means...
+Shepherd: But why would he do that?
+Matches: ...maybe he wanted an alibi? By swiping his card and not taking the metro, he could corroborate any lies about where he was!
+Shepherd: <style="int">(That does make sense...)</style>
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+<<SetPose Flippant>>
+<<PlayEffect Energy>>
+Wolf: That's right! You got me. I drove to the station, swiped my card, then walked directly to the crime scene.
+<<RemoveStatement Wolf2_Q3_SeeKids>>
+<<AddStatement Wolf2_Q3_FakedMetro "Wolf drove to the metro station, swiped his card, and then walked to the crime scene without returning home.">>
+Shepherd: <style="int">(What an eager reaction.)</style>
+Wolf: Are you satisfied? Match Girl, take me-
+<<PlayEffect Emphasis>>
+Shepherd: No. Your story's still... contradictory. You're not leaving until I know the truth of this case.
+<<jump Wolf2_Q3_Start>>
+===
+title: Wolf2_Q3_Accusation_Correct_Car
+tags:
+position: 353,432
+---
+<<StopMusic>>
+Shepherd: You can't even keep your own story straight.
+Wolf: What?
+Shepherd: After we found the car, you said that you didn't go home. 
+Shepherd: Yet, you also said that you got your new clothes from home and insisted that you didn't bring them with you.
+<<PlayEffect Emphasis>>
+Shepherd: So? Which is it, Wolf? Did you change your clothes or not?
+Wolf: Fine! Fine! I didn't change my clothes! 
+<<RemoveStatement Wolf2_Q3_ChangeClothes "Wolf got his new clothes from his home.">>
+<<AddStatement Wolf2_Q3_DidntChangeClothes "Wolf did not change his clothes.">>
+Wolf: Why are you nitpicking everything I say?! I'm confessing to the crime!
+Shepherd: Wolf, I'm just trying to find the truth. Why are you still lying?
+Wolf: ...
+Shepherd: Then I guess we'll do this that hard way.
+Shepherd: <style="int">(He must be lying again. And I've got to prove it.)</style>
 <<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Accusation_Correct_CCTV
 tags:
 position: 353,432
 ---
+<<StopMusic>>
+Shepherd: <style="int">(He's lied so much, why would confronting him one more time change anything?)</style>
+Shepherd: <style="int">(...)</style>
+Shepherd: <style="int">(He's practically shaking in his boots. He must be hiding something.)</style>
+Shepherd: <style="int">(All I can do is press on.)</style>
+Shepherd: Wolf?
+<<PlayEffect Emphasis>>
+Wolf: Yes?! What now?
+Shepherd: Your story just has too many holes for me to believe.
+<<PlayEffect Energy>>
+Wolf: What?!
+Shepherd: First, you lied about driving home. Then, you lied about changing clothes at your house.
+Shepherd: Now, you've lied again. There's no way you <style="emph">didn't</style> change clothes.
+Wolf: What the-?! But you just said that I didn't change clothes!
+Shepherd: No, I said that it's impossible for you to have changed clothes <style="emph">at your house</style>.
+Shepherd: However, it's equally impossible for you to have changed clothes in your car.
+<<PlayEffect Emphasis>>
+Shepherd: Because you were then spotted on camera, wearing your current clothes!
+Wolf: I could have easily just disposed of my clothes somewhere! Just dumped them into a bush!
+Shepherd: If that's the case, where did you get your current clothing?
+<<PlayEffect Emphasis>>
+Wolf: Why do you care so fucking much?! I did it! Let me rot away in a cell somewhere! Please!
+Shepherd: <style="int">(What is going on with him?)</style>
+Wolf: I ran the drug ring, I dealt with the pigs, I met with Tinker Bell, I told her to kill the pig, I came back to the scene...
+Wolf: Match Girl! Take me away, I did it!
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+Matches: Shepherd.
+Shepherd: Matches...
+Matches: It's no use. He's just a liar. Who knows why he's lying, but these nitpicks aren't helping us.
+Shepherd: Don't you see it too?
+<<wait 1>>
+Matches: I'm sorry, but this thing with the clothes... he's deranged. Is it really unrealistic to think he just forgot where he got his pants?
+Matches: For all we know, that could be long underwear, and he could have just dropped his other clothes somewhere in the city.
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+Wolf: Yes... please... Take me away.
+<<PlayEffect Shock>>
+Shepherd: NO.
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+<<PlayEffect Energy>>
+Matches: What?
+<<PlayEffect Emphasis>>
+Shepherd: I said no!
+Shepherd: Didn't you hear that, Matches?
+Matches: I already said-
+<<PlayEffect Energy>>
+Shepherd: No, not the clothes! What he just said!
+Matches: N-no, I didn't hear anything out of the ordinary...
+Shepherd: There's no doubt in my mind that this Wolf is not the mastermind.
+Shepherd: I don't know if you were there, or someone told you the story secondhand, but you missed one crucial detail, Wolf.
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+<<PlayEffect Interesting>>
+Wolf: Huh?!
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+<<PlayEffect Energy>>
+Matches: What?!
+Shepherd: Wolf, this statement you just made contradicts the evidence!
+<<ResetEvidenceResponses>>
 
-<<if visited("Wolf2_Q3_Accusation_Correct_MetroPass") == true>>
-    <<jump Wolf2_Q3_Finish>>
-<<else>>
-    <<jump Wolf2_Q4_Start>>
-<<endif>>
-===
-title: Wolf2_Q3_Accusation_Correct_MetroPass
-tags:
-position: 353,432
----
 
-<<if visited("Wolf2_Q3_Accusation_Correct_MetroPass") == true>>
-    <<jump Wolf2_Q3_Finish>>
-<<else>>
-    <<jump Wolf2_Q4_Start>>
-<<endif>>
-===
-title: Wolf2_Q3_Finish
-tags:
-position: 353,432
----
+Shepherd: I'm sorry, but you've lied too much for you to believe you anymore.
+Wolf: ...
+Shepherd: Please, tell me the truth.
+<<PlayEffect Interesting>>
+Wolf: Why...
+Shepherd: <style="int">(...?)</style>
+Wolf: Why... me...?
 
 <<jump Wolf2_Q4_Start>>
 
