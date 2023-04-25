@@ -415,13 +415,14 @@ position: -767,1109
 <<PlayEffect Emphasis>>
 Shepherd: TinkerBell, do you recognize why I am questioning you?
 TinkerBell: I..I don't know.
-Shepherd: This is the autopsy report for PIG NAME HERE. His brothers mentioned that he had been planning to meet with you.
-Shepherd: Their interrogations heavily implied that you were responsible. Yours so far has only strengthened our theory.
+Shepherd: This is the autopsy report for Stick Pig. His brothers mentioned that he had been planning to meet with you.
+Shepherd: Their interrogations heavily implied that you were responsible. Your's so far has only strengthened our theory.
 <<PlayEffect shock>>
 TinkerBell: He's....he....I...killed him? No..nonononono..
 TinkerBell: Oh my gods oh my gods the boss is going to kill me...he'll find and kill me. I need to leave the country, go somewhere he won't find me.
 <<PlayEffect Energy>>
 TinkerBell: Oh woe! Woe on me, for I have murdered a friend!
+<<wait 1>>
 Shepherd: TinkerBell, drop the act. You clearly had no problem beating someone near to death. I think you know you killed him, and you just want to get out of this. 
 TinkerBell: Ugh, fine. I'll get you information, guarentee my safety and get me a plea deal and we'll talk.
 Shepherd: You're unbearable, fine I'll get legal working on that.
@@ -429,7 +430,7 @@ Shepherd: You're unbearable, fine I'll get legal working on that.
 <<wait 5>>
 <<PlayEffect Reveal>>
 Shepherd: Alright, legal's working on it now, you gonna cooperate?
-TinkerBell: I suppose
+TinkerBell: I suppose..
 <<jump TinkerBell_Q5_Start>>
 ===
 title: TinkerBell_Q5_Start
@@ -474,10 +475,11 @@ TinkerBell: Who?
 <<PlayEffect interesting>>
 Shepherd: Wolf..Isn't he the new boss?
 TinkerBell: I don't know, I've never really talked to him and he only recently took charge around here.
-<<wait 1>>
+<<wait 0.5>>
 TinkerBell: Oh gods I'm dead I'm so dead I just had to rough him up a bit
+Shepherd:<style="int">(Oh for fuck's sake)</style>
 <<PlayEffect shock>>
-Shepherd: Oh not this act again, we are working on the plea so can you just drop the act?
+Shepherd: Oh don't you start this again, we are working on the plea so can you just drop the act?
 TinkerBell: Maybe, I don't know yet.
 
 <<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
@@ -495,7 +497,7 @@ position: -374,1432
     <<jump TinkerBell_Q5_Start>>
 <<endif>>
     TinkerBell: My goal? To rise up and become the queen of crime in this hellhole of a city.
-    Shepherd: <int> Hmm, wonder if Matches could grab me that bat from TinkerBell's car? <int>
+    Shepherd: <style="int"> (Hmm, wonder if Matches could grab me that bat from TinkerBell's car?) </style>
     Shepherd: You know what I mean, why did you go kill the pig?
     TinkerBell: I was just supposed to rough him up a bit after the boss left.
     Shepherd: Why?
@@ -517,12 +519,14 @@ position: -991,1605
     Shepherd: Did he take over from anyone or is this his own group.
     TinkerBell: He made it all himself, and he invited me to join after the Pigs recommended me.
     Shepherd: Have you ever seen him? Do you know what he looks like? Body shape? Anything?
+    <<wait 1>>
     TinkerBell: Never his face...he always wears a mask. I'm not sure about body shape, I've only ever seen him in a trenchcoat and hat.
     Shepherd: Any distinguishing features or mannerisms? 
     //TinkerBell: He...he mentions fire sometimes...that if the pigs burned us we'll burn them back..
     //TinkerBell: But I think thats a common phrase..
     TinkerBell: Not that I can think of.
-    <<AddStatement TinkerBell_Q5_Boss2 "Boss seems to like trenchcoats and hats. Very cautious with identifiers May have an affinity for fire based metaphors?">>
+    Shepherd:  <style="int">(Damn, dead end)</style>
+    <<AddStatement TinkerBell_Q5_Boss2 "Boss seems to like trenchcoats and hats. Very cautious with identifiers.">>
 <<endif>>
 <<jump TinkerBell_Q5_Start>>
 
@@ -542,11 +546,13 @@ position: -512,1601
     TinkerBell: He promised me that they'd get it done soon, and I told him as I walked away that they were only going to be paid for the amount they delivered.
     Shepherd: I presume he did not take that well.
     <<PlayEffect interesting>>
-    TinkerBell: He swung at me, so I beat him with the bat.
+    TinkerBell: No. He swung at me, so I beat him with the bat.
     Shepherd: Why did you have the bat? 
     TinkerBell: Intimidation mostly.
     Shepherd: Didn't the boss ask you to rough him up though?
     TinkerBell: He did, I had no intention of going through with it until he swung at me.
+    Shepherd: <style="int">(No way, I don't belive that for a second)</style>
+    <<wait 0.5>>
     Shepherd: Uh huh..
     Shepherd: What state was he in when you left?
     TinkerBell: He was unconscious on the floor, his head was bleeding. I figured his brothers would find him in a minute or two.
@@ -573,5 +579,10 @@ position: -774,1745
 <<PlayEffect Shock>>
 Shepherd: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
 Shepherd: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
-
+Shepherd: Matches? Can you go book her?
+<<PlayEffect FadeToWhite>>
+<<RemoveCharacter TinkerBell>>
+<<wait 5>>
+<<PlayEffect Reveal>>
+Shepard: <style="int">(</style>
 ===

@@ -527,7 +527,7 @@ title: Wolf2_Q3_Question_5
 tags:
 position: -149,435
 ---
-<<if visited("Wolf2_Q3_Accusation_Correct_Car" == false)>>
+<<if visited("Wolf2_Q3_Accusation_Correct_Car" )== false>>
     Shepherd: You changed clothes? What were you wearing?
     <<wait 0.8>>
     <<PlayEffect Energy>>
