@@ -53,6 +53,7 @@ public class A4 : FlippableEvidence<A4Page>
 
     public override void FlipRight()
     {
+        Debug.Log("b");
         StartCoroutine(FlipRightAnim(1f));
         base.FlipRight();
     }
@@ -74,8 +75,6 @@ public class A4 : FlippableEvidence<A4Page>
         while (timeElapsed < time)
         {
             float percent = EasingFunction.EaseInOutQuad(0, 1, timeElapsed / time);
-
-            Debug.Log(currentPage);
 
             float angleToRotate = -360f * percent - totalAngleRotated; 
 
@@ -118,11 +117,9 @@ public class A4 : FlippableEvidence<A4Page>
         float totalAngleRotated = 0;
         while (timeElapsed < time)
         {
-            float percent = EasingFunction.EaseOutCubic(1, 0, timeElapsed / time);
+            float percent = EasingFunction.EaseInOutQuad(1, 0, timeElapsed / time);
 
             float angleToRotate = -360f * percent - totalAngleRotated;
-
-            Debug.Log(angleToRotate);
 
             //Flip Corner
             if (currentPage == 0)
