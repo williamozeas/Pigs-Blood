@@ -5,7 +5,7 @@ position: 122,-203
 
 <<jump Pigs_Q1_Start>>
 
-//PIGS Q1
+//Pigs Q1
 ===
 title: Pigs_Q1_Start
 tags:
@@ -20,10 +20,10 @@ position: 123,-136
         -> Temp2
             <<jump Pigs_Q1_Question_2>>
     -> Accuse
-        -> This evidence proves you wrong!
+        -> You're lying about this statement!
             <<ResetEvidenceResponses>>
-            //<<SetEvidenceResponse testPaper_1 TestPaper1Response>>
-            <<PromptEvidence Pigs_Q1_Accusation_Default>>
+            <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q1_Accusation_Correct>>
+            <<PromptStatement Pigs_Q1_Accusation_Proof>>
     -> Review
         <<Review>>
 <<endif>>
@@ -42,15 +42,29 @@ position: -127,-18
 
 <<jump Pigs_Q1_Start>>
 ===
+title: Pigs_Q1_Accusation_Proof
+tags:
+position: 516,-150
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Pigs_Q1_Accusation_Default>>
+===
 title: Pigs_Q1_Accusation_Default
 tags:
 position: 331,-153
 ---
 
 <<jump Pigs_Q1_Start>>
+===
+title: Pigs_Q1_Accusation_Correct
+tags:
+position: 334,-37
+---
+
+<<jump Pigs_Q2_Start>>
 
 
-//PIGS Q2
+//Pigs Q2
 ===
 title: Pigs_Q2_Start
 tags:
@@ -62,11 +76,11 @@ position: 123,141
     -> Temp 2
         <<jump Pigs_Q2_Question_2>>
 -> Accuse
-    -> This evidence proves you wrong!
+    -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetEvidenceResponse TEMP Pigs_Q2_Accusation_Correct>>
-        <<PromptEvidence Pigs_Q2_Accusation_Default>>
+        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q2_Accusation_Correct>>
+        <<PromptStatement Pigs_Q2_Accusation_Proof>>
 -> Review
     <<Review>>
 ===
@@ -84,6 +98,13 @@ position: -138,219
 
 <<jump Pigs_Q2_Start>>
 ===
+title: Pigs_Q2_Accusation_Proof
+tags:
+position: 534,183
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Pigs_Q2_Accusation_Default>>
+===
 title: Pigs_Q2_Accusation_Default
 tags:
 position: 348,109
@@ -98,7 +119,7 @@ position: 350,186
 
 <<jump Pigs_Q3_Start>>
 
-//PIGS Q3
+//Pigs Q3
 ===
 title: Pigs_Q3_Start
 tags:
@@ -110,11 +131,11 @@ position: 124,340
     -> Temp 2
         <<jump Pigs_Q3_Question_2>>
 -> Accuse
-    -> This evidence proves you wrong!
+    -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetEvidenceResponse TEMP Pigs_Q3_Accusation_Correct>>
-        <<PromptEvidence Pigs_Q3_Accusation_Default>>
+        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q3_Accusation_Correct>>
+        <<PromptStatement Pigs_Q3_Accusation_Proof>>
 -> Review
     <<Review>>
 ===
@@ -132,6 +153,13 @@ position: -149,435
 
 <<jump Pigs_Q3_Start>>
 ===
+title: Pigs_Q3_Accusation_Proof
+tags:
+position: 543,331
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Pigs_Q3_Accusation_Default>>
+===
 title: Pigs_Q3_Accusation_Default
 tags:
 position: 350,333
@@ -147,7 +175,7 @@ position: 353,432
 <<jump Pigs_Q4_Start>>
 
 
-//PIGS Q4
+//Pigs Q4
 ===
 title: Pigs_Q4_Start
 tags:
@@ -159,11 +187,11 @@ position: 125,558
     -> Temp 2
         <<jump Pigs_Q4_Question_2>>
 -> Accuse
-    -> This evidence proves you wrong!
+    -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetEvidenceResponse TEMP Pigs_Q4_Accusation_Correct>>
-        <<PromptEvidence Pigs_Q4_Accusation_Default>>
+        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q4_Accusation_Correct>>
+        <<PromptStatement Pigs_Q4_Accusation_Proof>>
 -> Review
     <<Review>>
 ===
@@ -181,6 +209,13 @@ position: -189,621
 
 <<jump Pigs_Q4_Start>>
 ===
+title: Pigs_Q4_Accusation_Proof
+tags:
+position: 536,544
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Pigs_Q4_Accusation_Default>>
+===
 title: Pigs_Q4_Accusation_Default
 tags:
 position: 354,544
@@ -195,7 +230,7 @@ position: 367,620
 
 <<jump Pigs_Q5_Start>>
 
-//PIGS Q5
+//Pigs Q5
 ===
 title: Pigs_Q5_Start
 tags:
@@ -207,11 +242,11 @@ position: 112,787
     -> Temp 2
         <<jump Pigs_Q5_Question_2>>
 -> Accuse
-    -> This evidence proves you wrong!
+    -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetEvidenceResponse TEMP Pigs_Q5_Accusation_Correct>>
-        <<PromptEvidence Pigs_Q5_Accusation_Default>>
+        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q5_Accusation_Correct>>
+        <<PromptStatement Pigs_Q5_Accusation_Proof>>
 -> Review
     <<Review>>
 ===
@@ -229,6 +264,13 @@ position: -159,875
 
 <<jump Pigs_Q5_Start>>
 ===
+title: Pigs_Q5_Accusation_Proof
+tags:
+position: 533,773
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Pigs_Q5_Accusation_Default>>
+===
 title: Pigs_Q5_Accusation_Default
 tags:
 position: 354,773
@@ -243,11 +285,11 @@ position: 363,884
 
 <<jump Pigs_Q6_Start>>
 
-//PIGS Q6
+//Pigs Q6
 ===
 title: Pigs_Q6_Start
 tags:
-position: 112,787
+position: 111,994
 ---
 -> Question
     -> Temp 1
@@ -255,38 +297,45 @@ position: 112,787
     -> Temp 2
         <<jump Pigs_Q6_Question_2>>
 -> Accuse
-    -> This evidence proves you wrong!
+    -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetEvidenceResponse TEMP Pigs_Q6_Accusation_Correct>>
-        <<PromptEvidence Pigs_Q6_Accusation_Default>>
+        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q6_Accusation_Correct>>
+        <<PromptStatement Pigs_Q6_Accusation_Proof>>
 -> Review
     <<Review>>
 ===
 title: Pigs_Q6_Question_1
 tags:
-position: 41,881
+position: 49,1112
 ---
 
 <<jump Pigs_Q6_Start>>
 ===
 title: Pigs_Q6_Question_2
 tags:
-position: -159,875
+position: -168,1117
 ---
 
 <<jump Pigs_Q6_Start>>
 ===
+title: Pigs_Q6_Accusation_Proof
+tags:
+position: 518,1092
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Pigs_Q6_Accusation_Default>>
+===
 title: Pigs_Q6_Accusation_Default
 tags:
-position: 354,773
+position: 328,1092
 ---
 
 <<jump Pigs_Q6_Start>>
 ===
 title: Pigs_Q6_Accusation_Correct
 tags:
-position: 363,884
+position: 337,1203
 ---
 
 <<jump Pigs_Ending>>
@@ -294,7 +343,7 @@ position: 363,884
 ===
 title: Pigs_Ending
 tags:
-position: 122,1049
+position: 58,1403
 ---
 
 ===
