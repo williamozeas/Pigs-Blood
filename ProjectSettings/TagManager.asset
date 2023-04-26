@@ -3,16 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EvidenceBox
+  - LeftCorner
+  - Undefined
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - WorldSpaceUI
   - Water
   - UI
-  - 
-  - 
+  - Triggers
+  - Corner
   - 
   - 
   - 

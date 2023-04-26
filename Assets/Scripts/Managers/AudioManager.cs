@@ -8,6 +8,7 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 public class AudioManager : Singleton<AudioManager>
 {
     private EventInstance Music;
+    private string currentMusic;
     
     // Start is called before the first frame update
     void Start()
@@ -15,10 +16,15 @@ public class AudioManager : Singleton<AudioManager>
         
     }
 
-    public void SetMusic(string name) //TODO: Don't change music if it's the same 
+    public void SetMusic(string name) 
     {
+        if (name == currentMusic)
+        {
+            return;
+        }
         StopMusic();
 
+        currentMusic = name;
         string eventString = "event:/Music/" + name;
         Music = RuntimeManager.CreateInstance(eventString);
         Music.start();
@@ -31,5 +37,17 @@ public class AudioManager : Singleton<AudioManager>
             Music.release();
             Music.stop(STOP_MODE.ALLOWFADEOUT);
         }
+
+        currentMusic = "";
+    }
+    
+    public void CharacterTypedSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Typewriter");
+    }
+    
+    public void ContinueTextSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Return");
     }
 }

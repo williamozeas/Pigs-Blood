@@ -1,70 +1,560 @@
-﻿title: Wolf1
-tags:
-position: 14,-239
+﻿title: Wolf_Start
 ---
-Wolf: Well well, a little piggy comes to pay a visit to the big bad wolf.
-Boy: Can it Wolf, We got a list of evidence a mile long. This is only a formality. But if you answer my questions, maybe we can let you off a bit easier this time.
+<<wait 1>>
+<<AddCharacter Wolf>>
+<<jump Wolf_1>>
+//Q1
+===
+
+title: Wolf_1
+tags:
+position: -748,-1095
+---
+<<SetPose Wolf CheckedOut>>
+Wolf: Well, well. A little piggy comes to pay a visit to the big bad wolf.
+<<PlayEffect Emphasis>>
+Shepherd: Can it, Wolf. We've got a list of evidence a mile long. 
+Wolf: I can see that. Anyone ever tell you that your organization skills are terrible?
+Shepherd: Anyone ever tell you that your following-the-law skills are terrible?
+<<PlayEffect Failure>>
+Wolf: Wow. You really got me with that one. Besides, my following-the-law skills are up to par - I think <style="emph">you</style> need to work on <style="emph">your</style> idea of what "breaking the law" is.
+Wolf: What am I even in here for? Walking too slowly?
+<<PlayEffect Emphasis>>
+Shepherd: One of the Pigs brothers was found dead.
+<<wait 0.7>>
+<<SetPose Wolf Flippant>>
+<<PlayEffect Interesting>>
+Wolf: ...
+Shepherd: Not so cocky now.
+Wolf: ...You've got nothing on me. You can't.
+Shepherd: I wouldn't be so sure of that. If I were you, I'd talk on this one.
+<<PlayEffect Emphasis>>
 Wolf: You're not getting <style="emph">anything</style> out of me.
 
-<<jump Wolf_Q1_Start>>
-===
-title: Wolf_Q1_Start
-tags:
-position: 13,-67
----
--> Question
-    -> This is a new low, even for you. Selling illicit drugs to kids? What's with the shift here Wolf?
-        <<jump Wolf_Q1_Question_1>>
-    -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
-        <<jump Wolf_Q1_Question_2>>
--> Accuse
-    -> You lied about...!
-        <<jump Pick_Evidence_Lie>> //maybe set a var here instead & call command
-    -> You know <style="imp">who's behind this!</style>
-        <<jump Pick_Evidence>>
--> Review
-    Triggering review.... #review
-===
-title: Wolf_Q1_Question_1
-tags:
-position: -184,72
----
-<<if visited("Wolf_Q1_Question_1") == true>>
-    <<wait 0.5>>
-    Wolf: Again? Did you forget what I said the first time?
-<<else>>
-    Wolf: Wow. Great question, Sherlock. Money, Power whatever really...
-<<endif>>
-<<PlayAudio Airball>>
-Boy: Alright, smart ass.
-<<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
-    <<jump Wolf_Q2_Start>>
-<<else>>
-    <<jump Wolf_Q1_Start>>
-<<endif>>
-===
-title: Wolf_Q1_Question_2
-tags:
-position: 224,71
----
-<<if visited("Wolf_Q1_Question_2") == true>>
-    <<wait 0.5>>
-    Wolf: Again? Did you forget what I said the first time?
-<<else>>
-    Wolf: Simple, law of supply and demand. Demand for this stuff went up, so everyone came to the only supply: Me.
-    Boy: What are you even calling this stuff? Every person we've talked to has a different name for it.
-    Wolf: Pixie Dust, name is stupid I know..
-    Boy: But didn't you...
-<<endif>>
+<<SetMusic Questions>>
+<<jump Wolf_Q2_Start>>
+// ===
+// title: Wolf_Q1_Start
+// tags:
+// position: -749,-923
+// ---
+// <<SetPose Wolf CheckedOut>>
+// <<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
+//     <<jump Wolf_Q2>>
+// <<else>>
+//     -> Question
+//         -> This is a new low, even for you. Selling illicit drugs to kids? What's with the shift here Wolf?
+//             <<jump Wolf_Q1_Question_1>>
+//         -> This stuff has been spreading like wildfire all over the city. Where'd you get the connections to set up a distribution network like this?
+//             <<jump Wolf_Q1_Question_2>>
+//     -> Accuse
+//         -> You're lying about this statement!
+//             <<ResetEvidenceResponses>>
+//             //<<SetEvidenceResponse testPaper_1 TestPaper1Response>>
+//             <<PromptEvidence Wolf_Q1_Accusation_Default>>
+//     -> Review
+//         <<Review>>
+// <<endif>>
 
-<<if visited("Wolf_Q1_Question_2") == true && visited("Wolf_Q1_Question_1") == true >>
-    <<jump Wolf_Q2_Start>>
-<<else>>
-    <<jump Wolf_Q1_Start>>
-<<endif>>
+// ===
+// title: Wolf_Q1_Question_1
+// tags:
+// position: -946,-784
+// ---
+// <<SetPose Wolf Flippant>>
+// <<if visited("Wolf_Q1_Question_1") == true>>
+//     <<wait 0.5>>
+//     Wolf: Again? Did you forget what I said the first time? Check that little book of yours.
+// <<else>>
+//     //Isn't wolf trying to deny he sells drugs?
+//     Wolf: Wow. Great question, Sherlock. Money, Power whatever really...
+//     <<AddStatement wolf_q1_drugs "Wolf sells drugs for the money and power">>
+// <<endif>>
+// Shepherd: Alright, smart ass.
+// <<jump Wolf_Q1_Start>>
+
+// ===
+// title: Wolf_Q1_Question_2
+// tags:
+// position: -538,-785
+// ---
+// <<SetPose Wolf CheckedOut>>
+// <<if visited("Wolf_Q1_Question_2") == true>>
+//     <<SetPose Wolf Flippant>>
+//     <<wait 0.5>>
+//     Wolf: Again? Did you forget what I said the first time?
+//     Shepherd: I'm asking the questions here.
+// <<endif>>
+// Wolf: Simple, law of supply and demand. Demand for this stuff went up, so everyone came to the only supply: Me.
+// Shepherd: What are you even calling this stuff? Every person we've talked to has a different name for it.
+// Wolf: Pixie Dust, name is stupid I know..
+// Shepherd: But didn't you...ah whatever
+// <<jump Wolf_Q1_Start>>
+
+// ===
+// title:  Wolf_Q1_Accusation_Default
+// tags:
+// position: -323,-926
+// ---
+// Wolf: And thats relevant how? 
+// Wolf: You're losing your edge kid
+// Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+// <<jump Wolf_Q1_Start>>
+
+
+//Q2
+===
+title: Wolf_Q2
+position: -745,-569
+---
+<<SetPose Wolf CheckedOut>>
+Shepherd: Alright Wolf, I have a few more questions for you. 
+Wolf: Sure, not like I can go anywhere. Can ya hurry this up, I have a shift in a few hours?
+Shepherd: Depends on how you answer these questions Wolf, don't lie or mouth off and it will be done sooner.
+
+<<jump Wolf_Q2_Start>>
 ===
 title: Wolf_Q2_Start
-position: 17,287
+position: -745,-405
 ---
+<<SetPose Wolf CheckedOut>>
+-> Question
+    -> Where were you yesterday?
+        <<jump Wolf_Q2_Question_1>>
+    -> Did you leave the building at all? <<if visited("Wolf_Q2_Question_1") == true>>
+        <<jump Wolf_Q2_Question_2>>
+    -> What games did you play?<<if visited("Wolf_Q2_Question_1") == true>>
+        <<jump Wolf_Q2_Question_3>>
+    -> Back
+        <<jump Wolf_Q2_Start>>
+-> Accuse
+    -> You committed the murder!
+        <<ResetEvidenceResponses>>
+        // <<SetEvidenceResponse Wolf_CCTV Wolf_Q2_Accusation_Correct>>
+        <<PromptEvidence Wolf_Q2_Accusation_Default>>
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        <<SetStatementResponse Wolf_Q2_Home_All_Day Wolf_CCTV Wolf_Q2_Accusation_Correct>>
+        <<SetStatementResponse Wolf_Q2_Home_All_Day Wolf_MetroPass Wolf_Q2_Accusation_Correct_MetroPass>>
+        <<PromptStatement Wolf_Q2_Accusation_Proof>>
+    -> Back
+        <<jump Wolf_Q2_Start>>
+-> Review
+    <<Review>>
+===
+title: Wolf_Q2_Question_1
+position: -1002,-284
+---
+Shepherd: Where were you yesterday?
+Wolf: I was spending time with my kids.
+Shepherd: Your kids?
+Wolf: Yes, my kids.
+Shepherd: What are their names?
+<<SetPose Wolf Flippant>>
+<<PlayEffect Emphasis>>
+Wolf: Are you serious?
+Shepherd: Can you answer the question or not?
+Wolf: My kids' names are... Linus and Sophia.
+<<AddStatement Wolf_q2_kidsnames "Wolf has two kids named Linus and Sophia.">>
+Shepherd: And why were you spending time with them?
+<<PlayEffect Energy>>
+Wolf: Wh- Because they're my kids?
+Shepherd: Shouldn't they have been at school?
+<<SetPose Wolf CheckedOut>>
+Wolf: Oh... They had a day off from school, so they wanted to play board games.
+Shepherd: And why did they have school off?
+Wolf: I don't- Some sort of holiday, I don't keep track of these things.
+Shepherd: Uh huh.
+<<AddStatement Wolf_q2_boardgames "Wolf played board games with his kids.">>
+<<jump Wolf_Q2_Start>>
+===
+title: Wolf_Q2_Question_2
+position: -490,-292
+---
+Wolf: I took the trash out and got the mail.
+Shepherd: And when was that?
+<<SetPose Wolf Flippant>>
+Wolf: Do you want a fucking itinerary?
+Shepherd: Answer the question.
+<<SetPose Wolf CheckedOut>>
+<<PlayEffect Energy>>
+<<wait 1>>
+Wolf: I don't know. Some time around noon.
+Shepherd: And you never left the house besides that.
+<<wait 1>>
+Wolf: ...No.
+<<AddStatement Wolf_Q2_Home_All_Day "Wolf stayed home all day.">>
+<<jump Wolf_Q2_Start>>
+===
+title: Wolf_Q2_Question_3
+position: -743,-171
+---
+<<SetPose Wolf Flippant>>
+Wolf: What kinda question is that? How the hell is that relevant? 
+Shepherd: Just answer the question Wolf.
+Wolf: Fine, Whatever.
+Wolf: We played Financial Syndicate, took forever to finish. 
+Wolf: Pretty sure Linus was cheating with how many doubles he rolled. Kid nearly bankrupted me twice.
+Shepherd: Mhmm...I see...
+<<AddStatement Wolf_Q2_Financial_Syndicate "Wolf played Financial Syndicate with his kids.">>
+<<jump Wolf_Q2_Start>>
+===
+title: Wolf_Q2_Accusation_Proof
+tags:
+position: -233,-214
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Wolf_Q2_Accusation_Default>>
+===
+title: Wolf_Q2_Accusation_Correct
+tags:
+position: -233,-214
+---
+<<StopMusic>>
+<<wait 1>>
+Shepherd: You claim that you were at home all day, yet we have this CCTV footage showing you on Main. 
+Wolf: What makes you think that's me? The quality on that photo is atrocious.
+Shepherd: You're literally wearing the same clothes as you are in the photo.
+Shepherd: <style="int">(...or lack thereof.)</style>
+Wolf: ...
+Shepherd: In addition, we found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
+Wolf: N-no, I...
+<<PlayEffect Emphasis>>
+Shepherd: So, Wolf, why are you lying to me? Are you hiding something?
+Wolf: No, I just... I forgot. I bought some groceries, a-and I took a walk.
+<<jump Wolf_Q3>>
+===
+title: Wolf_Q2_Accusation_Correct_MetroPass
+tags:
+position: -233,-214
+---
+<<StopMusic>>
+<<wait 1>>
+Shepherd: You claim that you were at home all day, yet found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
+Wolf: N-no, I...
+Shepherd: We also have this CCTV footage showing you on Main.
+Wolf: What makes you think that's me? The quality on that photo is atrocious.
+Shepherd: You're literally wearing the same clothes as you are in the photo.
+Shepherd: <style="int">(...or lack thereof.)</style>
+Wolf: ...
+<<PlayEffect Emphasis>>
+Shepherd: So, Wolf, why are you lying to me? Are you hiding something?
+Wolf: No, I just... I forgot. I bought some groceries, a-and I took a walk.
+<<jump Wolf_Q3>>
+===
+title:  Wolf_Q2_Accusation_Default
+tags:
+position: -231,-426
+---
+Wolf: And that's relevant how? 
+<<PlayEffect Failure>>
+Shepherd: ...
+Wolf: That's what I thought. 
+Shepherd: <style="int">(He's obviously lying about his movements. I just have to prove he was somewhere he never mentioned being.)</style>
+<<jump Wolf_Q2_Start>>
 
+
+//Q3
+===
+title: Wolf_Q3
+position: -751,20
+---
+<<ResetStatements>>
+<<AddStatement Wolf_q2_kidsnames "Wolf has two kids named Linus and Sophia.">>
+<<AddStatement Wolf_q2_boardgames "Wolf played board games with his kids.">>
+
+Shepherd: Groceries and a walk, huh? 
+Wolf: You heard me.
+<<jump Wolf_Q3_Start>>
+===
+title: Wolf_Q3_Start
+position: -751,186
+---
+<<SetMusic Questions>>
+<<SetPose Wolf CheckedOut>>
+-> Question
+    -> Groceries?
+        <<jump Wolf_Q3_Question_1>>
+    -> A walk? 
+        <<jump Wolf_Q3_Question_2>>
+    -> When did you get groceries? <<if visited("Wolf_Q3_Question_1") == true >>
+        <<jump Wolf_Q3_Question_4>>
+    -> Did you talk with anyone or give anything to anyone while out? <<if visited("Wolf_Q3_Question_2") == true >>
+        <<jump Wolf_Q3_Question_3>>
+    -> Back
+        <<jump Wolf_Q3_Start>>
+-> Accuse
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        <<SetStatementResponse Wolf_Q3_Metro Wolf_MetroPass Wolf_Q3_Accusation_Correct>>
+        <<PromptStatement Wolf_Q3_Accusation_Proof>>
+    -> Back
+        <<jump Wolf_Q3_Start>>
+-> Review
+    <<Review>>
+===
+title: Wolf_Q3_Question_1
+position: -1012,251
+---
+Shepherd: You got groceries?
+Wolf: Yep. Rode the metro to Colmar to get them this morning.
+<<AddStatement Wolf_Q3_Groceries "Wolf went to the grocery store.">>
+Shepherd: What did you get?
+Wolf: Uh- I got spaghetti and meat sauce, chicken, bread, some fruit for my kids, um...
+<<wait 0.5>>
+Wolf: F-fruit gummies.
+<<AddStatement Wolf_Q3_Gummies "Wolf bought fruit gummies at the grocery store.">>
+Shepherd: What a diverse diet.
+Wolf: ...
+<<jump Wolf_Q3_Start>>
+===
+title: Wolf_Q3_Question_2
+position: -751,352
+---
+Shepherd: Why did you take a walk?
+Wolf: I went on a walk after the kids bankrupted me. Wanted to get some fresh air.
+Wolf: That must be when the CCTV camera got me.
+<<AddStatement Wolf_Q3_CCTV "The CCTV camera caught wolf taking a walk after playing board games.">>
+Shepherd: That CCTV camera's on Main Street. Pretty long walk, wouldn't you say?
+Wolf: What can I say? I'm a fast walker.
+Shepherd: <style="int">(Not fast enough, apparently.)</style>
+<<jump Wolf_Q3_Start>>
+===
+title: Wolf_Q3_Question_3
+position: -504,245
+---
+<<SetPose Wolf Flippant>>
+Wolf: Are you insinuating I went out to give drugs to someone?
+Shepherd: You said it, not me.
+<<PlayEffect Emphasis>>
+Wolf: How dare you! I have kids at home, I would never-
+Shepherd: Let's calm down.
+Wolf: Grrr...
+<<jump Wolf_Q3_Start>>
+===
+title: Wolf_Q3_Question_4
+position: -504,245
+---
+Shepherd: And when did you go out to get groceries?
+Wolf: It was early in the morning. I must have taken the metro there around... 9 AM?
+Shepherd: And when did you come back? 
+Wolf: Around 10:30.
+Shepherd: Fast shopper.
+<<PlayEffect Interesting>>
+Wolf: ...
+<<AddStatement Wolf_Q3_Metro "Wolf took the metro at 9 AM and 10:40 AM this morning.">>
+<<jump Wolf_Q3_Start>>
+===
+title: Wolf_Q3_Accusation_Proof
+tags:
+position: -233,-214
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Wolf_Q3_Accusation_Default>>
+===
+title: Wolf_Q3_Accusation_Default
+position: -248,180
+---
+Wolf: I don't see how that proves anything.
+<<PlayEffect Failure>>
+Shepherd: Well, you see, uh...
+<<wait 1>>
+Wolf: You're losing your edge. Too many donuts?
+Shepherd: <style="int">(He's still lying. There's no way he walked all the way to where we caught him)</style>
+<<jump Wolf_Q3_Start>>
+===
+title: Wolf_Q3_Accusation_Correct
+position: -260,413
+---
+<<StopMusic>>
+Shepherd: We noticed you had a metro card in your wallet when we booked you.
+Shepherd: We had a chat with the metro authority, and they report this card was used this morning.
+Wolf: Yeah. That's from when I got the groceries.
+Shepherd: The pass was only used once, at around 10:40 AM.
+Wolf: So? That's not-
+<<SetPose Wolf Flippant>>
+<<PlayEffect Interesting>>
+Wolf: Oh.
+Shepherd: You're lying again. I've half a mind to get you indicted this instant.
+Wolf: Wait, wait. Okay, I might have lied. But I just went out to do an errand. I swear.
+<<SetMusic Questions>>
+<<jump Wolf_Q4>>
+
+
+//Q4
+===
+title: Wolf_Q4
+position: -749,541
+---
+<<ResetStatements>>
+<<AddStatement Wolf_q2_boardgames "Wolf played board games with his kids.">>
+<<jump Wolf_Q4_Start>>
+===
+title: Wolf_Q4_Start
+position: -747,700
+---
+<<SetPose Wolf Flippant>>
+-> Question
+    -> What errand?
+        <<jump Wolf_Q4_Question_1>>
+    -> What happened at the farm? <<if visited("Wolf_Q4_Question_1") == true >>
+        <<jump Wolf_Q4_Question_2>>
+    -> Back
+        <<jump Wolf_Q4_Start>>
+-> Accuse
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        <<SetStatementResponse Wolf_Q4_NothingHappened Wolf_CCTV Wolf_Q4_Accusation_Correct>>
+        <<PromptStatement Wolf_Q4_Accusation_Proof>>
+    -> Back
+        <<jump Wolf_Q4_Start>>
+-> Review
+    <<Review>>
+===
+title: Wolf_Q4_Question_1
+position: -960,815
+---
+Wolf: I.. uh.. went to go get strawberries for my kids. They really like this one farm outside the city.
+Wolf: They grow this one variety that are super juicy but last like 2 days tops. My kids adore them, and my wife makes jam out of the left over ones.
+Shepherd: And what is the name of this farm?
+Wolf: It's called... Uhhhhh... The name escapes me at the moment.
+Shepherd: Wolf, don't lie to me. You know what it's called.
+<<PlayEffect Failure>>
+Wolf: N-no...
+<<PlayEffect Energy>>
+Shepherd: It's the Three Pigs' Strawberry Farm, isn't it.
+Wolf: ...
+<<PlayEffect Emphasis>>
+Shepherd: The location of the murder.
+<<SetMusic Trepidation>>
+<<AddStatement Wolf_Q4_Location "Wolf went to the three Pigs' farm.">>
+<<jump Wolf_Q4_Start>>
+===
+title: Wolf_Q4_Question_2
+position: -745,928
+---
+Shepherd: What happened at the farm?
+Wolf: Nothing. I swear. I talked to one of the pigs, he picked me some strawberries, and I left!
+Shepherd: Was there anything suspicious about the pig?
+Wolf: No! Nothing!
+Shepherd: Anything strange you notice about the farm?
+Wolf: No, nothing at all. Nothing happened!
+<<AddStatement Wolf_Q4_NothingHappened "Nothing happened to Wolf at the farm.">>
+Shepherd: I see.
+<<jump Wolf_Q4_Start>>
+===
+title: Wolf_Q4_Accusation_Proof
+tags:
+position: -233,-214
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence Wolf_Q4_Accusation_Default>>
+===
+title: Wolf_Q4_Accusation_Correct
+position: -254,1026
+---
+<<StopMusic>>
+Wolf: It's... the picture of me?
+Shepherd: Yes. Notice anything?
+Wolf: No...?
+Shepherd: Those red stains on your fur. They're not there in the picture.
+Wolf: Red stai-?
+<<PlayEffect Shock>>
+<<wait 1>>
+Wolf: GAH!
+<<SetMusic Trepidation>>
+Shepherd: What exactly are those stains, Wolf?
+Wolf: They... I don't know, i-it must-
+<<PlayEffect Emphasis>>
+Wolf: STRAWBERRIES! It's strawberry juice! They must have gotten on me when I-
+Shepherd: Sorry, Wolf. I don't think you bought any berries at all. After all, where did they go?
+<<PlayEffect Energy>>
+Wolf: I-I must have dropped them when you guys pulled up, maybe some g-got on my coat-
+Shepherd: You've lied enough today.
+<<SetPose Wolf Sad>>
+<<PlayEffect Emphasis>>
+Wolf: I...I'm not lying. You have to believe me.
+<<StopMusic>>
+Shepherd: Sorry, Wolf. I don't. Matches?
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+Matches: Yes?
+Shepherd: Arrest this wolf.
+<<jump Wolf_Q5>>
+===
+title: Wolf_Q4_Accusation_Default
+position: -300,744
+---
+Wolf: ...
+<<PlayEffect Failure>>
+Shepherd: Nothing?
+Wolf: ...
+Shepherd: <style="int">(Damn. Is there any way I can prove something happened to Wolf at the farm? Did something about him change?)</style>
+<<jump Wolf_Q4_Start>>
+===
+title: Wolf_Q5
+position: -751,1141
+---
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+<<PlayEffect Energy>>
+Wolf: N-no! Wait! I have proof!
+Shepherd: And what is this proof?
+Wolf: I have a receipt, I have it somewhere, just let me go and I'll-
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+Matches: He's lying to you. You should know that.
+Shepherd: I do...?
+
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_ArrestReport Wolf_Q5_Accusation_Correct>>
+<<PromptEvidence Wolf_Q5_Accusation_Default>>
+===
+title: Wolf_Q5_Accusation_Default
+---
+<<wait 1>>
+Matches: No, that's not it. You should know this. Did he have a receipt on him?
+<<PromptEvidence Wolf_Q5_Accusation_Default>>
+===
+title: Wolf_Q5_Accusation_Correct
+---
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+Shepherd: According to the arrest report, you had no such receipt.
+Wolf: Wh-...
+<<wait 1.5>>
+Wolf: You dirty cop bastards. You're gonna get what's coming to you. 
+Shepherd: One too many lies, huh?
+<<PlayEffect Emphasis>>
+Wolf: I mean it! You'll <style="emph">pay!</style>
+Shepherd: Don't come back unless you feel like telling the truth!
+<<RemoveCharacter Wolf>>
+<<wait 2>>
+<<AddCharacter MatchGirl>>
+Shepherd: Wow. I didn't know he had that in him.
+Matches: I did. 
+Shepherd: What did you do with him?
+Matches: I put him in the jail until we get some more testimony.
+<<wait 1>>
+<<SetMusic Chill>>
+Shepherd: *sigh*
+Shepherd: You think he did it?
+Matches: I do.
+Shepherd: At the very least he was involved. 
+Matches: Why else would he lie so much?
+Shepherd: I don't know.
+<<wait 2>>
+Shepherd: Matches?
+Matches: Yeah?
+Shepherd: Sometimes I feel bad for them.
+Matches: Don't. It's easier that way.
+Shepherd: ...
+Matches: He did something bad, and he has to pay for it.
+Matches: Besides, think of the pig who died. We've gotta make it up to his friends, his family.
+Shepherd: Right.
+Matches: Speaking of... we've got them lined up in the next room. 
+Shepherd: Them?
+Matches: The brothers, the ones who worked at the farm?
+Shepherd: Right.
+Matches: I wrote up the profiles as always, plus got all the relevant evidence. Feel free to peruse.
 ===

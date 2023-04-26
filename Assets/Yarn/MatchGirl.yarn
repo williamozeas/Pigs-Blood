@@ -1,5 +1,349 @@
 ﻿title: MatchGirl
 tags:
+position: 122,-203
+---
+
+<<jump MatchGirl_Q1_Start>>
+
+//MatchGirl Q1
+===
+title: MatchGirl_Q1_Start
+tags:
+position: 123,-136
+---
+<<if visited("MatchGirl_Q1_Question_2") == true && visited("MatchGirl_Q1_Question_1") == true >>
+    <<jump MatchGirl_Q2_Start>>
+<<else>>
+    -> Question
+        -> Temp
+            <<jump MatchGirl_Q1_Question_1>>
+        -> Temp2
+            <<jump MatchGirl_Q1_Question_2>>
+    -> Accuse
+        -> You're lying about this statement!
+            <<ResetEvidenceResponses>>
+            <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q1_Accusation_Correct>>
+            <<PromptStatement MatchGirl_Q1_Accusation_Proof>>
+    -> Review
+        <<Review>>
+<<endif>>
+===
+title: MatchGirl_Q1_Question_1
+tags:
+position: 60,-13
+---
+
+<<jump MatchGirl_Q1_Start>>
+===
+title: MatchGirl_Q1_Question_2
+tags:
+position: -127,-18
+---
+
+<<jump MatchGirl_Q1_Start>>
+===
+title: MatchGirl_Q1_Accusation_Proof
+tags:
+position: 516,-150
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence MatchGirl_Q1_Accusation_Default>>
+===
+title: MatchGirl_Q1_Accusation_Default
+tags:
+position: 331,-153
+---
+
+<<jump MatchGirl_Q1_Start>>
+===
+title: MatchGirl_Q1_Accusation_Correct
+tags:
+position: 334,-37
+---
+
+<<jump MatchGirl_Q2_Start>>
+
+
+//MatchGirl Q2
+===
+title: MatchGirl_Q2_Start
+tags:
+position: 123,141
+---
+-> Question
+    -> Temp 1
+        <<jump MatchGirl_Q2_Question_1>>
+    -> Temp 2
+        <<jump MatchGirl_Q2_Question_2>>
+-> Accuse
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q2_Accusation_Correct>>
+        <<PromptStatement MatchGirl_Q2_Accusation_Proof>>
+-> Review
+    <<Review>>
+===
+title: MatchGirl_Q2_Question_1
+tags:
+position: 71,226
+---
+
+<<jump MatchGirl_Q2_Start>>
+===
+title: MatchGirl_Q2_Question_2
+tags:
+position: -138,219
+---
+
+<<jump MatchGirl_Q2_Start>>
+===
+title: MatchGirl_Q2_Accusation_Proof
+tags:
+position: 534,183
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence MatchGirl_Q2_Accusation_Default>>
+===
+title: MatchGirl_Q2_Accusation_Default
+tags:
+position: 348,109
+---
+
+<<jump MatchGirl_Q2_Start>>
+===
+title: MatchGirl_Q2_Accusation_Correct
+tags:
+position: 350,186
+---
+
+<<jump MatchGirl_Q3_Start>>
+
+//MatchGirl Q3
+===
+title: MatchGirl_Q3_Start
+tags:
+position: 124,340
+---
+-> Question
+    -> Temp 1
+        <<jump MatchGirl_Q3_Question_1>>
+    -> Temp 2
+        <<jump MatchGirl_Q3_Question_2>>
+-> Accuse
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q3_Accusation_Correct>>
+        <<PromptStatement MatchGirl_Q3_Accusation_Proof>>
+-> Review
+    <<Review>>
+===
+title: MatchGirl_Q3_Question_1
+tags:
+position: 54,440
+---
+
+<<jump MatchGirl_Q3_Start>>
+===
+title: MatchGirl_Q3_Question_2
+tags:
+position: -149,435
+---
+
+<<jump MatchGirl_Q3_Start>>
+===
+title: MatchGirl_Q3_Accusation_Proof
+tags:
+position: 543,331
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence MatchGirl_Q3_Accusation_Default>>
+===
+title: MatchGirl_Q3_Accusation_Default
+tags:
+position: 350,333
+---
+
+<<jump MatchGirl_Q3_Start>>
+===
+title: MatchGirl_Q3_Accusation_Correct
+tags:
+position: 353,432
+---
+
+<<jump MatchGirl_Q4_Start>>
+
+
+//MatchGirl Q4
+===
+title: MatchGirl_Q4_Start
+tags:
+position: 125,558
+---
+-> Question
+    -> Temp 1
+        <<jump MatchGirl_Q4_Question_1>>
+    -> Temp 2
+        <<jump MatchGirl_Q4_Question_2>>
+-> Accuse
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q4_Accusation_Correct>>
+        <<PromptStatement MatchGirl_Q4_Accusation_Proof>>
+-> Review
+    <<Review>>
+===
+title: MatchGirl_Q4_Question_1
+tags:
+position: 16,629
+---
+
+<<jump MatchGirl_Q4_Start>>
+===
+title: MatchGirl_Q4_Question_2
+tags:
+position: -189,621
+---
+
+<<jump MatchGirl_Q4_Start>>
+===
+title: MatchGirl_Q4_Accusation_Proof
+tags:
+position: 536,544
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence MatchGirl_Q4_Accusation_Default>>
+===
+title: MatchGirl_Q4_Accusation_Default
+tags:
+position: 354,544
+---
+
+<<jump MatchGirl_Q4_Start>>
+===
+title: MatchGirl_Q4_Accusation_Correct
+tags:
+position: 367,620
+---
+
+<<jump MatchGirl_Q5_Start>>
+
+//MatchGirl Q5
+===
+title: MatchGirl_Q5_Start
+tags:
+position: 112,787
+---
+-> Question
+    -> Temp 1
+        <<jump MatchGirl_Q5_Question_1>>
+    -> Temp 2
+        <<jump MatchGirl_Q5_Question_2>>
+-> Accuse
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q5_Accusation_Correct>>
+        <<PromptStatement MatchGirl_Q5_Accusation_Proof>>
+-> Review
+    <<Review>>
+===
+title: MatchGirl_Q5_Question_1
+tags:
+position: 41,881
+---
+
+<<jump MatchGirl_Q5_Start>>
+===
+title: MatchGirl_Q5_Question_2
+tags:
+position: -159,875
+---
+
+<<jump MatchGirl_Q5_Start>>
+===
+title: MatchGirl_Q5_Accusation_Proof
+tags:
+position: 533,773
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence MatchGirl_Q5_Accusation_Default>>
+===
+title: MatchGirl_Q5_Accusation_Default
+tags:
+position: 354,773
+---
+
+<<jump MatchGirl_Q5_Start>>
+===
+title: MatchGirl_Q5_Accusation_Correct
+tags:
+position: 363,884
+---
+
+<<jump MatchGirl_Q6_Start>>
+
+//MatchGirl Q6
+===
+title: MatchGirl_Q6_Start
+tags:
+position: 111,994
+---
+-> Question
+    -> Temp 1
+        <<jump MatchGirl_Q6_Question_1>>
+    -> Temp 2
+        <<jump MatchGirl_Q6_Question_2>>
+-> Accuse
+    -> You're lying about this statement!
+        <<ResetEvidenceResponses>>
+        //SET CORRECT EVIDENCE HERE
+        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q6_Accusation_Correct>>
+        <<PromptStatement MatchGirl_Q6_Accusation_Proof>>
+-> Review
+    <<Review>>
+===
+title: MatchGirl_Q6_Question_1
+tags:
+position: 49,1112
+---
+
+<<jump MatchGirl_Q6_Start>>
+===
+title: MatchGirl_Q6_Question_2
+tags:
+position: -168,1117
+---
+
+<<jump MatchGirl_Q6_Start>>
+===
+title: MatchGirl_Q6_Accusation_Proof
+tags:
+position: 518,1092
+---
+Wolf: Yeah? and what's your proof?
+<<PromptEvidence MatchGirl_Q6_Accusation_Default>>
+===
+title: MatchGirl_Q6_Accusation_Default
+tags:
+position: 328,1092
+---
+
+<<jump MatchGirl_Q6_Start>>
+===
+title: MatchGirl_Q6_Accusation_Correct
+tags:
+position: 337,1203
+---
+
+<<jump MatchGirl_Ending>>
+
+===
+title: MatchGirl_Ending
+tags:
+position: 58,1403
 ---
 
 ===

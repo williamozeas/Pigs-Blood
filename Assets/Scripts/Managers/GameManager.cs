@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using Yarn.Unity;
 
 public enum GameState
 {
@@ -15,7 +16,9 @@ public enum GameState
 public enum PlayerState
 {
     Talk,
-    Review
+    Review,
+    ChooseEvidence,
+    Inspecting
 }
 
 public class GameManager : Singleton<GameManager>
@@ -33,6 +36,7 @@ public class GameManager : Singleton<GameManager>
         set { SetPlayerState(value); }
         get { return playerState; }
     }
+    public YarnCommandManager YarnCommandManager { get; private set; }
 
     public static event Action Advance;
     public static event Action StartInterrogation;
@@ -48,7 +52,23 @@ public class GameManager : Singleton<GameManager>
             SceneManager.LoadScene("Documents", LoadSceneMode.Additive);
         }
     }
-    
+
+    private void Update()
+    {
+        //TODO: Make button?
+        if (PlayerState == PlayerState.Review)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                YarnCommandManager.Runner.Stop();
+                PlayerState = PlayerState.Talk;
+            }
+        } else if (PlayerState == PlayerState.Talk)
+        {
+            
+        }
+    }
+
     public void SetGameState(GameState newGameState)
     {
         // Debug.Log("");
@@ -73,15 +93,45 @@ public class GameManager : Singleton<GameManager>
 
         _gamestate = newGameState;
     }
-    
+
+    private string currentTalkNode;
     private void SetPlayerState(PlayerState value)
     {
+        switch (value)
+        {
+            case (PlayerState.Review):
+            {
+                if (playerState == PlayerState.Talk)
+                {
+                    currentTalkNode = YarnCommandManager.Runner.CurrentNodeName;
+                }
+                break;
+            }
+            case (PlayerState.Talk):
+            {
+                if (playerState == PlayerState.Review)
+                {
+                    YarnCommandManager.Runner.StartDialogue(currentTalkNode);
+                }
+                break;
+            }
+        }
+        ChangePlayerState?.Invoke(value);
         playerState = value;
-        ChangePlayerState?.Invoke(playerState);
     }
 
     public static void TriggerAdvance()
     {
         Advance?.Invoke();
+    }
+
+    public void SetYarnCommandManager(YarnCommandManager ycm)
+    {
+        YarnCommandManager = ycm;
+    }
+
+    public void SetCurrentNode(string node)
+    {
+        currentTalkNode = node;
     }
 }

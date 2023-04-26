@@ -1,0 +1,78 @@
+﻿title: Start
+tags:
+---
+<<LoadEvidence Wolf_MetroPass>>
+<<LoadEvidence Wolf_ArrestReport>>
+<<LoadEvidence Wolf_CCTV>>
+<<LoadEvidence Wolf_Profile>>
+<<SetMusic Chill>>
+Shepherd: <style="int">(One dead, blunt force trauma.)</style> 
+Shepherd: <style="int">(Side of the head. Two of the victim's brothers on the scene.)</style> 
+Shepherd: <style="int">(One wolf visited the scene a few minutes before the body was found.)</style> 
+<<AddCharacter MatchGirl>>
+Matches: Hey, Shepherd.
+Shepherd: <style="int">(One wolf picked up near the scene. Resisted arrest.)</style> 
+Matches: Shepherd?
+Shepherd: <style="int">(Classic open and shut case, right?)</style> 
+<<PlayEffect Emphasis>>
+Matches: Shepherd!
+<<wait 1>>
+<<PlayEffect Energy>>
+Shepherd: W-woah! Matches!
+Matches: You're up as soon as you're ready. You alright?
+Shepherd: Yeah... Right as rain.
+Matches: You sure? You've just been staring into space for the past five minutes.
+Shepherd: <style="int">(This is the Little Match Girl, my partner in... stopping crime. Together, we've set successful arrest records over the past two years.)</style>
+Shepherd: <style="int">(It turns out a penchant for crying wolf is a lot more useful when they keep committing crimes.)</style>
+<<PlayEffect Emphasis>>
+Matches: HEY! You're doing it again!
+<<PlayEffect Failure>>
+Shepherd: Um. Yeah! I'm fine.
+Matches: I picked up this wolf fleeing from the scene. I believe you two are acquainted? I wrote a profile on him, should be in your evidence... 
+<<wait 1>>
+<<PlayEffect Interesting>>
+Matches: ...pile.
+Shepherd: Yeah. He's broken a few rules here and there. Should be easy enough.
+Matches: Alright, well, this is a bit more than a few rules. This is a murder.
+Matches: We need you at your best for this. Have you looked over the evidence?
+Shepherd: Uh. Definitely.
+<<PlayEffect Failure>>
+Matches: ...Convincing. Have another look.
+<<ReviewWithDestination Intro_DoneReviewing>>
+Shepherd: <style="int">(Click and drag your mouse to inspect evidence. Drag evidence to the bottom of the screen to inspect it. Use ESC to finish.)</style>
+===
+title: Intro_DoneReviewing
+---
+Matches: You finished? That was fast.
+<<PlayEffect Energy>>
+Shepherd: The power of speed-reading.
+<<PlayEffect Failure>>
+Matches: We don't need speed-readers, we need speed-comprehenders.
+Matches: Tell me, how old is our friend the wolf?
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_Profile Intro_Q1_Success>>
+<<PromptEvidence Intro_Q1_Failure>>
+Shepherd: <style="int">(Drop the evidence that shows the wolf's age into the box.)</style>
+===
+title: Intro_Q1_Failure
+---
+<<PlayEffect Failure>>
+Matches: No! Try looking at his profile.
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_Profile Intro_Q1_Success>>
+<<PromptEvidence Intro_Q1_Failure>>
+===
+title: Intro_Q1_Success
+---
+Shepherd: He's 39. Says so right on his report.
+Matches: Glad my work writing those isn't in vain. Even if your workspace is as organized as a burning building.
+Shepherd: Very funny. I have my methods. Besides, have I let you down yet?
+Matches: Of course not. You're as good a detective as we've ever seen here. Though, I'll be watching from the next room if you need help.
+<<StopMusic>>
+<<wait 1>>
+Matches: You ready?
+Shepherd: As I'll ever be.
+Matches: Here he comes. 
+<<RemoveCharacter MatchGirl>>
+<<jump Wolf_Start>>
+===
