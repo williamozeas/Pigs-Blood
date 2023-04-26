@@ -34,8 +34,7 @@ public abstract class Character : MonoBehaviour
         {
             poseDict.Add(pair.poseName, pair.poseObject);
         }
-
-        Debug.Log(gameObject.name);
+        
         currentPose = poseObjects[0].poseObject;
         currentPose.SetActive(true);
 
@@ -64,19 +63,21 @@ public abstract class Character : MonoBehaviour
 
     public virtual void FadeIn()
     {
+        gameObject.SetActive(true);
         //TODO: Make actual fade
-        foreach (Renderer renderer in renderers)
+        /*foreach (Renderer renderer in renderers)
         {
             renderer.enabled = true;
-        }
+        }*/
     }
 
     public virtual void FadeOut()
     {
+        gameObject.SetActive(false);
         //TODO: Make actual fade
-        foreach (Renderer renderer in renderers)
+        /*foreach (Renderer renderer in renderers)
         {
             renderer.enabled = false;
-        }
+        }*/
     }
 }

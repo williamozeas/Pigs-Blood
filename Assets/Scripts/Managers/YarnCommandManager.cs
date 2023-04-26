@@ -238,6 +238,7 @@ public class YarnCommandManager : DialogueViewBase
 
 	public void AddCharacter(string characterName)
 	{
+		Debug.Log("trying to add " + characterName);
 		Characters characterEnum = CharacterManager.GetCharacterEnum(characterName);
 		Character character = CharacterManager.Instance.GetCharacter(characterEnum);
 		character.FadeIn();

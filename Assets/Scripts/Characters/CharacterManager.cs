@@ -28,12 +28,12 @@ public class CharacterManager : Singleton<CharacterManager>
     public override void Awake()
     {
         base.Awake();
-        Wolf = GetComponentInChildren<Wolf>();
-        Straw = GetComponentInChildren<Straw>();
-        Sticks = GetComponentInChildren<Sticks>();
-        Bricks = GetComponentInChildren<Bricks>();
-        TinkerBell = GetComponentInChildren<TinkerBell>();
-        MatchGirl = GetComponentInChildren<MatchGirl>();
+        Wolf = GetComponentInChildren<Wolf>(true);
+        Straw = GetComponentInChildren<Straw>(true);
+        Sticks = GetComponentInChildren<Sticks>(true);
+        Bricks = GetComponentInChildren<Bricks>(true);
+        TinkerBell = GetComponentInChildren<TinkerBell>(true);
+        MatchGirl = GetComponentInChildren<MatchGirl>(true);
     }
 
     // Update is called once per frame
