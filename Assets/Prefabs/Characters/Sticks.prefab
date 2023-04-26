@@ -142,3 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37f8ede6bcc04192af18320e55c0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poseObjects:
+  - poseName: idle
+    poseObject: {fileID: 4012806523228609478}

@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct PosePair
+{
+    public string poseName;
+    public GameObject poseObject;
+}
+
 public abstract class Character : MonoBehaviour
 {
     protected Renderer[] renderers;
     protected Animator animator;
+
+    public List<PosePair> poseObjects = new List<PosePair>();
+    Dictionary<string, GameObject> poseDict = new Dictionary<string, GameObject>();
+    GameObject currentPose;
+
     
     // Start is called before the first frame update
     protected void Awake()
@@ -17,6 +29,16 @@ public abstract class Character : MonoBehaviour
         {
             renderer.enabled = false;
         }
+        
+        foreach (PosePair pair in poseObjects)
+        {
+            poseDict.Add(pair.poseName, pair.poseObject);
+        }
+
+        Debug.Log(gameObject.name);
+        currentPose = poseObjects[0].poseObject;
+        currentPose.SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -27,9 +49,11 @@ public abstract class Character : MonoBehaviour
 
     public virtual void TriggerPose(string pose)
     {
-        if (animator)
+        if (poseDict.ContainsKey(pose))
         {
-            animator.SetTrigger(pose);
+            currentPose.SetActive(false);
+            currentPose = poseDict[pose];
+            currentPose.SetActive(true);
             Debug.Log("Set pose: " + name + " " + pose);
         }
         else

@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90504f3cfa5534af3b2a80c1a5d63924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poseObjects:
+  - poseName: idle
+    poseObject: {fileID: 5545819141456931922}
 --- !u!1 &5545819141456931922
 GameObject:
   m_ObjectHideFlags: 0
