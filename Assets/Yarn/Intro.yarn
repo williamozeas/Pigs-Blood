@@ -5,6 +5,7 @@ tags:
 <<LoadEvidence Wolf_ArrestReport>>
 <<LoadEvidence Wolf_CCTV>>
 <<LoadEvidence Wolf_Profile>>
+<<LoadEvidence Wolf_FamilyPortrait>>
 <<SetMusic Chill>>
 Shepherd: <style="int">(One dead, blunt force trauma.)</style> 
 Shepherd: <style="int">(Side of the head. Two of the victim's brothers on the scene.)</style> 
