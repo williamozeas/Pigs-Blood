@@ -40,4 +40,14 @@ public class AudioManager : Singleton<AudioManager>
 
         currentMusic = "";
     }
+    
+    public void CharacterTypedSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Typewriter");
+    }
+    
+    public void ContinueTextSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Return");
+    }
 }

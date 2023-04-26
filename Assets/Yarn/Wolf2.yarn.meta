@@ -11,16 +11,4 @@ ScriptedImporter:
   LastImportHadImplicitStringIDs: 1
   LastImportHadAnyStrings: 1
   isSuccessfullyParsed: 1
-  parseErrorMessages:
-  - '529:13: Error: All terms of == must be the same, not String, Bool
-
-    "Wolf2_Q3_Accusation_Correct_Car"
-    == false
-
-'
-  - '529:5: Error: visited parameter 1 expects a String, not a Bool
-
-    visited("Wolf2_Q3_Accusation_Correct_Car"
-    == false)
-
-'
+  parseErrorMessages: []

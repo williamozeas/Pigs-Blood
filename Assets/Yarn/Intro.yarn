@@ -11,9 +11,9 @@ Shepherd: <style="int">(Side of the head. Two of the victim's brothers on the sc
 Shepherd: <style="int">(One wolf visited the scene a few minutes before the body was found.)</style> 
 <<AddCharacter MatchGirl>>
 Matches: Hey, Shepherd.
-Shepherd: <style="int">One wolf picked up near the scene. Resisted arrest.</style> 
+Shepherd: <style="int">(One wolf picked up near the scene. Resisted arrest.)</style> 
 Matches: Shepherd?
-Shepherd: <style="int">Classic open and shut case, right?</style> 
+Shepherd: <style="int">(Classic open and shut case, right?)</style> 
 <<PlayEffect Emphasis>>
 Matches: Shepherd!
 <<wait 1>>
