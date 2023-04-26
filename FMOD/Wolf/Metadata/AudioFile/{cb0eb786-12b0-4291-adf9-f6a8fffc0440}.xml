@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cb0eb786-12b0-4291-adf9-f6a8fffc0440}">
+		<property name="assetPath">
+			<value>Typewriter_04.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.74913832199546482</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a0ea6df-e6b6-4150-8eec-71b8014833b9}</destination>
+		</relationship>
+	</object>
+</objects>
