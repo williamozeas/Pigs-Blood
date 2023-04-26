@@ -437,7 +437,7 @@ Wolf: I woke up at 9 and drove to the strawberry farm at around 10. Met Tinker B
 Wolf: I started walking back to the farm to see what had happened, and that's when I got arrested by you people.
 Shepherd: I thought you were arrested running away from the scene?
 Wolf: The police car was coming from the direction of the scene. I took off in the opposite direction.
-<<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested wolf came from the crime scene.">>
+<<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested Wolf came from the crime scene.">>
 Shepherd: You were surprised to see a police car coming from a crime scene?
 <<wait 0.8>>
 Wolf: I wasn't. The car slowed down as it approached me, and I know from experience that's a bad sign.
@@ -464,7 +464,7 @@ Wolf: ...Yes, of course. It's just not important.
 Shepherd: <style="int">(He's being evasive on this point. I can't call him out on this point until he says something more concrete, though.)</style>
 Shepherd: <style="int">(I should find somewhere else to attack.)</style>
 
-<<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested wolf came from the crime scene.">>
+<<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested Wolf came from the crime scene.">>
 <<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Question_3
