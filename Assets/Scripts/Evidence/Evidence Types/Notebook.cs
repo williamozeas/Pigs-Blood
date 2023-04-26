@@ -65,7 +65,6 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
         NotebookPage pageToAdd = pages.Last();
         if (pageToAdd.statements.Count >= statementsPerPage)
         {
-            Debug.LogError("Not enough pages to hold all these statements!");
             //TODO: Add new page! & set pageToAdd
             NotebookPage newPage = Instantiate(pagePrefab, backPos, rightRot, transform).GetComponent<NotebookPage>();
             pages.Add(newPage);
