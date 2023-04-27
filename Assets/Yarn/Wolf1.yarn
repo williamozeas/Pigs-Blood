@@ -403,6 +403,8 @@ Wolf: Oh.
 Shepherd: You're lying again. I've half a mind to get you indicted this instant.
 <<SetPose Wolf neutral_idle>>
 Wolf: Wait, wait. Okay, I might have lied. But I just went out to do an errand. I swear.
+Shepherd: Are you... shedding?
+Wolf: ...I do that when I'm nervous. Please, hear me out.
 <<SetMusic Questions>>
 <<jump Wolf_Q4>>
 
