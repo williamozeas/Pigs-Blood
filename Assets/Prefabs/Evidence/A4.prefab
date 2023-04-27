@@ -80,6 +80,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Wolf_Wallet
+  canBeClickedOff: 1
+  inspectPos: {x: 0, y: 5.6, z: -4.8}
+  inspectRot: {x: -0.08715574, y: 0, z: 0, w: 0.9961947}
   currentPage: 0
   pages:
   - {fileID: 5243324027177262973}
@@ -87,6 +90,9 @@ MonoBehaviour:
   bl_corner: {fileID: 1233289684408386207}
   pagePrefab: {fileID: 4781774795969239724, guid: 76f1b3ac3592a4586b1f356ad6f46a95,
     type: 3}
+  fontSize: 6
+  font: {fileID: 0}
+  lineSpacing: -30
   cornerT: {fileID: 4572554113123144718}
   pagesText:
   - Test Page 1

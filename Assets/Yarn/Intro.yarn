@@ -25,7 +25,7 @@ Shepherd: W-woah! Matches!
 Matches: You're up as soon as you're ready. You alright?
 Shepherd: Yeah... Right as rain.
 Matches: You sure? You've just been staring into space for the past five minutes.
-Shepherd: <style="int">(This is the Little Match Girl, my partner in... stopping crime. Together, we've set successful arrest records over the past two years.)</style>
+Shepherd: <style="int">(This is the Little Match Girl, my partner in... stopping crime. Together, we've set successful arrest records over the past four years.)</style>
 Shepherd: <style="int">(It turns out a penchant for crying wolf is a lot more useful when they keep committing crimes.)</style>
 <<PlayEffect Emphasis>>
 Matches: HEY! You're doing it again!

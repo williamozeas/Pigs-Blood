@@ -57,8 +57,8 @@ position: 334,-37
 Shepherd: You say that anyone in the city could have blackmailed wolf, but is that true?
 Matches: Yes! Wolf said that the letter came into his cell through the air vent, which leads to the outside.
 Matches: Therefore, anyone could have walked by the jail and given it to him.
-<<PlayEffect Energy>>
 Shepherd: That's not true.
+<<PlayEffect Energy>>
 Matches: ...!
 Shepherd: Wolf, you said that you can't see outside from within your cell, right?
 <<RemoveCharacter MatchGirl>>
