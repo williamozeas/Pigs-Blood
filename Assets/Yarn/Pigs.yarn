@@ -128,13 +128,13 @@ position: 123,141
 -> Question
     -> During this time, what was your brother doing?
         <<jump Pigs_Q2_Question_1>>
-    -> Temp 2
+    -> Who is this friend?
         <<jump Pigs_Q2_Question_2>>
 -> Accuse
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q2_Accusation_Correct>>
+        <<SetStatementResponse Pigs_Q1_WhereTheyWere Pigs_Farm_Map Pigs_Q2_Accusation_Correct>>
         <<PromptStatement Pigs_Q2_Accusation_Proof>>
 -> Review
     <<Review>>
@@ -143,6 +143,18 @@ title: Pigs_Q2_Question_1
 tags:
 position: 71,226
 ---
+Shepherd: While you two were busy, what was your brother doing?
+Bricks: Well, yesterday he told me that he was gonna be fillin' some tax reports. Something about nothin' bein' scarier than the IRS breathin' down your neck.
+<<PlayEffect Interesting>>
+Straw: Huh? He tolds me that he was meetin with a frien' of his.
+<<AddStatement Pigs_Q2_BrotherStory "Sticks was either working on their taxes or meeting with a friend">>
+<<wait 1>>
+Straw: Wait, did this frien' o' his hurt him? I'll KILL 'em! I'll get me shotgun and blow holes in them till they look like a fuckin..
+<<PlayEffect Shock>>
+Bricks: STRAW! SHUT YER MOUTH and calm down.
+Straw: *sniffle* Sorry, got bit carried away there.
+Shepherd: <style="int">(He has a gun? How the hell did someone like Straw pass the mental exam to buy one?)</style>
+Shepherd: <style="int">(Not my problem now, I'll call ATF later. For now, that story difference is strange)</style>
 
 <<jump Pigs_Q2_Start>>
 ===
@@ -150,28 +162,45 @@ title: Pigs_Q2_Question_2
 tags:
 position: -138,219
 ---
-
+Shepherd: Do you have any idea who this "friend" is?
+Bricks: No clue, I didn't even know Sticks had any friends. 
+Shepherd: And if I rember correctly neither of you saw anyone enter or leave?
+Bricks: That's right, neither of us were in a spot where we could see the house.
+Shepherd: <style="int">(Is that even possible?)</style>
 <<jump Pigs_Q2_Start>>
 ===
 title: Pigs_Q2_Accusation_Proof
 tags:
 position: 534,183
 ---
-Wolf: Yeah? and what's your proof?
+Bricks: Yeah? and what's your proof?
 <<PromptEvidence Pigs_Q2_Accusation_Default>>
 ===
 title: Pigs_Q2_Accusation_Default
 tags:
 position: 348,109
 ---
-
+Shepherd: You're lying! And I can prove it with-
+Bricks: Sir! This is hardly the time for accusations!
+Shepherd: ...Sorry, you're right.
+Shepherd: <style="int">(Whoops.)</style>
 <<jump Pigs_Q2_Start>>
 ===
 title: Pigs_Q2_Accusation_Correct
 tags:
 position: 350,186
 ---
-
+Shepherd: You both say that you were in places where you could not see the house
+Bricks: Yeah, so?
+Shepherd: Looking at the map of the property, the spots you both claim to have been either had a sightline to the house or the driveway out
+<<PlayEffect Energy>>
+Bricks: Are you callin' me a liar? Them's fightin' words.
+Straw: Yeah, fightin' words.
+Shepherd: I'm not calling either of you liars, but neither of you are telling me the truth.
+Shepherd: So how about we start again?
+Bricks: Nah, we aint gonna change our stories
+Shepherd: Fine then, lets come back to this.
+Shepherd:<style="int">(I need to be careful, these two seem liable to get violent)</style>
 <<jump Pigs_Q3_Start>>
 
 //Pigs Q3
