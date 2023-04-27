@@ -45,6 +45,8 @@ position: 123,-136
             <<jump Pigs_Q1_Question_1>>
         -> What were you doing at the time of the murder?
             <<jump Pigs_Q1_Question_2>>
+        //-> Did either of you see anyone enter or leave? <<if visited("Pigs_Q1_Question_2") == true && visited("Pigs_Q1_Question_1") == true>>
+           // <<jump Pigs_Q1_Question_3>>
     -> Accuse
         -> You're lying about this statement!
             <<ResetEvidenceResponses>>
@@ -74,16 +76,30 @@ Bricks: That's enough!
  //SET POSE TO SOMETHING NEUTRAL OR GIGGLING
 <<wait 2>>
 Bricks: Apologies again for my brother's decorum.
-// Shepherd: 
+Shepherd: <style="int">(Grief is a powerful thing huh? Seems like Straw will be like this for a while. Might want to question Bricks more.)</style>
 <<jump Pigs_Q1_Start>>
 ===
 title: Pigs_Q1_Question_2
 tags:
 position: -127,-18
 ---
-
+Shepherd: What were you doing at the time of the murder?
+Bricks: I had been tending to my strawburry patch, and when I went into the house he was...
+Straw: Oo strawberries! Mr. Detective you have strawberries?
+<<wait 1>>
+Bricks: well, you know..
+Shepherd: Straw, what were you doing while Bricks was working on his strawberry patch?
+Straw: I was beatin' the tree trunk!
+<<PlayEffect Shock>>
+Shepherd: You what!?
+Bricks: Oh for Pete's sake Straw, watch yer' phrasin'. Excuse him officer, He was clearin' brush for firewood.
+<<wait 0.5>>
+Shepherd: I..alright..Where on the property was this?
+Bricks: Over on the other side of the shed, opposite of my field
+<<AddStatement Pigs_Q1_WhereTheyWere "At the time of the murder, Bricks was tending to his strawberries and Straw was clearing brush for firewood">>
 <<jump Pigs_Q1_Start>>
 ===
+
 title: Pigs_Q1_Accusation_Default
 tags:
 position: 331,-153
@@ -110,7 +126,7 @@ tags:
 position: 123,141
 ---
 -> Question
-    -> Temp 1
+    -> During this time, what was your brother doing?
         <<jump Pigs_Q2_Question_1>>
     -> Temp 2
         <<jump Pigs_Q2_Question_2>>
