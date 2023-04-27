@@ -29,7 +29,7 @@ Shepherd: Maybe.
 Matches: Hm... We know he was there, and the timeframe matches up with Tinker Bell's testimony.
 Matches: Plus, he lied about his movements. Why would he do that unless he had something to hide?
 Shepherd: Is he still here?
-Matches: Yep, he's been festering in the jail since you two last talked.
+Matches: Yep, he's been festering in Cell 8 since you two last talked.
 <<PlayEffect Energy>>
 Shepherd: I want to talk to him again.
 Matches: I had a feeling this would happen. I sent a few detectives to his house and around the farm once Tinker Bell mentioned a third party.
@@ -1007,7 +1007,11 @@ Shepherd: I'm sorry. For seeing you that way myself.
 <<wait 2>>
 Wolf: I found it in my cell this morning.
 Shepherd: Did you see who gave it to you?
-Wolf: No. I t-think it came in through the high window. 
+Wolf: No. I t-think it came in through the air vent.
+Shepherd: The air vent?
+Wolf: It's a little slit, high up in the wall. I think it leads to the outside but it's so thin I can't really see into it.
+Wolf: There's no way to see outside in there...
+//TODO: ADD THIS TO A STATEMENT
 Shepherd: Who knows you're in jail?
 Wolf: Only my family, I talked to them with my phone call...
 <<wait 1>>

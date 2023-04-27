@@ -2,7 +2,7 @@
 tags:
 position: 122,-203
 ---
-//TODO: ADD WOLF TESTIMONY OBJECT
+<<LoadEvidence Wolf_FinalTestimony>> //TODO: MUST have details about his cell number (8) and not being able to see through the vent + unable to see outside/no windows
 <<PlayEffect Emphasis>>
 Matches: What?!
 <<RemoveCharacter MatchGirl>>
@@ -29,22 +29,48 @@ Shepherd: Something you just said is incorrect.
 Matches: What...?
 Shepherd: Something you said contradicts with the way things played out...
 <<ResetEvidenceResponses>>
-<<SetEvidenceResponse MatchGirl_AnyoneInTheCity MatchGirl_Q1_Accusation_Correct>>
+<<SetStatementResponse MatchGirl_AnyoneInTheCity Wolf_FinalTestimony MatchGirl_Q1_Accusation_Correct>>
 <<PromptStatement MatchGirl_Q1_Accusation_Default>>
 
+===
+title: MatchGirl_Q1_Accusation_Proof
+tags:
+position: 516,-150
+---
+Matches: That's not true! Do you have any proof?
+<<PromptEvidence MatchGirl_Q1_Accusation_Default>>
 ===
 title: MatchGirl_Q1_Accusation_Default
 tags:
 position: 331,-153
 ---
-
-<<jump MatchGirl_Q1_Start>>
+Matches: That makes no sense! Can't you see? I can't be the blackmailer!
+Shepherd: <style="int">(Dammit. I need to think a little more about the circumstances surrounding the blackmailing...)</style>
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse MatchGirl_AnyoneInTheCity MatchGirl_Q1_Accusation_Correct>>
+<<PromptStatement MatchGirl_Q1_Accusation_Default>>
 ===
 title: MatchGirl_Q1_Accusation_Correct
 tags:
 position: 334,-37
 ---
-
+Shepherd: You say that anyone in the city could have blackmailed wolf, but is that true?
+Matches: Yes! Wolf said that the letter came into his cell through the air vent, which leads to the outside.
+Matches: Therefore, anyone could have walked by the jail and given it to him.
+<<PlayEffect Energy>>
+Shepherd: That's not true.
+Matches: ...!
+Shepherd: Wolf, you said that you can't see outside from within your cell, right?
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+Wolf: ...yeah. There aren't any windows or anything, and the vent is too thin to see out of.
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+Shepherd: So, the question is: How did the blackmailer know where to send the blackmail letter?
+<<PlayEffect Shock>>
+Matches: !!!
+Shepherd: It must have been someone on the inside, who knew which cell Wolf was staying in.
+//TODO: add more???
 <<jump MatchGirl_Q2_Start>>
 
 
