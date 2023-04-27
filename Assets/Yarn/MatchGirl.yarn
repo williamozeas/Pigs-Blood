@@ -13,9 +13,9 @@ Shepherd: ...
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
 <<ResetStatements>>
-Matches: Shepherd, you can't be serious! We're partners, you've known me for two years, I-
+Matches: Shepherd, you can't be serious! We're partners, you've known me for over four years, I-
 Shepherd: I am serious. It can't be anyone but you.
-Matches: N-no...! Wolf said that letter came from outside the jail! 
+Matches: Think Shepard! Wolf said that letter came from outside the jail! 
 <<AddStatement MatchGirl_BlackmailFromOutside "The blackmail letter came from outside the jail.">>
 Matches: That means could be literally anyone in the city, and you think it's me?
 <<AddStatement MatchGirl_AnyoneInTheCity "Anyone in the city could have blackmailed Wolf in his cell.">>
@@ -71,6 +71,13 @@ Shepherd: So, the question is: How did the blackmailer know where to send the bl
 Matches: !!!
 Shepherd: It must have been someone on the inside, who knew which cell Wolf was staying in.
 //TODO: add more???
+//mention the handwritting, and how it must have been hers
+//Why does that matter? 
+//its clear you wanted this case closed and done with faster
+//Wolf? when did you get this letter? do you know any specific time?
+//yesterday maybe? maybe around 6pm?
+//So the letter came after i had a chat with the pigs and found out theyre making drugs. And after I told Matches that we had to find this TinkerBell the pigs mentioned
+//Tinkerbell mentioned some boss character, And im beginning to suspect that youre the boss
 <<jump MatchGirl_Q2_Start>>
 
 
