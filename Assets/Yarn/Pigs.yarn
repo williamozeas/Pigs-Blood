@@ -27,6 +27,7 @@ Bricks: I, I'm sorry, Straw is just so torn up- could we, ah, maybe avoid sayin'
 Shepherd: Of course, I understand. These things are hard.
 Straw: *sniffle*
 Shepherd: <style="int">(Oh, boy. The younger one seems a bit... unstable. I should be gentle with my questioning.)</style>
+<<AddStatement Pigs_Straw " Straw seems a bit unstable and extremely out of it">>
 
 <<jump Pigs_Q1_Start>>
 
@@ -385,7 +386,11 @@ title: Pigs_Q4_Accusation_Correct
 tags:
 position: 367,620
 ---
-Shepherd: The crime scene description mentions bloody foot prints matching some type of high heel
+Shepherd: The crime scene description mentions bloody foot prints matching some type of high heel leading to the door.
+Shepherd: It seems like you have both a good understanding of what happened and no idea what happened.
+Bricks: I have no idea what happened.
+Shepherd: Bricks, what's in the basement?
+Bricks: I have no clue what you're talking about.
 <<jump Pigs_Q5_Start>>
 
 //Pigs Q5
