@@ -42,7 +42,8 @@ Matches: In addition, I've gotten all the evidence from the first interrogation 
 <<LoadEvidence Wolf_ArrestReport>>
 <<LoadEvidence Wolf_CCTV>>
 <<LoadEvidence Wolf_Profile>>
-// <<LoadEvidence TinkerBell_Testimony>>
+<<LoadEvidence Wolf_FamilyPortrait>>
+<<LoadEvidence TinkerBell_Testimony>>
 Shepherd: Thanks.
 Matches: He wasn't that great a liar the first time around, but that could have been a façade.
 Matches: If he really is the mastermind behind a drug ring, he'll be a tough nut to crack. Be on your toes.
@@ -436,11 +437,10 @@ Wolf: I woke up at 9 and drove to the strawberry farm at around 10. Met Tinker B
 <<AddStatement Wolf2_Q3_Arrival "Wolf drove to the farm at 10.">>
 Wolf: I started walking back to the farm to see what had happened, and that's when I got arrested by you people.
 Shepherd: I thought you were arrested running away from the scene?
-Wolf: The police car was coming from the direction of the scene. I took off in the opposite direction.
+Wolf: The car was coming from the direction of the scene. It was undercover.
+Wolf: Once that match girl came out and flashed her badge, I took off in the opposite direction.
 <<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested Wolf came from the crime scene.">>
-Shepherd: You were surprised to see a police car coming from a crime scene?
 <<wait 0.8>>
-Wolf: I wasn't. The car slowed down as it approached me, and I know from experience that's a bad sign.
 Wolf: Are you done? I've got a date with a set of metal bars.
 Shepherd: Just a few more questions...
 <<jump Wolf2_Q3_Start>>
@@ -614,12 +614,15 @@ Matches: The boys just got back to the station, and guess what they found?
 Matches: The car. It matches Tinker Bell's description, and was found abandoned on the side of the road.
 Shepherd: Oh, really?
 Matches: Really. I've got a picture here of the interior of the car.
+Matches: And even more, we found traces of fur in the car. We tested it for DNA, and it matched Wolf's perfectly.
 <<LoadEvidence Wolf_Car_Photo>> //GET EVIDENCE
+<<LoadEvidence Wolf_CarDescription>> 
 Shepherd: And where was this found?
 <<PlayEffect Energy>>
 Matches: Get this: it was abandoned near the metro station!
 Matches: It turns out that the boss did go to the station after all. And that means...
 Shepherd: But why would he do that?
+<<wait 1>>
 Matches: ...maybe he wanted an alibi? By swiping his card and not taking the metro, he could corroborate any lies about where he was!
 Shepherd: <style="int">(That does make sense...)</style>
 <<RemoveCharacter MatchGirl>>

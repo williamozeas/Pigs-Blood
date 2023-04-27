@@ -73,6 +73,25 @@ Shepherd: So, the question is: How did the blackmailer know where to send the bl
 Matches: !!!
 Shepherd: It must have been someone on the inside, who knew which cell Wolf was staying in.
 Shepherd: That, combined with the handwriting, is enough to convince me that you're behind this.
+<<PlayEffect Energy>>
+Matches: That's ridiculous! I've been helping you every step of this investigation! 
+Matches: You think that I've just helped you against my own interest? I've been completely above board this whole investigation!
+Shepherd: <style="int">(She has a point. If she truly was a mole, I would expect some tampering with the investigation.)</style>
+Shepherd: <style="int">(And yet, I haven't seen any evidence that seemed to be tampered with...)</style>
+Shepherd: <style="int">(...)</style>
+<<PlayEffect Interesting>>
+Shepherd: <style="int">(...unless she tampered with evidence that I haven't seen at all?)</style>
+Shepherd: I don't think that's quite true. You've been bending the truth since the very beginning.
+<<PlayEffect Emphasis>>
+Matches: What? Show me some evidence!
+Shepherd: I can't show you the evidence, because I don't have it, thanks to your meddling.
+<<PlayEffect Energy>>
+Matches: ...!
+Shepherd: The existence of that piece of evidence is indicated here!
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_Testimony MatchGirl_Q2_Accusation_Correct>>
+<<PromptEvidence MatchGirl_Q2_Accusation_Default>>
+
 //TODO: add more???
 //Why does that matter? 
 //its clear you wanted this case closed and done with faster
@@ -80,61 +99,67 @@ Shepherd: That, combined with the handwriting, is enough to convince me that you
 //yesterday maybe? maybe around 6pm?
 //So the letter came after i had a chat with the pigs and found out theyre making drugs. And after I told Matches that we had to find this TinkerBell the pigs mentioned
 //Tinkerbell mentioned some boss character, And im beginning to suspect that youre the boss
-<<jump MatchGirl_Q2_Start>>
-
-
-//MatchGirl Q2
-===
-title: MatchGirl_Q2_Start
-tags:
-position: 123,141
----
--> Question
-    -> Temp 1
-        <<jump MatchGirl_Q2_Question_1>>
-    -> Temp 2
-        <<jump MatchGirl_Q2_Question_2>>
--> Accuse
-    -> You're lying about this statement!
-        <<ResetEvidenceResponses>>
-        //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q2_Accusation_Correct>>
-        <<PromptStatement MatchGirl_Q2_Accusation_Proof>>
--> Review
-    <<Review>>
-===
-title: MatchGirl_Q2_Question_1
-tags:
-position: 71,226
----
-
-<<jump MatchGirl_Q2_Start>>
-===
-title: MatchGirl_Q2_Question_2
-tags:
-position: -138,219
----
-
-<<jump MatchGirl_Q2_Start>>
-===
-title: MatchGirl_Q2_Accusation_Proof
-tags:
-position: 534,183
----
-Wolf: Yeah? and what's your proof?
-<<PromptEvidence MatchGirl_Q2_Accusation_Default>>
 ===
 title: MatchGirl_Q2_Accusation_Default
 tags:
 position: 348,109
 ---
-
+Matches: That shows nothing! You're out of your mind, Shepherd!
+Shepherd: <style="int">(...Dammit, she's right.)</style>
+Shepherd: <style="int">(I need to think. What piece of evidence should exist, but doesn't?)</style>
+Shepherd: <style="int">(...And who told me about it?)</style>
 <<jump MatchGirl_Q2_Start>>
 ===
 title: MatchGirl_Q2_Accusation_Correct
 tags:
 position: 350,186
 ---
+<<PlayEffect Emphasis>>
+Shepherd: Wolf!
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+Wolf: Yes?
+Shepherd: When we first interrogated you, you claimed to possess a certain receipt that corroborated your story about buying strawberries.
+Shepherd: Yet, by the time you got to the police station, that receipt had magically disappeared.
+<<PlayEffect Energy>>
+Wolf: Yes! That's right!
+Shepherd: And who else had the opportunity to whisk it away but your arresting officer, the Little Match Girl?
+<<PlayEffect Energy>>
+<<RemoveCharacter Wolf>>
+<<AddCharacter Matches>>
+Matches: ...!
+Matches: But why would I need to do that? It's not like Wolf purchasing strawberries means that he wasnt't the killer.
+Shepherd: Right, however, it does cast enough doubt on him that he becomes a major suspect, just it actually happened.
+Shepherd: In fact, now that I'm thinking about this arrest... Wolf?
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+Wolf: Yeah?
+Shepherd: You said earlier that the car we found at the metro station was yours.
+<<PlayEffect Failure>>
+Wolf: ...that was a lie. I don't have a car.
+Shepherd: <style="int">(Hm. But in that case...?)</style>
+Shepherd: But in that case, something about this doesn't make sense...
+
+
+
+===
+title: MatchGirl_Q2_Accusation_Default
+tags:
+position: 348,109
+---
+Matches: That shows nothing! You're out of your mind, Shepherd!
+Shepherd: <style="int">(...Dammit, she's right.)</style>
+Shepherd: <style="int">(I need to think. What piece of evidence should exist, but doesn't?)</style>
+Shepherd: <style="int">(...And who told me about it?)</style>
+<<jump MatchGirl_Q2_Start>>
+===
+title: MatchGirl_Q2_Accusation_Correct
+tags:
+position: 350,186
+---
+<<PlayEffect Emphasis>>
+
+
 
 <<jump MatchGirl_Q3_Start>>
 

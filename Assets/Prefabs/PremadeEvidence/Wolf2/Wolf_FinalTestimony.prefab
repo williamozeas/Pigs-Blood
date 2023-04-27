@@ -1,54 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6814984786009019834
+--- !u!1001 &5913871582463527220
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 451992162915504234, guid: e9237cd618652460097a3aba9efdfbc4,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 568681983026150072, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: m_Name
-      value: Wolf_ArrestReport
+      value: Wolf_FinalTestimony
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: id
-      value: Wolf_ArrestReport
+      value: Wolf_FinalTestimony
       objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 11400000, guid: dd33b899c44134d7c8eb9aa20fdd5b8d,
+        type: 2}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: pagesText.Array.data[0]
-      value: 'Wolf Arrest Report
+      value: 'Testimony from Wolf, Second Interrogation
 
-        Time of Arrest: 11:35 AM
+        -Wolf was arrested
+        in a civilian car.
 
-        Location:
-        Sherry Avenue, 0.5 mi. from Pigs'' Farm.
+        -Wolf recieved a blackmail letter through the
+        vent in Cell 8.
 
-        Arresting Officer: Little
-        Match Girl
-
-        Suspect attempted to escape arrest and flee away from
-        the crime scene once officer pulled over and showed her badge.
-
-
-        Continued
-        on next page.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
-        type: 3}
-      propertyPath: pagesText.Array.data[1]
-      value: 'Personal Affects: One food wrapper, one wallet containing money, identification,
-        a family photo, and a metro pass.
-
-'
+        -There is no way to see outside the jail cell from
+        within or vice versa.'
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
