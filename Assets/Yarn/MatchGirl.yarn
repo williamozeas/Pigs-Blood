@@ -20,6 +20,8 @@ Matches: Think Shepard! Wolf said that letter came from outside the jail!
 Matches: That means could be literally anyone in the city, and you think it's me?
 <<AddStatement MatchGirl_AnyoneInTheCity "Anyone in the city could have blackmailed Wolf in his cell.">>
 Shepherd: Yes, I do.
+Matches: The handwriting might be similar, but that's not proof!
+<<AddStatement MatchGirl_SimilarHandwriting "Similar handwriting is not proof.">>
 Matches: Surely you're a better detective than this!
 <<AddStatement MatchGirl_ShepherdIsBetter "Shepherd is a better detective than this.">>
 Shepherd: Surely you're a better liar than this.
@@ -70,8 +72,8 @@ Shepherd: So, the question is: How did the blackmailer know where to send the bl
 <<PlayEffect Shock>>
 Matches: !!!
 Shepherd: It must have been someone on the inside, who knew which cell Wolf was staying in.
+Shepherd: That, combined with the handwriting, is enough to convince me that you're behind this.
 //TODO: add more???
-//mention the handwritting, and how it must have been hers
 //Why does that matter? 
 //its clear you wanted this case closed and done with faster
 //Wolf? when did you get this letter? do you know any specific time?

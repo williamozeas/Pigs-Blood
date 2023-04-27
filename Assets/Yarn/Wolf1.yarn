@@ -10,6 +10,13 @@ title: Wolf_1
 tags:
 position: -748,-1095
 ---
+// WOLF POSES:
+// neutral_idle
+// rawr_idle
+// scared_idle
+// neutral_tapping
+// angry_tapping
+// scared_looking
 <<SetPose Wolf CheckedOut>>
 Wolf: Well, well. A little piggy comes to pay a visit to the big bad wolf.
 <<PlayEffect Emphasis>>

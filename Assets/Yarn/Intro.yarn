@@ -1,6 +1,13 @@
 ﻿title: Start
 tags:
 ---
+// MatchGirl Poses:
+// neutral_idle
+// irritated_sitting
+// smug_sitting (don't use here, save for when she's evil)
+// surprised_breathing (don't use here, save for later?)
+// surprised_looking (don't use here, save for later?)
+
 <<LoadEvidence Wolf_MetroPass>>
 <<LoadEvidence Wolf_ArrestReport>>
 <<LoadEvidence Wolf_CCTV>>
