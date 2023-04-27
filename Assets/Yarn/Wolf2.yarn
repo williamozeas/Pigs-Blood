@@ -62,6 +62,7 @@ Shepherd: Not so talkative now, huh? A night in the slammer tends to do that.
 <<PlayEffect Interesting>>
 Wolf: ...
 Shepherd: ...Alright then.
+Shepherd: <style="int">(...he's shedding. He might be able to hide his nervousness in his words, but his body betrays him.)</style>
 
 <<jump Wolf2_Q1_Start>>
 //Wolf2 Q1

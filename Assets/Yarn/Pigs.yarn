@@ -27,6 +27,7 @@ Bricks: I, I'm sorry, Straw is just so torn up- could we, ah, maybe avoid sayin'
 Shepherd: Of course, I understand. These things are hard.
 Straw: *sniffle*
 Shepherd: <style="int">(Oh, boy. The younger one seems a bit... unstable. I should be gentle with my questioning.)</style>
+<<AddStatement Pigs_Straw " Straw seems a bit unstable and extremely out of it">>
 
 <<jump Pigs_Q1_Start>>
 
@@ -303,7 +304,9 @@ Shepherd: Straw, what's in the basement?
 Bricks: Ignore him officer, he's an idiot who makes things up all the times. Right Straw?
 Straw: Hehe yeah.
 <<AddStatement Pigs_Basement "There is something in that basement that they both want to hide that makes them a lot of money.">>
-
+Shepherd: How about we switch gears a bit? Straw, try not to listen to what your brother and I are saying.
+Straw: Hehe okie dokie!
+Shepherd:<style="int">(No clue what's up with him. Hope he's not listening to this next part)</style>
 
 <<jump Pigs_Q4_Start>>
 
@@ -315,15 +318,15 @@ tags:
 position: 125,558
 ---
 -> Question
-    -> Temp 1
+    -> What happened when you discovered Sticks?
         <<jump Pigs_Q4_Question_1>>
-    -> Temp 2
+    -> Do you think this person he met with killed him?
         <<jump Pigs_Q4_Question_2>>
 -> Accuse
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q4_Accusation_Correct>>
+        <<SetStatementResponse Pigs_Q4_Scene Pigs_Crime_Scene Pigs_Q4_Accusation_Correct>>
         <<PromptStatement Pigs_Q4_Accusation_Proof>>
 -> Review
     <<Review>>
@@ -332,14 +335,34 @@ title: Pigs_Q4_Question_1
 tags:
 position: 16,629
 ---
-
+Shepherd: What happened when you discovered Sticks?
+<<wait 1>>
+Bricks: I walked into the house and saw him on the floor.
+Shepherd: Did you attempt first aid or did you immediately call us?
+Bricks: I tried first aid, but after a few seconds I saw I couldn't do nothin' for him and called.
+<<PlayEffect Interesting>>
+<<AddStatement Pigs_Q4_Aid "Brick attempted first aid on Sticks before calling 911">>
+Shepherd: After you called, what did you do next?
+Bricks: I ran outside to wait for the paramedics to arrive.
+Shepherd: Did anything strike you as strange inside? We're there any clues about the other party?
+<<wait 2>>
+Bricks: No.
+<<AddStatement Pigs_Q4_Scene "Brick reports no strange items or clues about the other party inside the house">>
 <<jump Pigs_Q4_Start>>
 ===
 title: Pigs_Q4_Question_2
 tags:
 position: -189,621
 ---
-
+Shepherd: Do you think this person he met with killed him?
+<<PlayEffect Energy>>
+Bricks: 100%, that bitch killed him.
+<<wait 0.5>>
+<<PlayEffect Interesting>>
+Shepherd: But didn't you say earlier you don't recall anyone coming or leaving before?
+Bricks: I..I was speaking generally
+Shepherd: You know who killed him, don't you?
+Bricks: Nope, no idea.
 <<jump Pigs_Q4_Start>>
 ===
 title: Pigs_Q4_Accusation_Proof
@@ -353,14 +376,21 @@ title: Pigs_Q4_Accusation_Default
 tags:
 position: 354,544
 ---
-
+Shepherd: You're lying! And I can prove it with-
+Bricks: Sir! This is hardly the time for accusations!
+Shepherd: ...Sorry, you're right.
+Shepherd: <style="int">(Whoops.)</style>
 <<jump Pigs_Q4_Start>>
 ===
 title: Pigs_Q4_Accusation_Correct
 tags:
 position: 367,620
 ---
-
+Shepherd: The crime scene description mentions bloody foot prints matching some type of high heel leading to the door.
+Shepherd: It seems like you have both a good understanding of what happened and no idea what happened.
+Bricks: I have no idea what happened.
+Shepherd: Bricks, what's in the basement?
+Bricks: I have no clue what you're talking about.
 <<jump Pigs_Q5_Start>>
 
 //Pigs Q5
