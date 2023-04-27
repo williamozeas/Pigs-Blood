@@ -266,7 +266,8 @@ public class YarnCommandManager : DialogueViewBase
 
 	public void RemoveStatement(string id)
 	{
-		
+		Notebook nb = (Notebook)EvidenceManager.Instance.GetCurrentEvidenceByType(DocType.Notebook);
+		nb.RemoveStatement(id);
 	}
 
 	public void ResetStatements()

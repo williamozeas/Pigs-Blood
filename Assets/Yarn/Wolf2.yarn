@@ -1013,7 +1013,6 @@ Wolf: Only my family, I talked to them with my phone call...
 <<wait 1>>
 Shepherd: <style="int">(I don't want to believe it, but...)</style>
 <<PlayEffect Energy>>
-Shepherd: ...It must be someone on the inside. Otherwise, how could they have known your cell?
 Shepherd: Blackmailing someone while they're in jail. That takes some guts.
 Wolf: Do you know who it is? Any clues?
 <<StopMusic>>
@@ -1069,11 +1068,12 @@ Shepherd: <style="int">(No matter how hard it is to face.)</style>
 <<wait 1>>
 Shepherd: That's right. The handwriting on this note exactly matches that on the profiles.
 Shepherd: Profiles written by my partner...
-<<PlayEffect>>
+<<PlayEffect ToWhite>>
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<PlayEffect DramaticReveal>>
+<<SetMusic Contradiction>>
 Shepherd: The Little Match Girl.
-
 
 <<jump MatchGirl>>
 ===

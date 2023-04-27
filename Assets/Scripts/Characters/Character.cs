@@ -48,7 +48,7 @@ public abstract class Character : MonoBehaviour
 
     public virtual void TriggerPose(string pose)
     {
-        if (poseDict.ContainsKey(pose))
+        if (poseDict.ContainsKey(pose.ToLower()))
         {
             currentPose.SetActive(false);
             currentPose = poseDict[pose];
