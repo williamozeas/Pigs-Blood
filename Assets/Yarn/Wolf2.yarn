@@ -632,7 +632,7 @@ Shepherd: <style="int">(That does make sense...)</style>
 Wolf: That's right! You got me. I drove to the station, swiped my card, then walked directly to the crime scene.
 <<RemoveStatement Wolf2_Q3_SeeKids>>
 <<AddStatement Wolf2_Q3_FakedMetro "Wolf drove to the metro station, swiped his card, and then walked to the crime scene without returning home.">>
-Shepherd: <style="int">(What an eager reaction.)</style>
+Shepherd: <style="int">(What an eager reaction. He didn't even look at the picture.)</style>
 Wolf: Are you satisfied? Match Girl, take me-
 <<PlayEffect Emphasis>>
 Shepherd: No. Your story's still... contradictory. You're not leaving until I know the truth of this case.

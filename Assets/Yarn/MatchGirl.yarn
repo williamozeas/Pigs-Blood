@@ -15,7 +15,7 @@ Shepherd: ...
 <<ResetStatements>>
 Matches: Shepherd, you can't be serious! We're partners, you've known me for over four years, I-
 Shepherd: I am serious. It can't be anyone but you.
-Matches: Think Shepard! Wolf said that letter came from outside the jail! 
+Matches: Think, Shepherd! Wolf said that letter came from outside the jail! 
 <<AddStatement MatchGirl_BlackmailFromOutside "The blackmail letter came from outside the jail.">>
 Matches: That means could be literally anyone in the city, and you think it's me?
 <<AddStatement MatchGirl_AnyoneInTheCity "Anyone in the city could have blackmailed Wolf in his cell.">>
@@ -98,7 +98,6 @@ Shepherd: The existence of that piece of evidence is indicated here!
 //Wolf? when did you get this letter? do you know any specific time?
 //yesterday maybe? maybe around 6pm?
 //So the letter came after i had a chat with the pigs and found out theyre making drugs. And after I told Matches that we had to find this TinkerBell the pigs mentioned
-//Tinkerbell mentioned some boss character, And im beginning to suspect that youre the boss
 ===
 title: MatchGirl_Q2_Accusation_Default
 tags:
@@ -130,91 +129,129 @@ Shepherd: And who else had the opportunity to whisk it away but your arresting o
 Matches: ...!
 Matches: But why would I need to do that? It's not like Wolf purchasing strawberries means that he wasnt't the killer.
 Shepherd: Right, however, it does cast enough doubt on him that he becomes a major suspect, just it actually happened.
-Shepherd: In fact, now that I'm thinking about this arrest... Wolf?
+Shepherd: Give it up, Matches. We've got enough proof to put you in jail.
+<<StopMusic>>
+<<wait 1.5>>
+<<PlayEffect Interesting>>
+<<SetPose MatchGirl smug_sitting>>
+Matches: ...What proof?
+Shepherd: The note, of course! We'll get the handwriting analyzed, and then-
+<<PlayEffect Energy>>
+Matches: You mean this note?
+<<PlayEffect Emphasis>>
+Shepherd: ...!
+Matches: Oh, paper, how I love you...
+Matches: So useful, so important! And yet, so...
+<<PlayEffect Energy>>
+Matches: Flammable.
+<<PlayEffect Emphasis>>
+Shepherd: No!
+<<PlayEffect FadeToWhite>>
+//set pose not holding paper?
+<<PlayEffect DramaticReveal>>
+<<wait 2>>
+Shepherd: Y-you...
+Matches: Aww, don't worry Shepherd! I'm doing you a favor! Like I always say...
+<<PlayEffect Emphasis>>
+<<SetMusic Trepidation>>
+Matches: Clean up your fucking desk.
+Shepherd: Ngh...
+Matches: It's really a miracle this hasn't happened before. Keeping crucial evidence within reach of your prime suspects is pretty idiotic.
+Shepherd: But... The cameras-!
+Matches: I turned them off. 
+Shepherd: You won't get away with this...
+Matches: Oh, I will! It's so <style="emph">sad</style> that such a decorated detective as you turned out to be a traitor!
+<<PlayEffect Emphasis>>
+Shepherd: You wouldn't!
+Matches: Don't worry, I certainly would.
+Shepherd: They'll never believe you.
+<<PlayEffect Energy>>
+Matches: And they won't believe you either! Especially because it's the word of two against one...
+<<PlayEffect Emphasis>>
+Shepherd: What?!
+Matches: You wouldn't want anything happening to that family of yours, would you, Wolfie?
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+<<SetPose scared_idle>>
+<<PlayEffect Energy>>
+Wolf: ...!
+Matches: I have connections, you know. If you snitch, who knows what could happen?
+Shepherd: W-wolf, please...
+<<wait 2>>
+Wolf: ...I'm sorry.
+Shepherd: Gh-!
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+Matches: Who's a good boy!
+<<wait 1>>
+Shepherd: So this is who you really are?
+
+//MOTIVATIONS SPEECH
+Matches: I always hated this town.
+Matches: You know my story. I grew up on the streets. 
+Matches: Hating the dead eyes on every face that walks by, never bothering to look at the poor girl on the corner selling matches.
+Matches: The dreary policemen who arrested my friends when they did so much as take one step out of line.
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+<<SetPose Wolf scared_idle>>
+<<PlayEffect Interesting>>
+Matches: Like you did with this poor wolf here.
+Wolf: ...
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
+Matches: You make me sick, Shepherd. And I've spent every second of every day here hating you and everything you stand for.
+Shepherd: I...
+Matches: I can't wait to see you disgraced.
+<<StopMusic>>
+<<wait 1.5>>
+Shepherd: I've made some mistakes.
+<<wait 1.5>>
+Shepherd: But all I try to do is find the truth.
+Shepherd: I just didn't realize that sometimes the truth isn't as... straightforwards as it first seems.
+Matches: ...
+Shepherd: ...So you're just a mole? That's it?
+Matches: ...what's it to you?
+Shepherd: <style="int">(I can't prove that she's the blackmailer. She destroyed the only concrete evidence of that.)</style>
+Shepherd: <style="int">(But maybe, the rabbit hole goes deeper. And if it does, maybe she slipped up somewhere I haven't thought about.)</style>
+<<PlayEffect Energy>>
+Shepherd: <style="int">(...!)</style>
+Shepherd: Wolf?
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
 Wolf: Yeah?
 Shepherd: You said earlier that the car we found at the metro station was yours.
-<<PlayEffect Failure>>
 Wolf: ...that was a lie. I don't have a car.
 Shepherd: <style="int">(Hm. But in that case...?)</style>
-Shepherd: But in that case, something about this doesn't make sense...
-
-
-
-===
-title: MatchGirl_Q2_Accusation_Default
-tags:
-position: 348,109
----
-Matches: That shows nothing! You're out of your mind, Shepherd!
-Shepherd: <style="int">(...Dammit, she's right.)</style>
-Shepherd: <style="int">(I need to think. What piece of evidence should exist, but doesn't?)</style>
-Shepherd: <style="int">(...And who told me about it?)</style>
-<<jump MatchGirl_Q2_Start>>
-===
-title: MatchGirl_Q2_Accusation_Correct
-tags:
-position: 350,186
----
-<<PlayEffect Emphasis>>
-
-
-
-<<jump MatchGirl_Q3_Start>>
-
-//MatchGirl Q3
-===
-title: MatchGirl_Q3_Start
-tags:
-position: 124,340
----
--> Question
-    -> Temp 1
-        <<jump MatchGirl_Q3_Question_1>>
-    -> Temp 2
-        <<jump MatchGirl_Q3_Question_2>>
--> Accuse
-    -> You're lying about this statement!
-        <<ResetEvidenceResponses>>
-        //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q3_Accusation_Correct>>
-        <<PromptStatement MatchGirl_Q3_Accusation_Proof>>
--> Review
-    <<Review>>
-===
-title: MatchGirl_Q3_Question_1
-tags:
-position: 54,440
----
-
-<<jump MatchGirl_Q3_Start>>
-===
-title: MatchGirl_Q3_Question_2
-tags:
-position: -149,435
----
-
-<<jump MatchGirl_Q3_Start>>
-===
-title: MatchGirl_Q3_Accusation_Proof
-tags:
-position: 543,331
----
-Wolf: Yeah? and what's your proof?
-<<PromptEvidence MatchGirl_Q3_Accusation_Default>>
+Shepherd: But in that case, another piece of evidence doesn't make sense...
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_CarDescription MatchGirl_Q3_Accusation_Correct>>
+<<PromptEvidence>>
 ===
 title: MatchGirl_Q3_Accusation_Default
 tags:
 position: 350,333
 ---
-
+Wolf: What? I don't get it...
+<<PlayEffect Failure>>
+Shepherd: <style="int">(Darn. He's right.)</style>
+Shepherd: <style="int">(If that car doesn't belong to Wolf, one piece of evidence is very strange...!)</style>
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_CarDescription MatchGirl_Q3_Accusation_Correct>>
+<<PromptEvidence>>
 <<jump MatchGirl_Q3_Start>>
 ===
 title: MatchGirl_Q3_Accusation_Correct
 tags:
 position: 353,432
 ---
+<<PlayEffect Energy>>
+Shepherd: Your fur was found in the car, DNA tested and all.
+Wolf: Surely that was just tampered with by the Match Girl? She did give it to you, after all.
+Shepherd: I don't think so. She doesn't handle the DNA testing, and the results were given to us inside this room.
+Shepherd: She shouldn't have had time to tamper with the results of a typed official document.
+Wolf: Wait, so how did my fur get in that car?
+Shepherd: There's only one explanation...
+
 
 <<jump MatchGirl_Q4_Start>>
 
