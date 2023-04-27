@@ -2,6 +2,31 @@
 tags:
 position: 122,-203
 ---
+Shepherd: Alright, I'm ready. Send them in.
+<<RemoveCharacter MatchGirl>>
+<<wait 1.5>>
+<<AddCharacter Bricks>>
+<<wait 1>>
+<<PlayEffect Interesting>>
+<<AddCharacter Straw>>
+<<wait 1>>
+Shepherd: ...Good to meet you, gentlemen. I'm very sorry for what happened.
+Shepherd: I'm Detective Shepherd, and I just need to ask you a few questions about this morning.
+Bricks: I appreciate your work, detective. My name's Bricks, and this here is Straw.
+Straw: ...*hic*...
+Bricks: Pardon my brother, he's... not havin' a good day.
+Shepherd: <style="int">(Oooookay.)</style>
+Shepherd: ...I'm sure you're very torn up by the death of Sticks-
+<<StopMusic>>
+<<PlayEffect Emphasis>>
+//Crying pose???
+Straw: STIIIIIIIICKKSSSSS!!-
+<<PlayEffect Energy>>
+Bricks: I, I'm sorry, Straw is just so torn up- could we, ah, maybe avoid sayin'-
+<<SetMusic Chill>>
+Shepherd: Of course, I understand. These things are hard.
+Straw: *sniffle*
+Shepherd: <style="int">(Oh, boy. The younger one seems a bit... unstable. I should be gentle with my questioning.)</style>
 
 <<jump Pigs_Q1_Start>>
 
@@ -11,19 +36,20 @@ title: Pigs_Q1_Start
 tags:
 position: 123,-136
 ---
+<<SetMusic Questions>>
 <<if visited("Pigs_Q1_Question_2") == true && visited("Pigs_Q1_Question_1") == true >>
     <<jump Pigs_Q2_Start>>
 <<else>>
     -> Question
-        -> Temp
+        -> What was your relationship like with Sticks?
             <<jump Pigs_Q1_Question_1>>
-        -> Temp2
+        -> What were you doing at the time of the murder?
             <<jump Pigs_Q1_Question_2>>
     -> Accuse
         -> You're lying about this statement!
             <<ResetEvidenceResponses>>
             <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q1_Accusation_Correct>>
-            <<PromptStatement Pigs_Q1_Accusation_Proof>>
+            <<PromptStatement Pigs_Q1_Accusation_Default>>
     -> Review
         <<Review>>
 <<endif>>
@@ -32,7 +58,23 @@ title: Pigs_Q1_Question_1
 tags:
 position: 60,-13
 ---
-
+Shepherd: So, what was your relationship like with Sticks?
+<<wait 0.5>>
+<<PlayEffect Emphasis>>
+Straw: S-STICKS! H-he's... Bricks... I-
+Bricks: Detective! I told you not to bring him up!
+Shepherd: I'm sorry! It's very difficult to investigate a murder without-
+Straw: A-a murder?! B-bricks...! D-don't tell me...
+Bricks: No, no, shhh...! Sticks is, uh-
+Straw: I'll KILL 'em! Who murdered my brother!? I'll stab 'em through the-
+<<PlayEffect Emphasis>>
+Bricks: That's enough!
+<<wait 1>>
+<<PlayEffect Interesting>>
+ //SET POSE TO SOMETHING NEUTRAL OR GIGGLING
+<<wait 2>>
+Bricks: Apologies again for my brother's decorum.
+// Shepherd: 
 <<jump Pigs_Q1_Start>>
 ===
 title: Pigs_Q1_Question_2
@@ -42,18 +84,15 @@ position: -127,-18
 
 <<jump Pigs_Q1_Start>>
 ===
-title: Pigs_Q1_Accusation_Proof
-tags:
-position: 516,-150
----
-Wolf: Yeah? and what's your proof?
-<<PromptEvidence Pigs_Q1_Accusation_Default>>
-===
 title: Pigs_Q1_Accusation_Default
 tags:
 position: 331,-153
 ---
 
+Shepherd: You're lying! And I can prove it with-
+Bricks: Sir! This is hardly the time for accusations!
+Shepherd: ...Sorry, you're right.
+Shepherd: <style="int">(Whoops.)</style>
 <<jump Pigs_Q1_Start>>
 ===
 title: Pigs_Q1_Accusation_Correct

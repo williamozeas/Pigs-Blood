@@ -13,12 +13,12 @@ position: -748,-1095
 //<<SetPose TinkerBell Smug>>
 <<AddCharacter TinkerBell>>
 Shepherd: Ah, so you must be TinkerBell.
-TinkerBell: Oh so you're the Wolf Shepherd huh? Bit scruffier and scrawnier than I expected.
-Shepherd: And you're much more....flamboyant than I expected.
+TinkerBell: Oh, so you're the Wolf Shepherd, huh? Bit scruffier and scrawnier than I expected.
+Shepherd: And you're much more... flamboyant than I expected.
 <<SetPose TinkerBell Angry>>
 TinkerBell: Flamboyant? I hope you're just as bad at interrogating as you are complimenting people.
 <<PlayEffect shock>>
-Shepherd: That wasnt...ugh
+Shepherd: That wasnt... ugh
 
 <<jump TinkerBell_Q1_Start>>
 ===
@@ -192,13 +192,13 @@ position: -751,6
     TinkerBell: Am I going crazy? I could have sworn you wrote that down.
     <<jump TinkerBell_Q2_Start>>
 <<else>>
-    TinkerBell: Hmm...honestly I don't fully remember. Gimme a sec..
+    TinkerBell: Hmm... honestly I don't fully remember. Gimme a sec..
     <<wait 1>>
     TinkerBell: OH, right the glitter throwing orb job!
     <<PlayEffect shock>>
     Shepherd: I'm sorry, the what??
     TinkerBell: Its another custom I ordered for the Red Hot Chili Pipers show. Its a massive sphere that hangs over the crowd and blows smoke and sparkles all over.
-    Shepherd: Right...so when did you chat with them last about this?
+    Shepherd: Right... so when did you chat with them last about this?
     TinkerBell: 2 days ago.
     <<AddStatement TinkerBell_q2_client "TinkerBell has mentioned she spoke with the pigs recently.  ">>
 <<endif>>
@@ -219,7 +219,7 @@ position: -419,128
 ---
 <<SetPose TinkerBell Smug>>
 Shepherd: We had a chat with the pigs the other day. They had talked about how they had a meeting with a buisness associate. 
-TinkerBell: Um...ok, that matters to me how?
+TinkerBell: Um... ok, that matters to me how?
 Shepherd: The incident we are investigating happened the same day as your chat with a troublesome client. Were you referring to the pigs?
 <<PlayEffect shock>>
 <<SetPose TinkerBell Neutral>>
@@ -327,7 +327,7 @@ title: TinkerBell_Q3_Accusation_Correct
 position: -751,715
 ---
 <<SetPose TinkerBell Neutral>>
-TinkerBell: Um...why are you showing me my mugshot? 
+TinkerBell: Um... why are you showing me my mugshot? 
 Shepherd: Just out of curiosity, what's up with your boots?
 TinkerBell: What do you mean about my boo....ts...
 <<PlayEffect shock>>
@@ -335,7 +335,7 @@ TinkerBell: What do you mean about my boo....ts...
 TinkerBell: Is this a lighting trick why the hell are they colored weird?
 Shepherd: Did you by chance have an encounter with your bucket of peroxide?
 <<PlayEffect interesting>>
-TinkerBell: What? No I...god damn it my poor boots...they're ruined.
+TinkerBell: What? No I... god damn it. My poor boots... they're ruined.
 <<jump TinkerBell_Q4_Start>>
 ===
 title: TinkerBell_Q4_Start
@@ -418,8 +418,8 @@ TinkerBell: I..I don't know.
 Shepherd: This is the autopsy report for Stick Pig. His brothers mentioned that he had been planning to meet with you.
 Shepherd: Their interrogations heavily implied that you were responsible. Your's so far has only strengthened our theory.
 <<PlayEffect shock>>
-TinkerBell: He's....he....I...killed him? No..nonononono..
-TinkerBell: Oh my gods oh my gods the boss is going to kill me...he'll find and kill me. I need to leave the country, go somewhere he won't find me.
+TinkerBell: He's... he... I... killed him? No..nonononono..
+TinkerBell: Oh my gods oh my gods the boss is going to kill me... he'll find and kill me. I need to leave the country, go somewhere he won't find me.
 <<PlayEffect Energy>>
 TinkerBell: Oh woe! Woe on me, for I have murdered a friend!
 <<wait 1>>
