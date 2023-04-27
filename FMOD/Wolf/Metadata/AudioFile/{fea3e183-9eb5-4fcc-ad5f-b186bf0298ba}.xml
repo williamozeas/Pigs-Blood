@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fea3e183-9eb5-4fcc-ad5f-b186bf0298ba}">
+		<property name="assetPath">
+			<value>Just Asking More Questions.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>112.52054421768707</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a0ea6df-e6b6-4150-8eec-71b8014833b9}</destination>
+		</relationship>
+	</object>
+</objects>

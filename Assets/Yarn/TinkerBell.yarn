@@ -58,8 +58,8 @@ position: -946,-784
     TinkerBell: You already asked me that, aren't you taking notes on this?
     <<jump TinkerBell_Q1_Start>>
 <<else>>
-    TinkerBell: Well, lets see..
-    TinkerBell: I had to pay my employees for the month and did  some book balancing as well as manage inventory.
+    TinkerBell: Well, let's see..
+    TinkerBell: I had to pay my employees for the month and did some book balancing as well as manage inventory.
     TinkerBell: Did an inventory run for the club, took a couple of hours to get everything. Had to deal with a troublesome client that had been harrassing some staff as well.
     <<AddStatement TinkerBell_q1_alibi "TinkerBell did inventory and restocked. She also had to deal with some client issues. ">>
 <<endif>>
