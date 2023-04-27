@@ -327,7 +327,7 @@ Shepherd: Anything to say for yourself?
 Matches: Fine!
 Matches: It was me! I told that idiot Tinker Bell to rough up Sticks. I'm the big scary mastermind.
 Matches: I went from selling matches to selling something that would get me a little more comfort.
-Matches: That car was bought off the books, and you won't find any of my hair or skin in there, I made sure of it. //hand-wavey
+Matches: That car was bought off the books, and you won't find any of my hair in there - I always wear a hat and gloves. //hand-wavey
 Matches: And I didn't do enough at the scene for you to get me there, either.
 Matches: How does it feel? You've got the truth now, are you happy?
 Matches: Too bad you're about to go to jail, and you can't do anything about it. 
@@ -345,55 +345,22 @@ Shepherd: You think you're so on top of it, don't you?
 Shepherd: The brilliant mastermind, controlling everything from the beginning.
 Shepherd: Well, in your overconfidence, you were careless.
 Shepherd: You're the boss of the drug ring, and I can prove it with this!
-
-<<jump MatchGirl_Q5_Start>>
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_Car_Photo MatchGirl_Q5_Accusation_Correct>>
+<<PromptEvidence MatchGirl_Q5_Accusation_Default>>
 
 //MatchGirl Q5
-===
-title: MatchGirl_Q5_Start
-tags:
-position: 112,787
----
--> Question
-    -> Temp 1
-        <<jump MatchGirl_Q5_Question_1>>
-    -> Temp 2
-        <<jump MatchGirl_Q5_Question_2>>
--> Accuse
-    -> You're lying about this statement!
-        <<ResetEvidenceResponses>>
-        //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q5_Accusation_Correct>>
-        <<PromptStatement MatchGirl_Q5_Accusation_Proof>>
--> Review
-    <<Review>>
-===
-title: MatchGirl_Q5_Question_1
-tags:
-position: 41,881
----
-
-<<jump MatchGirl_Q5_Start>>
-===
-title: MatchGirl_Q5_Question_2
-tags:
-position: -159,875
----
-
-<<jump MatchGirl_Q5_Start>>
-===
-title: MatchGirl_Q5_Accusation_Proof
-tags:
-position: 533,773
----
-Wolf: Yeah? and what's your proof?
-<<PromptEvidence MatchGirl_Q5_Accusation_Default>>
 ===
 title: MatchGirl_Q5_Accusation_Default
 tags:
 position: 354,773
 ---
-
+<<PlayEffect Failure>>
+Shepherd: <style="int">(No, that's not right.)</style>
+Shepherd: <style="int">(I need proof that she can't destroy... Some mistake that she made somewhere.)</style>
+<<ResetEvidenceResponses>>
+<<SetEvidenceResponse Wolf_Car_Photo MatchGirl_Q5_Accusation_Correct>>
+<<PromptEvidence MatchGirl_Q5_Accusation_Default>>
 <<jump MatchGirl_Q5_Start>>
 ===
 title: MatchGirl_Q5_Accusation_Correct
@@ -401,23 +368,27 @@ tags:
 position: 363,884
 ---
 <<StopMusic>>
+Shepherd: <style="int">(That's it!)</style>
 Shepherd: You made one careless and fatal mistake.
-Shepherd: Honestly, I'm impressed. This isn't amateur hour
 Matches: The car?
 Shepherd: Yes.
-Matches: You're bluffing. Like I said, I didn't leave any hair-
-Shepherd: Not hair.
+Matches: You're bluffing. Like I said, I didn't leave any incriminating-
+Shepherd: I wouldn't be so sure about that. You left...
 <<PlayEffect Emphasis>>
+<<SetMusic Contradiction>>
 Shepherd: A match!
 <<wait 1>>
 Matches: ...
 <<wait 1>>
+<<StopMusic>>
 Matches: Pf....
 <<wait 1>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: Ahaha! You almost had me there! 
-
-
-
+Matches: A match doesn't prove anything! Everyone has matches!
+Shepherd: That's true. But not everyone uses them the same way you do.
+<<SetPose MatchGirl irritated_sitting>>
+Matches: ...!
 <<jump MatchGirl_Q6_Start>>
 
 //MatchGirl Q6
@@ -426,59 +397,39 @@ title: MatchGirl_Q6_Start
 tags:
 position: 111,994
 ---
--> Question
-    -> Temp 1
-        <<jump MatchGirl_Q6_Question_1>>
-    -> Temp 2
-        <<jump MatchGirl_Q6_Question_2>>
--> Accuse
-    -> You're lying about this statement!
-        <<ResetEvidenceResponses>>
-        //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE MatchGirl_Q6_Accusation_Correct>>
-        <<PromptStatement MatchGirl_Q6_Accusation_Proof>>
--> Review
-    <<Review>>
-===
-title: MatchGirl_Q6_Question_1
-tags:
-position: 49,1112
----
-
-<<jump MatchGirl_Q6_Start>>
-===
-title: MatchGirl_Q6_Question_2
-tags:
-position: -168,1117
----
-
-<<jump MatchGirl_Q6_Start>>
-===
-title: MatchGirl_Q6_Accusation_Proof
-tags:
-position: 518,1092
----
-Wolf: Yeah? and what's your proof?
-<<PromptEvidence MatchGirl_Q6_Accusation_Default>>
-===
-title: MatchGirl_Q6_Accusation_Default
-tags:
-position: 328,1092
----
-
-<<jump MatchGirl_Q6_Start>>
-===
-title: MatchGirl_Q6_Accusation_Correct
-tags:
-position: 337,1203
----
-
-<<jump MatchGirl_Ending>>
+Shepherd: That's right. We'll have undeniable proof you used that car when we...
+-> Search the car for more matches
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(No... That's not it. Even if we find more matches, that won't prove anything.)</style>
+    <<jump MatchGirl_Q6_Start>>
+-> Check for fingerprints
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(No... That's not it. She just said that she always wears gloves in the car.)</style>
+    <<jump MatchGirl_Q6_Start>>
+-> Light the match
+    <<PlayEffect Failure>>
+    Shepherd: <style="int">(No... Lighting the evidence on fire won't help my case!)</style>
+    <<jump MatchGirl_Q6_Start>>
+-> Check the match for DNA
+    Shepherd: ...check the match for DNA.
+    <<jump MatchGirl_Ending>>
+    
 
 ===
 title: MatchGirl_Ending
 tags:
 position: 58,1403
 ---
-
+<<SetMusic Contradiction>>
+<<PlayEffect Shock>>
+Matches: No!!
+Shepherd: Yes, that's right. You have a particular habit of chewing on matches. 
+Shepherd: And I have no doubt that the one in this picture comes from the same habit.
+Shepherd: I'm sure if I tell the detectives to test that match...
+Matches: You can't! They'll just- I'll say you planted it!
+Shepherd: A likely story. You yourself ordered the search for the car, and I've been here the whole time since then.
+<<PlayEffect Emphasis>>
+Matches: No!!! Fuck!! Put your walkie talkie down!
+Shepherd: Guards!? I have a job for you!
+Shepherd: It's over, Matches. 
 ===

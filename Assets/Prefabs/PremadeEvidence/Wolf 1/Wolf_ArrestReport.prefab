@@ -24,6 +24,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 11400000, guid: 3322b7c6b4b02427792b45529d3fe77a,
+        type: 2}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
       propertyPath: pagesText.Array.data[0]
       value: 'Wolf Arrest Report
 
@@ -45,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: pagesText.Array.data[1]
-      value: 'Personal Affects: One food wrapper, one wallet containing money, identification,
+      value: 'Personal Effects: One food wrapper, one wallet containing money, identification,
         a family photo, and a metro pass.
 
 '

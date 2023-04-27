@@ -50,7 +50,7 @@ Matches: Alright, well, this is a bit more than a few rules. This is a murder.
 Matches: We need you at your best for this. Have you looked over the evidence?
 Shepherd: Uh. Definitely.
 <<PlayEffect Failure>>
-<<SetPose MatchGirl irritated_sitting>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: ...Convincing. Have another look.
 <<ReviewWithDestination Intro_DoneReviewing>>
 Shepherd: <style="int">(Click and drag your mouse to inspect evidence. Drag evidence to the bottom of the screen to inspect it. Use ESC to finish.)</style>
@@ -62,7 +62,7 @@ Matches: You finished? That was fast.
 <<PlayEffect Energy>>
 Shepherd: The power of speed-reading.
 <<PlayEffect Failure>>
-<<SetPose MatchGirl irritated_sitting>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: We don't need speed-readers, we need speed-comprehenders.
 Matches: Tell me, how old is our friend the wolf?
 <<ResetEvidenceResponses>>
@@ -73,7 +73,7 @@ Shepherd: <style="int">(Drop the evidence that shows the wolf's age into the box
 title: Intro_Q1_Failure
 ---
 <<PlayEffect Failure>>
-<<SetPose MatchGirl irritated_sitting>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: No! Try looking at his profile.
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_Profile Intro_Q1_Success>>
