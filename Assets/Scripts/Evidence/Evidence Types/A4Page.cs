@@ -7,6 +7,10 @@ public class A4Page : PageAbstract
 {
     public string pageText;
     public TextMeshProUGUI tmp;
+    public TMP_FontAsset font;
+    public float spacing;
+
+    public float fontSize = 6;
     // Start is called before the first frame update
     void Awake()
     {
@@ -15,6 +19,9 @@ public class A4Page : PageAbstract
 
     public override void Populate()
     {
+        tmp.font = font;
+        tmp.lineSpacing = spacing;
+        tmp.fontSize = fontSize;
         tmp.text = pageText;
     }
 

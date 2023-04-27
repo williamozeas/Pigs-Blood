@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class A4 : FlippableEvidence<A4Page>
 {
     [SerializeField] private GameObject pagePrefab;
+
+    [SerializeField] private float fontSize = 6;
+    [SerializeField] private TMP_FontAsset font;
+    [SerializeField] private float lineSpacing = -30f;
 
     private Vector3 frontPos = new Vector3(-.284f, .001f, .419f);
     private Vector3 backPos = new Vector3(-.284f, 0f, .419f);
@@ -36,6 +41,11 @@ public class A4 : FlippableEvidence<A4Page>
             string pageText = pagesText[i];
             A4Page newPage = Instantiate(pagePrefab, transform).GetComponent<A4Page>();
             newPage.pageText = pageText;
+            newPage.fontSize = fontSize;
+            if (font)
+            {
+                newPage.font = font;
+            }
             newPage.Populate();
             pages.Add(newPage);
             if (i == currentPage)

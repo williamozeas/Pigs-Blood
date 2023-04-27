@@ -1,54 +1,103 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6814984786009019834
+--- !u!1001 &7030302984259232321
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 451992162915504234, guid: e9237cd618652460097a3aba9efdfbc4,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 568681983026150072, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: m_Name
-      value: Wolf_ArrestReport
+      value: Pigs_Autopsy
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: id
-      value: Wolf_ArrestReport
+      value: Pigs_Autopsy
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 11400000, guid: 3322b7c6b4b02427792b45529d3fe77a,
+        type: 2}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: fontSize
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: lineSpacing
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: pagesText.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: pagesText.Array.data[0]
-      value: 'Wolf Arrest Report
-
-        Time of Arrest: 11:35 AM
-
-        Location:
-        Sherry Avenue, 0.5 mi. from Pigs'' Farm.
-
-        Arresting Officer: Little
-        Match Girl
-
-        Suspect attempted to escape arrest and flee away from
-        the crime scene once officer pulled over and showed her badge.
+      value: 'Autopsy Report
 
 
-        Continued
-        on next page.'
+        Victim: Sticks Pig
+
+        Date of Death:
+        April 19, 2023
+
+        Time of Death: 10:45-11:15 PM
+
+        Cause of Death:
+        Blunt force trauma to the head
+
+        Manner of Death: Homicide
+
+
+        External
+        Examination:
+
+        The victim is identified as a male pig of approximately
+        5 years old. The pig is 3 feet tall and weighs approximately 150 pounds.
+        The victim has suffered extensive head trauma, with multiple lacerations
+        and fractures to the skull. There are also several large contusions on the
+        torso and limbs. The cause of death is consistent with blunt force trauma
+        to the head.'
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: pagesText.Array.data[1]
-      value: 'Personal Affects: One food wrapper, one wallet containing money, identification,
-        a family photo, and a metro pass.
+      value: 'Internal Examination:
 
-'
+        The skull is fractured in several places.
+        The brain itself is severely damaged, with evidence of hemorrhage and contusions.
+        The victim''s lungs are filled with blood, indicating that the pig likely
+        bled out while waiting for medical attention. There are also multiple fractures
+        to the ribs and sternum. The liver and kidneys show signs of minor damage,
+        likely caused by blunt force trauma.
+
+
+        Toxicology:
+
+        Trace
+        amounts of psychedelic substances were detected in blood and urine samples.
+        Victim was not under influence at time of death, but may have taken some
+        variation of drug within the past few days.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: pagesText.Array.data[2]
+      value: 'Conclusion:
+
+
+        Based on the findings of the external and internal
+        examinations, it is the opinion of the medical examiner that the victim,
+        a male pig, died as a result of blunt force trauma to the head. The victim
+        bled out while waiting for medical attention. The manner of death is homicide,
+        and the investigation is ongoing.'
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}

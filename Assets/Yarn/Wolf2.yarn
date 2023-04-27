@@ -29,7 +29,7 @@ Shepherd: Maybe.
 Matches: Hm... We know he was there, and the timeframe matches up with Tinker Bell's testimony.
 Matches: Plus, he lied about his movements. Why would he do that unless he had something to hide?
 Shepherd: Is he still here?
-Matches: Yep, he's been festering in the jail since you two last talked.
+Matches: Yep, he's been festering in Cell 8 since you two last talked.
 <<PlayEffect Energy>>
 Shepherd: I want to talk to him again.
 Matches: I had a feeling this would happen. I sent a few detectives to his house and around the farm once Tinker Bell mentioned a third party.
@@ -42,7 +42,8 @@ Matches: In addition, I've gotten all the evidence from the first interrogation 
 <<LoadEvidence Wolf_ArrestReport>>
 <<LoadEvidence Wolf_CCTV>>
 <<LoadEvidence Wolf_Profile>>
-// <<LoadEvidence TinkerBell_Testimony>>
+<<LoadEvidence Wolf_FamilyPortrait>>
+<<LoadEvidence TinkerBell_Testimony>>
 Shepherd: Thanks.
 Matches: He wasn't that great a liar the first time around, but that could have been a façade.
 Matches: If he really is the mastermind behind a drug ring, he'll be a tough nut to crack. Be on your toes.
@@ -436,11 +437,10 @@ Wolf: I woke up at 9 and drove to the strawberry farm at around 10. Met Tinker B
 <<AddStatement Wolf2_Q3_Arrival "Wolf drove to the farm at 10.">>
 Wolf: I started walking back to the farm to see what had happened, and that's when I got arrested by you people.
 Shepherd: I thought you were arrested running away from the scene?
-Wolf: The police car was coming from the direction of the scene. I took off in the opposite direction.
+Wolf: The car was coming from the direction of the scene. It was undercover.
+Wolf: Once that match girl came out and flashed her badge, I took off in the opposite direction.
 <<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested Wolf came from the crime scene.">>
-Shepherd: You were surprised to see a police car coming from a crime scene?
 <<wait 0.8>>
-Wolf: I wasn't. The car slowed down as it approached me, and I know from experience that's a bad sign.
 Wolf: Are you done? I've got a date with a set of metal bars.
 Shepherd: Just a few more questions...
 <<jump Wolf2_Q3_Start>>
@@ -614,12 +614,15 @@ Matches: The boys just got back to the station, and guess what they found?
 Matches: The car. It matches Tinker Bell's description, and was found abandoned on the side of the road.
 Shepherd: Oh, really?
 Matches: Really. I've got a picture here of the interior of the car.
+Matches: And even more, we found traces of fur in the car. We tested it for DNA, and it matched Wolf's perfectly.
 <<LoadEvidence Wolf_Car_Photo>> //GET EVIDENCE
+<<LoadEvidence Wolf_CarDescription>> 
 Shepherd: And where was this found?
 <<PlayEffect Energy>>
 Matches: Get this: it was abandoned near the metro station!
 Matches: It turns out that the boss did go to the station after all. And that means...
 Shepherd: But why would he do that?
+<<wait 1>>
 Matches: ...maybe he wanted an alibi? By swiping his card and not taking the metro, he could corroborate any lies about where he was!
 Shepherd: <style="int">(That does make sense...)</style>
 <<RemoveCharacter MatchGirl>>
@@ -629,7 +632,7 @@ Shepherd: <style="int">(That does make sense...)</style>
 Wolf: That's right! You got me. I drove to the station, swiped my card, then walked directly to the crime scene.
 <<RemoveStatement Wolf2_Q3_SeeKids>>
 <<AddStatement Wolf2_Q3_FakedMetro "Wolf drove to the metro station, swiped his card, and then walked to the crime scene without returning home.">>
-Shepherd: <style="int">(What an eager reaction.)</style>
+Shepherd: <style="int">(What an eager reaction. He didn't even look at the picture.)</style>
 Wolf: Are you satisfied? Match Girl, take me-
 <<PlayEffect Emphasis>>
 Shepherd: No. Your story's still... contradictory. You're not leaving until I know the truth of this case.
@@ -1007,7 +1010,11 @@ Shepherd: I'm sorry. For seeing you that way myself.
 <<wait 2>>
 Wolf: I found it in my cell this morning.
 Shepherd: Did you see who gave it to you?
-Wolf: No. I t-think it came in through the high window. 
+Wolf: No. I t-think it came in through the air vent.
+Shepherd: The air vent?
+Wolf: It's a little slit, high up in the wall. I think it leads to the outside but it's so thin I can't really see into it.
+Wolf: There's no way to see outside in there...
+//TODO: ADD THIS TO A STATEMENT
 Shepherd: Who knows you're in jail?
 Wolf: Only my family, I talked to them with my phone call...
 <<wait 1>>

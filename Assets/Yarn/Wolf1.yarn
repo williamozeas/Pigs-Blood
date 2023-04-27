@@ -10,25 +10,34 @@ title: Wolf_1
 tags:
 position: -748,-1095
 ---
-<<SetPose Wolf CheckedOut>>
+// WOLF POSES:
+// neutral_idle
+// rawr_idle
+// scared_idle
+// neutral_tapping
+// angry_tapping
+// scared_looking
+<<SetPose Wolf neutral_tapping>>
 Wolf: Well, well. A little piggy comes to pay a visit to the big bad wolf.
 <<PlayEffect Emphasis>>
 Shepherd: Can it, Wolf. We've got a list of evidence a mile long. 
 Wolf: I can see that. Anyone ever tell you that your organization skills are terrible?
 Shepherd: Anyone ever tell you that your following-the-law skills are terrible?
 <<PlayEffect Failure>>
+<<SetPose Wolf angry_tapping>>
 Wolf: Wow. You really got me with that one. Besides, my following-the-law skills are up to par - I think <style="emph">you</style> need to work on <style="emph">your</style> idea of what "breaking the law" is.
 Wolf: What am I even in here for? Walking too slowly?
 <<PlayEffect Emphasis>>
 Shepherd: One of the Pigs brothers was found dead.
 <<wait 0.7>>
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf neutral_idle>>
 <<PlayEffect Interesting>>
 Wolf: ...
 Shepherd: Not so cocky now.
 Wolf: ...You've got nothing on me. You can't.
 Shepherd: I wouldn't be so sure of that. If I were you, I'd talk on this one.
 <<PlayEffect Emphasis>>
+<<SetPose Wolf rawr_idle>>
 Wolf: You're not getting <style="emph">anything</style> out of me.
 
 <<SetMusic Questions>>
@@ -107,7 +116,7 @@ Wolf: You're not getting <style="emph">anything</style> out of me.
 title: Wolf_Q2
 position: -745,-569
 ---
-<<SetPose Wolf CheckedOut>>
+<<SetPose Wolf neutral_idle>>
 Shepherd: Alright Wolf, I have a few more questions for you. 
 Wolf: Sure, not like I can go anywhere. Can ya hurry this up, I have a shift in a few hours?
 Shepherd: Depends on how you answer these questions Wolf, don't lie or mouth off and it will be done sooner.
@@ -117,7 +126,7 @@ Shepherd: Depends on how you answer these questions Wolf, don't lie or mouth off
 title: Wolf_Q2_Start
 position: -745,-405
 ---
-<<SetPose Wolf CheckedOut>>
+<<SetPose Wolf neutral_tapping>>
 -> Question
     -> Where were you yesterday?
         <<jump Wolf_Q2_Question_1>>
@@ -145,12 +154,13 @@ position: -745,-405
 title: Wolf_Q2_Question_1
 position: -1002,-284
 ---
+<<SetPose Wolf neutral_tapping>>
 Shepherd: Where were you yesterday?
 Wolf: I was spending time with my kids.
 Shepherd: Your kids?
 Wolf: Yes, my kids.
 Shepherd: What are their names?
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf neutral_idle>>
 <<PlayEffect Emphasis>>
 Wolf: Are you serious?
 Shepherd: Can you answer the question or not?
@@ -160,7 +170,7 @@ Shepherd: And why were you spending time with them?
 <<PlayEffect Energy>>
 Wolf: Wh- Because they're my kids?
 Shepherd: Shouldn't they have been at school?
-<<SetPose Wolf CheckedOut>>
+<<SetPose Wolf neutral_tapping>>
 Wolf: Oh... They had a day off from school, so they wanted to play board games.
 Shepherd: And why did they have school off?
 Wolf: I don't- Some sort of holiday, I don't keep track of these things.
@@ -173,10 +183,10 @@ position: -490,-292
 ---
 Wolf: I took the trash out and got the mail.
 Shepherd: And when was that?
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf angry_tapping>>
 Wolf: Do you want a fucking itinerary?
 Shepherd: Answer the question.
-<<SetPose Wolf CheckedOut>>
+<<SetPose Wolf neutral_idle>>
 <<PlayEffect Energy>>
 <<wait 1>>
 Wolf: I don't know. Some time around noon.
@@ -189,10 +199,11 @@ Wolf: ...No.
 title: Wolf_Q2_Question_3
 position: -743,-171
 ---
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf angry_tapping>>
 Wolf: What kinda question is that? How the hell is that relevant? 
 Shepherd: Just answer the question Wolf.
 Wolf: Fine, Whatever.
+<<SetPose Wolf neutral_tapping>>
 Wolf: We played Financial Syndicate, took forever to finish. 
 Wolf: Pretty sure Linus was cheating with how many doubles he rolled. Kid nearly bankrupted me twice.
 Shepherd: Mhmm...I see...
@@ -203,6 +214,7 @@ title: Wolf_Q2_Accusation_Proof
 tags:
 position: -233,-214
 ---
+<<SetPose Wolf neutral_tapping>>
 Wolf: Yeah? and what's your proof?
 <<PromptEvidence Wolf_Q2_Accusation_Default>>
 ===
@@ -216,6 +228,7 @@ Shepherd: You claim that you were at home all day, yet we have this CCTV footage
 Wolf: What makes you think that's me? The quality on that photo is atrocious.
 Shepherd: You're literally wearing the same clothes as you are in the photo.
 Shepherd: <style="int">(...or lack thereof.)</style>
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 Shepherd: In addition, we found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
 Wolf: N-no, I...
@@ -233,9 +246,11 @@ position: -233,-214
 Shepherd: You claim that you were at home all day, yet found this metro pass on you. Used once today. Do you usually ride the train without leaving the house?
 Wolf: N-no, I...
 Shepherd: We also have this CCTV footage showing you on Main.
+<<SetPose Wolf angry_tapping>>
 Wolf: What makes you think that's me? The quality on that photo is atrocious.
 Shepherd: You're literally wearing the same clothes as you are in the photo.
 Shepherd: <style="int">(...or lack thereof.)</style>
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 <<PlayEffect Emphasis>>
 Shepherd: So, Wolf, why are you lying to me? Are you hiding something?
@@ -246,6 +261,7 @@ title:  Wolf_Q2_Accusation_Default
 tags:
 position: -231,-426
 ---
+<<SetPose Wolf angry_tapping>>
 Wolf: And that's relevant how? 
 <<PlayEffect Failure>>
 Shepherd: ...
@@ -264,6 +280,7 @@ position: -751,20
 <<AddStatement Wolf_q2_boardgames "Wolf played board games with his kids.">>
 
 Shepherd: Groceries and a walk, huh? 
+<<SetPose Wolf neutral_tapping>>
 Wolf: You heard me.
 <<jump Wolf_Q3_Start>>
 ===
@@ -271,7 +288,7 @@ title: Wolf_Q3_Start
 position: -751,186
 ---
 <<SetMusic Questions>>
-<<SetPose Wolf CheckedOut>>
+<<SetPose Wolf neutral_idle>>
 -> Question
     -> Groceries?
         <<jump Wolf_Q3_Question_1>>
@@ -296,10 +313,12 @@ position: -751,186
 title: Wolf_Q3_Question_1
 position: -1012,251
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: You got groceries?
 Wolf: Yep. Rode the metro to Colmar to get them this morning.
 <<AddStatement Wolf_Q3_Groceries "Wolf went to the grocery store.">>
 Shepherd: What did you get?
+<<SetPose Wolf neutral_tapping>>
 Wolf: Uh- I got spaghetti and meat sauce, chicken, bread, some fruit for my kids, um...
 <<wait 0.5>>
 Wolf: F-fruit gummies.
@@ -311,6 +330,7 @@ Wolf: ...
 title: Wolf_Q3_Question_2
 position: -751,352
 ---
+<<SetPose Wolf neutral_tapping>>
 Shepherd: Why did you take a walk?
 Wolf: I went on a walk after the kids bankrupted me. Wanted to get some fresh air.
 Wolf: That must be when the CCTV camera got me.
@@ -323,10 +343,11 @@ Shepherd: <style="int">(Not fast enough, apparently.)</style>
 title: Wolf_Q3_Question_3
 position: -504,245
 ---
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf angry_tapping>>
 Wolf: Are you insinuating I went out to give drugs to someone?
 Shepherd: You said it, not me.
 <<PlayEffect Emphasis>>
+<<SetPose Wolf rawr_idle>>
 Wolf: How dare you! I have kids at home, I would never-
 Shepherd: Let's calm down.
 Wolf: Grrr...
@@ -335,6 +356,7 @@ Wolf: Grrr...
 title: Wolf_Q3_Question_4
 position: -504,245
 ---
+<<SetPose Wolf angry_tapping>>
 Shepherd: And when did you go out to get groceries?
 Wolf: It was early in the morning. I must have taken the metro there around... 9 AM?
 Shepherd: And when did you come back? 
@@ -349,12 +371,14 @@ title: Wolf_Q3_Accusation_Proof
 tags:
 position: -233,-214
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: Yeah? and what's your proof?
 <<PromptEvidence Wolf_Q3_Accusation_Default>>
 ===
 title: Wolf_Q3_Accusation_Default
 position: -248,180
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: I don't see how that proves anything.
 <<PlayEffect Failure>>
 Shepherd: Well, you see, uh...
@@ -367,15 +391,17 @@ title: Wolf_Q3_Accusation_Correct
 position: -260,413
 ---
 <<StopMusic>>
+<<SetPose Wolf neutral_tapping>>
 Shepherd: We noticed you had a metro card in your wallet when we booked you.
 Shepherd: We had a chat with the metro authority, and they report this card was used this morning.
 Wolf: Yeah. That's from when I got the groceries.
 Shepherd: The pass was only used once, at around 10:40 AM.
 Wolf: So? That's not-
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf neutral_idle>>
 <<PlayEffect Interesting>>
 Wolf: Oh.
 Shepherd: You're lying again. I've half a mind to get you indicted this instant.
+<<SetPose Wolf neutral_idle>>
 Wolf: Wait, wait. Okay, I might have lied. But I just went out to do an errand. I swear.
 <<SetMusic Questions>>
 <<jump Wolf_Q4>>
@@ -393,7 +419,7 @@ position: -749,541
 title: Wolf_Q4_Start
 position: -747,700
 ---
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf neutral_idle>>
 -> Question
     -> What errand?
         <<jump Wolf_Q4_Question_1>>
@@ -414,12 +440,14 @@ position: -747,700
 title: Wolf_Q4_Question_1
 position: -960,815
 ---
+<<SetPose Wolf neutral_tapping>>
 Wolf: I.. uh.. went to go get strawberries for my kids. They really like this one farm outside the city.
 Wolf: They grow this one variety that are super juicy but last like 2 days tops. My kids adore them, and my wife makes jam out of the left over ones.
 Shepherd: And what is the name of this farm?
 Wolf: It's called... Uhhhhh... The name escapes me at the moment.
 Shepherd: Wolf, don't lie to me. You know what it's called.
 <<PlayEffect Failure>>
+<<SetPose Wolf neutral_idle>>
 Wolf: N-no...
 <<PlayEffect Energy>>
 Shepherd: It's the Three Pigs' Strawberry Farm, isn't it.
@@ -433,6 +461,7 @@ Shepherd: The location of the murder.
 title: Wolf_Q4_Question_2
 position: -745,928
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: What happened at the farm?
 Wolf: Nothing. I swear. I talked to one of the pigs, he picked me some strawberries, and I left!
 Shepherd: Was there anything suspicious about the pig?
@@ -447,6 +476,7 @@ title: Wolf_Q4_Accusation_Proof
 tags:
 position: -233,-214
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: Yeah? and what's your proof?
 <<PromptEvidence Wolf_Q4_Accusation_Default>>
 ===
@@ -454,30 +484,35 @@ title: Wolf_Q4_Accusation_Correct
 position: -254,1026
 ---
 <<StopMusic>>
+<<SetPose Wolf neutral_idle>>
 Wolf: It's... the picture of me?
 Shepherd: Yes. Notice anything?
 Wolf: No...?
 Shepherd: Those red stains on your fur. They're not there in the picture.
+<<SetPose Wolf scared_idle>>
 Wolf: Red stai-?
 <<PlayEffect Shock>>
 <<wait 1>>
+<<SetPose Wolf rawr_idle>>
 Wolf: GAH!
 <<SetMusic Trepidation>>
 Shepherd: What exactly are those stains, Wolf?
 Wolf: They... I don't know, i-it must-
 <<PlayEffect Emphasis>>
+<<SetPose Wolf scared_idle>>
 Wolf: STRAWBERRIES! It's strawberry juice! They must have gotten on me when I-
 Shepherd: Sorry, Wolf. I don't think you bought any berries at all. After all, where did they go?
 <<PlayEffect Energy>>
 Wolf: I-I must have dropped them when you guys pulled up, maybe some g-got on my coat-
 Shepherd: You've lied enough today.
-<<SetPose Wolf Sad>>
+<<SetPose Wolf scared_looking>>
 <<PlayEffect Emphasis>>
 Wolf: I...I'm not lying. You have to believe me.
 <<StopMusic>>
 Shepherd: Sorry, Wolf. I don't. Matches?
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 Matches: Yes?
 Shepherd: Arrest this wolf.
 <<jump Wolf_Q5>>
@@ -485,6 +520,7 @@ Shepherd: Arrest this wolf.
 title: Wolf_Q4_Accusation_Default
 position: -300,744
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 <<PlayEffect Failure>>
 Shepherd: Nothing?
@@ -497,12 +533,14 @@ position: -751,1141
 ---
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf scared_idle>>
 <<PlayEffect Energy>>
 Wolf: N-no! Wait! I have proof!
 Shepherd: And what is this proof?
 Wolf: I have a receipt, I have it somewhere, just let me go and I'll-
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 Matches: He's lying to you. You should know that.
 Shepherd: I do...?
 
@@ -512,6 +550,7 @@ Shepherd: I do...?
 ===
 title: Wolf_Q5_Accusation_Default
 ---
+<<SetPose MatchGirl neutral_idle>>
 <<wait 1>>
 Matches: No, that's not it. You should know this. Did he have a receipt on him?
 <<PromptEvidence Wolf_Q5_Accusation_Default>>
@@ -520,9 +559,12 @@ title: Wolf_Q5_Accusation_Correct
 ---
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf neutral_tapping>>
 Shepherd: According to the arrest report, you had no such receipt.
+<<SetPose Wolf angry_tapping>>
 Wolf: Wh-...
 <<wait 1.5>>
+<<SetPose Wolf rawr_idle>>
 Wolf: You dirty cop bastards. You're gonna get what's coming to you. 
 Shepherd: One too many lies, huh?
 <<PlayEffect Emphasis>>
@@ -531,6 +573,7 @@ Shepherd: Don't come back unless you feel like telling the truth!
 <<RemoveCharacter Wolf>>
 <<wait 2>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 Shepherd: Wow. I didn't know he had that in him.
 Matches: I did. 
 Shepherd: What did you do with him?

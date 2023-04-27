@@ -126,6 +126,11 @@ public class EvidenceManager : Singleton<EvidenceManager>
 
     public void LoadEvidence(string id)
     {
+        if (GetEvidenceByID(id) != null)
+        {
+            Debug.LogWarning("Duplicate evidence added: " + id);
+            return;
+        }
         GameObject prefab = GetEvidencePrefabByID(id);
         float x = Random.Range(-2f, 2f);
         float z = Random.Range(-3.2f, -5f);
