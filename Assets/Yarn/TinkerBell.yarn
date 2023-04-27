@@ -250,7 +250,7 @@ title: TinkerBell_Q3_Start
 tags:
 position: -758,481
 ---
-<<declare $reviewCompleted = false as bool>>
+<<declare $reviewCompletedTB = false as bool>>
 <<SetMusic Questions>>
 <<SetPose TinkerBell Neutral>>
     -> Question
@@ -264,7 +264,7 @@ position: -758,481
             <<SetEvidenceResponse TinkerBell_Fullbody_Mugshot TinkerBell_Q3_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q3_Accusation_Default>>
     -> Review
-        <<set $reviewCompleted to true>>
+        <<set $reviewCompletedTB to true>>
         <<Review>>
 
 ===

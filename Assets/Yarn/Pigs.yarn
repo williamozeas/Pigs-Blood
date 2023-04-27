@@ -209,24 +209,37 @@ title: Pigs_Q3_Start
 tags:
 position: 124,340
 ---
+<<declare $reviewCompletedPigs = false as bool>>
 -> Question
-    -> Temp 1
+    -> What are your finacials like?
         <<jump Pigs_Q3_Question_1>>
-    -> Temp 2
+    -> How do you both earn most of your money? <<if visited("Pigs_Q3_Question_1") == true>>
         <<jump Pigs_Q3_Question_2>>
 -> Accuse
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q3_Accusation_Correct>>
+        <<SetStatementResponse Pigs_Q3_Money Pigs_Tax_Returns Pigs_Q3_Accusation_Correct>>
         <<PromptStatement Pigs_Q3_Accusation_Proof>>
 -> Review
+    <<set $reviewCompletedPigs to true>>
     <<Review>>
 ===
 title: Pigs_Q3_Question_1
 tags:
 position: 54,440
 ---
+Shepherd: What are your...
+Straw: The fuck kinda question do that be huh? 
+<<PlayEffect Energy>>
+Bricks: Straw. Stop. NOW!
+<<wait 1.5>>
+Bricks: Sorry about him, could you repeat the question? 
+Shepherd: What are your finacials like?
+Bricks: Well..Sticks usually handled the finances. As far as I know we are stable but rather poor.
+<<AddStatement Pigs_Q3_Money "Sticks handled their finacials, though Bricks mentions they are rather poor">>
+Shepherd:<style="int">(Interesting, I should check out those tax forms we found.)</style>
+
 
 <<jump Pigs_Q3_Start>>
 ===
@@ -234,27 +247,63 @@ title: Pigs_Q3_Question_2
 tags:
 position: -149,435
 ---
-
+Shepherd: How do you both earn most of your money?
+Bricks: Well, I run that strawberry patch. Sell strawberries to people. 
+Bricks: And Straw sells firewood from the trees on the property as well as taking the occasional odd job.
+Shepherd: Speaking of strawberries, did you happen to sell any the day your brother was murdered?
+<<StopMusic>>
+<<PlayEffect Emphasis>>
+//Crying pose???
+Straw: STIIIIIIIICKKSSSSS!!- STIIIIIIIICKKSSSSS!!-
+<<PlayEffect shock>>
+Bricks: WHAT DID I SAY BEFORE?
+<<SetMusic Chill>>
+Shepherd: Shit, sorry. 
+Bricks: You had better be, don't you hurt my brother. Fuckin' pig.
+Shepherd:<style="int">(Large stone to be throwing from your glass house pork chop)</style>
+Straw: *sniffle*
+Shepherd: Can you answer the question?
+Bricks: No.
+<<if $reviewCompletedPigs == true>>
+Shepherd:<style="int">(Hmm, that's really weird. Those tax forms had a huge declared income and business deductions on them)</style>
+<<endif>>
 <<jump Pigs_Q3_Start>>
 ===
 title: Pigs_Q3_Accusation_Proof
 tags:
 position: 543,331
 ---
-Wolf: Yeah? and what's your proof?
+Bricks: Yeah? and what's your proof?
 <<PromptEvidence Pigs_Q3_Accusation_Default>>
 ===
 title: Pigs_Q3_Accusation_Default
 tags:
 position: 350,333
 ---
-
+Shepherd: You're lying! And I can prove it with-
+Bricks: Sir! This is hardly the time for accusations!
+Shepherd: ...Sorry, you're right.
+Shepherd: <style="int">(Whoops.)</style>
 <<jump Pigs_Q3_Start>>
 ===
 title: Pigs_Q3_Accusation_Correct
 tags:
 position: 353,432
 ---
+Shepherd: You mentioned you all were relatively poor correct?
+Bricks: Thats what I said, yeah.
+Shepherd: Then why do your tax forms declare an income this year of 1.8 million?
+<<PlayEffect shock>>
+Bricks: I..I don't..
+<<PlayEffect Energy>>
+Straw: Oh that's easy, its all because of the basement!
+Bricks: STRAW! SHUT IT. NOW.
+<<wait 2>>
+Shepherd: Straw, what's in the basement?
+Bricks: Ignore him officer, he's an idiot who makes things up all the times. Right Straw?
+Straw: Hehe yeah.
+<<AddStatement Pigs_Basement "There is something in that basement that they both want to hide that makes them a lot of money.">>
+
 
 <<jump Pigs_Q4_Start>>
 
@@ -297,7 +346,7 @@ title: Pigs_Q4_Accusation_Proof
 tags:
 position: 536,544
 ---
-Wolf: Yeah? and what's your proof?
+Bricks: Yeah? and what's your proof?
 <<PromptEvidence Pigs_Q4_Accusation_Default>>
 ===
 title: Pigs_Q4_Accusation_Default
