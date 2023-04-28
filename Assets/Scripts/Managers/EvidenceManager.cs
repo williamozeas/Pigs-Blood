@@ -152,10 +152,13 @@ public class EvidenceManager : Singleton<EvidenceManager>
 
     public void RemoveAllEvidence()
     {
+        EvidenceAbstract nb = GetCurrentEvidenceByType(DocType.Notebook);
         foreach (var evidenceToRemove in currentEvidence)
         {
-            Destroy(evidenceToRemove.gameObject);
+            if(evidenceToRemove != nb)
+                Destroy(evidenceToRemove.gameObject);
         }
         currentEvidence.Clear();
+        currentEvidence.Add(nb);
     }
 }

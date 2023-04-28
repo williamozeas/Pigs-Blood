@@ -14,17 +14,17 @@ tags:
 position: -748,-1095
 ---
 <<SetMusic Questions>>
-//<<SetPose TinkerBell Smug>>
+//<<SetPose TinkerBell smug_idle>>
 <<AddCharacter TinkerBell>>
-<<SetPose TinkerBell Neutral>>
+<<SetPose TinkerBell neutral_idle>>
 <<PlayEffect Reveal>>
 <<wait 3>>
 Shepherd: Ah, so you must be TinkerBell.
 TinkerBell: Oh, so you're the Wolf Shepherd, huh? Bit scruffier and scrawnier than I expected.
 Shepherd: And you're much more... flamboyant than I expected.
-<<SetPose TinkerBell Angry>>
+<<SetPose TinkerBell angry_idle>>
 TinkerBell: Flamboyant? I hope you're just as bad at interrogating as you are complimenting people.
-<<PlayEffect shock>>
+<<PlayEffect Failure>>
 Shepherd: That wasnt... ugh
 
 <<jump TinkerBell_Q1_Start>>
@@ -33,7 +33,7 @@ title: TinkerBell_Q1_Start
 tags:
 position: -749,-923
 ---
-<<SetPose TinkerBell Neutral>>
+<<SetPose TinkerBell neutral_idle>>
 <<SetMusic Questions>>
 <<if visited("TinkerBell_Q1_Question_3") == true && visited("TinkerBell_Q1_Question_1") == true >>
     <<jump TinkerBell_Q2>>
@@ -59,7 +59,7 @@ title: TinkerBell_Q1_Question_1
 tags:
 position: -946,-784
 ---
-<<SetPose TinkerBell Smug>>
+<<SetPose TinkerBell smug_sitting>>
 <<if visited("TinkerBell_Q1_Question_1") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
@@ -77,9 +77,9 @@ title: TinkerBell_Q1_Question_2
 tags:
 position: -596,-733
 ---
-<<SetPose TinkerBell Neutral>>
+<<SetPose TinkerBell neutral_idle>>
 <<if visited("TinkerBell_Q1_Question_2") == true>>
-    <<SetPose TinkerBell Smug>>
+    <<SetPose TinkerBell smug_idle>>
     <<wait 0.5>>
     TinkerBell: Again? Are you even listening?
     Shepherd: Quiet, I'm asking the questions here.
@@ -97,8 +97,8 @@ Shepherd: Hmm..I see
 title: TinkerBell_Q1_Question_3
 position: -746,-638
 ---
-<<SetPose TinkerBell Smug>>
-<<if visited("TinkerBell_Q1_Question_1") == true>>
+<<SetPose TinkerBell smug_idle>>
+<<if visited("TinkerBell_Q1_Question_3") == true>>
     <<wait 0.5>>
     TinkerBell: Am I going crazy? I could have sworn you wrote that down.
     <<jump TinkerBell_Q1_Start>>
@@ -137,7 +137,7 @@ Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place
 title: TinkerBell_Q2
 position: -760,-518
 ---
-<<SetPose TinkerBell Smug>>
+<<SetPose TinkerBell smug_idle>>
 Shepherd: Alright TinkerBell, let's shift gears a bit. Do you have any connection to the Pig Family?
 <<PlayEffect interesting>>
 TinkerBell: I worked a bit with Momua Pig during prohibition when they smuggled moonshine. I was a bartender at one of the speakeasys they delivered to.
@@ -150,9 +150,9 @@ title: TinkerBell_Q2_Start
 tags:
 position: -757,-330
 ---
-<<SetPose TinkerBell Neutral>>
+<<SetPose TinkerBell neutral_idle>>
 <<SetMusic Questions>>
-<<if visited("TinkerBell_Q2_Question_3") == true && visited("TinkerBell_Q2_Question_1") == true >>
+<<if visited("TinkerBell_Q2_Question_2") == true && visited("TinkerBell_Q2_Question_1") == true >>
     <<jump TinkerBell_Q2>>
 <<else>>
     -> Question
@@ -174,7 +174,7 @@ title: TinkerBell_Q2_Question_1
 tags:
 position: -1054,-207
 ---
-<<SetPose TinkerBell Smug>>
+<<SetPose TinkerBell smug_sitting>>
 <<if visited("TinkerBell_Q2_Question_1") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
@@ -193,8 +193,8 @@ position: -1054,-207
 title: TinkerBell_Q2_Question_2
 position: -751,6
 ---
-<<SetPose TinkerBell Smug>>
-<<if visited("TinkerBell_Q2_Question_1") == true>>
+<<SetPose TinkerBell smug_idle>>
+<<if visited("TinkerBell_Q2_Question_2") == true>>
     <<wait 0.5>>
     TinkerBell: Am I going crazy? I could have sworn you wrote that down.
     <<jump TinkerBell_Q2_Start>>
@@ -225,12 +225,12 @@ title: TinkerBell_Q2_Accusation_Correct
 position: -419,128
 ---
 <<StopMusic>>
-<<SetPose TinkerBell Smug>>
+<<SetPose TinkerBell smug_idle>>
 Shepherd: We had a chat with the pigs the other day. They had talked about how they had a meeting with a business associate. 
 TinkerBell: Um... ok, that matters to me how?
 Shepherd: The incident we are investigating happened the same day as your chat with a troublesome client. Were you referring to the pigs?
 <<PlayEffect Emphasis>>
-<<SetPose TinkerBell Neutral>>
+<<SetPose TinkerBell neutral_idle>>
 TinkerBell: I..what? No, I never...
 <<jump TinkerBell_Q3>>
 ===
@@ -247,7 +247,7 @@ Shepherd: What? I'm kinda in the middle of something.
 MatchGirl: I'm aware, just finished the search of her car. Here's the file for you, some real gems in there for you.
 <<PlayEffect Energy>>
 <<LoadEvidence TinkerBell_Search_Data>>
-<<SetPose TinkerBell Angry>>
+<<SetPose TinkerBell angry_idle>>
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter TinkerBell>>
 TinkerBell: Are you judging the stuff in my car? Rude. 
@@ -267,7 +267,7 @@ position: -758,481
 ---
 <<declare $reviewCompletedTB = false as bool>>
 <<SetMusic Questions>>
-<<SetPose TinkerBell Neutral>>
+<<SetPose TinkerBell neutral_idle>>
     -> Question
         -> Why all the Hydrogen Peroxide? <<if $reviewCompleted == true>>
             <<jump TinkerBell_Q3_Question_1>>
@@ -287,7 +287,7 @@ title: TinkerBell_Q3_Question_1
 tags:
 position: -960,684
 ---
-<<SetPose TinkerBell Smug>>
+<<SetPose TinkerBell smug_idle>>
 <<if visited("TinkerBell_Q3_Question_1") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
@@ -314,7 +314,7 @@ title: TinkerBell_Q3_Question_2
 position: -541,694
 ---
 <<if visited("TinkerBell_Q3_Question_2") == true>>
-    <<SetPose TinkerBell Smug>>
+    <<SetPose TinkerBell smug_idle>>
     <<wait 0.5>>
     TinkerBell: Again? Are you even listening?
     Shepherd: Quiet, I'm asking the questions here.
@@ -323,7 +323,7 @@ position: -541,694
     Shepherd: Just answer the question.
     TinkerBell: I must have forgotten it after doing the inventory run.
     Shepherd: How could you have forgotten it? Report says it was sitting in the passenger footwell.
-    <<SetPose TinkerBell Annoyed>>
+    <<SetPose TinkerBell angry_idle>>
     TinkerBell: I just forgot OK? I did not know that having stuff in your car was a crime now.
 <<jump TinkerBell_Q3_Start>>
 ===
@@ -341,12 +341,12 @@ Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place
 title: TinkerBell_Q3_Accusation_Correct
 position: -751,715
 ---
-<<SetPose TinkerBell Neutral>>
+<<SetPose TinkerBell neutral_idle>>
 TinkerBell: Um... why are you showing me my mugshot? 
 Shepherd: Just out of curiosity, what's up with your boots?
 TinkerBell: What do you mean about my boo....ts...
 <<PlayEffect shock>>
-<<SetPose TinkerBell Scared>>
+<<SetPose TinkerBell scared_disbelief>>
 TinkerBell: Is this a lighting trick why the hell are they colored weird?
 Shepherd: Did you by chance have an encounter with your bucket of peroxide?
 <<PlayEffect interesting>>
@@ -377,7 +377,7 @@ title: TinkerBell_Q4_Question_1
 tags:
 position: -970,1027
 ---
-<<SetPose TinkerBell Flippant>>
+// <<SetPose TinkerBell Flippant>>
 <<if visited("TinkerBell_Q4_Question_1") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
@@ -434,12 +434,15 @@ TinkerBell: I..I don't know.
 Shepherd: This is the autopsy report for Stick Pig. His brothers mentioned that he had been planning to meet with you.
 Shepherd: Their interrogations heavily implied that you were responsible. Your's so far has only strengthened our theory.
 <<PlayEffect shock>>
+<<SetPose TinkerBell sad_down>>
 TinkerBell: He's... he... I... killed him? No..nonononono..
 TinkerBell: Oh my gods oh my gods the boss is going to kill me... he'll find and kill me. I need to leave the country, go somewhere he won't find me.
 <<PlayEffect Energy>>
 TinkerBell: Oh woe! Woe on me, for I have murdered a friend!
-<<wait 1>>
 Shepherd: TinkerBell, drop the act. You clearly had no problem beating someone near to death. I think you know you killed him, and you just want to get out of this. 
+<<wait 2>>
+<<PlayEffect Interesting>>
+<<SetPose TinkerBell angry_idle>>
 TinkerBell: Ugh, fine. I'll get you information, guarentee my safety and get me a plea deal and we'll talk.
 Shepherd: You're unbearable, fine I'll get legal working on that.
 <<PlayEffect ToWhite>>
@@ -454,7 +457,7 @@ tags:
 position: -777,1287
 ---
 <<SetMusic QuestionsFaster>>
-<<SetPose TinkerBell Smug>>
+<<SetPose TinkerBell neutral_idle>>
 <<if visited("TinkerBell_Q5_Question_1") == true && visited("TinkerBell_Q5_Question_2") == true && visited("TinkerBell_Q5_Question_3") == true  && visited("TinkerBell_Q5_Question_4") == true>>
 <<jump TinkerBell_Q6>>
 <<endif>>
@@ -492,10 +495,13 @@ TinkerBell: Who?
 Shepherd: Wolf..Isn't he the new boss?
 TinkerBell: I don't know, I've never really talked to him and he only recently took charge around here.
 <<wait 0.5>>
+<<PlayEffect Interesting>>
+<<SetPose TinkerBell sad_down>>
 TinkerBell: Oh gods I'm dead I'm so dead! I just had to rough him up a bit!
 Shepherd:<style="int">(Oh for fuck's sake...)</style>
-<<PlayEffect shock>>
+<<PlayEffect Emphasis>>
 Shepherd: Oh don't you start this again, we are working on the plea so can you just drop the act?
+<<SetPose TinkerBell neutral_idle>>
 TinkerBell: Maybe, I don't know yet.
 
 <<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
@@ -561,7 +567,8 @@ position: -512,1601
     TinkerBell: Only one of the pigs was in the house. We had a chat about what had been going on, 
     TinkerBell: He promised me that they'd get it done soon, and I told him as I walked away that they were only going to be paid for the amount they delivered.
     Shepherd: I presume he did not take that well.
-    <<PlayEffect interesting>>
+    <<PlayEffect Energy>>
+    <<SetPose TinkerBell angry_idle>>
     TinkerBell: No. He swung at me, so I beat him with the bat.
     Shepherd: Why did you have the bat? 
     TinkerBell: Intimidation mostly.
@@ -571,9 +578,11 @@ position: -512,1601
     <<wait 0.5>>
     Shepherd: Uh huh..
     Shepherd: What state was he in when you left?
+    <<SetPose TinkerBell neutral_idle>>
     TinkerBell: He was unconscious on the floor, his head was bleeding. I figured his brothers would find him in a minute or two.
     Shepherd: But they didn't. He bled to death before they found him.
-    TinkerBell: Unfortunate.
+    <<wait 1>>
+    TinkerBell: ...Unfortunate.
     
     <<AddStatement TinkerBell_Q5_Timeline "TinkerBell arrived at the farm, had a conversation with the victim. Victim got agitated and attacked TinkerBell, TinkerBell beat him until he was unconcious and fled">>
 <<endif>>
@@ -592,7 +601,7 @@ Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place
 title: TinkerBell_Q6
 position: -774,1745
 ---
-<<PlayEffect Shock>>
+<<PlayEffect Emphasis>>
 Shepherd: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
 Shepherd: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
 Shepherd: Matches? Can you go book her?

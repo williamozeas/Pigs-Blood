@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poseObjects:
-  - poseName: neutral_sititng
+  - poseName: neutral_sitting
     poseObject: {fileID: 447036144916135450}
   - poseName: angry_idle
     poseObject: {fileID: 8390832645815714318}
