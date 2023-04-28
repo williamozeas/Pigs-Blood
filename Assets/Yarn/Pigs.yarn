@@ -191,7 +191,7 @@ Shepherd: Do you have any idea who this "friend" is?
 Bricks: No clue, I didn't even know Sticks had any friends. 
 Shepherd: And if I rember correctly neither of you saw anyone enter or leave?
 Bricks: That's right, neither of us were in a spot where we could see the house.
-Shepherd: <style="int">(Is that even possible?)</style>
+Shepherd: <style="int">(Is that even possible?)</style> //
 <<jump Pigs_Q2_Start>>
 ===
 title: Pigs_Q2_Accusation_Proof
