@@ -677,7 +677,7 @@ Matches: Get this: it was abandoned near the metro station!
 Matches: It turns out that the boss did go to the station after all. And that means...
 Shepherd: But why would he do that?
 <<wait 1>>
-<<SetPose MatchGirl thinking_idle>
+<<SetPose MatchGirl thinking_idle>>
 Matches: ...maybe he wanted an alibi? By swiping his card and not taking the metro, he could corroborate any lies about where he was!
 Shepherd: <style="int">(That does make sense...)</style>
 <<RemoveCharacter MatchGirl>>
@@ -1123,7 +1123,7 @@ Shepherd: Now that you mention it, something about this letter seems... familiar
 Shepherd: <style="int">(Oh no.)</style>
 <<PlayEffect Emphasis>>
 Shepherd: Wolf, I know who did this to you.
-<<SetPose Wolf scared_looking>
+<<SetPose Wolf scared_looking>>
 Wolf: Y-you do?
 Shepherd: I do.
 Shepherd: Thank you for trusting me, Wolf. You've blown the case wide open.
@@ -1152,7 +1152,7 @@ tags:
 position: 337,1203
 ---
 <<StopMusic>>
-<<SetPose Wolf scared_looking>
+<<SetPose Wolf scared_looking>>
 Wolf: M-my profile? Me?
 Shepherd: Yes, your profile.
 Wolf: But I- all that's written there are details about me!
