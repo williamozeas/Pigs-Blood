@@ -7,6 +7,44 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2901054518837620038, guid: 47a56275a20d94525b65effe830feb32,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703845857647817697, guid: 47a56275a20d94525b65effe830feb32,
+        type: 3}
+      propertyPath: m_text
+      value: 'Tinker Bell''s Boots
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703845858009502808, guid: 47a56275a20d94525b65effe830feb32,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b550f4de798a4431393be11e6740ec66,
+        type: 3}
+    - target: {fileID: 7703845858009502809, guid: 47a56275a20d94525b65effe830feb32,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703845858009502809, guid: 47a56275a20d94525b65effe830feb32,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703845858009502809, guid: 47a56275a20d94525b65effe830feb32,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703845858009502809, guid: 47a56275a20d94525b65effe830feb32,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7703845858074874724, guid: 47a56275a20d94525b65effe830feb32,
         type: 3}
       propertyPath: id
@@ -71,6 +109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TinkerBell_Boots
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703845858328575557, guid: 47a56275a20d94525b65effe830feb32,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a56275a20d94525b65effe830feb32, type: 3}
