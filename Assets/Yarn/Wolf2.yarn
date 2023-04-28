@@ -5,6 +5,7 @@ position: 122,-203
 
 <<wait 2>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 <<SetMusic Chill>>
 Matches: So that's it, then.
 <<wait 2>>
@@ -15,8 +16,10 @@ Matches: She'll face punishment for her crimes, we can be sure of that.
 Shepherd: ...
 Matches: Drug dealing, assault, now murder...
 Shepherd: <style="int">(So was it him?)</style>
+<<SetPose MatchGirl smug_sitting>>
 Matches: ...we've stopped some evil today.
 Shepherd: <style="int">(Can we prove it?)</int>
+<<SetPose MatchGirl thinking_idle>>
 Matches: Shepherd?
 <<PlayEffect Interesting>>
 <<StopMusic>>
@@ -24,6 +27,7 @@ Shepherd: ...we're not done here.
 Matches: No?
 <<SetMusic Trepidation>>
 Shepherd: We haven't stopped anything. Not while whoever's in charge of this whole thing is still out there.
+<<SetPose MatchGirl neutral_idle>>
 Matches: ...
 Matches: You think it's the wolf?
 Shepherd: Maybe.
@@ -33,8 +37,10 @@ Shepherd: Is he still here?
 Matches: Yep, he's been festering in Cell 8 since you two last talked.
 <<PlayEffect Energy>>
 Shepherd: I want to talk to him again.
+<<SetPose MatchGirl smug_sitting>>
 Matches: I had a feeling this would happen. I sent a few detectives to his house and around the farm once Tinker Bell mentioned a third party.
-Shepherd: Find anything? 
+Shepherd: Find anything?
+<<SetPose MatchGirl neutral_idle>> 
 Matches: They're still there. I'll let you know as soon as they get back.
 Shepherd: Thanks.
 Matches: In addition, I've gotten all the evidence from the first interrogation here.
@@ -51,14 +57,15 @@ Matches: In addition, I've gotten all the evidence from the first interrogation 
 Shepherd: Thanks.
 Matches: He wasn't that great a liar the first time around, but that could have been a façade.
 Matches: If he really is the mastermind behind a drug ring, he'll be a tough nut to crack. Be on your toes.
-Shepherd: Alright, I'll be on the lookout. 
+Shepherd: Alright, I'll be on the lookout.
+<<SetPose MatchGirl smug_sitting>> 
 Matches: Good luck.
 Shepherd: Bring him in.
 <<RemoveCharacter MatchGirl>>
 <<StopMusic>>
 <<wait 2>>
 <<AddCharacter Wolf>>
-<<SetPose Wolf CheckedOut>>
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 Shepherd: So we meet again.
 Wolf: Mm.
@@ -95,6 +102,7 @@ title: Wolf2_Q1_Question_1
 tags:
 position: 60,-13
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: Where were you yesterday morning?
 Wolf: ...
 Shepherd: ...Hello?
@@ -109,15 +117,18 @@ title: Wolf2_Q1_Question_2
 tags:
 position: -127,-18
 ---
+<<SetPose Wolf neutral_tapping>>
 Shepherd: Why are you so quiet?
 Wolf: I'm not being quiet.
 Shepherd: ...
 Wolf: ...
 Shepherd: Where's your usual sass?
+<<SetPose Wolf neutral_idle>>
 Wolf: What?
 Shepherd: You know, the insults, the talking back. You've been here so many times. Why shut up now?
 Wolf: ...
 Shepherd: Scared you're going to be booked for something big this time?
+<<SetPose Wolf rawr_idle>>
 Wolf: I'm not a fucking jester. If you're interrogating me for entertainment, go look somewhere else.
 Shepherd: <style="int">(...Okay.)</int>
 
@@ -127,6 +138,7 @@ title: Wolf2_Q1_Accusation_Proof
 tags:
 position: 516,-150
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 <<PromptEvidence Wolf2_Q1_Accusation_Default>>
 ===
@@ -134,6 +146,7 @@ title: Wolf2_Q1_Accusation_Default
 tags:
 position: 331,-153
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 <<wait 2>>
 <<PlayEffect Failure>>
@@ -147,6 +160,7 @@ tags:
 position: 334,-37
 ---
 <<StopMusic>>
+<<SetPose Wolf neutral_idle>>
 Shepherd: Wolf, we've been over this.
 Wolf: ...
 Shepherd: You weren't at home yesterday morning. We have a picture of you out and about, plus a record of your metro card being used.
@@ -190,6 +204,7 @@ title: Wolf2_Q2_Question_1
 tags:
 position: 71,226
 ---
+<<SetPose Wolf neutral_tapping>>
 Shepherd: You went out and bought groceries?
 Wolf: Yes. I took the metro there at around 9, and took it back around 10:15.
 <<AddStatement Wolf2_Metro "Wolf took the metro at 9, then again at 10:15">>
@@ -200,6 +215,7 @@ Wolf: ...
 Shepherd: You're lying. Again.
 Wolf: I went to the grocery store.
 Shepherd: Wolf, please cooperate.
+<<SetPose Wolf neutral_idle>>
 Wolf: I said, I went.
 <<PlayEffect Shock>>
 Wolf: To the <style="emph">GOD DAMNED GROCERY STORE</style>.
@@ -212,6 +228,7 @@ title: Wolf2_Q2_Question_2
 tags:
 position: -138,219
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: You say you went on a walk afterwards?
 <<AddStatement Wolf2_Groceries "Wolf went on a walk">>
 Wolf: Yes.
@@ -219,6 +236,7 @@ Shepherd: And why did you do that?
 <<wait 1>>
 Wolf: You don't care.
 Shepherd: What?
+<<SetPose Wolf angry_tapping>>
 Wolf: You don't give two shits.
 Shepherd: Excuse me?
 Wolf: Who cares why I went on a walk? 
@@ -234,6 +252,7 @@ Wolf: Because I got into an argument and wanted to blow off steam?
 <<PlayEffect Emphasis>>
 Wolf: Because I <style="emph">really</style> fucking love the smell of car exhaust?
 <<PlayEffect Shock>>
+<<SetPose Wolf rawr_idle>>
 Wolf: Because I wanted to MURDER someone?
 Shepherd: Jesus, Wolf. Calm down.
 Wolf: Get off my ass. You don't care.
@@ -245,6 +264,7 @@ title: Wolf2_Q2_Accusation_Proof
 tags:
 position: 534,183
 ---
+<<SetPose Wolf angry_tapping>>
 Wolf: ...You're full of shit.
 <<PromptEvidence Wolf2_Q2_Accusation_Default>>
 ===
@@ -252,6 +272,7 @@ title: Wolf2_Q2_Accusation_Default
 tags:
 position: 348,109
 ---
+<<SetPose Wolf angry_tapping>>
 Wolf: Is this funny to you?
 <<PlayEffect Failure>>
 Shepherd: <style="int">("Damn.")</style>
@@ -262,6 +283,7 @@ title: Wolf2_Q2_Accusation_Correct
 tags:
 position: 350,186
 ---
+<<SetPose Wolf neutral_tapping>>
 <<StopMusic>>
 Shepherd: Wolf. Look at me.
 Wolf: ...
@@ -273,6 +295,7 @@ Wolf: I went to the farm to pick up strawberries for my kids, and-
 <<PlayEffect Emphasis>>
 Shepherd: NO! Wolf, we know you didn't go there to buy strawberries.
 Shepherd: You were found running from the crime scene, no strawberries in sight. No receipt either.
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 Shepherd: In addition, you have red stains on your fur. They weren't there in the CCTV footage showing you on your way to the crime.
 Wolf: ...
@@ -287,6 +310,7 @@ Shepherd: Excuse me?
 Wolf: You should know this. It can't be blood.
 Shepherd: <style="int">(...I should know this?)</style>
 <<SetMusic Trepidation>>
+<<SetPose Wolf angry_tapping>>
 Wolf: Dumb pigs. All of you. Look at your damn evidence.
 Shepherd: What?
 Wolf: You think I'm the boss, right? Well, if I'm the boss, could this stain be that pig's blood?
@@ -298,6 +322,7 @@ Shepherd: <style="int">(My evidence? Is there proof that the red stain can't be 
 title: Wolf2_Q2p1_Default
 ---
 <<PlayEffect Failure>>
+<<SetPose Wolf neutral_idle>>
 Wolf: No. Wrong. Try again.
 Shepherd: <style="int">(Hmmm... If Wolf is the boss, could he have blood on him?)</style>
 <<ResetEvidenceResponses>>
@@ -306,6 +331,7 @@ Shepherd: <style="int">(Hmmm... If Wolf is the boss, could he have blood on him?
 ===
 title: Wolf2_Q2p1_Correct
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: According to Tinker Bell's testimony, the boss left the scene well before any violence took place.
 Wolf: See? Even if I was the big mastermind behind this whole thing, I wouldn't have blood on me. 
 Shepherd: Hmm...
@@ -322,6 +348,7 @@ Wolf: ...
 ===
 title: Wolf2_Q2p2
 ---
+<<SetPose Wolf neutral_tapping>>
 -> The strawberry stains prove you are the boss.
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... that's not it. What did he say that was suspicious?)</style>
@@ -350,6 +377,7 @@ Wolf: ...
 Wolf: ...
 <<wait 2>>
 <<PlayEffect Energy>>
+<<SetPose Wolf neutral_idle>>
 Wolf: Fine.
 Shepherd: <style="int">(...?!)</style>
 Wolf: I did it. I'm the mastermind.
@@ -363,6 +391,7 @@ Wolf: What? Do you want me to break down crying or something? Throw a fit and ri
 Wolf: I did it. Just take me the hell away. Match Girl? My cell?
 <<RemoveCharacter Wolf>>
 <<AddCharacter Matches>>
+<<SetPose MatchGirl neutral_idle>>
 Matches: Way ahead of you there.
 <<wait 1>>
 Shepherd: Wait, Matches.
@@ -372,6 +401,7 @@ Matches: Wh- but it's him, he just admitted it! We did it!
 Shepherd: But it just doesn't sit right with me.
 <<wait 0>>
 //TODO: Pose change
+<<SetPose MatchGirl thinking_idle>>
 Matches: For Pete's sake, Shepherd, not everything has to be a detective novel.
 Matches: He's admitting to the crime. What more do you want?
 Shepherd: Let me talk to him some more.
@@ -379,12 +409,15 @@ Matches: Why? For what? Take a break, Shepherd, you've been working hard for thi
 Shepherd: He's running a drug ring, we can get more information out of him.
 Matches: ...
 Shepherd: Let me talk to him. I just have some details I need to iron out.
+<<SetPose MatchGirl neutral_idle>>
 Matches: ...alright. 
 <<RemoveCharacter Matches>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf neutral_tapping>>
 <<wait 1.5>>
 Wolf: You want my signature or something?
 Shepherd: No, I just want to ask you a few questions about-
+<<SetPose Wolf angry_tapping>>
 Wolf: God DAMN, you are the nosiest person I've ever met.
 <<wiat 0.8>>
 Shepherd: It's in the job description.
@@ -398,7 +431,7 @@ title: Wolf2_Q3_Start
 tags:
 position: 124,340
 ---
-<<SetPose CheckedOut>>
+<<SetPose Wolf neutral_idle>>
 <<SetMusic QuestionsFaster>>
 -> Question
     -> Where were you yesterday?
@@ -439,6 +472,7 @@ title: Wolf2_Q3_Question_1
 tags:
 position: 54,440
 ---
+<<SetPose Wolf neutral_tapping>>
 <<PlayEffect Energy>>
 Shepherd: For the last time, where were you yesterday?
 Wolf: I woke up at 9 and drove to the strawberry farm at around 10. Met Tinker Bell there. Left.
@@ -457,10 +491,12 @@ title: Wolf2_Q3_Question_2
 tags:
 position: -149,435
 ---
+<<SetPose Wolf neutral_tapping>>
 Shepherd: What happened at the farm?
 Wolf: I already told you. I just talked to Tinker Bell, then left.
 Shepherd: Wolf. Cooperate with me. What did you talk about?
 <<PlayEffect Interesting>>
+<<SetPose Wolf neutral_idle>>
 Wolf: ...None of your business.
 Shepherd: It certainly is my business. Why not tell me if you've already confessed? Are you hiding something?
 <<wait 1>>
@@ -479,6 +515,7 @@ title: Wolf2_Q3_Question_3
 tags:
 position: -149,435
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: What did you do in between leaving the farm and getting arrested?
 <<if visited("Wolf2_Q3_Accusation_Correct_MetroPass") == false>>
     Wolf: Nothing much. Drove my car back to my house.
@@ -514,6 +551,7 @@ title: Wolf2_Q3_Question_4
 tags:
 position: -149,435
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: So, why did you try to return to the scene of the crime? You had gotten away with it!
 Wolf: ...
 Wolf: I didn't trust Tinker Bell. I had to make sure she did it.
@@ -521,6 +559,7 @@ Wolf: I didn't trust Tinker Bell. I had to make sure she did it.
 Shepherd: Why didn't you trust her?
 Wolf: I don't trust anybody.
 Shepherd: How edgy.
+<<SetPose Wolf angry_tapping>>
 Wolf: I don't care what you think of me. Doesn't change where I'm headed.
 Shepherd: You seem awfully determined to go to prison.
 <<PlayEffect Energy>>
@@ -572,6 +611,7 @@ title: Wolf2_Q3_Accusation_Proof
 tags:
 position: 543,331
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: Yeah? and what's your proof?
 <<PromptEvidence Wolf2_Q3_Accusation_Default>>
 ===
@@ -579,6 +619,7 @@ title: Wolf2_Q3_Accusation_Contradict
 tags:
 position: 543,331
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: Yeah? And what's the other statement?
 <<PromptStatement Wolf2_Q3_Accusation_Default>>
 ===
@@ -586,6 +627,7 @@ title: Wolf2_Q3_Accusation_Default
 tags:
 position: 350,333
 ---
+<<SetPose Wolf neutral_idle>>
 Wolf: What are you trying to say? I already confessed!
 <<PlayEffect Failure>>
 <<if visited("Wolf2_Q3_Accusation_Correct_Car") == true>>
@@ -601,6 +643,7 @@ title: Wolf2_Q3_Accusation_Correct_MetroPass
 tags:
 position: 353,432
 ---
+<<SetPose Wolf neutral_idle>>
 <<StopMusic>>
 <<PlayEffect Emphasis>>
 Shepherd: Wolf, you're lying.
@@ -616,6 +659,7 @@ Shepherd: So, why did you take the metro?
 Wolf: That's...
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 <<PlayEffect Energy>>
 Matches: I think I can shed some light on the subject, Shepherd.
 Shepherd: Matches?
@@ -633,11 +677,12 @@ Matches: Get this: it was abandoned near the metro station!
 Matches: It turns out that the boss did go to the station after all. And that means...
 Shepherd: But why would he do that?
 <<wait 1>>
+<<SetPose MatchGirl thinking_idle>
 Matches: ...maybe he wanted an alibi? By swiping his card and not taking the metro, he could corroborate any lies about where he was!
 Shepherd: <style="int">(That does make sense...)</style>
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
-<<SetPose Flippant>>
+<<SetPose Wolf neutral_idle>>
 <<PlayEffect Energy>>
 Wolf: That's right! You got me. I drove to the station, swiped my card, then walked directly to the crime scene.
 <<StopMusic>>
@@ -653,6 +698,7 @@ title: Wolf2_Q3_Accusation_Correct_Car
 tags:
 position: 353,432
 ---
+<<SetPose Wolf neutral_idle>>
 <<StopMusic>>
 Shepherd: You can't even keep your own story straight.
 Wolf: What?
@@ -661,11 +707,13 @@ Shepherd: Yet, you also said that you got your new clothes from home and insiste
 <<PlayEffect Emphasis>>
 <<SetMusic Contradiction>>
 Shepherd: So? Which is it, Wolf? Did you change your clothes or not?
+<<SetPose Wolf angry_tapping>>
 Wolf: Fine! Fine! I didn't change my clothes! 
 <<RemoveStatement Wolf2_Q3_ChangeClothes "Wolf got his new clothes from his home.">>
 <<AddStatement Wolf2_Q3_DidntChangeClothes "Wolf did not change his clothes.">>
 Wolf: Why are you nitpicking everything I say?! I'm confessing to the crime!
 Shepherd: Wolf, I'm just trying to find the truth. Why are you still lying?
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 Shepherd: Then I guess we'll do this that hard way.
 <<StopMusic>>
@@ -676,6 +724,7 @@ title: Wolf2_Q3_Accusation_Correct_CCTV
 tags:
 position: 353,432
 ---
+<<SetPose Wolf neutral_idle>>
 <<StopMusic>>
 Shepherd: <style="int">(He's lied so much, why would confronting him one more time change anything?)</style>
 Shepherd: <style="int">(...)</style>
@@ -686,6 +735,7 @@ Shepherd: Wolf?
 Wolf: Yes?! What now?
 Shepherd: Your story just has too many holes for me to believe.
 <<PlayEffect Energy>>
+<<SetPose Wolf angry_tapping>>
 Wolf: What?!
 <<SetMusic Contradiction>>
 <<PlayEffect Shock>>
@@ -700,6 +750,7 @@ Wolf: I could have easily just disposed of my clothes somewhere! Just dumped the
 Shepherd: If that's the case, where did you get your current clothing?
 <<PlayEffect Emphasis>>
 <<StopMusic>>
+<<SetPose Wolf rawr_idle>>
 Wolf: Why do you care so fucking much?! I did it! Let me rot away in a cell somewhere! Please!
 Shepherd: <style="int">(What is going on with him?)</style>
 <<ResetStatements>>
@@ -714,6 +765,7 @@ Wolf: Match Girl! Take me away, I did it!
 Shepherd: <style="int">(...?)</style>
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 Matches: Shepherd.
 Shepherd: Matches...
 Matches: It's no use. He's just a liar. Who knows why he's lying, but these nitpicks aren't helping us.
@@ -723,12 +775,14 @@ Matches: I'm sorry, but this thing with the clothes... he's deranged. Is it real
 Matches: For all we know, that could be long underwear, and he could have just dropped his other clothes somewhere in the city.
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf neutral_idle>>
 Wolf: Yes... please... Take me away.
 <<SetMusic Trepidation>>
 <<PlayEffect Shock>>
 Shepherd: NO.
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl thinking_idle>>
 <<PlayEffect Energy>>
 Matches: What?
 <<PlayEffect Emphasis>>
@@ -737,19 +791,23 @@ Shepherd: Didn't you hear that, Matches?
 Matches: I already said-
 <<PlayEffect Energy>>
 Shepherd: No, not the clothes! What he just said!
+<<SetPose MatchGirl neutral_idle>>
 Matches: N-no, I didn't hear anything out of the ordinary...
 Shepherd: There's no doubt in my mind that this Wolf is not the mastermind.
 Shepherd: I don't know if you were there, or someone told you the story secondhand, but you missed one crucial detail, Wolf.
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf scared_looking>>
 <<PlayEffect Interesting>>
 Wolf: Huh?!
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
 <<PlayEffect Energy>>
+<<SetPose MatchGirl surprised_looking>>
 Matches: What?!
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf neutral_idle>>
 Shepherd: Wolf, this statement you just made contradicts the evidence!
 <<ResetEvidenceResponses>>
 <<SetStatementResponse Wolf_Q3_ToldTBToKill TinkerBell_Testimony Wolf2_Q3_Statement_Correct>>
@@ -769,12 +827,14 @@ Shepherd: <style="int">(Something Wolf just said contradicts what we know about 
 title: Wolf2_Q3_Statement_Correct
 ---
 <<StopMusic>>
+<<SetPose Wolf neutral_idle>>
 Shepherd: Wolf... I don't know why you're lying.
 Wolf: ...Please...
 Shepherd: But there's no way you're the boss.
 Shepherd: Matches, can you remind me exactly what orders the boss gave to Tinker Bell?
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 Matches: The boss? They told her to...
 <<PlayEffect Energy>>
 Matches: Oh.
@@ -783,6 +843,7 @@ Shepherd: Exactly. The boss wanted Tinker Bell to rough up the pig.
 Shepherd: Not kill him, as our friend the Wolf said.
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf scared_looking>>
 <<PlayEffect Energy>>
 Wolf: ...!
 Shepherd: So, Wolf! For the last time...
@@ -795,8 +856,10 @@ Shepherd: Please, tell me the truth.
 <<SetMusic Trepidation>>
 Wolf: Why...
 Shepherd: <style="int">(...?)</style>
+<<SetPose Wolf rawr_idle>>
 Wolf: Why... me...?
 Shepherd: Wolf...? What's happening?
+<<SetPose Wolf scared_looking>>
 Wolf: No, no, no, please...!
 <<PlayEffect Emphasis>>
 Wolf: Just lock me up! Take me away! Please!!
@@ -839,6 +902,7 @@ title: Wolf2_Q4_Question_1
 tags:
 position: 16,629
 ---
+<<SetPose Wolf scared_looking>>
 Shepherd: Wolf. What's wrong?
 <<PlayEffect Interesting>>
 Wolf: N-no...
@@ -861,6 +925,7 @@ title: Wolf2_Q4_Accusation_Prison
 tags:
 position: 354,544
 ---
+<<SetPose Wolf scared_looking>>
 <<PlayEffect Emphasis>>
 Shepherd: You're trying to infiltrate the prison, aren't you!
 Wolf: What...?
@@ -873,6 +938,7 @@ title: Wolf2_Q4_Accusation_Culprit
 tags:
 position: 354,544
 ---
+<<SetPose Wolf scared_looking>>
 <<PlayEffect Emphasis>>
 Shepherd: You're trying to cover for the true culprit, aren't you?
 Shepherd: Who is it? Your friend? Your family?
@@ -886,6 +952,7 @@ tags:
 position: 354,544
 ---
 <<PlayEffect Emphasis>>
+<<SetPose Wolf neutral_idle>>
 Shepherd: This evidence proves it!
 Wolf: ...
 <<PlayEffect Failure>>
@@ -896,9 +963,11 @@ title: Wolf2_Q4_Accusation_Blackmailed
 tags:
 position: 367,620
 ---
+<<SetPose Wolf scared_looking>>
 Shepherd: Wolf, you do have something you can be blackmailed with.
 Shepherd: Something you hold near and dear to your heart.
 <<PlayEffect Energy>>
+<<SetPose Wolf scared_looking>>
 Wolf: ...!
 Shepherd: Your family.
 <<PlayEffect Emphasis>>
@@ -909,6 +978,7 @@ Shepherd: If you just tell us who is blackmailing you...
 Wolf: I don't kn-!
 <<wait 1>>
 <<PlayEffect Interesting>>
+<<SetPose Wolf neutral_idle>>
 Wolf: ...no.
 Wolf: Search my cell. You won't find anything.
 Shepherd: <style="int">(Looks like I'm right. And it sounds like he doesn't know who blackmailed him - meaning it was probably a letter.)</int>
@@ -917,6 +987,7 @@ Shepherd: <style="int">(How can I prove he's being blackmailed? I should get som
 ===
 title: Wolf2_Q5_1
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: <style="int">(Let's see... First of all, when was Wolf blackmailed?)</int>
 -> Before the murder
     <<PlayEffect Failure>>
@@ -961,6 +1032,7 @@ Shepherd: <style="int">(...I have a bad feeling about this.)</int>
 ===
 title: Wolf2_Q5_3
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: <style="int">(So, where is the blackmail letter now?)</int> 
 -> At his home
     <<PlayEffect Failure>>
@@ -977,9 +1049,11 @@ Shepherd: <style="int">(So, where is the blackmail letter now?)</int>
     Shepherd: Matches, hold him still. I want to check his pockets.
     <<RemoveCharacter Wolf>>
     <<AddCharacter MatchGirl>>
+    <<SetPose MatchGirl neutral_idle>>
     Matches: ...Alright.
     <<RemoveCharacter MatchGirl>>
     <<AddCharacter Wolf>>
+    <<SetPose Wolf scared_looking>>
     Wolf: No! Don't! I'll...
 Shepherd: Hold him!
 <<PlayEffect ToWhite>>
@@ -996,6 +1070,7 @@ Shepherd: Let's see here...
 ===
 title: Wolf2_Q5_DoneReviewing
 ---
+<<SetPose Wolf neutral_idle>>
 <<StopMusic>>
 Shepherd: ...
 Shepherd: Where did you get this?
@@ -1048,6 +1123,7 @@ Shepherd: Now that you mention it, something about this letter seems... familiar
 Shepherd: <style="int">(Oh no.)</style>
 <<PlayEffect Emphasis>>
 Shepherd: Wolf, I know who did this to you.
+<<SetPose Wolf scared_looking>
 Wolf: Y-you do?
 Shepherd: I do.
 Shepherd: Thank you for trusting me, Wolf. You've blown the case wide open.
@@ -1062,6 +1138,7 @@ title: Wolf2_Q6_Accusation_Default
 tags:
 position: 328,1092
 ---
+<<SetPose Wolf neutral_idle>>
 Shepherd: <style="int">(No, that's not it.)</style>
 Shepherd: <style="int">(I need to take a closer look and compare the note to other pieces of evidence.)</style>
 Shepherd: <style="int">(Any similarity could give me a clue.)</style>
@@ -1075,19 +1152,23 @@ tags:
 position: 337,1203
 ---
 <<StopMusic>>
+<<SetPose Wolf scared_looking>
 Wolf: M-my profile? Me?
 Shepherd: Yes, your profile.
 Wolf: But I- all that's written there are details about me!
 Shepherd: It's not about what's written there.
 Shepherd: It's about how it's written.
 <<PlayEffect Interesting>>
+<<SetPose Wolf neutral_idle>>
 Wolf: ...
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl thinking_idle>>
 <<PlayEffect Energy>>
 Matches: ...!
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf neutral_idle>>
 Shepherd: <style="int">(This is it. I can't turn back from this.)</style>
 Shepherd: <style="int">(I can hardly believe it myself, but...)</style>
 Shepherd: <style="int">(I can't turn away from the truth.)</style>
@@ -1098,6 +1179,7 @@ Shepherd: Profiles written by my partner...
 <<PlayEffect ToWhite>>
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 <<PlayEffect DramaticReveal>>
 <<SetMusic Contradiction>>
 Shepherd: The Little Match Girl.
