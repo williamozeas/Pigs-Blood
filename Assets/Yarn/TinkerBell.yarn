@@ -2,7 +2,7 @@
 tags:
 position: -749,-1282
 ---
-<<SetMusic Chill>>
+//<<SetMusic Chill>>
 <<jump TinkerBell_1>>
 ===
 title: TinkerBell_1
@@ -12,6 +12,9 @@ position: -748,-1095
 <<SetMusic Questions>>
 //<<SetPose TinkerBell Smug>>
 <<AddCharacter TinkerBell>>
+<<SetPose TinkerBell Neutral>>
+<<PlayEffect Reveal>>
+<<wait 3>>
 Shepherd: Ah, so you must be TinkerBell.
 TinkerBell: Oh, so you're the Wolf Shepherd, huh? Bit scruffier and scrawnier than I expected.
 Shepherd: And you're much more... flamboyant than I expected.

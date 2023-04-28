@@ -399,53 +399,52 @@ title: Pigs_Q5_Start
 tags:
 position: 112,787
 ---
--> Question
-    -> Temp 1
-        <<jump Pigs_Q5_Question_1>>
-    -> Temp 2
-        <<jump Pigs_Q5_Question_2>>
--> Accuse
-    -> You're lying about this statement!
+Shepherd: <style="int">(I have an idea what's there but I need the right piece of evidence and note)</style>
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q5_Accusation_Correct>>
+        <<SetStatementResponse Pigs_Straw Pigs_Tax_Returns Pigs_Q5_Accusation_Correct>>
         <<PromptStatement Pigs_Q5_Accusation_Proof>>
--> Review
-    <<Review>>
-===
-title: Pigs_Q5_Question_1
-tags:
-position: 41,881
----
-
-<<jump Pigs_Q5_Start>>
-===
-title: Pigs_Q5_Question_2
-tags:
-position: -159,875
----
-
-<<jump Pigs_Q5_Start>>
 ===
 title: Pigs_Q5_Accusation_Proof
 tags:
-position: 533,773
+position: 536,544
 ---
-Wolf: Yeah? and what's your proof?
 <<PromptEvidence Pigs_Q5_Accusation_Default>>
 ===
 title: Pigs_Q5_Accusation_Default
 tags:
-position: 354,773
+position: 354,544
 ---
-
-<<jump Pigs_Q5_Start>>
+<<PlayEffect Failure>>
+Shepherd: <style="int">(Damn it, that's not it. Lost my train of thought)</style>
+<<jump Pigs_54_Start>>
 ===
 title: Pigs_Q5_Accusation_Correct
 tags:
 position: 363,884
 ---
-
+<<SetMusic Contradiction>>
+Shepherd: These tax returns imply a very lucritive business is happening at your farm, presumably in the basement.
+<<wait 0.5>>
+Shepherd: Add in how secretive you both seem to be about about that basement...
+<<wait 0.5>>
+Shepherd: And add how Straw has been acting. Maybe I'm a bit off but...
+<<wait 1>>
+<<PlayEffect shock>>
+Shepherd: Is there a drug lab in your basement?
+<<StopMusic>>
+<<wait 4>>
+Straw: Uh huh! Wanna try a new pixie dust batch with me?
+<<SetMusic Questions>>
+<<wait 0.5>>
+<<PlayEffect shock>>
+Bricks: FOR FUCKS SAKE STRAW! Why the hell did you tell him about that?
+Shepherd: Judging from your reaction Bricks, I'm right aren't I?
+Bricks: I...
+Shepherd: We already have enough evidence to get a warrant to search your property, so how about you save us all some time?
+<<wait 1>>
+Bricks: There's a lab under the shed...
+Shepherd: <style="int">(Bricks really should have stayed silent, then I would have ignored Straws)</style>
 <<jump Pigs_Q6_Start>>
 
 //Pigs Q6
@@ -454,17 +453,17 @@ title: Pigs_Q6_Start
 tags:
 position: 111,994
 ---
+<<SetMusic Questions>>
 -> Question
-    -> Temp 1
+    -> So, what's the actual story?
         <<jump Pigs_Q6_Question_1>>
-    -> Temp 2
+    -> This "friend", who are they?
         <<jump Pigs_Q6_Question_2>>
--> Accuse
-    -> You're lying about this statement!
+-> Accuse <<if visited("Pigs_Q6_Question_2") == true>>
+    -> Take a look at this.
         <<ResetEvidenceResponses>>
-        //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse STATEMENT EVIDENCE Pigs_Q6_Accusation_Correct>>
-        <<PromptStatement Pigs_Q6_Accusation_Proof>>
+        <<SetEvidenceResponse Pigs_FamilyPortrait Pigs_Q6_Accusation_Correct>>
+        <<PromptEvidence Pigs_Q6_Accusation_Default>>
 -> Review
     <<Review>>
 ===
@@ -472,14 +471,30 @@ title: Pigs_Q6_Question_1
 tags:
 position: 49,1112
 ---
-
+Shepherd: So, what's the actual story?
+Bricks: We..we were in the lab. Straw was trying a new batch, and I was packin' it all up. 
+Shepherd: Uh huh.
+Bricks: I came upstairs after and started tendin' to my strawberries. I think I talked to someone.
+Shepherd: You think?
+Bricks: I inhaled some pixie dust and so I was kinda high. While trippin' i think i talked to someone but I can't recall if it was real or not.
+<<if visited("Pigs_Q6_Question_2") == false>>
+    Shepherd: <style="int">(Who could that have been if it was real, Wolf? But why would he double back if he killed Sticks)</style>
+<<else>>
+     Shepherd: <style="int">(Was that Wolf? But if he did kill Sticks why would he have stayed around for so long? Build an alibi maybe?)</style>
+<<endif>>
 <<jump Pigs_Q6_Start>>
 ===
 title: Pigs_Q6_Question_2
 tags:
 position: -168,1117
 ---
-
+Shepherd: This "friend", who are they?
+<<wait 0.5>>
+Bricks: I..I can't say.
+Shepherd: Why not?
+Bricks: They...they scare me.
+Straw: If we talk we might end up in trouble.
+Shepherd: <style="int">(I need to convince them to talk, and tell me who they suspect it was.)</style>
 <<jump Pigs_Q6_Start>>
 ===
 title: Pigs_Q6_Accusation_Proof
@@ -493,6 +508,8 @@ title: Pigs_Q6_Accusation_Default
 tags:
 position: 328,1092
 ---
+Bricks: Yeah, what about it? Why should that do anything for me?
+Shepherd: <style="int">(Damn it, that's not it.)</style>
 
 <<jump Pigs_Q6_Start>>
 ===
@@ -500,7 +517,16 @@ title: Pigs_Q6_Accusation_Correct
 tags:
 position: 337,1203
 ---
-
+Shepherd: Both of you, look at this picture.
+Shepherd: Your brother is dead, and you both seem to have an idea who did it.
+Shepherd: Don't you want to get revenge on them? For your brother?
+<<wait 3>>
+Straw: TinkerBell
+Shepherd: TinkerBell? Who's that?
+Bricks: Our..distibutor and the boss' right hand
+Straw: Bring her down 
+Bricks: For our brother, for Sticks.
+<<PlayEffect ToWhite>>
 <<jump Pigs_Ending>>
 
 ===
@@ -508,5 +534,18 @@ title: Pigs_Ending
 tags:
 position: 58,1403
 ---
-
+<<SetMusic Chill>>
+<<RemoveCharacter Bricks>>
+<<RemoveCharacter Straw>>
+<<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
+<<PlayEffect Reveal>>
+Matches: TinkerBell huh?
+Shepherd: Thats what they said.
+Matches: You ever heard of her? Who is she?
+Shepherd: I think she owns a nightclub downtown, though I never expected her to be the murderous type.
+Matches: Some people will always dissapoint huh? Anyways head home Shepherd. We should have her in here at some point tomorrow morning to have a chat with you.
+Shepherd: Thanks Matches, really appreciate it.
+<<PlayEffect ToWhite>>
+<<jump StartTinkerBell>>
 ===
