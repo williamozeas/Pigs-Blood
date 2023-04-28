@@ -149,4 +149,13 @@ public class EvidenceManager : Singleton<EvidenceManager>
             Destroy(evidenceToRemove.gameObject);
         }
     }
+
+    public void RemoveAllEvidence()
+    {
+        foreach (var evidenceToRemove in currentEvidence)
+        {
+            currentEvidence.Remove(evidenceToRemove);
+            Destroy(evidenceToRemove.gameObject);
+        }
+    }
 }

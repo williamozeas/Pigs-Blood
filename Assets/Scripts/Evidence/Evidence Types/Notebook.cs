@@ -27,10 +27,10 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
         type = DocType.Notebook;
         
         statements = GetComponentsInChildren<Statement>().ToList();
-        for (int i = 0; i < 18; i++)
-        {
-            AddStatement(i.ToString(), "a");
-        }
+        // for (int i = 0; i < 18; i++)
+        // {
+        //     AddStatement(i.ToString(), "a");
+        // }
     }
 
     //TODO: clear statements on new interrogation

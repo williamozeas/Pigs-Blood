@@ -45,6 +45,9 @@ Matches: In addition, I've gotten all the evidence from the first interrogation 
 <<LoadEvidence Wolf_Profile>>
 <<LoadEvidence Wolf_FamilyPortrait>>
 <<LoadEvidence TinkerBell_Testimony>>
+<<LoadEvidence Pigs_Crime_Scene>>
+<<LoadEvidence Pigs_Autopsy>>
+<<LoadEvidence Pigs_Testimony>>
 Shepherd: Thanks.
 Matches: He wasn't that great a liar the first time around, but that could have been a façade.
 Matches: If he really is the mastermind behind a drug ring, he'll be a tough nut to crack. Be on your toes.
@@ -992,7 +995,7 @@ Wolf: ...
 Shepherd: We can't do it without you.
 <<wait 1>>
 Wolf: ...
-<<PlayMusic Chill>>
+<<SetMusic Chill>>
 Shepherd: Wolf.
 Shepherd: You're doing this to protect your family, but...
 <<PlayEffect Interesting>>

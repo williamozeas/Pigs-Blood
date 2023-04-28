@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7030302984259232321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 568681983026150072, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_Name
+      value: Pigs_CrimeSceneDescription
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: id
+      value: Pigs_Crime_Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: font
+      value: 
+      objectReference: {fileID: 11400000, guid: dd33b899c44134d7c8eb9aa20fdd5b8d,
+        type: 2}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: fontSize
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: lineSpacing
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: pagesText.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: pagesText.Array.data[0]
+      value: 'Crime Scene Description:
+
+
+        The crime scene is a front room
+        of a rural house. The room is dimly lit with a single lamp in the corner.
+        The furniture is sparse, consisting of a small table with a lamp, a few chairs,
+        and a couch. The walls are painted a pale yellow and adorned with a few framed
+        pictures and a clock. There is a fireplace against one wall, with a few logs
+        still smoldering in the grate. In the room next to the crime scene, there
+        is a table with mostly filled out tax forms visible. The forms are scattered
+        around the table, with several pens and a calculator nearby. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: pagesText.Array.data[1]
+      value: 'Blood is spattered across the room, with most of it concentrated near
+        the center of the room. There are several large pools of blood on the hardwood
+        floor, indicating that the victim likely collapsed and bled out at this location.
+        There are also blood smears on the walls and furniture, indicating that the
+        victim was likely struck with a blunt object several times.
+
+
+        Notably,
+        any weapon used in the attack is not present at the scene, indicating that
+        the perpetrator likely took it with them after the crime. The absence of
+        any signs of forced entry suggests that the perpetrator may have been known
+        to the victim or had been let into the house willingly.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: pagesText.Array.data[2]
+      value: 'Conclusion:
+
+
+        Based on the findings of the external and internal
+        examinations, it is the opinion of the medical examiner that the victim,
+        a male pig, died as a result of blunt force trauma to the head. The victim
+        bled out while waiting for medical attention. The manner of death is homicide,
+        and the investigation is ongoing.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9237cd618652460097a3aba9efdfbc4, type: 3}

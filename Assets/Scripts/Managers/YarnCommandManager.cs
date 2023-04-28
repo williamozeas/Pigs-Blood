@@ -87,6 +87,7 @@ public class YarnCommandManager : DialogueViewBase
 		runner.AddCommandHandler("ResetStatements", ResetStatements);
 		runner.AddCommandHandler<string>("LoadEvidence", LoadEvidence);
 		runner.AddCommandHandler<string>("RemoveEvidence", RemoveEvidence);
+		runner.AddCommandHandler("RemoveAllEvidence", RemoveAllEvidence);
 
 		// adds all Resources to internal lists / one big pile... it
 		// will scan inside all subfolders too! note: but when
@@ -342,6 +343,11 @@ public class YarnCommandManager : DialogueViewBase
 	public void RemoveEvidence(string id)
 	{
 		EvidenceManager.Instance.RemoveEvidence(id);
+	}
+
+	public void RemoveAllEvidence()
+	{
+		EvidenceManager.Instance.RemoveAllEvidence();
 	}
 
 	//SPRITE & Audio OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM
