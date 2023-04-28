@@ -154,6 +154,7 @@ Shepherd: No!
 <<StopMusic>>
 <<PlayEffect FadeToWhite>>
 //set pose not holding paper?
+<<RemoveEvidence Wolf_BlackmailLetter>>
 <<PlayEffect DramaticReveal>>
 <<wait 2>>
 Shepherd: Y-you...
