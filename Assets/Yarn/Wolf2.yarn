@@ -55,6 +55,7 @@ Shepherd: Alright, I'll be on the lookout.
 Matches: Good luck.
 Shepherd: Bring him in.
 <<RemoveCharacter MatchGirl>>
+<<StopMusic>>
 <<wait 2>>
 <<AddCharacter Wolf>>
 <<SetPose Wolf CheckedOut>>
@@ -66,7 +67,7 @@ Shepherd: Not so talkative now, huh? A night in the slammer tends to do that.
 <<PlayEffect Interesting>>
 Wolf: ...
 Shepherd: ...Alright then.
-Shepherd: <style="int">(...he's shedding. He might be able to hide his nervousness in his words, but his body betrays him.)</style>
+Shepherd: <style="int">(...he's shedding. He might be able to hide his nervousness in his words, but not his body language.)</style>
 
 <<jump Wolf2_Q1_Start>>
 //Wolf2 Q1
@@ -331,6 +332,8 @@ title: Wolf2_Q2p2
     Shepherd: <style="int">(No... that's not it. What did he say that was suspicious?)</style>
     <<jump Wolf2_Q2p2>>
 <<PlayEffect Emphasis>>
+Shepherd: <style="int">(Here goes.)</style>
+<<SetMusic Contradiction>>
 Shepherd: You shouldn't have known about the boss's movement.
 Wolf: ...
 <<PlayEffect Emphasis>>
@@ -341,9 +344,9 @@ Shepherd: You talked to Tinker Bell, you left, she went in, she killed the pig. 
 Shepherd: Then, after you left, you came sauntering back to the crime scene to check on your henchwoman's handiwork.
 Shepherd: But you didn't expect a police car to chase you down and bring you here.
 Shepherd: We know what you've done. Why not just admit it? Either way, you're going away for a loooong time.
-<<StopMusic>>
 Wolf: ...
 <<wait 2>>
+<<StopMusic>>
 Wolf: ...
 <<wait 2>>
 <<PlayEffect Energy>>
@@ -396,7 +399,7 @@ tags:
 position: 124,340
 ---
 <<SetPose CheckedOut>>
-<<SetMusic Questions>>
+<<SetMusic QuestionsFaster>>
 -> Question
     -> Where were you yesterday?
         <<jump Wolf2_Q3_Question_1>>
@@ -607,6 +610,8 @@ Shepherd: You didn't go home. Or at least, you didn't drive there.
 Shepherd: Your metro pass was used once on the day of the crime. If you're driving everywhere, why take the train?
 Wolf: ...I-I...
 Shepherd: In fact, you took the metro at 10:40. That's about ten minutes after Tinker Bell said the boss left the farm.
+<<PlayEffect Emphasis>>
+<<SetMusic Contradiction>>
 Shepherd: So, why did you take the metro?
 Wolf: That's...
 <<RemoveCharacter Wolf>>
@@ -620,7 +625,7 @@ Matches: The car. It matches Tinker Bell's description, and was found abandoned 
 Shepherd: Oh, really?
 Matches: Really. I've got a picture here of the interior of the car.
 Matches: And even more, we found traces of fur in the car. We tested it for DNA, and it matched Wolf's perfectly.
-<<LoadEvidence Wolf_Car_Photo>> //GET EVIDENCE
+// <<LoadEvidence Wolf_Car_Photo>> //GET EVIDENCE
 <<LoadEvidence Wolf_CarDescription>> 
 Shepherd: And where was this found?
 <<PlayEffect Energy>>
@@ -635,6 +640,7 @@ Shepherd: <style="int">(That does make sense...)</style>
 <<SetPose Flippant>>
 <<PlayEffect Energy>>
 Wolf: That's right! You got me. I drove to the station, swiped my card, then walked directly to the crime scene.
+<<StopMusic>>
 <<RemoveStatement Wolf2_Q3_SeeKids>>
 <<AddStatement Wolf2_Q3_FakedMetro "Wolf drove to the metro station, swiped his card, and then walked to the crime scene without returning home.">>
 Shepherd: <style="int">(What an eager reaction. He didn't even look at the picture.)</style>
@@ -653,6 +659,7 @@ Wolf: What?
 Shepherd: After we found the car, you said that you didn't go home. 
 Shepherd: Yet, you also said that you got your new clothes from home and insisted that you didn't bring them with you.
 <<PlayEffect Emphasis>>
+<<SetMusic Contradiction>>
 Shepherd: So? Which is it, Wolf? Did you change your clothes or not?
 Wolf: Fine! Fine! I didn't change my clothes! 
 <<RemoveStatement Wolf2_Q3_ChangeClothes "Wolf got his new clothes from his home.">>
@@ -661,6 +668,7 @@ Wolf: Why are you nitpicking everything I say?! I'm confessing to the crime!
 Shepherd: Wolf, I'm just trying to find the truth. Why are you still lying?
 Wolf: ...
 Shepherd: Then I guess we'll do this that hard way.
+<<StopMusic>>
 Shepherd: <style="int">(He must be lying again. And I've got to prove it.)</style>
 <<jump Wolf2_Q3_Start>>
 ===
@@ -679,6 +687,8 @@ Wolf: Yes?! What now?
 Shepherd: Your story just has too many holes for me to believe.
 <<PlayEffect Energy>>
 Wolf: What?!
+<<SetMusic Contradiction>>
+<<PlayEffect Shock>>
 Shepherd: First, you lied about driving home. Then, you lied about changing clothes at your house.
 Shepherd: Now, you've lied again. There's no way you <style="emph">didn't</style> change clothes.
 Wolf: What the-?! But you just said that I didn't change clothes!
@@ -689,6 +699,7 @@ Shepherd: Because you were then spotted on camera, wearing your current clothes!
 Wolf: I could have easily just disposed of my clothes somewhere! Just dumped them into a bush!
 Shepherd: If that's the case, where did you get your current clothing?
 <<PlayEffect Emphasis>>
+<<StopMusic>>
 Wolf: Why do you care so fucking much?! I did it! Let me rot away in a cell somewhere! Please!
 Shepherd: <style="int">(What is going on with him?)</style>
 <<ResetStatements>>
@@ -713,6 +724,7 @@ Matches: For all we know, that could be long underwear, and he could have just d
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
 Wolf: Yes... please... Take me away.
+<<SetMusic Trepidation>>
 <<PlayEffect Shock>>
 Shepherd: NO.
 <<RemoveCharacter Wolf>>
@@ -961,6 +973,7 @@ Shepherd: <style="int">(So, where is the blackmail letter now?)</int>
     Shepherd: <style="int">(He just told me to search his cell. There's no way he would do that if the letter is there.)</int> 
     <<jump Wolf2_Q5_3>>
 -> In the interrogation room //shoutout to TGAA1 where witnesses pass around an object between each other while at the witness stand that was awesome
+    <<StopMusic>>
     Shepherd: Matches, hold him still. I want to check his pockets.
     <<RemoveCharacter Wolf>>
     <<AddCharacter MatchGirl>>
@@ -1013,6 +1026,7 @@ Shepherd: Wolf...
 Shepherd: <style="int">(Shit.)</int>
 Shepherd: I'm sorry. For seeing you that way myself.
 <<wait 2>>
+<<StopMusic>>
 Wolf: I found it in my cell this morning.
 Shepherd: Did you see who gave it to you?
 Wolf: No. I t-think it came in through the air vent.
@@ -1027,7 +1041,7 @@ Shepherd: <style="int">(I don't want to believe it, but...)</style>
 <<PlayEffect Energy>>
 Shepherd: Blackmailing someone while they're in jail. That takes some guts.
 Wolf: Do you know who it is? Any clues?
-<<StopMusic>>
+<<SetMusic Trepidation>>
 Shepherd: Now that you mention it, something about this letter seems... familiar.
 <<wait 2>>
 <<PlayEffect Energy>>
@@ -1060,6 +1074,7 @@ title: Wolf2_Q6_Accusation_Correct
 tags:
 position: 337,1203
 ---
+<<StopMusic>>
 Wolf: M-my profile? Me?
 Shepherd: Yes, your profile.
 Wolf: But I- all that's written there are details about me!

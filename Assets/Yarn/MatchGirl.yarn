@@ -57,6 +57,7 @@ title: MatchGirl_Q1_Accusation_Correct
 tags:
 position: 334,-37
 ---
+<<StopMusic>>
 Shepherd: You say that anyone in the city could have blackmailed wolf, but is that true?
 Matches: Yes! Wolf said that the letter came into his cell through the air vent, which leads to the outside.
 Matches: Therefore, anyone could have walked by the jail and given it to him.
@@ -70,6 +71,7 @@ Wolf: ...yeah. There aren't any windows or anything, and the vent is too thin to
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
 Shepherd: So, the question is: How did the blackmailer know where to send the blackmail letter?
+<<SetMusic Contradiction>>
 <<PlayEffect Shock>>
 Matches: !!!
 Shepherd: It must have been someone on the inside, who knew which cell Wolf was staying in.
@@ -136,6 +138,7 @@ Shepherd: Give it up, Matches. We've got enough proof to put you in jail.
 <<wait 1.5>>
 <<PlayEffect Interesting>>
 <<SetPose MatchGirl smug_sitting>>
+<<SetMusic Trepidation>>
 Matches: ...What proof?
 Shepherd: The note, of course! We'll get the handwriting analyzed, and then-
 <<PlayEffect Energy>>
@@ -148,6 +151,7 @@ Matches: So useful, so important! And yet, so...
 Matches: Flammable.
 <<PlayEffect Emphasis>>
 Shepherd: No!
+<<StopMusic>>
 <<PlayEffect FadeToWhite>>
 //set pose not holding paper?
 <<PlayEffect DramaticReveal>>
@@ -220,6 +224,7 @@ Shepherd: <style="int">(But maybe, the rabbit hole goes deeper. And if it does, 
 Shepherd: <style="int">(I can't nail her with anything here, or she'll just burn the evidence. What's some evidence she can't get rid of...?)</style>
 <<PlayEffect Energy>>
 Shepherd: <style="int">(...!)</style>
+<<PlayMusic QuestionsFaster>>
 Shepherd: Wolf?
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
@@ -281,6 +286,7 @@ title: MatchGirl_Q4_Accusation_Correct
 tags:
 position: 367,620
 ---
+<<StopMusic>>
 Shepherd: Well, there's one time you've been in an unknown car recently, right, Wolf?
 <<PlayEffect Interesting>>
 Wolf: ...?
