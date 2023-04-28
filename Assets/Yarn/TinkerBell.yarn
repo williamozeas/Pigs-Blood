@@ -160,7 +160,7 @@ position: -757,-330
 -> Accuse
     -> This evidence proves you wrong!
         <<ResetEvidenceResponses>>
-        <<SetEvidenceResponse TinkerBell_Pig_Info TinkerBell_Q2_Accusation_Correct>>
+        <<SetEvidenceResponse Pigs_Testimony TinkerBell_Q2_Accusation_Correct>>
         <<PromptEvidence TinkerBell_Q2_Accusation_Default>>
 -> Review
     <<Review>>
