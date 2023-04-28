@@ -566,14 +566,14 @@ tags:
 position: -168,1117
 ---
 <<SetPose Bricks neutral_sitting>>
-<<SetPose Straw neutral_lookingDown>
+<<SetPose Straw neutral_lookingDown>>
 Shepherd: This "friend", who are they?
 <<wait 0.5>>
 <<SetPose Bricks scared_looking>>
 Bricks: I..I can't say.
 Shepherd: Why not?
 Bricks: They...they scare me.
-<<SetPose Straw neutral_idle>
+<<SetPose Straw neutral_idle>>
 Straw: If we talk we might end up in trouble.
 Shepherd: <style="int">(I need to convince them to talk, and tell me who they suspect it was.)</style>
 <<jump Pigs_Q6_Start>>
