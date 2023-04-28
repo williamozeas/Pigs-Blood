@@ -5813,7 +5813,7 @@ PrefabInstance:
     - target: {fileID: 8517922602376601813, guid: fe758d2578e924949a58776c2f5fb87f,
         type: 3}
       propertyPath: startNode
-      value: StartTinkerBell
+      value: Start
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe758d2578e924949a58776c2f5fb87f, type: 3}

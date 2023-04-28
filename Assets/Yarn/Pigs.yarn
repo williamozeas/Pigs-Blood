@@ -3,6 +3,7 @@ tags:
 position: 122,-203
 ---
 Shepherd: Alright, I'm ready. Send them in.
+
 <<RemoveCharacter MatchGirl>>
 <<wait 1.5>>
 <<AddCharacter Bricks>>
@@ -464,6 +465,15 @@ title: Pigs_Q5_Start
 tags:
 position: 112,787
 ---
+
+
+// <<LoadEvidence Pigs_Autopsy>>
+// <<LoadEvidence Pigs_FamilyPortrait>>
+// <<LoadEvidence Pigs_Crime_Scene>>
+// <<LoadEvidence Pigs_Farm_Map>>
+// <<LoadEvidence Pigs_Tax_Returns>>
+// <<AddCharacter Straw>>
+// <<AddCharacter Bricks>>
 <<SetPose Bricks neutral_sitting>>
 <<SetPose Straw neutral_idle>>
 Shepherd: <style="int">(I have an idea what's there but I need the right piece of note and evidence..)</style>
@@ -484,7 +494,7 @@ position: 354,544
 ---
 <<PlayEffect Failure>>
 Shepherd: <style="int">(Damn it, that's not it. Lost my train of thought.)</style>
-<<jump Pigs_54_Start>>
+<<jump Pigs_Q5_Start>>
 ===
 title: Pigs_Q5_Accusation_Correct
 tags:

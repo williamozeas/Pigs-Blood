@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 7703845858074874725}
   - component: {fileID: 7703845858074874724}
   m_Layer: 0
-  m_Name: Pigs_Tax_Return
+  m_Name: Pigs_Tax_Returns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef34c777eb68401d8eaeb3d1b274106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Pigs_Tax_Return
+  id: Pigs_Tax_Returns
   canBeClickedOff: 1
   inspectPos: {x: 0, y: 5.72, z: -4.82}
   inspectRot: {x: -0.08715574, y: 0, z: 0, w: 0.9961947}
