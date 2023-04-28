@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;  
 
-public class Button : MonoBehaviour
+public class ButtonInteraction : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -12,7 +12,7 @@ public class Button : MonoBehaviour
     }
 
     public void clickToStartGame() {
-        // GameManager.Instance.CurrentScene = SceneNum.Interrogation;
+        SceneManager.LoadScene("Interrogation");
     }
 
     // Update is called once per frame
