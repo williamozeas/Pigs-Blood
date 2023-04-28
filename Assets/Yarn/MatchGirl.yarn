@@ -4,14 +4,17 @@ position: 122,-203
 ---
 <<LoadEvidence Wolf_FinalTestimony>> //TODO: MUST have details about his cell number (8) and not being able to see through the vent + unable to see outside/no windows
 <<PlayEffect Emphasis>>
+<<SetPose MatchGirl surprised_looking>>
 Matches: What?!
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf scared_looking>>
 <<PlayEffect Emphasis>>
 Wolf: Huh!?!
 Shepherd: ...
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl thinking_idle>>
 <<ResetStatements>>
 Matches: Shepherd, you can't be serious! We're partners, you've known me for over four years, I-
 Shepherd: I am serious. It can't be anyone but you.
@@ -26,6 +29,7 @@ Matches: Surely you're a better detective than this!
 <<AddStatement MatchGirl_ShepherdIsBetter "Shepherd is a better detective than this.">>
 Shepherd: Surely you're a better liar than this.
 <<PlayEffect Interesting>>
+<<SetPose MatchGirl neutral_idle>>
 Matches: ...
 Shepherd: Something you just said is incorrect. 
 Matches: What...?
@@ -39,6 +43,7 @@ title: MatchGirl_Q1_Accusation_Proof
 tags:
 position: 516,-150
 ---
+<<SetPose MatchGirl thinking_idle>>
 Matches: That's not true! Do you have any proof?
 <<PromptEvidence MatchGirl_Q1_Accusation_Default>>
 ===
@@ -47,6 +52,7 @@ tags:
 position: 331,-153
 ---
 <<PlayEffect Failure>>
+<<SetPose MatchGirl thinking_idle>>
 Matches: That makes no sense! Can't you see? I can't be the blackmailer!
 Shepherd: <style="int">(Dammit. I need to think a little more about the circumstances surrounding the blackmailing...)</style>
 <<ResetEvidenceResponses>>
@@ -58,25 +64,31 @@ tags:
 position: 334,-37
 ---
 <<StopMusic>>
+<<SetPose MatchGirl neutral_idle>>
 Shepherd: You say that anyone in the city could have blackmailed wolf, but is that true?
 Matches: Yes! Wolf said that the letter came into his cell through the air vent, which leads to the outside.
 Matches: Therefore, anyone could have walked by the jail and given it to him.
 Shepherd: That's not true.
 <<PlayEffect Energy>>
+<<SetPose MatchGirl thinking_idle>>
 Matches: ...!
 Shepherd: Wolf, you said that you can't see outside from within your cell, right?
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf neutral_idle>>
 Wolf: ...yeah. There aren't any windows or anything, and the vent is too thin to see out of.
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl neutral_idle>>
 Shepherd: So, the question is: How did the blackmailer know where to send the blackmail letter?
 <<SetMusic Contradiction>>
 <<PlayEffect Shock>>
+<<SetPose MatchGirl surprised_looking>>
 Matches: !!!
 Shepherd: It must have been someone on the inside, who knew which cell Wolf was staying in.
 Shepherd: That, combined with the handwriting, is enough to convince me that you're behind this.
 <<PlayEffect Energy>>
+<<SetPose MatchGirl irritated_sitting>>
 Matches: That's ridiculous! I've been helping you every step of this investigation! 
 Matches: You think that I've just helped you against my own interest? I've been completely above board this whole investigation!
 Shepherd: <style="int">(She has a point. If she truly was a mole, I would expect some tampering with the investigation.)</style>
@@ -89,6 +101,7 @@ Shepherd: I don't think that's quite true. You've been bending the truth since t
 Matches: What? Show me some evidence!
 Shepherd: I can't show you the evidence, because I don't have it, thanks to your meddling.
 <<PlayEffect Energy>>
+<<SetPose MatchGirl thinking_idle>>
 Matches: ...!
 Shepherd: The existence of that piece of evidence is indicated here!
 <<ResetEvidenceResponses>>
@@ -107,6 +120,7 @@ tags:
 position: 348,109
 ---
 <<PlayEffect Failure>>
+<<SetPose MatchGirl thinking_idle>>
 Matches: That shows nothing! You're out of your mind, Shepherd!
 Shepherd: <style="int">(...Dammit, she's right.)</style>
 Shepherd: <style="int">(I need to think. What piece of evidence should exist, but doesn't?)</style>
@@ -117,10 +131,12 @@ title: MatchGirl_Q2_Accusation_Correct
 tags:
 position: 350,186
 ---
+<<SetPose MatchGirl neutral_idle>>
 <<PlayEffect Emphasis>>
 Shepherd: Wolf!
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf neutral_idle>>
 Wolf: Yes?
 Shepherd: When we first interrogated you, you claimed to possess a certain receipt that corroborated your story about buying strawberries.
 Shepherd: Yet, by the time you got to the police station, that receipt had magically disappeared.
@@ -130,7 +146,9 @@ Shepherd: And who else had the opportunity to whisk it away but your arresting o
 <<PlayEffect Energy>>
 <<RemoveCharacter Wolf>>
 <<AddCharacter Matches>>
+<<SetPose MatchGirl thinking_idle>>
 Matches: ...!
+<<SetPose MatchGirl neutral_idle>>
 Matches: But why would I need to do that? It's not like Wolf purchasing strawberries means that he wasnt't the killer.
 Shepherd: Right, however, it does cast enough doubt on him that he becomes a major suspect, just it actually happened.
 Shepherd: Give it up, Matches. We've got enough proof to put you in jail.
@@ -142,6 +160,7 @@ Shepherd: Give it up, Matches. We've got enough proof to put you in jail.
 Matches: ...What proof?
 Shepherd: The note, of course! We'll get the handwriting analyzed, and then-
 <<PlayEffect Energy>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: You mean this note?
 <<PlayEffect Emphasis>>
 Shepherd: ...!
@@ -158,9 +177,11 @@ Shepherd: No!
 <<PlayEffect DramaticReveal>>
 <<wait 2>>
 Shepherd: Y-you...
+<<SetPose MatchGirl neutral_idle>>
 Matches: Aww, don't worry Shepherd! I'm doing you a favor! Like I always say...
 <<PlayEffect Emphasis>>
 <<SetMusic Trepidation>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: Clean up your fucking desk.
 Shepherd: Ngh...
 Matches: It's really a miracle this hasn't happened before. Keeping crucial evidence within reach of your prime suspects is pretty idiotic.
@@ -179,7 +200,7 @@ Shepherd: What?!
 Matches: You wouldn't want anything happening to that family of yours, would you, Wolfie?
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
-<<SetPose scared_idle>>
+<<SetPose Wolf scared_idle>>
 <<PlayEffect Energy>>
 Wolf: ...!
 Matches: I have connections, you know. If you snitch, who knows what could happen?
@@ -189,11 +210,13 @@ Wolf: ...I'm sorry.
 Shepherd: Gh-!
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: Who's a good boy!
 <<wait 1>>
 Shepherd: So this is who you really are?
 
 //MOTIVATIONS SPEECH
+<<SetPose MatchGirl neutral_idle>>
 Matches: I always hated this town.
 Matches: You know my story. I grew up on the streets. 
 Matches: Hating the dead eyes on every face that walks by, never bothering to look at the poor girl on the corner selling matches.
@@ -203,11 +226,13 @@ Matches: The dreary policemen who arrested my friends when they did so much as t
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
 <<SetPose Wolf scared_idle>>
+<<SetPose MatchGirl smug_sitting>>
 <<PlayEffect Interesting>>
 Matches: Like you did with this poor wolf here.
 Wolf: ...
 <<RemoveCharacter Wolf>>
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl irritated_sitting>>
 Matches: You make me sick, Shepherd. And I've spent every second of every day here hating you and everything you stand for.
 Shepherd: I...
 Matches: I can't wait to see you disgraced.
@@ -217,6 +242,7 @@ Shepherd: I've made some mistakes.
 <<wait 1.5>>
 Shepherd: But all I try to do is find the truth.
 Shepherd: I just didn't realize that sometimes the truth isn't as... straightforwards as it first seems.
+<<SetPose MatchGirl thinking_idle>>
 Matches: ...
 Shepherd: ...So you're just a mole? That's it?
 Matches: ...what's it to you?
@@ -229,6 +255,7 @@ Shepherd: <style="int">(...!)</style>
 Shepherd: Wolf?
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
+<<SetPose Wolf scared_idle>>
 Wolf: Yeah?
 Shepherd: You said earlier that the car we found at the metro station was yours.
 Wolf: ...that was a lie. I don't have a car.
@@ -242,6 +269,7 @@ title: MatchGirl_Q3_Accusation_Default
 tags:
 position: 350,333
 ---
+<<SetPose Wolf scared_idle>>
 Wolf: What? I don't get it...
 <<PlayEffect Failure>>
 Shepherd: <style="int">(Darn. He's right.)</style>
@@ -255,6 +283,7 @@ title: MatchGirl_Q3_Accusation_Correct
 tags:
 position: 353,432
 ---
+<<SetPose Wolf scared_idle>>
 <<PlayEffect Energy>>
 Shepherd: Your fur was found in the car, DNA tested and all.
 Wolf: Surely that was just tampered with by the Match Girl? She did give it to you, after all.
@@ -266,6 +295,7 @@ title: MatchGirl_Q4_Start
 tags:
 position: 125,558
 ---
+<<SetPose Wolf scared_idle>>
 Shepherd: There's only one explanation...
 -> The fur was planted in the car
     <<PlayEffect Failure>>
@@ -287,12 +317,14 @@ title: MatchGirl_Q4_Accusation_Correct
 tags:
 position: 367,620
 ---
+<<SetPose Wolf scared_idle>>
 <<StopMusic>>
 Shepherd: Well, there's one time you've been in an unknown car recently, right, Wolf?
 <<PlayEffect Interesting>>
 Wolf: ...?
 Shepherd: When you were arrested.
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl surprised_looking>>
 <<RemoveCharacter Wolf>>
 <<PlayEffect Interesting>>
 <<SetMusic Contradiction>>
@@ -302,15 +334,18 @@ Shepherd: Does the interior of this car look like the one you were arrested in?
 <<AddCharacter Wolf>>
 <<RemoveCharacter MatchGirl>>
 <<PlayEffect Energy>>
+<<SetPose Wolf scared_idle>>
 Wolf: Y-yes! Now that you mention it, it does!
 Wolf: But what does this mean?
 Shepherd: Well, this car also matches Tinker Bell's testimony about the boss's car.
 <<AddCharacter MatchGirl>>
+<<SetPose MatchGirl irritated_sitting>>
 <<RemoveCharacter Wolf>>
 Matches: You-!
 Shepherd: Meaning, not only is the Little Match Girl a mole...
 <<PlayEffect Shock>>
 Shepherd: ...but she's the boss of this entire operation!
+<<SetPose MatchGirl thinking_idle>>
 Matches: Oh, come now! Just because I own a similar car doesn't mean I'm suddenly the boss of the drug ring.
 Shepherd: You're defensive. What do you have left to hide? Am I onto something?
 Matches: ...
@@ -331,11 +366,13 @@ Shepherd: But unfortunately for you, you didn't communicate your story well enou
 Shepherd: Anything to say for yourself?
 <<wait 1>>
 <<PlayEffect Energy>>
+<<SetPose MatchGirl irritated_sitting>>
 Matches: Fine!
 Matches: It was me! I told that idiot Tinker Bell to rough up Sticks. I'm the big scary mastermind.
 Matches: I went from selling matches to selling something that would get me a little more comfort.
 Matches: That car was bought off the books, and you won't find any of my hair in there - I always wear a hat and gloves. //hand-wavey
 Matches: And I didn't do enough at the scene for you to get me there, either.
+<<SetPose MatchGirl smug_sitting>>
 Matches: How does it feel? You've got the truth now, are you happy?
 Matches: Too bad you're about to go to jail, and you can't do anything about it. 
 <<wait 1>>
@@ -347,6 +384,7 @@ Shepherd: Somewhere, somehow, you slipped up. And I should have evidence to prov
 Matches: Heh. Well, you have my word that any evidence you show me isn't leaving this room except as ashes.
 Shepherd: I wouldn't be too sure about that.
 <<PlayEffect Interesting>>
+<<SetPose MatchGirl thinking_idle>>
 Matches: ...?
 Shepherd: You think you're so on top of it, don't you?
 Shepherd: The brilliant mastermind, controlling everything from the beginning.
@@ -362,6 +400,7 @@ title: MatchGirl_Q5_Accusation_Default
 tags:
 position: 354,773
 ---
+<<SetPose MatchGirl neutral_idle>>
 <<PlayEffect Failure>>
 Shepherd: <style="int">(No, that's not right.)</style>
 Shepherd: <style="int">(I need proof that she can't destroy... Some mistake that she made somewhere.)</style>
@@ -374,6 +413,7 @@ title: MatchGirl_Q5_Accusation_Correct
 tags:
 position: 363,884
 ---
+<<SetPose MatchGirl neutral_idle>>
 <<StopMusic>>
 Shepherd: <style="int">(That's it!)</style>
 Shepherd: You made one careless and fatal mistake.
@@ -391,6 +431,7 @@ Matches: ...
 Matches: Pf....
 <<wait 1>>
 <<SetPose MatchGirl smug_sitting>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: Ahaha! You almost had me there! 
 Matches: A match doesn't prove anything! Everyone has matches!
 Shepherd: That's true. But not everyone uses them the same way you do.
@@ -404,6 +445,7 @@ title: MatchGirl_Q6_Start
 tags:
 position: 111,994
 ---
+<<SetPose MatchGirl irritated_sitting>>
 Shepherd: That's right. We'll have undeniable proof you used that car when we...
 -> Search the car for more matches
     <<PlayEffect Failure>>
@@ -429,6 +471,7 @@ position: 58,1403
 ---
 <<SetMusic Contradiction>>
 <<PlayEffect Shock>>
+<<SetPose MatchGirl irritated_sitting>>
 Matches: No!!
 Shepherd: Yes, that's right. You have a particular habit of chewing on matches. 
 Shepherd: And I have no doubt that the one in this picture comes from the same habit.
