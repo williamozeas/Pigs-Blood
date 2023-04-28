@@ -42,6 +42,7 @@ public class A4 : FlippableEvidence<A4Page>
             A4Page newPage = Instantiate(pagePrefab, transform).GetComponent<A4Page>();
             newPage.pageText = pageText;
             newPage.fontSize = fontSize;
+            newPage.spacing = lineSpacing;
             if (font)
             {
                 newPage.font = font;

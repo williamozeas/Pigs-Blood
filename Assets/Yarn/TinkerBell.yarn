@@ -2,7 +2,12 @@
 tags:
 position: -749,-1282
 ---
-//<<SetMusic Chill>>
+<<RemoveAllEvidence>>
+<<LoadEvidence Pigs_Autopsy>>
+<<LoadEvidence TinkerBell_Boots>>
+<<LoadEvidence Pigs_Testimony>>
+<<LoadEvidence Pigs_Crime_Scene>>
+<<LoadEvidence >>
 <<jump TinkerBell_1>>
 ===
 title: TinkerBell_1
@@ -44,7 +49,7 @@ position: -749,-923
     -> Accuse
         -> This evidence proves you wrong!
             <<ResetEvidenceResponses>>
-            //<<SetEvidenceResponse TinkerBell_Pig_Info TinkerBell_Q1_Accusation_Correct>>
+            //<<SetEvidenceResponse Pigs_Testimony TinkerBell_Q1_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q1_Accusation_Default>>
     -> Review
         <<Review>>
@@ -221,7 +226,7 @@ title: TinkerBell_Q2_Accusation_Correct
 position: -419,128
 ---
 <<SetPose TinkerBell Smug>>
-Shepherd: We had a chat with the pigs the other day. They had talked about how they had a meeting with a buisness associate. 
+Shepherd: We had a chat with the pigs the other day. They had talked about how they had a meeting with a business associate. 
 TinkerBell: Um... ok, that matters to me how?
 Shepherd: The incident we are investigating happened the same day as your chat with a troublesome client. Were you referring to the pigs?
 <<PlayEffect shock>>
@@ -232,6 +237,7 @@ TinkerBell: I..what? No, I never...
 title: TinkerBell_Q3
 position: -752,239
 ---
+<<RemoveCharacter TinkerBell>>
 <<AddCharacter MatchGirl>>
 <<SetPose MatchGirl Neutral>>
 MatchGirl: Oi, kid.
@@ -240,12 +246,16 @@ MatchGirl: I'm aware, just finished the search of her car. Here's the file for y
 <<PlayEffect Energy>>
 <<LoadEvidence TinkerBell_Search_Data>>
 <<SetPose TinkerBell Angry>>
+<<RemoveCharacter TinkerBell>>
+<<AddCharacter MatchGirl>>
 TinkerBell: Are you judging the stuff in my car? Rude. 
-MatchGirl: Quiet down chartreuse bonnie. //BETTER INSULT GOES HERE MAYBE?
-<<PlayEffect shock>>
-MatchGirl: Alright, have fun I guess.
+<<RemoveCharacter TinkerBell>>
+<<AddCharacter MatchGirl>>
+MatchGirl: Quiet down, chartreuse bonnie. //BETTER INSULT GOES HERE MAYBE?
+<<PlayEffect energy>>
+MatchGirl: Alright, have fun, I guess.
 <<RemoveCharacter MatchGirl>>
-
+<<AddCharacter TinkerBell>>
 
 <<jump TinkerBell_Q3_Start>>
 ===
@@ -264,7 +274,7 @@ position: -758,481
     -> Accuse
         -> This evidence proves you wrong!
             <<ResetEvidenceResponses>>
-            <<SetEvidenceResponse TinkerBell_Fullbody_Mugshot TinkerBell_Q3_Accusation_Correct>>
+            <<SetEvidenceResponse TinkerBell_Boots TinkerBell_Q3_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q3_Accusation_Default>>
     -> Review
         <<set $reviewCompletedTB to true>>
@@ -589,8 +599,8 @@ Shepherd: Matches? Can you go book her?
 <<SetMusic Chill>>
 <<PlayEffect Reveal>>
 <<AddCharacter MatchGirl>>
-Shepard: <style="int">(Hmm, this story got a bit more interesting)</style>
-Shepard: <style="int">(TinkerBell not knowing who Wolf or the Boss are is really odd. Her description of the Boss is rather specific, and I'm not really convinced Wolf fits it)</style>
+Shepard: <style="int">(Hmm, this story got a bit more interesting.)</style>
+Shepard: <style="int">(TinkerBell not knowing who Wolf or the Boss are is really odd. Her description of the Boss is rather specific...)</style>
 
 Shepard: <style="int">(Wolf was certainly lying before, maybe he'll be a bit more willing to speak honestly now)</style>
 <<PlayEffect Emphasis>>

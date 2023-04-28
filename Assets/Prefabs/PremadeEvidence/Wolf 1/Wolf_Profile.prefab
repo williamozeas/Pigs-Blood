@@ -7,6 +7,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2026234116566798947, guid: d3b4a2a2787cf4c67a873ae9581a70ea,
+        type: 3}
+      propertyPath: m_text
+      value: '-Public Indecency
+
+        -Intimidation of storekeeper
+
+        -Intimidation
+        of officer (2)
+
+        -Driving under the Influence
+
+        -Jaywalking
+
+        -Intent
+        to posess narcotics
+
+        Filed by Little Match Girl
+
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 2026234117875522594, guid: d3b4a2a2787cf4c67a873ae9581a70ea,
         type: 3}
       propertyPath: m_RootOrder
