@@ -126,6 +126,7 @@ Shepherd: Depends on how you answer these questions Wolf, don't lie or mouth off
 title: Wolf_Q2_Start
 position: -745,-405
 ---
+<<SetMusic Questions>>
 <<SetPose Wolf neutral_tapping>>
 -> Question
     -> Where were you yesterday?
@@ -287,7 +288,7 @@ Wolf: You heard me.
 title: Wolf_Q3_Start
 position: -751,186
 ---
-<<SetMusic Questions>>
+<<SetMusic QuestionsFaster>>
 <<SetPose Wolf neutral_idle>>
 -> Question
     -> Groceries?
@@ -405,7 +406,6 @@ Shepherd: You're lying again. I've half a mind to get you indicted this instant.
 Wolf: Wait, wait. Okay, I might have lied. But I just went out to do an errand. I swear.
 Shepherd: Are you... shedding?
 Wolf: ...I do that when I'm nervous. Please, hear me out.
-<<SetMusic Questions>>
 <<jump Wolf_Q4>>
 
 
@@ -421,6 +421,7 @@ position: -749,541
 title: Wolf_Q4_Start
 position: -747,700
 ---
+<<SetMusic Answers>>
 <<SetPose Wolf neutral_idle>>
 -> Question
     -> What errand?
@@ -497,7 +498,7 @@ Wolf: Red stai-?
 <<wait 1>>
 <<SetPose Wolf rawr_idle>>
 Wolf: GAH!
-<<SetMusic Trepidation>>
+<<SetMusic Contradiction>>
 Shepherd: What exactly are those stains, Wolf?
 Wolf: They... I don't know, i-it must-
 <<PlayEffect Emphasis>>
@@ -577,7 +578,7 @@ Shepherd: Don't come back unless you feel like telling the truth!
 <<AddCharacter MatchGirl>>
 <<SetPose MatchGirl neutral_idle>>
 Shepherd: Wow. I didn't know he had that in him.
-Matches: I did. 
+Matches: ...They hide it well.
 Shepherd: What did you do with him?
 Matches: I put him in the jail until we get some more testimony.
 <<wait 1>>
@@ -604,5 +605,12 @@ Shepherd: Right.
 Matches: I wrote up the profiles as always, plus got all the relevant evidence. Feel free to peruse.
 
 //ADD EVIDENCE
-<<jump Pigs>>
+<<RemoveAllEvidence>>
+<<ResetStatements>>
+<<LoadEvidence Pigs_Autopsy>>
+<<LoadEvidence Pigs_FamilyPortrait>>
+<<LoadEvidence Pigs_Crime_Scene>>
+<<LoadEvidence Pigs_Farm_Map>>
+<<LoadEvidence Pigs_Tax_Returns>>
+<<ReviewWithDestination Pigs>>
 ===

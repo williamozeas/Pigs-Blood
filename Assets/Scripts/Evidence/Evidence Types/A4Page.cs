@@ -19,7 +19,9 @@ public class A4Page : PageAbstract
 
     public override void Populate()
     {
-        tmp.font = font;
+        if(font) {
+            tmp.font = font;
+        }
         tmp.lineSpacing = spacing;
         tmp.fontSize = fontSize;
         tmp.text = pageText;
