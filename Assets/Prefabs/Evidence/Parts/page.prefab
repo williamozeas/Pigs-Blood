@@ -182,6 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'TEMP_F
 
+    TEMP_F
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd33b899c44134d7c8eb9aa20fdd5b8d, type: 2}
@@ -210,8 +212,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7
-  m_fontSizeBase: 15
+  m_fontSize: 6
+  m_fontSizeBase: 6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -222,7 +224,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -246,7 +248,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 2.4, y: 0.93, z: 0, w: 0}
+  m_margin: {x: 2.4, y: 1.808296, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -383,3 +385,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageText: 
   tmp: {fileID: 204304736826572670}
+  font: {fileID: 0}
+  spacing: 0
+  fontSize: 6

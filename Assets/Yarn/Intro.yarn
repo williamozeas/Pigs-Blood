@@ -1,6 +1,13 @@
 ﻿title: Start
 tags:
 ---
+// MatchGirl Poses:
+// neutral_idle
+// irritated_sitting
+// smug_sitting (don't use here, save for when she's evil)
+// surprised_breathing (don't use here, save for later?)
+// surprised_looking (don't use here, save for later?)
+
 <<LoadEvidence Wolf_MetroPass>>
 <<LoadEvidence Wolf_ArrestReport>>
 <<LoadEvidence Wolf_CCTV>>
@@ -21,16 +28,19 @@ Shepherd: <style="int">(Classic open and shut case, right?)</style>
 Matches: Shepherd!
 <<wait 1>>
 <<PlayEffect Energy>>
+<<SetPose MatchGirl neutral_idle>>
 Shepherd: W-woah! Matches!
 Matches: You're up as soon as you're ready. You alright?
 Shepherd: Yeah... Right as rain.
 Matches: You sure? You've just been staring into space for the past five minutes.
-Shepherd: <style="int">(This is the Little Match Girl, my partner in... stopping crime. Together, we've set successful arrest records over the past two years.)</style>
+Shepherd: <style="int">(This is the Little Match Girl, my partner in... stopping crime. Together, we've set successful arrest records over the past four years.)</style>
 Shepherd: <style="int">(It turns out a penchant for crying wolf is a lot more useful when they keep committing crimes.)</style>
 <<PlayEffect Emphasis>>
+<<SetPose MatchGirl surprised_looking>>
 Matches: HEY! You're doing it again!
 <<PlayEffect Failure>>
 Shepherd: Um. Yeah! I'm fine.
+<<SetPose MatchGirl neutral_idle>>
 Matches: I picked up this wolf fleeing from the scene. I believe you two are acquainted? I wrote a profile on him, should be in your evidence... 
 <<wait 1>>
 <<PlayEffect Interesting>>
@@ -40,16 +50,19 @@ Matches: Alright, well, this is a bit more than a few rules. This is a murder.
 Matches: We need you at your best for this. Have you looked over the evidence?
 Shepherd: Uh. Definitely.
 <<PlayEffect Failure>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: ...Convincing. Have another look.
 <<ReviewWithDestination Intro_DoneReviewing>>
 Shepherd: <style="int">(Click and drag your mouse to inspect evidence. Drag evidence to the bottom of the screen to inspect it. Use ESC to finish.)</style>
 ===
 title: Intro_DoneReviewing
 ---
+<<SetPose MatchGirl surprised_looking>>
 Matches: You finished? That was fast.
 <<PlayEffect Energy>>
 Shepherd: The power of speed-reading.
 <<PlayEffect Failure>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: We don't need speed-readers, we need speed-comprehenders.
 Matches: Tell me, how old is our friend the wolf?
 <<ResetEvidenceResponses>>
@@ -60,6 +73,7 @@ Shepherd: <style="int">(Drop the evidence that shows the wolf's age into the box
 title: Intro_Q1_Failure
 ---
 <<PlayEffect Failure>>
+<<SetPose MatchGirl smug_sitting>>
 Matches: No! Try looking at his profile.
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_Profile Intro_Q1_Success>>
@@ -68,6 +82,7 @@ Matches: No! Try looking at his profile.
 title: Intro_Q1_Success
 ---
 Shepherd: He's 39. Says so right on his report.
+<<SetPose MatchGirl neutral_idle>>
 Matches: Glad my work writing those isn't in vain. Even if your workspace is as organized as a burning building.
 Shepherd: Very funny. I have my methods. Besides, have I let you down yet?
 Matches: Of course not. You're as good a detective as we've ever seen here. Though, I'll be watching from the next room if you need help.

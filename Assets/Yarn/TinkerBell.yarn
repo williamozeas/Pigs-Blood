@@ -2,7 +2,7 @@
 tags:
 position: -749,-1282
 ---
-<<SetMusic Chill>>
+//<<SetMusic Chill>>
 <<jump TinkerBell_1>>
 ===
 title: TinkerBell_1
@@ -12,6 +12,9 @@ position: -748,-1095
 <<SetMusic Questions>>
 //<<SetPose TinkerBell Smug>>
 <<AddCharacter TinkerBell>>
+<<SetPose TinkerBell Neutral>>
+<<PlayEffect Reveal>>
+<<wait 3>>
 Shepherd: Ah, so you must be TinkerBell.
 TinkerBell: Oh, so you're the Wolf Shepherd, huh? Bit scruffier and scrawnier than I expected.
 Shepherd: And you're much more... flamboyant than I expected.
@@ -250,7 +253,7 @@ title: TinkerBell_Q3_Start
 tags:
 position: -758,481
 ---
-<<declare $reviewCompleted = false as bool>>
+<<declare $reviewCompletedTB = false as bool>>
 <<SetMusic Questions>>
 <<SetPose TinkerBell Neutral>>
     -> Question
@@ -264,7 +267,7 @@ position: -758,481
             <<SetEvidenceResponse TinkerBell_Fullbody_Mugshot TinkerBell_Q3_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q3_Accusation_Default>>
     -> Review
-        <<set $reviewCompleted to true>>
+        <<set $reviewCompletedTB to true>>
         <<Review>>
 
 ===
@@ -585,9 +588,10 @@ Shepherd: Matches? Can you go book her?
 <<wait 5>>
 <<SetMusic Chill>>
 <<PlayEffect Reveal>>
+<<AddCharacter MatchGirl>>
 Shepard: <style="int">(Hmm, this story got a bit more interesting)</style>
 Shepard: <style="int">(TinkerBell not knowing who Wolf or the Boss are is really odd. Her description of the Boss is rather specific, and I'm not really convinced Wolf fits it)</style>
-<<AddCharacter MatchGirl>>
+
 Shepard: <style="int">(Wolf was certainly lying before, maybe he'll be a bit more willing to speak honestly now)</style>
 <<PlayEffect Emphasis>>
 Matches: Shepherd!
@@ -595,4 +599,5 @@ Shepherd: Matches? When..When did you get here?
 Matches: Just now, you should really try to stop spacing out like that. 
 Shepherd: Sorry, just lost in thought.
 Matches: Clearly.
+<<jump Wolf2>>
 ===
