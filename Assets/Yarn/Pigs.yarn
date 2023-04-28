@@ -547,5 +547,7 @@ Shepherd: I think she owns a nightclub downtown, though I never expected her to 
 Matches: Some people will always dissapoint huh? Anyways head home Shepherd. We should have her in here at some point tomorrow morning to have a chat with you.
 Shepherd: Thanks Matches, really appreciate it.
 <<PlayEffect ToWhite>>
+<<StopMusic>>
+<<RemoveCharacter MatchGirl>>
 <<jump StartTinkerBell>>
 ===

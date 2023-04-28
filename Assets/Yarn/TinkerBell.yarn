@@ -588,9 +588,10 @@ Shepherd: Matches? Can you go book her?
 <<wait 5>>
 <<SetMusic Chill>>
 <<PlayEffect Reveal>>
+<<AddCharacter MatchGirl>>
 Shepard: <style="int">(Hmm, this story got a bit more interesting)</style>
 Shepard: <style="int">(TinkerBell not knowing who Wolf or the Boss are is really odd. Her description of the Boss is rather specific, and I'm not really convinced Wolf fits it)</style>
-<<AddCharacter MatchGirl>>
+
 Shepard: <style="int">(Wolf was certainly lying before, maybe he'll be a bit more willing to speak honestly now)</style>
 <<PlayEffect Emphasis>>
 Matches: Shepherd!
@@ -598,4 +599,5 @@ Shepherd: Matches? When..When did you get here?
 Matches: Just now, you should really try to stop spacing out like that. 
 Shepherd: Sorry, just lost in thought.
 Matches: Clearly.
+<<jump Wolf2>>
 ===
