@@ -428,6 +428,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colluder
       objectReference: {fileID: 0}
+    - target: {fileID: 4663763438913745456, guid: 2fc08bfcd112f4af09c456ddfef02293,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8473578621966848433, guid: 2fc08bfcd112f4af09c456ddfef02293,
         type: 3}
       propertyPath: m_RootOrder
