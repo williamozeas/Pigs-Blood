@@ -88,6 +88,10 @@ public class YarnCommandManager : DialogueViewBase
 		runner.AddCommandHandler<string>("LoadEvidence", LoadEvidence);
 		runner.AddCommandHandler<string>("RemoveEvidence", RemoveEvidence);
 		runner.AddCommandHandler("RemoveAllEvidence", RemoveAllEvidence);
+		runner.AddCommandHandler<string>("SetLoseNode", SetLoseNode);
+		runner.AddCommandHandler("Lose", Lose);
+		runner.AddCommandHandler("LoseLife", LoseLife);
+		runner.AddCommandHandler("ResetLives", ResetLives);
 
 		// adds all Resources to internal lists / one big pile... it
 		// will scan inside all subfolders too! note: but when
@@ -348,6 +352,29 @@ public class YarnCommandManager : DialogueViewBase
 	public void RemoveAllEvidence()
 	{
 		EvidenceManager.Instance.RemoveAllEvidence();
+	}
+
+	private string loseNode;
+
+	public void LoseLife()
+	{
+		//@efe call life losing function here
+	}
+
+	public void ResetLives()
+	{
+		//@efe restore all lives
+	}
+	
+	public void SetLoseNode(string newLoseNode)
+	{
+		loseNode = newLoseNode;
+	}
+
+	public void Lose()
+	{
+		//@efe call this from your script when you lose all lives
+		runner.StartDialogue(loseNode);
 	}
 
 	//SPRITE & Audio OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM
