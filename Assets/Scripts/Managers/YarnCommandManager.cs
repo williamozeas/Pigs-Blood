@@ -385,6 +385,7 @@ public class YarnCommandManager : DialogueViewBase
 	public void Lose()
 	{
 		//@efe call this from your script when you lose all lives
+		runner.Stop();
 		runner.StartDialogue(loseNode);
 	}
 

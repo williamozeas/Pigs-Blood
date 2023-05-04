@@ -629,7 +629,7 @@ Wolf: I've had enough. This is a sham!
 Shepherd: But-
 Wolf: I'm not talking to anyone until I get a lawyer.
 Shepherd: <style="int">(Dammit! I made too many wrong accusations.)</style>
-<<FadeToBlack>>
+<<PlayEffect ToBlack>>
 <<wait 3>>
 <<RemoveCharacter Wolf>>
 <<jump Wolf_1>>

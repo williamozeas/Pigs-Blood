@@ -705,7 +705,7 @@ Bricks: What are you trying to pull here?
 Straw: Y-yeah! This is a in-pos-ition!
 Bricks: ...We won't be talking anymore, detective.
 Shepherd: <style="int">(Dammit! I must have pushed too hard!)</style>
-<<FadeToBlack>>
+<<PlayEffect ToBlack>>
 <<wait 3>>
 <<RemoveCharacter Wolf>>
 <<StopJump Pigs>>

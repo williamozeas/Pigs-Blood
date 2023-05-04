@@ -1214,7 +1214,7 @@ position: -73,-264
 Wolf2: That's it. I'm not going to say anything more.
 Shepherd: <style="int">(Dammit! I need more information out of him, this can't end here!)</style>
 
-<<FadeToBlack>>
+<<PlayEffect ToBlack>>
 <<wait 3>>
 <<RemoveCharacter Wolf>>
 <<RemoveCharacter MatchGirl>>

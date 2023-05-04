@@ -650,7 +650,7 @@ Shepherd: Wait, but-
 TinkerBell: No buts. I'm not saying another word.
 Shepherd: <style="int">(Dammit. I need more information out of her! This can't end here...)</style>
 
-<<FadeToBlack>>
+<<PlayEffect ToBlack>>
 <<wait 3>>
 <<RemoveCharacter TinkerBell>>
 <<StopJump StartTinkerBell>>
