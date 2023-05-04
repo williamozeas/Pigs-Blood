@@ -57,6 +57,8 @@ title: Pigs_Q1_Start
 tags:
 position: 123,-136
 ---
+<<AddCharacter Bricks>>
+<<AddCharacter Straw>>
 <<SetMusic Questions>>
 <<if visited("Pigs_Q1_Question_2") == true && visited("Pigs_Q1_Question_1") == true >>
     <<jump Pigs_Q2_Start>>
@@ -159,6 +161,8 @@ title: Pigs_Q2_Start
 tags:
 position: 123,141
 ---
+<<AddCharacter Bricks>>
+<<AddCharacter Straw>>
 -> Question
     -> During this time, what was your brother doing?
         <<jump Pigs_Q2_Question_1>>
@@ -255,6 +259,8 @@ title: Pigs_Q3_Start
 tags:
 position: 124,340
 ---
+<<AddCharacter Bricks>>
+<<AddCharacter Straw>>
 <<SetMusic QuestionsFaster>>
 <<declare $reviewCompletedPigs = false as bool>>
 -> Question
@@ -387,6 +393,8 @@ title: Pigs_Q4_Start
 tags:
 position: 125,558
 ---
+<<AddCharacter Bricks>>
+<<AddCharacter Straw>>
 <<SetMusic Answers>>
 -> Question
     -> What happened when you discovered Sticks?
@@ -490,6 +498,8 @@ position: 112,787
 // <<LoadEvidence Pigs_Tax_Returns>>
 // <<AddCharacter Straw>>
 // <<AddCharacter Bricks>>
+<<AddCharacter Bricks>>
+<<AddCharacter Straw>>
 <<SetPose Bricks neutral_sitting>>
 <<SetPose Straw neutral_idle>>
 Shepherd: <style="int">(I have an idea what's there but I need the right piece of note and evidence..)</style>
@@ -554,6 +564,8 @@ title: Pigs_Q6_Start
 tags:
 position: 111,994
 ---
+<<AddCharacter Bricks>>
+<<AddCharacter Straw>>
 <<SetMusic Trepidation>>
 -> Question
     -> So, what's the actual story?

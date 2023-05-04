@@ -126,6 +126,7 @@ Shepherd: Depends on how you answer these questions Wolf, don't lie or mouth off
 title: Wolf_Q2_Start
 position: -745,-405
 ---
+<<AddCharacter Wolf>>
 <<SetMusic Questions>>
 <<SetPose Wolf neutral_tapping>>
 -> Question
@@ -289,6 +290,7 @@ title: Wolf_Q3_Start
 position: -751,186
 ---
 <<SetMusic QuestionsFaster>>
+<<AddCharacter Wolf>>
 <<SetPose Wolf neutral_idle>>
 -> Question
     -> Groceries?
@@ -421,6 +423,7 @@ position: -749,541
 title: Wolf_Q4_Start
 position: -747,700
 ---
+<<AddCharacter Wolf>>
 <<SetMusic Answers>>
 <<SetPose Wolf neutral_idle>>
 -> Question
