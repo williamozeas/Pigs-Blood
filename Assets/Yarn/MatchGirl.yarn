@@ -171,7 +171,10 @@ Matches: Flammable.
 <<PlayEffect Emphasis>>
 Shepherd: No!
 <<StopMusic>>
+<<SetPose MatchGirl grabbing>>
+<<wait 0.5>>
 <<PlayEffect FadeToWhite>>
+<<wait 2>>
 //set pose not holding paper?
 <<RemoveEvidence Wolf_BlackmailLetter>>
 <<PlayEffect DramaticReveal>>
@@ -430,7 +433,6 @@ Matches: ...
 <<StopMusic>>
 Matches: Pf....
 <<wait 1>>
-<<SetPose MatchGirl smug_sitting>>
 <<SetPose MatchGirl smug_sitting>>
 Matches: Ahaha! You almost had me there! 
 Matches: A match doesn't prove anything! Everyone has matches!
