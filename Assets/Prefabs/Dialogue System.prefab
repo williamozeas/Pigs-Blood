@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runner: {fileID: 8517922602376601813}
+  lives: {fileID: 0}
   loadSprites: []
   loadAudio:
   - {fileID: 8300000, guid: bd755ecaa60ee496d8bef5955a7dc20d, type: 3}
@@ -313,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1252846134805308198}
-  - component: {fileID: 6565498351959831318}
+  - component: {fileID: 825078168570293061}
   m_Layer: 5
   m_Name: Lives
   m_TagString: Untagged
@@ -346,7 +347,7 @@ RectTransform:
   m_AnchoredPosition: {x: -614.1, y: -123.42}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6565498351959831318
+--- !u!114 &825078168570293061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1884417432337555634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
@@ -364,9 +365,9 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
+  m_Spacing: -70.69
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0

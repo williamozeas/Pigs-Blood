@@ -300,6 +300,8 @@ Wolf: I went to the farm to pick up strawberries for my kids, and-
 <<PlayEffect Emphasis>>
 Shepherd: NO! Wolf, we know you didn't go there to buy strawberries.
 Shepherd: You were found running from the crime scene, no strawberries in sight. No receipt either.
+<<LoadEvidence Wolf_Testimony>>
+Shepherd: I'm writing all this down, your testimony from the first interrogation.
 <<SetPose Wolf neutral_idle>>
 Wolf: ...
 Shepherd: In addition, you have red stains on your fur. They weren't there in the CCTV footage showing you on your way to the crime.

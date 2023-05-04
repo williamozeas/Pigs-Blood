@@ -2,6 +2,19 @@
 tags:
 position: 122,-203
 ---
+<<RemoveAllEvidence>>
+<<LoadEvidence Wolf_MetroPass>>
+<<LoadEvidence Wolf_ArrestReport>>
+<<LoadEvidence Wolf_CCTV>>
+<<LoadEvidence Wolf_Profile>>
+<<LoadEvidence Wolf_FamilyPortrait>>
+<<LoadEvidence TinkerBell_Testimony>>
+<<LoadEvidence Pigs_Crime_Scene>>
+<<LoadEvidence Pigs_Autopsy>>
+<<LoadEvidence Pigs_Testimony>>
+<<LoadEvidence Wolf_BlackmailLetter>>
+<<LoadEvidence Wolf_CarDescription>>
+<<LoadEvidence Wolf_Testimony>>
 <<LoadEvidence Wolf_FinalTestimony>> //TODO: MUST have details about his cell number (8) and not being able to see through the vent + unable to see outside/no windows
 <<PlayEffect Emphasis>>
 <<SetPose MatchGirl surprised_looking>>
@@ -36,7 +49,7 @@ Matches: What...?
 Shepherd: Something you said contradicts with the way things played out...
 <<ResetEvidenceResponses>>
 <<SetStatementResponse MatchGirl_AnyoneInTheCity Wolf_FinalTestimony MatchGirl_Q1_Accusation_Correct>>
-<<PromptStatement MatchGirl_Q1_Accusation_Default>>
+<<PromptStatement MatchGirl_Q1_Accusation_Proof>>
 
 ===
 title: MatchGirl_Q1_Accusation_Proof
@@ -103,6 +116,10 @@ Shepherd: I can't show you the evidence, because I don't have it, thanks to your
 <<PlayEffect Energy>>
 <<SetPose MatchGirl thinking_idle>>
 Matches: ...!
+<<jump MatchGirl_Q2_Start>>
+===
+title: MatchGirl_Q2_Start
+---
 Shepherd: The existence of that piece of evidence is indicated here!
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_Testimony MatchGirl_Q2_Accusation_Correct>>
@@ -145,7 +162,7 @@ Wolf: Yes! That's right!
 Shepherd: And who else had the opportunity to whisk it away but your arresting officer, the Little Match Girl?
 <<PlayEffect Energy>>
 <<RemoveCharacter Wolf>>
-<<AddCharacter Matches>>
+<<AddCharacter MatchGirl>>
 <<SetPose MatchGirl thinking_idle>>
 Matches: ...!
 <<SetPose MatchGirl neutral_idle>>
