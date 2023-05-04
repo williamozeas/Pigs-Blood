@@ -93,5 +93,5 @@ Matches: You ready?
 Shepherd: As I'll ever be.
 Matches: Here he comes. 
 <<RemoveCharacter MatchGirl>>
-<<jump Wolf_Start>>
+<<StopJump Wolf_Start>>
 ===

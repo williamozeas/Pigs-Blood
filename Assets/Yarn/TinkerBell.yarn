@@ -10,7 +10,7 @@ position: -749,-1282
 <<LoadEvidence TinkerBell_Boots>>
 <<LoadEvidence Pigs_Testimony>>
 <<LoadEvidence Pigs_Crime_Scene>>
-<<jump TinkerBell_1>>
+<<StopJump TinkerBell_1>>
 ===
 title: TinkerBell_1
 tags:
@@ -30,7 +30,7 @@ TinkerBell: Flamboyant? I hope you're just as bad at interrogating as you are co
 <<PlayEffect Failure>>
 Shepherd: That wasnt... ugh
 
-<<jump TinkerBell_Q1_Start>>
+<<StopJump TinkerBell_Q1_Start>>
 ===
 title: TinkerBell_Q1_Start
 tags:
@@ -40,15 +40,15 @@ position: -749,-923
 <<SetPose TinkerBell neutral_idle>>
 <<SetMusic Questions>>
 <<if visited("TinkerBell_Q1_Question_3") == true && visited("TinkerBell_Q1_Question_1") == true >>
-    <<jump TinkerBell_Q2>>
+    <<StopJump TinkerBell_Q2>>
 <<else>>
     -> Question
         -> So, describe your day yesterday.
-            <<jump TinkerBell_Q1_Question_1>>
+            <<StopJump TinkerBell_Q1_Question_1>>
         -> Can you elaborate on the inventory management? <<if visited("TinkerBell_Q1_Question_1") == true >>
-            <<jump TinkerBell_Q1_Question_2>>
+            <<StopJump TinkerBell_Q1_Question_2>>
         -> What do you mean by dispute? <<if visited("TinkerBell_Q1_Question_1") == true >>
-            <<jump TinkerBell_Q1_Question_3>>
+            <<StopJump TinkerBell_Q1_Question_3>>
     -> Accuse
         -> This evidence proves you wrong!
             <<ResetEvidenceResponses>>
@@ -67,14 +67,14 @@ position: -946,-784
 <<if visited("TinkerBell_Q1_Question_1") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
-    <<jump TinkerBell_Q1_Start>>
+    <<StopJump TinkerBell_Q1_Start>>
 <<else>>
     TinkerBell: Well, let's see..
     TinkerBell: I had to pay my employees for the month and did some book balancing as well as manage inventory.
     TinkerBell: Did an inventory run for the club, took a couple of hours to get everything. Had to deal with a troublesome client that had been harrassing some staff as well.
     <<AddStatement TinkerBell_q1_alibi "TinkerBell did inventory and restocked. She also had to deal with some client issues. ">>
 <<endif>>
-<<jump TinkerBell_Q1_Start>>
+<<StopJump TinkerBell_Q1_Start>>
 
 ===
 title: TinkerBell_Q1_Question_2
@@ -95,7 +95,7 @@ Shepherd: What kind of stuff would be disappearing at a club?
 TinkerBell: Mostly booze and the like. I worry mostly about any of the stage effects going missing. 
 Shepherd: Hmm..I see
 
-<<jump TinkerBell_Q1_Start>>
+<<StopJump TinkerBell_Q1_Start>>
 
 ===
 title: TinkerBell_Q1_Question_3
@@ -105,7 +105,7 @@ position: -746,-638
 <<if visited("TinkerBell_Q1_Question_3") == true>>
     <<wait 0.5>>
     TinkerBell: Am I going crazy? I could have sworn you wrote that down.
-    <<jump TinkerBell_Q1_Start>>
+    <<StopJump TinkerBell_Q1_Start>>
 <<else>>
     TinkerBell: I can't really get into the details, since I doubt they would be happy if I explained the full story.
     TinkerBell: This client has a tendency to put everything on a tab every time they come in. Well, this was the third time they left it open at the end of the night without paying.
@@ -115,7 +115,7 @@ position: -746,-638
     Shepherd: Huh, interesting. 
     <<AddStatement TinkerBell_q1_client "TinkerBell had some type of dispute with a long standing client about non-payment ">>
 <<endif>>
-<<jump TinkerBell_Q1_Start>>
+<<StopJump TinkerBell_Q1_Start>>
 ===
 title:  TinkerBell_Q1_Accusation_Default
 tags:
@@ -126,7 +126,7 @@ TinkerBell: Maybe you should just let me come back later, you seem a bit distrac
 Shepherd: Not happening, I'm fine.
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<LoseLife>>
-<<jump TinkerBell_Q1_Start>>
+<<StopJump TinkerBell_Q1_Start>>
 //===
 // title: TinkerBell_Q1_Accusation_Correct
 // position: -260,413
@@ -137,7 +137,7 @@ Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place
 // Wolf: I...You....
 // Shepherd: You better cooperate Wolf
 // Wolf: Fine, I went out to do some errands. 
-//<<jump TinkerBell_Q2>>
+//<<StopJump TinkerBell_Q2>>
 ===
 title: TinkerBell_Q2
 position: -760,-518
@@ -149,7 +149,7 @@ TinkerBell: I worked a bit with Momua Pig during prohibition when they smuggled 
 TinkerBell: Is that what this is about? Statute of limitations is way past by now.
 
 
-<<jump TinkerBell_Q2_Start>>
+<<StopJump TinkerBell_Q2_Start>>
 ===
 title: TinkerBell_Q2_Start
 tags:
@@ -160,9 +160,9 @@ position: -757,-330
 <<SetMusic Questions>>
 -> Question
     -> What about her sons?
-        <<jump TinkerBell_Q2_Question_1>>
+        <<StopJump TinkerBell_Q2_Question_1>>
     -> When was the last time you dealt with them? <<if visited("TinkerBell_Q2_Question_1") == true >>
-        <<jump TinkerBell_Q2_Question_2>>
+        <<StopJump TinkerBell_Q2_Question_2>>
 -> Accuse
     -> This evidence proves you wrong!
         <<ResetEvidenceResponses>>
@@ -180,7 +180,7 @@ position: -1054,-207
 <<if visited("TinkerBell_Q2_Question_1") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
-    <<jump TinkerBell_Q2_Start>>
+    <<StopJump TinkerBell_Q2_Start>>
 <<else>>
     TinkerBell: Oh the boys? I've worked with them on occasion.
     Shepherd: How so?
@@ -188,7 +188,7 @@ position: -1054,-207
     <<PlayEffect interesting>>
     <<AddStatement TinkerBell_q2_alibi "TinkerBell has had contact with the victim and his brothers ">>
 <<endif>>
-<<jump TinkerBell_Q2_Start>>
+<<StopJump TinkerBell_Q2_Start>>
 
 ===
 
@@ -199,7 +199,7 @@ position: -751,6
 <<if visited("TinkerBell_Q2_Question_2") == true>>
     <<wait 0.5>>
     TinkerBell: Am I going crazy? I could have sworn you wrote that down.
-    <<jump TinkerBell_Q2_Start>>
+    <<StopJump TinkerBell_Q2_Start>>
 <<else>>
     TinkerBell: Hmm... honestly I don't fully remember. Gimme a sec..
     <<wait 1>>
@@ -211,7 +211,7 @@ position: -751,6
     TinkerBell: 2 days ago.
     <<AddStatement TinkerBell_q2_client "TinkerBell has mentioned she spoke with the pigs recently.  ">>
 <<endif>>
-<<jump TinkerBell_Q2_Start>>
+<<StopJump TinkerBell_Q2_Start>>
 ===
 title:  TinkerBell_Q2_Accusation_Default
 tags:
@@ -222,7 +222,7 @@ TinkerBell: Maybe you should just let me come back later, you seem a bit distrac
 Shepherd: Not happening, I'm fine
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<LoseLife>>
-<<jump TinkerBell_Q2_Start>>
+<<StopJump TinkerBell_Q2_Start>>
 ===
 title: TinkerBell_Q2_Accusation_Correct
 position: -419,128
@@ -235,7 +235,7 @@ Shepherd: The incident we are investigating happened the same day as your chat w
 <<PlayEffect Emphasis>>
 <<SetPose TinkerBell neutral_idle>>
 TinkerBell: I..what? No, I never...
-<<jump TinkerBell_Q3>>
+<<StopJump TinkerBell_Q3>>
 ===
 title: TinkerBell_Q3
 position: -752,239
@@ -262,7 +262,7 @@ MatchGirl: Alright, have fun, I guess.
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter TinkerBell>>
 
-<<jump TinkerBell_Q3_Start>>
+<<StopJump TinkerBell_Q3_Start>>
 ===
 title: TinkerBell_Q3_Start
 tags:
@@ -274,9 +274,9 @@ position: -758,481
 <<SetPose TinkerBell neutral_idle>>
     -> Question <<if $reviewCompletedTB == true>>
         -> Why all the Hydrogen Peroxide? <<if $reviewCompletedTB == true>>
-            <<jump TinkerBell_Q3_Question_1>>
+            <<StopJump TinkerBell_Q3_Question_1>>
         -> Why is this still here then? <<if $reviewCompletedTB == true && visited("TinkerBell_Q3_Question_1") == true>>
-            <<jump TinkerBell_Q3_Question_2>>
+            <<StopJump TinkerBell_Q3_Question_2>>
     -> Accuse <<if $reviewCompletedTB == true>>
         -> Take a look at this.
             <<ResetEvidenceResponses>>
@@ -295,7 +295,7 @@ position: -960,684
 <<if visited("TinkerBell_Q3_Question_1") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
-    <<jump TinkerBell_Q3_Start>>
+    <<StopJump TinkerBell_Q3_Start>>
 <<else>>
     Shepherd: Why all the Hydrogen Peroxide?
     <<PlayEffect interesting>>
@@ -311,7 +311,7 @@ position: -960,684
     Shepherd: I see.
     <<AddStatement TinkerBell_Q3_Peroxide "TinkerBell uses high grade hydrogen peroxide for cleaning bodily fluids, but it has a tendency to bleach cloth if not diluted enough. ">>
 <<endif>>
-<<jump TinkerBell_Q3_Start>>
+<<StopJump TinkerBell_Q3_Start>>
 
 ===
 
@@ -331,7 +331,7 @@ position: -541,694
     Shepherd: How could you have forgotten it? Report says it was sitting in the passenger footwell.
     <<SetPose TinkerBell angry_idle>>
     TinkerBell: I just forgot OK? I did not know that having stuff in your car was a crime now.
-<<jump TinkerBell_Q3_Start>>
+<<StopJump TinkerBell_Q3_Start>>
 ===
 title:  TinkerBell_Q3_Accusation_Default
 tags:
@@ -342,7 +342,7 @@ TinkerBell: Maybe you should just let me come back later, you seem a bit distrac
 Shepherd: Not happening, I'm fine
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<LoseLife>>
-<<jump TinkerBell_Q3_Start>>
+<<StopJump TinkerBell_Q3_Start>>
 ===
 
 title: TinkerBell_Q3_Accusation_Correct
@@ -358,7 +358,7 @@ TinkerBell: Is this a lighting trick why the hell are they colored weird?
 Shepherd: Did you by chance have an encounter with your bucket of peroxide?
 <<PlayEffect interesting>>
 TinkerBell: What? No I... god damn it. My poor boots... they're ruined.
-<<jump TinkerBell_Q4_Start>>
+<<StopJump TinkerBell_Q4_Start>>
 ===
 title: TinkerBell_Q4_Start
 tags:
@@ -370,9 +370,9 @@ position: -763,955
 <<SetPose TinkerBell neutral_idle>>
     -> Question
         -> What's with the bat? 
-            <<jump TinkerBell_Q4_Question_1>>
+            <<StopJump TinkerBell_Q4_Question_1>>
         -> Do you expect me to believe that? <<if visited("TinkerBell_Q4_Question_1") == true>>
-            <<jump TinkerBell_Q4_Question_2>>
+            <<StopJump TinkerBell_Q4_Question_2>>
     -> Accuse
         -> Look at this.
             <<ResetEvidenceResponses>>
@@ -390,7 +390,7 @@ position: -970,1027
 <<if visited("TinkerBell_Q4_Question_1") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
-    <<jump TinkerBell_Q4_Start>>
+    <<StopJump TinkerBell_Q4_Start>>
 <<else>>
     Shepherd: What's with the bat?
     TinkerBell: I'm not really sure what you're talking about.
@@ -401,7 +401,7 @@ position: -970,1027
     TinkerBell: You haven't even told me why I am here, I have no clue why you have me here.
     <<AddStatement TinkerBell_Q4_Bat "TinkerBell has a baseball bat in her car, she claims it's for softball">>
 <<endif>>
-<<jump TinkerBell_Q4_Start>>
+<<StopJump TinkerBell_Q4_Start>>
 
 ===
 
@@ -411,7 +411,7 @@ position: -558,1008
 <<if visited("TinkerBell_Q4_Question_2") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, aren't you taking notes on this?
-    <<jump TinkerBell_Q4_Start>>
+    <<StopJump TinkerBell_Q4_Start>>
 <<endif>>
     Shepherd: Do you expect me to believe that?
     TinkerBell: Its for softball, I swear to Jupiter.
@@ -422,7 +422,7 @@ position: -558,1008
     Shepherd: Why does it also appear to be bleached? Paints all splotchy, Is it just personalized like that too?
     TinkerBell: I...
      <<AddStatement TinkerBell_Q4_Bat2 "Baseball bat has Gaslight engraved on it. The paint is extremely splotchy, as if it had been bleached ">>
-<<jump TinkerBell_Q4_Start>>
+<<StopJump TinkerBell_Q4_Start>>
 ===
 title:  TinkerBell_Q4_Accusation_Default
 tags:
@@ -433,7 +433,7 @@ TinkerBell: Maybe you should just let me come back later, you seem a bit distrac
 Shepherd: Not happening, I'm fine
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<LoseLife>>
-<<jump TinkerBell_Q4_Start>>
+<<StopJump TinkerBell_Q4_Start>>
 ===
 
 title: TinkerBell_Q4_Accusation_Correct
@@ -462,7 +462,7 @@ Shepherd: You're unbearable, fine I'll get legal working on that.
 <<PlayEffect Reveal>>
 Shepherd: Alright, legal's working on it now, you gonna cooperate?
 TinkerBell: I suppose..
-<<jump TinkerBell_Q5_Start>>
+<<StopJump TinkerBell_Q5_Start>>
 ===
 title: TinkerBell_Q5_Start
 tags:
@@ -472,17 +472,17 @@ position: -777,1287
 <<SetMusic QuestionsFaster>>
 <<SetPose TinkerBell neutral_idle>>
 <<if visited("TinkerBell_Q5_Question_1") == true && visited("TinkerBell_Q5_Question_2") == true && visited("TinkerBell_Q5_Question_3") == true  && visited("TinkerBell_Q5_Question_4") == true>>
-<<jump TinkerBell_Q6>>
+<<StopJump TinkerBell_Q6>>
 <<endif>>
     -> Question
         -> The boss? 
-            <<jump TinkerBell_Q5_Question_1>>
+            <<StopJump TinkerBell_Q5_Question_1>>
         -> What was your intended goal?
-            <<jump TinkerBell_Q5_Question_2>>
+            <<StopJump TinkerBell_Q5_Question_2>>
         -> What do you know of this new boss? <<if visited("TinkerBell_Q5_Question_1") == true>>
-            <<jump TinkerBell_Q5_Question_3>>
+            <<StopJump TinkerBell_Q5_Question_3>>
         -> Can you describe the series of events? <<if visited("TinkerBell_Q5_Question_2") == true>>
-            <<jump TinkerBell_Q5_Question_4>>
+            <<StopJump TinkerBell_Q5_Question_4>>
     -> Accuse
         -> This evidence proves you wrong!
             <<ResetEvidenceResponses>>
@@ -520,7 +520,7 @@ position: -1061,1423
 
     <<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
 <<endif>>
-<<jump TinkerBell_Q5_Start>>
+<<StopJump TinkerBell_Q5_Start>>
 
 ===
 
@@ -530,7 +530,7 @@ position: -374,1432
 <<if visited("TinkerBell_Q5_Question_2") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, my time is valuable you know?
-    <<jump TinkerBell_Q5_Start>>
+    <<StopJump TinkerBell_Q5_Start>>
 <<endif>>
     Shepherd:What was your intended goal?
     TinkerBell: My goal? To rise up and become the queen of crime in this hellhole of a city.
@@ -540,7 +540,7 @@ position: -374,1432
     Shepherd: Why?
     TinkerBell: They were behind in production. They only delivered half of what they promised. And so, they did need to answer for their shortcomings. Would have been happier if he did not die however.
      <<AddStatement TinkerBell_Q5_OriginalGoal "Pigs were supposed to deliver more Pixie Dust than they did. TinkerBell was sent by boss to intimidate the Pigs. The Boss also left before TinkerBell attacked the pig">>
-<<jump TinkerBell_Q5_Start>>
+<<StopJump TinkerBell_Q5_Start>>
 ===
 title: TinkerBell_Q5_Question_3
 tags:
@@ -550,7 +550,7 @@ position: -991,1605
 <<if visited("TinkerBell_Q5_Question_3") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me that, my time is valuable you know?
-    <<jump TinkerBell_Q5_Start>>
+    <<StopJump TinkerBell_Q5_Start>>
 <<else>>
     Shepherd: What do you know of this new boss?  
     TinkerBell: I don't know much. He's new in the area. 
@@ -566,7 +566,7 @@ position: -991,1605
     Shepherd:  <style="int">(Damn, dead end)</style>
     <<AddStatement TinkerBell_Q5_Boss2 "Boss seems to like trenchcoats and hats. Very cautious with identifiers.">>
 <<endif>>
-<<jump TinkerBell_Q5_Start>>
+<<StopJump TinkerBell_Q5_Start>>
 
 ===
 title: TinkerBell_Q5_Question_4
@@ -577,7 +577,7 @@ position: -512,1601
 <<if visited("TinkerBell_Q5_Question_4") == true>>
     <<wait 0.5>>
     TinkerBell: You already asked me about..that.
-    <<jump TinkerBell_Q5_Start>>
+    <<StopJump TinkerBell_Q5_Start>>
 <<else>>
     Shepherd: Can you describe the series of events?
     TinkerBell: I went to their farm with the boss, with the intent of asking about the missing product. 
@@ -603,7 +603,7 @@ position: -512,1601
     
     <<AddStatement TinkerBell_Q5_Timeline "TinkerBell arrived at the farm, had a conversation with the victim. Victim got agitated and attacked TinkerBell, TinkerBell beat him until he was unconcious and fled">>
 <<endif>>
-<<jump TinkerBell_Q5_Start>>
+<<StopJump TinkerBell_Q5_Start>>
 
 ===
 title:  TinkerBell_Q5_Accusation_Default
@@ -613,7 +613,7 @@ position: -382,1279
 TinkerBell: And why does that matter now?
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
 <<LoseLife>>
-<<jump TinkerBell_Q5_Start>>
+<<StopJump TinkerBell_Q5_Start>>
 ===
 
 title: TinkerBell_Q6
@@ -640,7 +640,7 @@ Shepherd: Matches? When..When did you get here?
 Matches: Just now, you should really try to stop spacing out like that. 
 Shepherd: Sorry, just lost in thought.
 Matches: Clearly.
-<<jump Wolf2>>
+<<StopJump Wolf2>>
 ===
 
 title: TinkerBellLose
@@ -653,5 +653,5 @@ Shepherd: <style="int">(Dammit. I need more information out of her! This can't e
 <<FadeToBlack>>
 <<wait 3>>
 <<RemoveCharacter TinkerBell>>
-<<jump StartTinkerBell>>
+<<StopJump StartTinkerBell>>
 ===
