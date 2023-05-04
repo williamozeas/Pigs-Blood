@@ -461,7 +461,7 @@ position: 124,340
         //SET CORRECT EVIDENCE HERE
         <<if visited("Wolf2_Q3_Accusation_Correct_MetroPass") == true && visited("Wolf2_Q3_Accusation_Correct_Car") == false>>
             //Second contradiction
-            <<SetStatementResponse Wolf2_Q3_FakedMetro Wolf_CarStatement Wolf2_Q3_Accusation_Correct_CCTV>>
+            <<SetStatementResponse Wolf2_Q3_FakedMetro Wolf2_Q3_SeeKids Wolf2_Q3_Accusation_Correct_CCTV>>
             <<PromptStatement Wolf2_Q3_Accusation_Contradict>>
         <<endif>>
         <<PromptStatement Wolf2_Q3_Accusation_Proof>>

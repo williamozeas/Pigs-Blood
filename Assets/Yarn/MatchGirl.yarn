@@ -526,8 +526,12 @@ Shepherd: It's over, Matches.
 <<SetMusic>>
 <<PlayEffect Reveal>>
 Shepherd: <style="int">(...So. We're done here.)</style>
+Wolf: Am I free to go?
+Shepherd: Yes, you're fine.
 Wolf: ...
-Shepherd: 
+Wolf: Am I going to be back here next week?
+Shepherd: ...
+// Wolf: 
 ===
 title: MatchGirlLose
 ---
