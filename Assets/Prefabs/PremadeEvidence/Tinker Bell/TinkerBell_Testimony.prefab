@@ -27,7 +27,7 @@ PrefabInstance:
       propertyPath: pagesText.Array.data[0]
       value: "TinkerBell's Testimony:\n\n-Pigs were supposed to deliver more Pixie
         Dust than they did. \n\n-TinkerBell was sent by boss to intimidate the Pigs.
-        \n\n-The Boss left before TinkerBell attacked Sticks.\n"
+        \n\n-The Boss left before TinkerBell attacked Sticks.\n\nCont'd on next page"
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
