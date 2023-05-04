@@ -636,6 +636,7 @@ tags:
 position: 58,1403
 ---
 <<SetMusic Chill>>
+<<wait 5>>
 <<RemoveCharacter Bricks>>
 <<RemoveCharacter Straw>>
 <<AddCharacter MatchGirl>>
@@ -648,7 +649,9 @@ Shepherd: I think she owns a nightclub downtown, though I never expected her to 
 Matches: Some people will always dissapoint huh? Anyways, head home Shepherd. We should have her in here at some point tomorrow morning to have a chat with you.
 Shepherd: Thanks Matches, really appreciate it.
 <<PlayEffect ToBlack>>
+<<wait 5>>
 <<StopMusic>>
 <<RemoveCharacter MatchGirl>>
+
 <<jump StartTinkerBell>>
 ===
