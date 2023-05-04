@@ -16,7 +16,6 @@ position: 122,-203
 <<LoadEvidence Wolf_BlackmailLetter>>
 <<LoadEvidence Wolf_CarDescription>>
 <<LoadEvidence Wolf_Testimony>>
-<<LoadEvidence Wolf_Car_Inventory>>
 <<LoadEvidence Wolf_FinalTestimony>> //TODO: MUST have details about his cell number (8) and not being able to see through the vent + unable to see outside/no windows
 <<PlayEffect Emphasis>>
 <<SetPose MatchGirl surprised_looking>>
@@ -420,6 +419,10 @@ Matches: ...?
 Shepherd: You think you're so on top of it, don't you?
 Shepherd: The brilliant mastermind, controlling everything from the beginning.
 Shepherd: Well, in your overconfidence, you were careless.
+<<jump MatchGirl_Q5_Start>>
+===
+title: MatchGirl_Q5_Start
+---
 Shepherd: You're the boss of the drug ring, and I can prove it with this!
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_Car_Inventory MatchGirl_Q5_Accusation_Correct>>

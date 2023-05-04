@@ -59,7 +59,7 @@ Matches: In addition, I've gotten all the evidence from the first interrogation 
 <<LoadEvidence Pigs_Autopsy>>
 <<LoadEvidence Pigs_Testimony>>
 Shepherd: Thanks.
-Matches: He wasn't that great a liar the first time around, but that could have been a façade.
+Matches: He wasn't that great a liar the first time around, but that could have been a facade.
 Matches: If he really is the mastermind behind a drug ring, he'll be a tough nut to crack. Be on your toes.
 Shepherd: Alright, I'll be on the lookout.
 <<SetPose MatchGirl smug_sitting>> 
