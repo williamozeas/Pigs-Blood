@@ -267,7 +267,7 @@ public class YarnCommandManager : DialogueViewBase
 	}
 
 	public void AddStatement(string id, string display)
-	{
+	{ 
 		Notebook nb = (Notebook)EvidenceManager.Instance.GetCurrentEvidenceByType(DocType.Notebook);
 		nb.AddStatement(id, display);
 	}

@@ -118,7 +118,7 @@ Shepherd: I can't show you the evidence, because I don't have it, thanks to your
 <<PlayEffect Energy>>
 <<SetPose MatchGirl thinking_idle>>
 Matches: ...!
-<<StopJump MatchGirl_Q2_Start>>
+<<jump MatchGirl_Q2_Start>>
 ===
 title: MatchGirl_Q2_Start
 ---
@@ -145,7 +145,7 @@ Shepherd: <style="int">(...Dammit, she's right.)</style>
 Shepherd: <style="int">(I need to think. What piece of evidence should exist, but doesn't?)</style>
 Shepherd: <style="int">(...And who told me about it?)</style>
 <<LoseLife>>
-<<StopJump MatchGirl_Q2_Start>>
+<<jump MatchGirl_Q2_Start>>
 ===
 title: MatchGirl_Q2_Accusation_Correct
 tags:
@@ -301,7 +301,7 @@ Shepherd: <style="int">(If that car doesn't belong to Wolf, one piece of evidenc
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_CarDescription MatchGirl_Q3_Accusation_Correct>>
 <<PromptEvidence>>
-<<StopJump MatchGirl_Q3_Start>>
+<<jump MatchGirl_Q3_Start>>
 ===
 title: MatchGirl_Q3_Accusation_Correct
 tags:
@@ -327,21 +327,21 @@ Shepherd: There's only one explanation...
     Shepherd: <style="int">(No, that doesn't make sense. The report says there were "large amounts" of hair.)</style>
     Shepherd: <style="int">(Where would she have gotten that?)</style>
     <<LoseLife>>
-    <<StopJump MatchGirl_Q4_Start>>
+    <<jump MatchGirl_Q4_Start>>
 -> The fur is not yours
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No, we just went over this.)</style>
     Shepherd: <style="int">(The DNA testing couldn't have been tampered with.)</style>
     <<LoseLife>>
-    <<StopJump MatchGirl_Q4_Start>>
+    <<jump MatchGirl_Q4_Start>>
 -> The fur got there when you were arrested
-    <<StopJump MatchGirl_Q4_Accusation_Correct>>
+    <<jump MatchGirl_Q4_Accusation_Correct>>
 -> It is your car
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No, that makes no sense.)</style>
     Shepherd: <style="int">(Wolf has no reason to lie about his car.)</style>
     <<LoseLife>>
-    <<StopJump MatchGirl_Q4_Start>>
+    <<jump MatchGirl_Q4_Start>>
 ===
 title: MatchGirl_Q4_Accusation_Correct
 tags:
@@ -438,7 +438,7 @@ Shepherd: <style="int">(I need proof that she can't destroy... Some mistake that
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_Car_Photo MatchGirl_Q5_Accusation_Correct>>
 <<PromptEvidence MatchGirl_Q5_Accusation_Default>>
-<<StopJump MatchGirl_Q5_Start>>
+<<jump MatchGirl_Q5_Start>>
 ===
 title: MatchGirl_Q5_Accusation_Correct
 tags:
@@ -467,7 +467,7 @@ Matches: A match doesn't prove anything! Everyone has matches!
 Shepherd: That's true. But not everyone uses them the same way you do.
 <<SetPose MatchGirl irritated_sitting>>
 Matches: ...!
-<<StopJump MatchGirl_Q6_Start>>
+<<jump MatchGirl_Q6_Start>>
 
 //MatchGirl Q6
 ===
@@ -481,20 +481,20 @@ Shepherd: That's right. We'll have undeniable proof you used that car when we...
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... That's not it. Even if we find more matches, that won't prove anything.)</style>
     <<LoseLife>>
-    <<StopJump MatchGirl_Q6_Start>>
+    <<jump MatchGirl_Q6_Start>>
 -> Check for fingerprints
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... That's not it. She just said that she always wears gloves in the car.)</style>
     <<LoseLife>>
-    <<StopJump MatchGirl_Q6_Start>>
+    <<jump MatchGirl_Q6_Start>>
 -> Light the match
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... Lighting the evidence on fire won't help my case!)</style>
     <<LoseLife>>
-    <<StopJump MatchGirl_Q6_Start>>
+    <<jump MatchGirl_Q6_Start>>
 -> Check the match for DNA
     Shepherd: ...check the match for DNA.
-    <<StopJump MatchGirl_Ending>>
+    <<jump MatchGirl_Ending>>
     
 
 ===
@@ -525,5 +525,5 @@ Shepherd: <style="int">(It can't be over!)</style>
 <<PlayEffect ToBlack>>
 <<wait 3>>
 <<RemoveCharacter MatchGirl>>
-<<StopJump MatchGirl>> //This might work?? needs to be tested though
+<<jump MatchGirl>> //This might work?? needs to be tested though
 ===

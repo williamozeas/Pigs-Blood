@@ -80,7 +80,7 @@ Wolf: ...
 Shepherd: ...Alright then.
 Shepherd: <style="int">(...he's shedding. He might be able to hide his nervousness in his words, but not his body language.)</style>
 
-<<StopJump Wolf2_Q1_Start>>
+<<jump Wolf2_Q1_Start>>
 //Wolf2 Q1
 ===
 title: Wolf2_Q1_Start
@@ -91,9 +91,9 @@ position: 123,-136
 <<SetMusic Questions>>
 -> Question
     -> Where were you yesterday?
-        <<StopJump Wolf2_Q1_Question_1>>
+        <<jump Wolf2_Q1_Question_1>>
     -> Why so quiet? <<if visited("Wolf2_Q1_Question_1") == true>>
-        <<StopJump Wolf2_Q1_Question_2>>
+        <<jump Wolf2_Q1_Question_2>>
 -> Accuse
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
@@ -116,7 +116,7 @@ Wolf: ...
 Wolf: I already told you. I stayed home all day.
 Shepherd: <style="int">(...Hm.)</style>
 <<AddStatement Wolf2_StayedHome "Wolf stayed home all day.">>
-<<StopJump Wolf2_Q1_Start>>
+<<jump Wolf2_Q1_Start>>
 ===
 title: Wolf2_Q1_Question_2
 tags:
@@ -137,7 +137,7 @@ Shepherd: Scared you're going to be booked for something big this time?
 Wolf: I'm not a fucking jester. If you're interrogating me for entertainment, go look somewhere else.
 Shepherd: <style="int">(...Okay.)</style>
 
-<<StopJump Wolf2_Q1_Start>>
+<<jump Wolf2_Q1_Start>>
 ===
 title: Wolf2_Q1_Accusation_Proof
 tags:
@@ -158,7 +158,7 @@ Wolf: ...
 Shepherd: Okay. Let's try that again.
 Shepherd: <style="int">("This is the same thing he said the first time. And I'll prove him wrong just as easily as I did then.")</style>
 <<LoseLife>>
-<<StopJump Wolf2_Q1_Start>>
+<<jump Wolf2_Q1_Start>>
 ===
 title: Wolf2_Q1_Accusation_Correct
 tags:
@@ -180,7 +180,7 @@ Wolf: I went out and got groceries, then I took a walk.
 Shepherd: <style="int">(...)</style>
 Shepherd: <style="int">(No, you didn't.)</style>
 
-<<StopJump Wolf2_Q2_Start>>
+<<jump Wolf2_Q2_Start>>
 
 
 //Wolf2 Q2
@@ -194,9 +194,9 @@ position: 123,141
 <<SetPose Wolf neutral_idle>>
 -> Question
     -> Groceries?
-        <<StopJump Wolf2_Q2_Question_1>>
+        <<jump Wolf2_Q2_Question_1>>
     -> A walk?
-        <<StopJump Wolf2_Q2_Question_2>>
+        <<jump Wolf2_Q2_Question_2>>
 -> Accuse
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
@@ -228,7 +228,7 @@ Wolf: To the <style="emph">GOD DAMNED GROCERY STORE</style>.
 <<AddStatement Wolf2_Groceries "Wolf went to the grocery store.">>
 Shepherd: Woah, woah! Alright, I get the message.
 Shepherd: <style="int">Someone's not having a good day.</style>
-<<StopJump Wolf2_Q2_Start>>
+<<jump Wolf2_Q2_Start>>
 ===
 title: Wolf2_Q2_Question_2
 tags:
@@ -264,7 +264,7 @@ Shepherd: Jesus, Wolf. Calm down.
 Wolf: Get off my ass. You don't care.
 Shepherd: <style="int">(Sheesh.)</style>
 
-<<StopJump Wolf2_Q2_Start>>
+<<jump Wolf2_Q2_Start>>
 ===
 title: Wolf2_Q2_Accusation_Proof
 tags:
@@ -284,7 +284,7 @@ Wolf: Is this funny to you?
 Shepherd: <style="int">("Damn.")</style>
 Shepherd: <style="int">("I should know this. There's no way he took the metro to the store and back.")</style>
 <<LoseLife>>
-<<StopJump Wolf2_Q2_Start>>
+<<jump Wolf2_Q2_Start>>
 ===
 title: Wolf2_Q2_Accusation_Correct
 tags:
@@ -354,7 +354,7 @@ Wolf: ...
 Shepherd: There's one problem with what you just said.
 Shepherd: A big problem.
 Wolf: ...
-<<StopJump Wolf2_Q2p2>>
+<<jump Wolf2_Q2p2>>
 ===
 title: Wolf2_Q2p2
 ---
@@ -362,12 +362,12 @@ title: Wolf2_Q2p2
 -> The strawberry stains prove you are the boss.
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... that's not it. What did he say that was suspicious?)</style>
-    <<StopJump Wolf2_Q2p2>>
+    <<jump Wolf2_Q2p2>>
 -> You couldn't have known about the boss's movement.
 -> The stain is actually blood.
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... that's not it. What did he say that was suspicious?)</style>
-    <<StopJump Wolf2_Q2p2>>
+    <<jump Wolf2_Q2p2>>
 <<PlayEffect Emphasis>>
 Shepherd: <style="int">(Here goes.)</style>
 <<SetMusic Contradiction>>
@@ -434,7 +434,7 @@ Shepherd: It's in the job description.
 Wolf: ...
 Wolf: Make this quick. I've got a prison to go to.
 <<ResetStatements>>
-<<StopJump Wolf2_Q3_Start >>
+<<jump Wolf2_Q3_Start >>
 //Wolf2 Q3
 ===
 title: Wolf2_Q3_Start
@@ -446,15 +446,15 @@ position: 124,340
 <<SetMusic QuestionsFaster>>
 -> Question
     -> Where were you yesterday?
-        <<StopJump Wolf2_Q3_Question_1>>
+        <<jump Wolf2_Q3_Question_1>>
     -> What happened at the farm? <<if visited("Wolf2_Q3_Question_1") == true>>
-        <<StopJump Wolf2_Q3_Question_2>>
+        <<jump Wolf2_Q3_Question_2>>
     -> What did you do in between the farm and your arrest? <<if visited("Wolf2_Q3_Question_1") == true>>
-        <<StopJump Wolf2_Q3_Question_3>>
+        <<jump Wolf2_Q3_Question_3>>
     -> Why did you come back to the scene of the crime? <<if visited("Wolf2_Q3_Question_1") == true>>
-        <<StopJump Wolf2_Q3_Question_4>>
+        <<jump Wolf2_Q3_Question_4>>
     -> You changed clothes? <<if visited("Wolf2_Q3_Question_3") == true>>
-        <<StopJump Wolf2_Q3_Question_5>>
+        <<jump Wolf2_Q3_Question_5>>
 -> Accuse
     -> Your statements contradict each other!
         <<ResetEvidenceResponses>>
@@ -496,7 +496,7 @@ Wolf: Once that match girl came out and flashed her badge, I took off in the opp
 <<wait 0.8>>
 Wolf: Are you done? I've got a date with a set of metal bars.
 Shepherd: Just a few more questions...
-<<StopJump Wolf2_Q3_Start>>
+<<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Question_2
 tags:
@@ -520,7 +520,7 @@ Shepherd: <style="int">(He's being evasive on this point. I can't call him out o
 Shepherd: <style="int">(I should find somewhere else to attack.)</style>
 
 <<AddStatement Wolf2_Q3_PoliceCar "The police car that arrested Wolf came from the crime scene.">>
-<<StopJump Wolf2_Q3_Start>>
+<<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Question_3
 tags:
@@ -556,7 +556,7 @@ Shepherd: What did you do in between leaving the farm and getting arrested?
     Wolf: Yes, it's mine. 
     Shepherd: <style="int">(Hm... This checks out with the new evidence.)</style>
 <<endif>>
-<<StopJump Wolf2_Q3_Start>>
+<<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Question_4
 tags:
@@ -579,7 +579,7 @@ Wolf: After all this time trying to catch me out on little mistakes, now that yo
 Shepherd: I'm just trying to make sure I have the right guy.
 Wolf: Seems to me like you just like arguing.
 
-<<StopJump Wolf2_Q3_Start>>
+<<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Question_5
 tags:
@@ -616,7 +616,7 @@ position: -149,435
 <<endif>>
     
 
-<<StopJump Wolf2_Q3_Start>>
+<<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Accusation_Proof
 tags:
@@ -649,7 +649,7 @@ Wolf: What are you trying to say? I already confessed!
     Shepherd: <style="int">(...Darn. Wolf's order of events seems tight, but I can't help feeling there's an inconsistency with the evidence...)</style>
 <<endif>>
 <<LoseLife>>
-<<StopJump Wolf2_Q3_Start>>
+<<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Accusation_Correct_MetroPass
 tags:
@@ -704,7 +704,7 @@ Shepherd: <style="int">(What an eager reaction. He didn't even look at the pictu
 Wolf: Are you satisfied? Match Girl, take me-
 <<PlayEffect Emphasis>>
 Shepherd: No. Your story's still... contradictory. You're not leaving until I know the truth of this case.
-<<StopJump Wolf2_Q3_Start>>
+<<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Accusation_Correct_Car
 tags:
@@ -730,7 +730,7 @@ Wolf: ...
 Shepherd: Then I guess we'll do this that hard way.
 <<StopMusic>>
 Shepherd: <style="int">(He must be lying again. And I've got to prove it.)</style>
-<<StopJump Wolf2_Q3_Start>>
+<<jump Wolf2_Q3_Start>>
 ===
 title: Wolf2_Q3_Accusation_Correct_CCTV
 tags:
@@ -884,7 +884,7 @@ Wolf: N-no, I'm not... Someone... No...
 Shepherd: <style="int">(Something is preventing Wolf from speaking...)</style>
 Shepherd: <style="int">(Could it be...?)</style>
 
-<<StopJump Wolf2_Q4_Start>>
+<<jump Wolf2_Q4_Start>>
 
 //Wolf2 Q4
 ===
@@ -895,12 +895,12 @@ position: 125,558
 <<AddCharacter Wolf>>
 -> Question
     -> What's wrong?
-        <<StopJump Wolf2_Q4_Question_1>>
+        <<jump Wolf2_Q4_Question_1>>
 -> Accuse
     -> You're trying to infiltrate a prison!
-        <<StopJump Wolf2_Q4_Accusation_Prison>>
+        <<jump Wolf2_Q4_Accusation_Prison>>
     -> You're protecting the real culprit!
-        <<StopJump Wolf2_Q4_Accusation_Culprit>>
+        <<jump Wolf2_Q4_Accusation_Culprit>>
     -> You're being blackmailed!
         Wolf: N-no! I'm not-
         Wolf: There's nothing to blackmail me with...!
@@ -929,7 +929,7 @@ Shepherd: Can't, or won't?
 Wolf: ...
 Wolf: Please, just take me away...
 
-<<StopJump Wolf2_Q4_Start>>
+<<jump Wolf2_Q4_Start>>
 title: Wolf2_Q4_Accusation_Proof
 tags:
 position: 536,544
@@ -948,7 +948,7 @@ Wolf: What...?
 Shepherd: You're a spy! Or something!
 Wolf: ...I'll be a spy, or a murderer, or whatever you want. Just close this case...
 Shepherd: <style="int">(Damn, looks like that was wrong...)</style>
-<<StopJump Wolf2_Q4_Start>>
+<<jump Wolf2_Q4_Start>>
 ===
 title: Wolf2_Q4_Accusation_Culprit
 tags:
@@ -961,7 +961,7 @@ Shepherd: Who is it? Your friend? Your family?
 Wolf: ...no. I don't... It's just me.
 Shepherd: <style="int">(Hm... He doesn't seem worried, he seems terrified.)</style>
 Shepherd: <style="int">(I'd better take a different approach.)</style>
-<<StopJump Wolf2_Q4_Start>>
+<<jump Wolf2_Q4_Start>>
 ===
 title: Wolf2_Q4_Accusation_Default
 tags:
@@ -974,7 +974,7 @@ Wolf: ...
 <<PlayEffect Failure>>
 Shepherd: <style="int">(Damn. No reaction.)</style>
 <<LoseLife>>
-<<StopJump Wolf2_Q4_Start>>
+<<jump Wolf2_Q4_Start>>
 ===
 title: Wolf2_Q4_Accusation_Blackmailed
 tags:
@@ -1000,7 +1000,7 @@ Wolf: ...no.
 Wolf: Search my cell. You won't find anything.
 Shepherd: <style="int">(Looks like I'm right. And it sounds like he doesn't know who blackmailed him - meaning it was probably a letter.)</style>
 Shepherd: <style="int">(How can I prove he's being blackmailed? I should get some details straight in my head to figure this out.)</style>
-<<StopJump Wolf2_Q5_1>>
+<<jump Wolf2_Q5_1>>
 ===
 title: Wolf2_Q5_1
 position: 908,-12
@@ -1011,22 +1011,22 @@ Shepherd: <style="int">(Let's see... First of all, when was Wolf blackmailed?)</
     <<PlayEffect Failure>>
     Shepherd: <style="int">(Hmmm... I don't think so.)</int>
     Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</int>
-    <<StopJump Wolf2_Q5_1>>
+    <<jump Wolf2_Q5_1>>
 -> After the murder, before the arrest
     <<PlayEffect Failure>>
     Shepherd: <style="int">(Hmmm... I don't think so.)</int> 
     Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</int>
-    <<StopJump Wolf2_Q5_1>>
+    <<jump Wolf2_Q5_1>>
 -> After the arrest, before the first interrogation
     <<PlayEffect Failure>>
     Shepherd: <style="int">(Hmmm... I don't think so.)</int> 
     Shepherd: <style="int">(Wolf wasn't acting this way during the first interrogation. I don't think he was blackmailed then.)</int>
-    <<StopJump Wolf2_Q5_1>>
+    <<jump Wolf2_Q5_1>>
 -> After the first interrogation
     <<PlayEffect Interesting>>
     Shepherd: <style="int">(It must have been after the first interrogation.)</style> 
     Shepherd: <style="int">(He only started acting strange during this interrogation.)</style> 
-<<StopJump Wolf2_Q5_2>>
+<<jump Wolf2_Q5_2>>
 ===
 title: Wolf2_Q5_2
 position: 1045,-366
@@ -1036,7 +1036,7 @@ Shepherd: <style="int">(Now, where was Wolf blackmailed?)</style>
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... That can't be it.)</int>
     Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</int>
-    <<StopJump Wolf2_Q5_2>>
+    <<jump Wolf2_Q5_2>>
 -> In his cell
     Shepherd: <style="int">(He must have been blackmailed in his cell.)</style> 
     Shepherd: <style="int">(Does that mean...?)</style> 
@@ -1044,10 +1044,10 @@ Shepherd: <style="int">(Now, where was Wolf blackmailed?)</style>
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... That can't be it.)</int>
     Shepherd: <style="int">(I've been here the whole time he's been in this room. He can't have been blackmailed here.)</int>
-    <<StopJump Wolf2_Q5_2>>
+    <<jump Wolf2_Q5_2>>
 
 Shepherd: <style="int">(...I have a bad feeling about this.)</style> 
-<<StopJump Wolf2_Q5_3>>
+<<jump Wolf2_Q5_3>>
 ===
 title: Wolf2_Q5_3
 position: 561,-383
@@ -1058,12 +1058,12 @@ Shepherd: <style="int">(So, where is the blackmail letter now?)</style>
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... That can't be it.)</int>
     Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</int>
-    <<StopJump Wolf2_Q5_3>>
+    <<jump Wolf2_Q5_3>>
 -> In his cell
     Shepherd: <style="int">(Hm... It does make sense for him to leave it in his cell. However...)</style> 
     <<PlayEffect Failure>>
     Shepherd: <style="int">(He just told me to search his cell. There's no way he would do that if the letter is there.)</int> 
-    <<StopJump Wolf2_Q5_3>>
+    <<jump Wolf2_Q5_3>>
 -> In the interrogation room //shoutout to TGAA1 where witnesses pass around an object between each other while at the witness stand that was awesome
     <<StopMusic>>
     Shepherd: Matches, hold him still. I want to check his pockets.
@@ -1206,7 +1206,7 @@ Shepherd: Profiles written by my partner...
 <<SetMusic Contradiction>>
 Shepherd: The Little Match Girl.
 
-<<StopJump MatchGirl>>
+<<jump MatchGirl>>
 ===
 
 title: Wolf2Lose
@@ -1219,5 +1219,5 @@ Shepherd: <style="int">(Dammit! I need more information out of him, this can't e
 <<wait 3>>
 <<RemoveCharacter Wolf>>
 <<RemoveCharacter MatchGirl>>
-<<StopJump Wolf2>>
+<<jump Wolf2>>
 ===
