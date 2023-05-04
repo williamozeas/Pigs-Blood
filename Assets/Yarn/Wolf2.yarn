@@ -2,7 +2,7 @@
 tags:
 position: 122,-203
 ---
-
+<<RemoveAllEvidence>>
 <<wait 2>>
 <<AddCharacter MatchGirl>>
 <<SetPose MatchGirl neutral_idle>>
@@ -18,7 +18,7 @@ Matches: Drug dealing, assault, now murder...
 Shepherd: <style="int">(So was it him?)</style>
 <<SetPose MatchGirl smug_sitting>>
 Matches: ...we've stopped some evil today.
-Shepherd: <style="int">(Can we prove it?)</int>
+Shepherd: <style="int">(Can we prove it?)</style>
 <<SetPose MatchGirl thinking_idle>>
 Matches: Shepherd?
 <<PlayEffect Interesting>>
@@ -29,7 +29,7 @@ Matches: No?
 Shepherd: We haven't stopped anything. Not while whoever's in charge of this whole thing is still out there.
 <<SetPose MatchGirl neutral_idle>>
 Matches: ...
-Matches: You think it's the wolf?
+Matches: You think it's Wolf?
 Shepherd: Maybe.
 Matches: Hm... We know he was there, and the timeframe matches up with Tinker Bell's testimony.
 Matches: Plus, he lied about his movements. Why would he do that unless he had something to hide?
