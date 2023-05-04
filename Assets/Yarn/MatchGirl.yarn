@@ -425,7 +425,7 @@ title: MatchGirl_Q5_Start
 ---
 Shepherd: You're the boss of the drug ring, and I can prove it with this!
 <<ResetEvidenceResponses>>
-<<SetEvidenceResponse Wolf_Car_Inventory MatchGirl_Q5_Accusation_Correct>>
+<<SetEvidenceResponse Wolf_CarDescription MatchGirl_Q5_Accusation_Correct>>
 <<PromptEvidence MatchGirl_Q5_Accusation_Default>>
 
 //MatchGirl Q5
