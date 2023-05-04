@@ -18,6 +18,8 @@ public class YarnCommandManager : DialogueViewBase
 	[SerializeField] DialogueRunner runner;
 	public DialogueRunner Runner => runner;
 
+	public Lives lives;
+
 	[Header("Assets"), Tooltip("you can manually assign various assets here if you don't want to use /Resources/ folder")]
 	public List<Sprite> loadSprites = new List<Sprite>();
 	public List<AudioClip> loadAudio = new List<AudioClip>();
@@ -359,11 +361,13 @@ public class YarnCommandManager : DialogueViewBase
 	public void LoseLife()
 	{
 		//@efe call life losing function here
+		lives.LoseLife();
 	}
 
 	public void ResetLives()
 	{
 		//@efe restore all lives
+		lives.ResetLives();
 	}
 	
 	public void SetLoseNode(string newLoseNode)
