@@ -147,6 +147,7 @@ Shepherd: You're lying! And I can prove it with-
 Bricks: Sir! This is hardly the time for accusations!
 Shepherd: ...Sorry, you're right.
 Shepherd: <style="int">(Whoops.)</style>
+<<LoseLife>>
 <<jump Pigs_Q1_Start>>
 ===
 title: Pigs_Q1_Accusation_Correct
@@ -234,6 +235,7 @@ Shepherd: You're lying! And I can prove it with-
 Bricks: Sir! This is hardly the time for accusations!
 Shepherd: ...Sorry, you're right.
 Shepherd: <style="int">(Whoops.)</style>
+<<LoseLife>>
 <<jump Pigs_Q2_Start>>
 ===
 title: Pigs_Q2_Accusation_Correct
@@ -354,6 +356,7 @@ Shepherd: You're lying! And I can prove it with-
 Bricks: Sir! This is hardly the time for accusations!
 Shepherd: ...Sorry, you're right.
 Shepherd: <style="int">(Whoops.)</style>
+<<LoseLife>>
 <<jump Pigs_Q3_Start>>
 ===
 title: Pigs_Q3_Accusation_Correct
@@ -471,6 +474,7 @@ Shepherd: You're lying! And I can prove it with-
 Bricks: Sir! This is hardly the time for accusations!
 Shepherd: ...Sorry, you're right.
 Shepherd: <style="int">(Whoops.)</style>
+<<LoseLife>>
 <<jump Pigs_Q4_Start>>
 ===
 title: Pigs_Q4_Accusation_Correct
@@ -522,6 +526,7 @@ position: 354,544
 ---
 <<PlayEffect Failure>>
 Shepherd: <style="int">(Damn it, that's not it. Lost my train of thought.)</style>
+<<LoseLife>>
 <<jump Pigs_Q5_Start>>
 ===
 title: Pigs_Q5_Accusation_Correct
@@ -635,7 +640,7 @@ position: 328,1092
 <<SetPose Straw neutral_idle>>
 Bricks: Yeah, what about it? Why should that do anything for me?
 Shepherd: <style="int">(Damn it, that's not it.)</style>
-
+<<LoseLife>>
 <<jump Pigs_Q6_Start>>
 ===
 title: Pigs_Q6_Accusation_Correct

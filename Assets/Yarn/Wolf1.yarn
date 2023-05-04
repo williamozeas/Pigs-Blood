@@ -279,6 +279,7 @@ Wolf: And that's relevant how?
 Shepherd: ...
 Wolf: That's what I thought. 
 Shepherd: <style="int">(He's obviously lying about his movements. I just have to prove he was somewhere he never mentioned being.)</style>
+<<LoseLife>>
 <<jump Wolf_Q2_Start>>
 
 
@@ -398,6 +399,7 @@ Shepherd: Well, you see, uh...
 <<wait 1>>
 Wolf: You're losing your edge. Too many donuts?
 Shepherd: <style="int">(He's still lying. There's no way he walked all the way to where we caught him)</style>
+<<LoseLife>>
 <<jump Wolf_Q3_Start>>
 ===
 title: Wolf_Q3_Accusation_Correct
@@ -542,6 +544,7 @@ Wolf: ...
 Shepherd: Nothing?
 Wolf: ...
 Shepherd: <style="int">(Damn. Is there any way I can prove something happened to Wolf at the farm? Did something about him change?)</style>
+<<LoseLife>>
 <<jump Wolf_Q4_Start>>
 ===
 title: Wolf_Q5
@@ -569,6 +572,7 @@ title: Wolf_Q5_Accusation_Default
 <<SetPose MatchGirl neutral_idle>>
 <<wait 1>>
 Matches: No, that's not it. You should know this. Did he have a receipt on him?
+<<LoseLife>>
 <<PromptEvidence Wolf_Q5_Accusation_Default>>
 ===
 title: Wolf_Q5_Accusation_Correct
