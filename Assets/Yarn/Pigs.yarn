@@ -703,4 +703,5 @@ Shepherd: <style="int">(Dammit! I must have pushed too hard!)</style>
 <<FadeToBlack>>
 <<wait 3>>
 <<RemoveCharacter Wolf>>
+<<jump Pigs>>
 ===

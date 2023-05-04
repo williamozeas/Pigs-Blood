@@ -644,5 +644,9 @@ TinkerBell: Alright. I think I've had enough of these questions for today.
 Shepherd: Wait, but-
 TinkerBell: No buts. I'm not saying another word.
 Shepherd: <style="int">(Dammit. I need more information out of her! This can't end here...)</style>
+
+<<FadeToBlack>>
+<<wait 3>>
+<<RemoveCharacter TinkerBell>>
 <<jump StartTinkerBell>>
 ===

@@ -3,6 +3,9 @@ tags:
 position: 122,-203
 ---
 <<RemoveAllEvidence>>
+<<ResetStatements>>
+<<ResetLives>>
+<<SetLoseNode Wolf2Lose>>
 <<wait 2>>
 <<AddCharacter MatchGirl>>
 <<SetPose MatchGirl neutral_idle>>
@@ -1189,4 +1192,16 @@ Shepherd: Profiles written by my partner...
 Shepherd: The Little Match Girl.
 
 <<jump MatchGirl>>
+===
+
+title: Wolf2Lose
+---
+Wolf2: That's it. I'm not going to say anything more.
+Shepherd: <style="int">(Dammit! I need more information out of him, this can't end here!)</style>
+
+<<FadeToBlack>>
+<<wait 3>>
+<<RemoveCharacter Wolf>>
+<<RemoveCharacter MatchGirl>>
+<<jump Wolf2>>
 ===
