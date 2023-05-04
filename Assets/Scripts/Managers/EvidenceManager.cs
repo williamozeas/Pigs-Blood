@@ -161,4 +161,9 @@ public class EvidenceManager : Singleton<EvidenceManager>
         currentEvidence.Clear();
         currentEvidence.Add(nb);
     }
+
+    public Vector3 GetResetPoint()
+    {
+        return resetPoint.position;
+    }
 }

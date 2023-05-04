@@ -49,6 +49,10 @@ public abstract class EvidenceAbstract : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
+        if (transform.position.y < -2f)
+        {
+            transform.position = EvidenceManager.Instance.GetResetPoint();
+        }
         if (grabbed)
         {
             float mouseY = Input.mousePosition.y;
