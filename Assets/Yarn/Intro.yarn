@@ -15,6 +15,7 @@ tags:
 <<LoadEvidence Wolf_FamilyPortrait>>
 <<LoadEvidence Pigs_Autopsy>>
 <<SetMusic Chill>>
+<<SetLoseNode Start>>
 Shepherd: <style="int">(One dead, blunt force trauma.)</style> 
 Shepherd: <style="int">(Side of the head. Two of the victim's brothers on the scene.)</style> 
 Shepherd: <style="int">(One wolf visited the scene a few minutes before the body was found.)</style> 
