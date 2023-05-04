@@ -1202,6 +1202,7 @@ Shepherd: That's right. The handwriting on this note exactly matches that on the
 Shepherd: Profiles written by my partner...
 <<PlayEffect ToWhite>>
 <<RemoveCharacter Wolf>>
+<<wait 3>>
 <<AddCharacter MatchGirl>>
 <<SetPose MatchGirl neutral_idle>>
 <<PlayEffect DramaticReveal>>
