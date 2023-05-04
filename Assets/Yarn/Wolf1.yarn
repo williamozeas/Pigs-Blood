@@ -1,5 +1,6 @@
 ﻿title: Wolf_Start
 ---
+<<PlayEffect Reveal>>
 <<RemoveAllEvidence>>
 <<LoadEvidence Wolf_MetroPass>>
 <<LoadEvidence Wolf_ArrestReport>>
@@ -632,5 +633,5 @@ Shepherd: <style="int">(Dammit! I made too many wrong accusations.)</style>
 <<PlayEffect ToBlack>>
 <<wait 3>>
 <<RemoveCharacter Wolf>>
-<<jump Wolf_1>>
+<<jump Wolf_Start>>
 ===
