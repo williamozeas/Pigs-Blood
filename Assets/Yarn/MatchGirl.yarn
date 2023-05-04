@@ -531,7 +531,22 @@ Shepherd: Yes, you're fine.
 Wolf: ...
 Wolf: Am I going to be back here next week?
 Shepherd: ...
-Shepherd: No, I don't think you will be
+<<PlayEffect Interesting>>
+<<SetMusic Chill>>
+Shepherd: No, I don't think you will be.
+Wolf: ...
+Wolf: And all it took was your partner being revealed as a psychopath.
+Shepherd: It does tend to change how you look at things.
+Wolf: Detective... I'm worried about my family. She said that-
+Shepherd: You did exactly as she asked. It's me she'll want revenge on.
+<<wait 1>>
+Wolf: Do you have kids?
+Shepherd: ...No.
+Wolf: If you did, you'd know that nothing can stop you from worrying about them.
+Shepherd: Listen, if she tries anything...
+Shepherd: I'll be there.
+Wolf: ...
+Shepherd: I know you have no reason to trust me, but I will.
 ===
 title: MatchGirlLose
 ---

@@ -767,8 +767,9 @@ Wolf: Why do you care so fucking much?! I did it! Let me rot away in a cell some
 Shepherd: <style="int">(What is going on with him?)</style>
 <<ResetStatements>>
 Wolf: I ran the drug ring, I dealt with the pigs, I met with Tinker Bell, I told her to kill the pig, I came back to the scene...
+<<RemoveStatement Wolf2_Q3_SeeKids>>
 <<AddStatement Wolf_Q3_RanTheDrugRing "Wolf ran the drug ring.">>
-<<AddStatement Wolf_Q3_DealtWithThePigs "Wolf dealt with the pigs.">>
+<<AddStatement Wolf_Q3_DealtWithThePigs "Wolf ordered drugs from the pigs.">>
 <<AddStatement Wolf_Q3_MetWithTB "Wolf met with Tinker Bell.">>
 <<AddStatement Wolf_Q3_ToldTBToKill "Wolf told Tinker Bell to kill the pig.">>
 <<AddStatement Wolf_Q3_CameBackToTheScene "Wolf came back to the scene.">>
@@ -907,7 +908,7 @@ position: 125,558
         Shepherd: <style="int">(I wouldn't be too sure about that...)</style>
         <<ResetEvidenceResponses>>
         <<SetEvidenceResponse Wolf_FamilyPortrait Wolf2_Q4_Accusation_Blackmailed>>
-        <<PromptEvidence >>
+        <<PromptEvidence Wolf2_Q4_Accusation_Proof>>
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         <<PromptStatement Wolf2_Q4_Accusation_Proof>>
@@ -930,6 +931,7 @@ Wolf: ...
 Wolf: Please, just take me away...
 
 <<jump Wolf2_Q4_Start>>
+===
 title: Wolf2_Q4_Accusation_Proof
 tags:
 position: 536,544
@@ -1009,18 +1011,18 @@ position: 908,-12
 Shepherd: <style="int">(Let's see... First of all, when was Wolf blackmailed?)</style>
 -> Before the murder
     <<PlayEffect Failure>>
-    Shepherd: <style="int">(Hmmm... I don't think so.)</int>
-    Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</int>
+    Shepherd: <style="int">(Hmmm... I don't think so.)</style>
+    Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</style>
     <<jump Wolf2_Q5_1>>
 -> After the murder, before the arrest
     <<PlayEffect Failure>>
-    Shepherd: <style="int">(Hmmm... I don't think so.)</int> 
-    Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</int>
+    Shepherd: <style="int">(Hmmm... I don't think so.)</style> 
+    Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</style>
     <<jump Wolf2_Q5_1>>
 -> After the arrest, before the first interrogation
     <<PlayEffect Failure>>
-    Shepherd: <style="int">(Hmmm... I don't think so.)</int> 
-    Shepherd: <style="int">(Wolf wasn't acting this way during the first interrogation. I don't think he was blackmailed then.)</int>
+    Shepherd: <style="int">(Hmmm... I don't think so.)</style> 
+    Shepherd: <style="int">(Wolf wasn't acting this way during the first interrogation. I don't think he was blackmailed then.)</style>
     <<jump Wolf2_Q5_1>>
 -> After the first interrogation
     <<PlayEffect Interesting>>
@@ -1034,16 +1036,16 @@ position: 1045,-366
 Shepherd: <style="int">(Now, where was Wolf blackmailed?)</style> 
 -> At his home
     <<PlayEffect Failure>>
-    Shepherd: <style="int">(No... That can't be it.)</int>
-    Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</int>
+    Shepherd: <style="int">(No... That can't be it.)</style>
+    Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</style>
     <<jump Wolf2_Q5_2>>
 -> In his cell
     Shepherd: <style="int">(He must have been blackmailed in his cell.)</style> 
     Shepherd: <style="int">(Does that mean...?)</style> 
 -> In the interrogation room 
     <<PlayEffect Failure>>
-    Shepherd: <style="int">(No... That can't be it.)</int>
-    Shepherd: <style="int">(I've been here the whole time he's been in this room. He can't have been blackmailed here.)</int>
+    Shepherd: <style="int">(No... That can't be it.)</style>
+    Shepherd: <style="int">(I've been here the whole time he's been in this room. He can't have been blackmailed here.)</style>
     <<jump Wolf2_Q5_2>>
 
 Shepherd: <style="int">(...I have a bad feeling about this.)</style> 
@@ -1056,13 +1058,13 @@ position: 561,-383
 Shepherd: <style="int">(So, where is the blackmail letter now?)</style> 
 -> At his home
     <<PlayEffect Failure>>
-    Shepherd: <style="int">(No... That can't be it.)</int>
-    Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</int>
+    Shepherd: <style="int">(No... That can't be it.)</style>
+    Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</style>
     <<jump Wolf2_Q5_3>>
 -> In his cell
     Shepherd: <style="int">(Hm... It does make sense for him to leave it in his cell. However...)</style> 
     <<PlayEffect Failure>>
-    Shepherd: <style="int">(He just told me to search his cell. There's no way he would do that if the letter is there.)</int> 
+    Shepherd: <style="int">(He just told me to search his cell. There's no way he would do that if the letter is there.)</style> 
     <<jump Wolf2_Q5_3>>
 -> In the interrogation room //shoutout to TGAA1 where witnesses pass around an object between each other while at the witness stand that was awesome
     <<StopMusic>>
