@@ -2,6 +2,7 @@
 ---
 
 //ADD EVIDENCE
+<<Checkpoint Pigs>>
 <<PlayEffect Reveal>>
 <<RemoveAllEvidence>>
 <<LoadEvidence Pigs_Autopsy>>

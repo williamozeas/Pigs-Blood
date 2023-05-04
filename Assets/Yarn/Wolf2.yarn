@@ -2,6 +2,7 @@
 tags:
 position: 122,-203
 ---
+<<Checkpoint Wolf2>>
 <<PlayEffect Reveal>>
 <<RemoveAllEvidence>>
 <<ResetStatements>>

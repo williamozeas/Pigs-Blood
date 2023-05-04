@@ -1,5 +1,6 @@
 ﻿title: Wolf_Start
 ---
+<<Checkpoint Wolf_Start>>
 <<PlayEffect Reveal>>
 <<RemoveAllEvidence>>
 <<LoadEvidence Wolf_MetroPass>>

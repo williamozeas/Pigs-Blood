@@ -95,6 +95,7 @@ public class YarnCommandManager : DialogueViewBase
 		runner.AddCommandHandler("LoseLife", LoseLife);
 		runner.AddCommandHandler("ResetLives", ResetLives);
 		runner.AddCommandHandler<string>("StopJump", StopJump);
+		runner.AddCommandHandler<string>("Checkpoint", Checkpoint);
 
 		// adds all Resources to internal lists / one big pile... it
 		// will scan inside all subfolders too! note: but when
@@ -387,6 +388,11 @@ public class YarnCommandManager : DialogueViewBase
 		//@efe call this from your script when you lose all lives
 		runner.Stop();
 		runner.StartDialogue(loseNode);
+	}
+
+	public void Checkpoint(string newCheckpoint)
+	{
+		PlayerPrefs.SetString("Checkpoint", newCheckpoint);
 	}
 
 	//SPRITE & Audio OPERATIONS FROM EXAMPLE CODE, KEPT FOR REFERENCE/IN CASE WE NEED THEM

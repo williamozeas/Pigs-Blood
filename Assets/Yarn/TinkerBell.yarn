@@ -2,6 +2,7 @@
 tags:
 position: -749,-1282
 ---
+<<Checkpoint StartTinkerBell>>
 <<PlayEffect Reveal>>
 <<RemoveAllEvidence>>
 <<ResetStatements>>

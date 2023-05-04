@@ -2,6 +2,7 @@
 tags:
 position: 122,-203
 ---
+<<Checkpoint MatchGirl>>
 <<PlayEffect Reveal>>
 <<RemoveAllEvidence>>
 <<LoadEvidence Wolf_MetroPass>>
@@ -226,8 +227,12 @@ Matches: You wouldn't want anything happening to that family of yours, would you
 <<SetPose Wolf scared_idle>>
 <<PlayEffect Energy>>
 Wolf: ...!
+<<RemoveCharacter Wolf>>
+<<AddCharacter MatchGirl>>
 Matches: I have connections, you know. If you snitch, who knows what could happen?
 Shepherd: W-Wolf, please...
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
 <<wait 2>>
 Wolf: ...I'm sorry.
 Shepherd: Gh-!
@@ -312,7 +317,7 @@ position: 353,432
 Shepherd: Your fur was found in the car, DNA tested and all.
 Wolf: Surely that was just tampered with by the Match Girl? She did give it to you, after all.
 Shepherd: I don't think so. She doesn't handle the DNA testing, and the results were given to us inside this room.
-Shepherd: She shouldn't have had time to tamper with the results of a typed official document.
+Shepherd: She didn't have time to tamper with the results of a typed official document.
 Wolf: Wait, so how did my fur get in that car?
 <<jump MatchGirl_Q4_Start>>
 ===
@@ -423,7 +428,7 @@ Shepherd: Well, in your overconfidence, you were careless.
 ===
 title: MatchGirl_Q5_Start
 ---
-Shepherd: You're the boss of the drug ring, and I can prove it with this!
+Shepherd: You're the boss that was at the scene of the crime, and I can prove it with this!
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_CarDescription MatchGirl_Q5_Accusation_Correct>>
 <<PromptEvidence MatchGirl_Q5_Accusation_Default>>
@@ -547,6 +552,24 @@ Shepherd: Listen, if she tries anything...
 Shepherd: I'll be there.
 Wolf: ...
 Shepherd: I know you have no reason to trust me, but I will.
+<<wait 1.3>>
+<<PlayEffect Energy>>
+Wolf: Alright.
+Shepherd: I'll see you around.
+Wolf: ...See you.
+<<RemoveCharacter Wolf>>
+Shepherd: <style="int">(And so the curtain closes.)</style>
+Shepherd: <style="int">(I still can't believe she was hiding a secret identity that whole time.)</style>
+Shepherd: <style="int">(But still... what she said about me hurt from someone close.)</style>
+Shepherd: <style="int">(...)</style>
+Shepherd: <style="int">(...But after Wolf, I can see why she felt that way.)</style>
+Shepherd: <style="int">(It's strange, the Big Bad Wolf fears the boy who cries his name.)</style>
+<<wait 2>>
+Shepherd: <style="int">(From now on, I have to make it up to the innocent.)</style>
+Shepherd: <style="int">(And never stop searching for the truth!)</style>
+<<PlayEffect ToBlack>>
+<<wait 2>>
+<<Checkpoint Start>>
 ===
 title: MatchGirlLose
 ---

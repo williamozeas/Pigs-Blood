@@ -51,6 +51,10 @@ public class GameManager : Singleton<GameManager>
         {
             SceneManager.LoadScene("Documents", LoadSceneMode.Additive);
         }
+
+        string currentCheckpoint = PlayerPrefs.GetString("Checkpoint", "Start");
+        YarnCommandManager.Runner.Stop();
+        YarnCommandManager.Runner.StartDialogue(currentCheckpoint);
     }
 
     private void Update()
