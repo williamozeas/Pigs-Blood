@@ -1,5 +1,15 @@
 ﻿title: Wolf_Start
 ---
+<<RemoveAllEvidence>>
+<<LoadEvidence Wolf_MetroPass>>
+<<LoadEvidence Wolf_ArrestReport>>
+<<LoadEvidence Wolf_CCTV>>
+<<LoadEvidence Wolf_Profile>>
+<<LoadEvidence Wolf_FamilyPortrait>>
+<<LoadEvidence Pigs_Autopsy>>
+<<ResetLives>>
+<<ResetStatements>>
+<<SetLoseNode WolfLose>>
 <<wait 1>>
 <<AddCharacter Wolf>>
 <<jump Wolf_1>>
@@ -126,6 +136,7 @@ Shepherd: Depends on how you answer these questions Wolf, don't lie or mouth off
 title: Wolf_Q2_Start
 position: -745,-405
 ---
+<<AddCharacter Wolf>>
 <<SetMusic Questions>>
 <<SetPose Wolf neutral_tapping>>
 -> Question
@@ -289,6 +300,7 @@ title: Wolf_Q3_Start
 position: -751,186
 ---
 <<SetMusic QuestionsFaster>>
+<<AddCharacter Wolf>>
 <<SetPose Wolf neutral_idle>>
 -> Question
     -> Groceries?
@@ -421,6 +433,7 @@ position: -749,541
 title: Wolf_Q4_Start
 position: -747,700
 ---
+<<AddCharacter Wolf>>
 <<SetMusic Answers>>
 <<SetPose Wolf neutral_idle>>
 -> Question
@@ -604,4 +617,16 @@ Matches: The brothers, the ones who worked at the farm?
 Shepherd: Right.
 Matches: I wrote up the profiles as always, plus got all the relevant evidence. Feel free to peruse.
 <<jump Pigs>>
+===
+
+title: WolfLose
+---
+Wolf: I've had enough. This is a sham!
+Shepherd: But-
+Wolf: I'm not talking to anyone until I get a lawyer.
+Shepherd: <style="int">(Dammit! I made too many wrong accusations.)</style>
+<<FadeToBlack>>
+<<wait 3>>
+<<RemoveCharacter Wolf>>
+<<jump Wolf>>
 ===

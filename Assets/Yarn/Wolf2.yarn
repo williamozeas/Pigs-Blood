@@ -2,7 +2,10 @@
 tags:
 position: 122,-203
 ---
-
+<<RemoveAllEvidence>>
+<<ResetStatements>>
+<<ResetLives>>
+<<SetLoseNode Wolf2Lose>>
 <<wait 2>>
 <<AddCharacter MatchGirl>>
 <<SetPose MatchGirl neutral_idle>>
@@ -18,7 +21,7 @@ Matches: Drug dealing, assault, now murder...
 Shepherd: <style="int">(So was it him?)</style>
 <<SetPose MatchGirl smug_sitting>>
 Matches: ...we've stopped some evil today.
-Shepherd: <style="int">(Can we prove it?)</int>
+Shepherd: <style="int">(Can we prove it?)</style>
 <<SetPose MatchGirl thinking_idle>>
 Matches: Shepherd?
 <<PlayEffect Interesting>>
@@ -29,7 +32,7 @@ Matches: No?
 Shepherd: We haven't stopped anything. Not while whoever's in charge of this whole thing is still out there.
 <<SetPose MatchGirl neutral_idle>>
 Matches: ...
-Matches: You think it's the wolf?
+Matches: You think it's Wolf?
 Shepherd: Maybe.
 Matches: Hm... We know he was there, and the timeframe matches up with Tinker Bell's testimony.
 Matches: Plus, he lied about his movements. Why would he do that unless he had something to hide?
@@ -83,6 +86,7 @@ title: Wolf2_Q1_Start
 tags:
 position: 123,-136
 ---
+<<AddCharacter Wolf>>
 <<SetMusic Questions>>
 -> Question
     -> Where were you yesterday?
@@ -184,6 +188,7 @@ title: Wolf2_Q2_Start
 tags:
 position: 123,141
 ---
+<<AddCharacter Wolf>>
 <<SetMusic Questions>>
 <<SetPose Wolf Flippant>>
 -> Question
@@ -431,6 +436,7 @@ title: Wolf2_Q3_Start
 tags:
 position: 124,340
 ---
+<<AddCharacter Wolf>>
 <<SetPose Wolf neutral_idle>>
 <<SetMusic QuestionsFaster>>
 -> Question
@@ -877,6 +883,7 @@ title: Wolf2_Q4_Start
 tags:
 position: 125,558
 ---
+<<AddCharacter Wolf>>
 -> Question
     -> What's wrong?
         <<jump Wolf2_Q4_Question_1>>
@@ -1185,4 +1192,16 @@ Shepherd: Profiles written by my partner...
 Shepherd: The Little Match Girl.
 
 <<jump MatchGirl>>
+===
+
+title: Wolf2Lose
+---
+Wolf2: That's it. I'm not going to say anything more.
+Shepherd: <style="int">(Dammit! I need more information out of him, this can't end here!)</style>
+
+<<FadeToBlack>>
+<<wait 3>>
+<<RemoveCharacter Wolf>>
+<<RemoveCharacter MatchGirl>>
+<<jump Wolf2>>
 ===

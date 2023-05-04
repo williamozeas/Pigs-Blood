@@ -485,3 +485,14 @@ Matches: No!!! Fuck!! Put your walkie talkie down!
 Shepherd: Guards!? I have a job for you!
 Shepherd: It's over, Matches. 
 ===
+title: MatchGirlLose
+---
+Matches: It's over. You have no proof.
+Shepherd: No-!
+Matches: Nobody will ever believe you, Shepherd.
+Shepherd: <style="int">(It can't be over!)</style>
+<<FadeToBlack>>
+<<wait 3>>
+<<RemoveCharacter MatchGirl>>
+<<jump MatchGirl>> //This might work?? needs to be tested though
+===
