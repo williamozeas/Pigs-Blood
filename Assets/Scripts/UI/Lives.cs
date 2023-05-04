@@ -17,6 +17,7 @@ public class Lives : MonoBehaviour
     {
         totalLives = lives.Count;
         remainingLives = totalLives;
+        GameManager.Instance.YarnCommandManager.lives = this;
     }
 
     public void LoseLife()
@@ -25,7 +26,7 @@ public class Lives : MonoBehaviour
         remainingLives--;
         if (remainingLives == 0)
         {
-            //test
+            GameManager.Instance.YarnCommandManager.Lose();
         }
     }
 
