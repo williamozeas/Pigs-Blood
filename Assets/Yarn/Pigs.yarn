@@ -2,6 +2,7 @@
 ---
 
 //ADD EVIDENCE
+<<PlayEffect Reveal>>
 <<RemoveAllEvidence>>
 <<LoadEvidence Pigs_Autopsy>>
 <<LoadEvidence Pigs_FamilyPortrait>>

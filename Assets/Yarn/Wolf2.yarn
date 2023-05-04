@@ -2,6 +2,7 @@
 tags:
 position: 122,-203
 ---
+<<PlayEffect Reveal>>
 <<RemoveAllEvidence>>
 <<ResetStatements>>
 <<ResetLives>>
