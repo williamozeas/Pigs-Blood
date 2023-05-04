@@ -104,7 +104,10 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
         {
             NotebookPage page = pages[i];
             page.statements.Clear();
-            Destroy(page.gameObject);
+            if (i != 0)
+            {
+                Destroy(page.gameObject);
+            }
         }
     }
 

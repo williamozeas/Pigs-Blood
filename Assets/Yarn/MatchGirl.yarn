@@ -519,6 +519,15 @@ Shepherd: A likely story. You yourself ordered the search for the car, and I've 
 Matches: No!!! Fuck!! Put your walkie talkie down!
 Shepherd: Guards!? I have a job for you!
 Shepherd: It's over, Matches. 
+<<PlayEffect ToBlack>>
+<<wait 3>>
+<<RemoveCharacter MatchGirl>>
+<<AddCharacter Wolf>>
+<<SetMusic>>
+<<PlayEffect Reveal>>
+Shepherd: <style="int">(...So. We're done here.)</style>
+Wolf: ...
+Shepherd: 
 ===
 title: MatchGirlLose
 ---
