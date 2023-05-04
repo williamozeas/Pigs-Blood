@@ -1,4 +1,19 @@
 ﻿title: Pigs
+---
+
+//ADD EVIDENCE
+<<RemoveAllEvidence>>
+<<ResetStatements>>
+<<LoadEvidence Pigs_Autopsy>>
+<<LoadEvidence Pigs_FamilyPortrait>>
+<<LoadEvidence Pigs_Crime_Scene>>
+<<LoadEvidence Pigs_Farm_Map>>
+<<LoadEvidence Pigs_Tax_Returns>>
+<<ReviewWithDestination PigsStart>>
+
+===
+
+title: PigsStart
 tags:
 position: 122,-203
 ---
