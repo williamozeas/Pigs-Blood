@@ -134,7 +134,7 @@ Wolf: ...
 Shepherd: Scared you're going to be booked for something big this time?
 <<SetPose Wolf rawr_idle>>
 Wolf: I'm not a fucking jester. If you're interrogating me for entertainment, go look somewhere else.
-Shepherd: <style="int">(...Okay.)</int>
+Shepherd: <style="int">(...Okay.)</style>
 
 <<jump Wolf2_Q1_Start>>
 ===
@@ -164,7 +164,7 @@ tags:
 position: 334,-37
 ---
 <<StopMusic>>
-<<SetPose Wolf neutral_idle>>
+//<<SetPose Wolf neutral_idle>>
 Shepherd: Wolf, we've been over this.
 Wolf: ...
 Shepherd: You weren't at home yesterday morning. We have a picture of you out and about, plus a record of your metro card being used.
@@ -190,7 +190,7 @@ position: 123,141
 ---
 <<AddCharacter Wolf>>
 <<SetMusic Questions>>
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf neutral_idle>>
 -> Question
     -> Groceries?
         <<jump Wolf2_Q2_Question_1>>
@@ -200,7 +200,7 @@ position: 123,141
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse Wolf2_Metro EVIDENCE Wolf2_Q2_Accusation_Correct>>
+        <<SetStatementResponse Wolf2_Metro Wolf_MetroPass Wolf2_Q2_Accusation_Correct>>
         <<PromptStatement Wolf2_Q2_Accusation_Proof>>
 -> Review
     <<Review>>
@@ -247,7 +247,7 @@ Shepherd: Excuse me?
 Wolf: Who cares why I went on a walk? 
 Wolf: Because I wanted some fresh air? Is that what you want to hear?
 Shepherd: I-
-<<SetPose Wolf Flippant>>
+<<SetPose Wolf neutral_idle>>
 <<PlayEffect Energy>>
 Wolf: Because I wanted to stretch my legs?
 <<PlayEffect Emphasis>>
@@ -261,7 +261,7 @@ Wolf: Because I <style="emph">really</style> fucking love the smell of car exhau
 Wolf: Because I wanted to MURDER someone?
 Shepherd: Jesus, Wolf. Calm down.
 Wolf: Get off my ass. You don't care.
-Shepherd: <style="int">("Sheesh.")</style>
+Shepherd: <style="int">(Sheesh.)</style>
 
 <<jump Wolf2_Q2_Start>>
 ===
@@ -397,7 +397,7 @@ Shepherd: That's it?
 Wolf: What? Do you want me to break down crying or something? Throw a fit and rip out my hair?
 Wolf: I did it. Just take me the hell away. Match Girl? My cell?
 <<RemoveCharacter Wolf>>
-<<AddCharacter Matches>>
+<<AddCharacter MatchGirl>>
 <<SetPose MatchGirl neutral_idle>>
 Matches: Way ahead of you there.
 <<wait 1>>
@@ -418,7 +418,7 @@ Matches: ...
 Shepherd: Let me talk to him. I just have some details I need to iron out.
 <<SetPose MatchGirl neutral_idle>>
 Matches: ...alright. 
-<<RemoveCharacter Matches>>
+<<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
 <<SetPose Wolf neutral_tapping>>
 <<wait 1.5>>
@@ -426,12 +426,12 @@ Wolf: You want my signature or something?
 Shepherd: No, I just want to ask you a few questions about-
 <<SetPose Wolf angry_tapping>>
 Wolf: God DAMN, you are the nosiest person I've ever met.
-<<wiat 0.8>>
+<<wait 0.8>>
 Shepherd: It's in the job description.
 Wolf: ...
 Wolf: Make this quick. I've got a prison to go to.
 <<ResetStatements>>
-
+<<jump Wolf2_Q3_Start >>
 //Wolf2 Q3
 ===
 title: Wolf2_Q3_Start
@@ -828,6 +828,7 @@ Shepherd: And that statement contradicts with this evidence!
 <<PromptEvidence Wolf2_Q3_Statement_Default>>
 ===
 title: Wolf2_Q3_Statement_Default
+position: 815,151
 ---
 <<PlayEffect Failure>>
 Shepherd: <style="int">(No... That's not it.)</style>
@@ -835,6 +836,7 @@ Shepherd: <style="int">(Something Wolf just said contradicts what we know about 
 <<LoseLife>>
 ===
 title: Wolf2_Q3_Statement_Correct
+position: 671,58
 ---
 <<StopMusic>>
 <<SetPose Wolf neutral_idle>>
@@ -993,75 +995,71 @@ Wolf: I don't kn-!
 <<SetPose Wolf neutral_idle>>
 Wolf: ...no.
 Wolf: Search my cell. You won't find anything.
-Shepherd: <style="int">(Looks like I'm right. And it sounds like he doesn't know who blackmailed him - meaning it was probably a letter.)</int>
-Shepherd: <style="int">(How can I prove he's being blackmailed? I should get some details straight in my head to figure this out.)</int>
+Shepherd: <style="int">(Looks like I'm right. And it sounds like he doesn't know who blackmailed him - meaning it was probably a letter.)</style>
+Shepherd: <style="int">(How can I prove he's being blackmailed? I should get some details straight in my head to figure this out.)</style>
 <<jump Wolf2_Q5_1>>
 ===
 title: Wolf2_Q5_1
+position: 908,-12
 ---
 <<SetPose Wolf neutral_idle>>
-Shepherd: <style="int">(Let's see... First of all, when was Wolf blackmailed?)</int>
+Shepherd: <style="int">(Let's see... First of all, when was Wolf blackmailed?)</style>
 -> Before the murder
     <<PlayEffect Failure>>
     Shepherd: <style="int">(Hmmm... I don't think so.)</int>
     Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</int>
-    <<LoseLife>>
     <<jump Wolf2_Q5_1>>
 -> After the murder, before the arrest
     <<PlayEffect Failure>>
     Shepherd: <style="int">(Hmmm... I don't think so.)</int> 
     Shepherd: <style="int">(The drug ring couldn't have known Wolf would be arrested - he was randomly picked off of the street.)</int>
-    <<LoseLife>>
     <<jump Wolf2_Q5_1>>
 -> After the arrest, before the first interrogation
     <<PlayEffect Failure>>
     Shepherd: <style="int">(Hmmm... I don't think so.)</int> 
     Shepherd: <style="int">(Wolf wasn't acting this way during the first interrogation. I don't think he was blackmailed then.)</int>
-    <<LoseLife>>
     <<jump Wolf2_Q5_1>>
 -> After the first interrogation
     <<PlayEffect Interesting>>
-    Shepherd: <style="int">(It must have been after the first interrogation.)</int> 
-    Shepherd: <style="int">(He only started acting strange during this interrogation.)</int> 
+    Shepherd: <style="int">(It must have been after the first interrogation.)</style> 
+    Shepherd: <style="int">(He only started acting strange during this interrogation.)</style> 
 <<jump Wolf2_Q5_2>>
 ===
 title: Wolf2_Q5_2
+position: 1045,-366
 ---
-Shepherd: <style="int">(Now, where was Wolf blackmailed?)</int> 
+Shepherd: <style="int">(Now, where was Wolf blackmailed?)</style> 
 -> At his home
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... That can't be it.)</int>
     Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</int>
-    <<LoseLife>>
     <<jump Wolf2_Q5_2>>
 -> In his cell
-    Shepherd: <style="int">(He must have been blackmailed in his cell.)</int> 
-    Shepherd: <style="int">(Does that mean...?)</int> 
+    Shepherd: <style="int">(He must have been blackmailed in his cell.)</style> 
+    Shepherd: <style="int">(Does that mean...?)</style> 
 -> In the interrogation room 
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... That can't be it.)</int>
     Shepherd: <style="int">(I've been here the whole time he's been in this room. He can't have been blackmailed here.)</int>
-    <<LoseLife>>
     <<jump Wolf2_Q5_2>>
 
-Shepherd: <style="int">(...I have a bad feeling about this.)</int> 
+Shepherd: <style="int">(...I have a bad feeling about this.)</style> 
 <<jump Wolf2_Q5_3>>
 ===
 title: Wolf2_Q5_3
+position: 561,-383
 ---
 <<SetPose Wolf neutral_idle>>
-Shepherd: <style="int">(So, where is the blackmail letter now?)</int> 
+Shepherd: <style="int">(So, where is the blackmail letter now?)</style> 
 -> At his home
     <<PlayEffect Failure>>
     Shepherd: <style="int">(No... That can't be it.)</int>
     Shepherd: <style="int">(Wolf hasn't gone home since his arrest.)</int>
-    <<LoseLife>>
     <<jump Wolf2_Q5_3>>
 -> In his cell
-    Shepherd: <style="int">(Hm... It does make sense for him to leave it in his cell. However...)</int> 
+    Shepherd: <style="int">(Hm... It does make sense for him to leave it in his cell. However...)</style> 
     <<PlayEffect Failure>>
     Shepherd: <style="int">(He just told me to search his cell. There's no way he would do that if the letter is there.)</int> 
-    <<LoseLife>>
     <<jump Wolf2_Q5_3>>
 -> In the interrogation room //shoutout to TGAA1 where witnesses pass around an object between each other while at the witness stand that was awesome
     <<StopMusic>>
@@ -1088,6 +1086,7 @@ Shepherd: Let's see here...
 <<ReviewWithDestination Wolf2_Q5_DoneReviewing>>
 ===
 title: Wolf2_Q5_DoneReviewing
+position: 269,-449
 ---
 <<SetPose Wolf neutral_idle>>
 <<StopMusic>>
@@ -1117,7 +1116,7 @@ Wolf: ...Everyone already sees me that way.
 Wolf: ...What are two more pairs of eyes?
 Shepherd: Wolf...
 <<wait 2>>
-Shepherd: <style="int">(Shit.)</int>
+Shepherd: <style="int">(Shit.)</style>
 Shepherd: I'm sorry. For seeing you that way myself.
 <<wait 2>>
 <<StopMusic>>
@@ -1208,6 +1207,7 @@ Shepherd: The Little Match Girl.
 ===
 
 title: Wolf2Lose
+position: -73,-264
 ---
 Wolf2: That's it. I'm not going to say anything more.
 Shepherd: <style="int">(Dammit! I need more information out of him, this can't end here!)</style>
