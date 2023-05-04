@@ -681,7 +681,7 @@ Matches: The car. It matches Tinker Bell's description, and was found abandoned 
 Shepherd: Oh, really?
 Matches: Really. I've got a picture here of the interior of the car.
 Matches: And even more, we found traces of fur in the car. We tested it for DNA, and it matched Wolf's perfectly.
-// <<LoadEvidence Wolf_Car_Photo>> //GET EVIDENCE
+// <<LoadEvidence Wolf_Car_Inventory>> //GET EVIDENCE
 <<LoadEvidence Wolf_CarDescription>> 
 Shepherd: And where was this found?
 <<PlayEffect Energy>>

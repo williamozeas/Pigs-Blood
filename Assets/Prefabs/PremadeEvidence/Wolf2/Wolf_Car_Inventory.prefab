@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 568681983026150072, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: m_Name
-      value: Wolf_CarDescription
+      value: Wolf_Car_Inventory
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: id
-      value: Wolf_CarDescription
+      value: Wolf_Car_Inventory
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
@@ -31,40 +31,20 @@ PrefabInstance:
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: pagesText.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: pagesText.Array.data[0]
-      value: 'Abandoned Car
-
-
-        -Car was found abandoned near the metro station
-
-
-        -Bits
-        amounts of thick fur were found in the car, when tested they matched Wolf''s
-        DNA.
-
-
-        Inventory on next page...'
-      objectReference: {fileID: 0}
-    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
-        type: 3}
-      propertyPath: pagesText.Array.data[1]
       value: 'Abandoned Car Inventory
 
 
-        -Empty 2 liter plastic bottle
+        -Car was found abandoned near the
+        metro station
 
 
-        -One
-        match, several indents along base
-
-
-        -Half-full box of tissues
-
-'
+        -Bits amounts of thick fur were found in the car,
+        when tested they matched Wolf''s DNA.'
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
