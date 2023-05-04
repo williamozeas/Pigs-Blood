@@ -94,6 +94,7 @@ public class YarnCommandManager : DialogueViewBase
 		runner.AddCommandHandler("Lose", Lose);
 		runner.AddCommandHandler("LoseLife", LoseLife);
 		runner.AddCommandHandler("ResetLives", ResetLives);
+		runner.AddCommandHandler<string>("StopJump", StopJump);
 
 		// adds all Resources to internal lists / one big pile... it
 		// will scan inside all subfolders too! note: but when
@@ -349,6 +350,12 @@ public class YarnCommandManager : DialogueViewBase
 	public void RemoveEvidence(string id)
 	{
 		EvidenceManager.Instance.RemoveEvidence(id);
+	}
+
+	public void StopJump(string id)
+	{
+		runner.Stop();
+		runner.StartDialogue(id);
 	}
 
 	public void RemoveAllEvidence()
