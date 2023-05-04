@@ -51,15 +51,26 @@ public class GameManager : Singleton<GameManager>
         {
             SceneManager.LoadScene("Documents", LoadSceneMode.Additive);
         }
+    }
 
+    private void Start()
+    {
         string currentCheckpoint = PlayerPrefs.GetString("Checkpoint", "Start");
-        YarnCommandManager.Runner.Stop();
-        YarnCommandManager.Runner.StartDialogue(currentCheckpoint);
+        if (YarnCommandManager.Runner.IsDialogueRunning)
+        {
+            YarnCommandManager.Runner.Stop();
+            YarnCommandManager.Runner.StartDialogue(currentCheckpoint);
+        }
+        else
+        {
+            YarnCommandManager.Runner.startNode = currentCheckpoint;
+        }
     }
 
     private void Update()
     {
         //TODO: Make button?
+        Debug.Log(PlayerState);
         if (PlayerState == PlayerState.Review)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
