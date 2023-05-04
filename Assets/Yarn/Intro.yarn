@@ -82,7 +82,7 @@ Matches: No! Try looking at his profile.
 ===
 title: Intro_Q1_Success
 ---
-Shepherd: He's 39. Says so right on his report.
+Shepherd: He's 30. Says so right on his report.
 <<SetPose MatchGirl neutral_idle>>
 Matches: Glad my work writing those isn't in vain. Even if your workspace is as organized as a burning building.
 Shepherd: Very funny. I have my methods. Besides, have I let you down yet?
