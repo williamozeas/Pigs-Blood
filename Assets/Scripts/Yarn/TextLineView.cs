@@ -49,7 +49,7 @@ public class TextLineView : LineView
 
     public void PlayTextSFX()
     {
-        if (currentLine[charIndex] != ' ')
+        if (charIndex < currentLine.Length && currentLine[charIndex] != ' ')
         {
             AudioManager.Instance.CharacterTypedSound();
         }

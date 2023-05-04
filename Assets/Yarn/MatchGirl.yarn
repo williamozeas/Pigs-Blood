@@ -79,7 +79,7 @@ position: 334,-37
 ---
 <<StopMusic>>
 <<SetPose MatchGirl neutral_idle>>
-Shepherd: You say that anyone in the city could have blackmailed wolf, but is that true?
+Shepherd: You say that anyone in the city could have blackmailed Wolf, but is that true?
 Matches: Yes! Wolf said that the letter came into his cell through the air vent, which leads to the outside.
 Matches: Therefore, anyone could have walked by the jail and given it to him.
 Shepherd: That's not true.
@@ -226,7 +226,7 @@ Matches: You wouldn't want anything happening to that family of yours, would you
 <<PlayEffect Energy>>
 Wolf: ...!
 Matches: I have connections, you know. If you snitch, who knows what could happen?
-Shepherd: W-wolf, please...
+Shepherd: W-Wolf, please...
 <<wait 2>>
 Wolf: ...I'm sorry.
 Shepherd: Gh-!
