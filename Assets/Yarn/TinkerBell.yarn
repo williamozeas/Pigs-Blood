@@ -343,9 +343,9 @@ title: TinkerBell_Q3_Accusation_Correct
 position: -751,715
 ---
 <<SetPose TinkerBell neutral_idle>>
-TinkerBell: Um... why are you showing me my mugshot? 
-Shepherd: Just out of curiosity, what's up with your boots?
-TinkerBell: What do you mean about my boo....ts...
+TinkerBell: Um... why are you showing me a picture of my boots? Why did you even take this picture?
+Shepherd: Just out of curiosity, what's up with their color?
+TinkerBell: What do you mean the color is fine...
 <<PlayEffect shock>>
 <<SetPose TinkerBell scared_disbelief>>
 TinkerBell: Is this a lighting trick why the hell are they colored weird?
@@ -360,16 +360,16 @@ position: -763,955
 ---
 <<AddCharacter TinkerBell>>
 <<SetMusic QuestionsFaster>>
-<<SetPose TinkerBell CheckedOut>>
+<<SetPose TinkerBell neutral_idle>>
     -> Question
         -> What's with the bat? 
             <<jump TinkerBell_Q4_Question_1>>
         -> Do you expect me to believe that? <<if visited("TinkerBell_Q4_Question_1") == true>>
             <<jump TinkerBell_Q4_Question_2>>
     -> Accuse
-        -> This evidence proves you wrong!
+        -> Look at this.
             <<ResetEvidenceResponses>>
-            <<SetEvidenceResponse TinkerBell_Pig_Autopsy TinkerBell_Q4_Accusation_Correct>>
+            <<SetEvidenceResponse Pigs_Autopsy TinkerBell_Q4_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q4_Accusation_Default>>
     -> Review
         <<Review>>
@@ -411,7 +411,7 @@ position: -558,1008
     TinkerBell: Why won't you believe me?
     Shepherd: If its for sport reasons, why does it say "Gaslight" on it?
     <<PlayEffect shock>>
-    TinkerBell: Am I not allowed to personalize? Why are you maike me out to be a criminal?
+    TinkerBell: Am I not allowed to personalize? Why are you making me out to be a criminal?
     Shepherd: Why does it also appear to be bleached? Paints all splotchy, Is it just personalized like that too?
     TinkerBell: I...
      <<AddStatement TinkerBell_Q4_Bat2 "Baseball bat has Gaslight engraved on it. The paint is extremely splotchy, as if it had been bleached ">>
@@ -494,22 +494,23 @@ position: -1061,1423
     <<wait 0.5>>
     TinkerBell: You already asked, each dumb question makes me want to answer less.
 <<else>>
-Shepherd: You mean Wolf? Hes in our custody at this moment.
-TinkerBell: Who?
-<<PlayEffect interesting>>
-Shepherd: Wolf..Isn't he the new boss?
-TinkerBell: I don't know, I've never really talked to him and he only recently took charge around here.
-<<wait 0.5>>
-<<PlayEffect Interesting>>
-<<SetPose TinkerBell sad_down>>
-TinkerBell: Oh gods I'm dead I'm so dead! I just had to rough him up a bit!
-Shepherd:<style="int">(Oh for fuck's sake...)</style>
-<<PlayEffect Emphasis>>
-Shepherd: Oh don't you start this again, we are working on the plea so can you just drop the act?
-<<SetPose TinkerBell neutral_idle>>
-TinkerBell: Maybe, I don't know yet.
+    Shepherd:The boss? 
+    Shepherd: You mean Wolf? Hes in our custody at this moment.
+    TinkerBell: Who?
+    <<PlayEffect interesting>>
+    Shepherd: Wolf..Isn't he the new boss?
+    TinkerBell: I don't know, I've never really talked to him and he only recently took charge around here.
+    <<wait 0.5>>
+    <<PlayEffect Interesting>>
+    <<SetPose TinkerBell sad_down>>
+    TinkerBell: Oh gods I'm dead I'm so dead! I just had to rough him up a bit!
+    Shepherd:<style="int">(Oh for fuck's sake...)</style>
+    <<PlayEffect Emphasis>>
+    Shepherd: Oh don't you start this again, we are working on the plea so can you just drop the act?
+    <<SetPose TinkerBell neutral_idle>>
+    TinkerBell: Maybe, I don't know yet.
 
-<<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
+    <<AddStatement TinkerBell_Q5_Boss1 "TinkerBell has no clue who Wolf is. Is he really the boss? I should talk with him again.">>
 <<endif>>
 <<jump TinkerBell_Q5_Start>>
 
@@ -523,6 +524,7 @@ position: -374,1432
     TinkerBell: You already asked me that, my time is valuable you know?
     <<jump TinkerBell_Q5_Start>>
 <<endif>>
+    Shepherd:What was your intended goal?
     TinkerBell: My goal? To rise up and become the queen of crime in this hellhole of a city.
     Shepherd: <style="int"> (Hmm, wonder if Matches could grab me that bat from TinkerBell's car?) </style>
     Shepherd: You know what I mean, why did you go kill the pig?
@@ -542,6 +544,7 @@ position: -991,1605
     TinkerBell: You already asked me that, my time is valuable you know?
     <<jump TinkerBell_Q5_Start>>
 <<else>>
+    Shepherd: What do you know of this new boss?  
     TinkerBell: I dont know much. He's new in the area. 
     Shepherd: Did he take over from anyone or is this his own group.
     TinkerBell: He made it all himself, and he invited me to join after the Pigs recommended me.
@@ -568,6 +571,7 @@ position: -512,1601
     TinkerBell: You already asked me about..that.
     <<jump TinkerBell_Q5_Start>>
 <<else>>
+    Shepherd: Can you describe the series of events?
     TinkerBell: I went to their farm with the boss, with the intent of asking about the missing product. 
     TinkerBell: Only one of the pigs was in the house. We had a chat about what had been going on, 
     TinkerBell: He promised me that they'd get it done soon, and I told him as I walked away that they were only going to be paid for the amount they delivered.
@@ -608,7 +612,7 @@ position: -774,1745
 ---
 
 <<PlayEffect Emphasis>>
-Shepherd: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
+Shepherd: Alright. TinkerBell you are formally under arrest for the murder of Sticks Pig. 
 Shepherd: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
 Shepherd: Matches? Can you go book her?
 <<PlayEffect FadeToWhite>>
