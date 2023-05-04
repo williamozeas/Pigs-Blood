@@ -314,6 +314,7 @@ Wolf: Surely that was just tampered with by the Match Girl? She did give it to y
 Shepherd: I don't think so. She doesn't handle the DNA testing, and the results were given to us inside this room.
 Shepherd: She shouldn't have had time to tamper with the results of a typed official document.
 Wolf: Wait, so how did my fur get in that car?
+<<jump MatchGirl_Q4_Start>>
 ===
 title: MatchGirl_Q4_Start
 tags:

@@ -36,10 +36,15 @@ PrefabInstance:
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: pagesText.Array.data[0]
-      value: '-Car was found abandoned near the metro station
+      value: 'Car Description
 
-        -Bits amounts
-        of thick fur were found in the car, when tested they matched Wolf''s DNA.'
+
+        -Car was found abandoned near the metro station
+
+
+        -Bits
+        amounts of thick fur were found in the car, when tested they matched Wolf''s
+        DNA.'
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}

@@ -236,7 +236,7 @@ position: -138,219
 ---
 <<SetPose Wolf neutral_idle>>
 Shepherd: You say you went on a walk afterwards?
-<<AddStatement Wolf2_Groceries "Wolf went on a walk">>
+<<AddStatement Wolf2_Walk "Wolf went on a walk">>
 Wolf: Yes.
 Shepherd: And why did you do that?
 <<wait 1>>

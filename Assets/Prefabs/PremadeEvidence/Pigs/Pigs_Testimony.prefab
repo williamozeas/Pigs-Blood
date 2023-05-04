@@ -25,11 +25,6 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
-      propertyPath: fontSize
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
-        type: 3}
       propertyPath: lineSpacing
       value: -15
       objectReference: {fileID: 0}
