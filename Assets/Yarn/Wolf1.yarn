@@ -1,5 +1,15 @@
 ﻿title: Wolf_Start
 ---
+<<RemoveAllEvidence>>
+<<LoadEvidence Wolf_MetroPass>>
+<<LoadEvidence Wolf_ArrestReport>>
+<<LoadEvidence Wolf_CCTV>>
+<<LoadEvidence Wolf_Profile>>
+<<LoadEvidence Wolf_FamilyPortrait>>
+<<LoadEvidence Pigs_Autopsy>>
+<<ResetLives>>
+<<ResetStatements>>
+<<SetLoseNode WolfLose>>
 <<wait 1>>
 <<AddCharacter Wolf>>
 <<jump Wolf_1>>
@@ -607,4 +617,16 @@ Matches: The brothers, the ones who worked at the farm?
 Shepherd: Right.
 Matches: I wrote up the profiles as always, plus got all the relevant evidence. Feel free to peruse.
 <<jump Pigs>>
+===
+
+title: WolfLose
+---
+Wolf: I've had enough. This is a sham!
+Shepherd: But-
+Wolf: I'm not talking to anyone until I get a lawyer.
+Shepherd: <style="int">(Dammit! I made too many wrong accusations.)</style>
+<<FadeToBlack>>
+<<wait 3>>
+<<RemoveCharacter Wolf>>
+<<jump Wolf>>
 ===
