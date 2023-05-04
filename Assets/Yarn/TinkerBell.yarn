@@ -125,6 +125,7 @@ TinkerBell: And that matters how exactly?
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
 Shepherd: Not happening, I'm fine.
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+<<LoseLife>>
 <<jump TinkerBell_Q1_Start>>
 //===
 // title: TinkerBell_Q1_Accusation_Correct
@@ -220,6 +221,7 @@ TinkerBell: And that matters how exactly?
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
 Shepherd: Not happening, I'm fine
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+<<LoseLife>>
 <<jump TinkerBell_Q2_Start>>
 ===
 title: TinkerBell_Q2_Accusation_Correct
@@ -339,6 +341,7 @@ TinkerBell: And that matters how exactly?
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
 Shepherd: Not happening, I'm fine
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+<<LoseLife>>
 <<jump TinkerBell_Q3_Start>>
 ===
 
@@ -429,6 +432,7 @@ TinkerBell: And that matters how exactly?
 TinkerBell: Maybe you should just let me come back later, you seem a bit distracted.
 Shepherd: Not happening, I'm fine
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+<<LoseLife>>
 <<jump TinkerBell_Q4_Start>>
 ===
 
@@ -608,6 +612,7 @@ position: -382,1279
 ---
 TinkerBell: And why does that matter now?
 Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place for everything, but not now")</style>
+<<LoseLife>>
 <<jump TinkerBell_Q5_Start>>
 ===
 
