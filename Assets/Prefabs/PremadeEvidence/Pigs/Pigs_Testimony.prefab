@@ -44,8 +44,16 @@ PrefabInstance:
       value: 'Pigs'' Testimony
 
 
-        On the day of the murder, Sticks was to
-        meet with Tinker Bell to talk about pixie dust production.'
+        -The pigs made over 1.8 million dollars
+        last year
+
+
+        -The pigs run a pixie dust lab in the basement of their
+        shed.
+
+
+        -On the day of the murder, Sticks was to meet with Tinker
+        Bell to talk about pixie dust production.'
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
