@@ -632,5 +632,5 @@ Shepherd: <style="int">(Dammit! I made too many wrong accusations.)</style>
 <<FadeToBlack>>
 <<wait 3>>
 <<RemoveCharacter Wolf>>
-<<jump Wolf>>
+<<jump Wolf_1>>
 ===
