@@ -343,9 +343,9 @@ title: TinkerBell_Q3_Accusation_Correct
 position: -751,715
 ---
 <<SetPose TinkerBell neutral_idle>>
-TinkerBell: Um... why are you showing me my mugshot? 
-Shepherd: Just out of curiosity, what's up with your boots?
-TinkerBell: What do you mean about my boo....ts...
+TinkerBell: Um... why are you showing me a picture of my boots? Why did you even take this picture?
+Shepherd: Just out of curiosity, what's up with their color?
+TinkerBell: What do you mean the color is fine...
 <<PlayEffect shock>>
 <<SetPose TinkerBell scared_disbelief>>
 TinkerBell: Is this a lighting trick why the hell are they colored weird?
