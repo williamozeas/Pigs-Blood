@@ -267,12 +267,12 @@ position: -758,481
 <<declare $reviewCompletedTB = false as bool>>
 <<SetMusic Questions>>
 <<SetPose TinkerBell neutral_idle>>
-    -> Question <<if $reviewCompleted == true>>
-        -> Why all the Hydrogen Peroxide? <<if $reviewCompleted == true>>
+    -> Question <<if $reviewCompletedTB == true>>
+        -> Why all the Hydrogen Peroxide? <<if $reviewCompletedTB == true>>
             <<jump TinkerBell_Q3_Question_1>>
-        -> Why is this still here then? <<if $reviewCompleted == true && visited("TinkerBell_Q3_Question_1") == true>>
+        -> Why is this still here then? <<if $reviewCompletedTB == true && visited("TinkerBell_Q3_Question_1") == true>>
             <<jump TinkerBell_Q3_Question_2>>
-    -> Accuse <<if $reviewCompleted == true>>
+    -> Accuse <<if $reviewCompletedTB == true>>
         -> This evidence proves you wrong!
             <<ResetEvidenceResponses>>
             <<SetEvidenceResponse TinkerBell_Boots TinkerBell_Q3_Accusation_Correct>>
@@ -292,6 +292,7 @@ position: -960,684
     TinkerBell: You already asked me that, aren't you taking notes on this?
     <<jump TinkerBell_Q3_Start>>
 <<else>>
+    Shepherd: Why all the Hydrogen Peroxide?
     <<PlayEffect interesting>>
     TinkerBell: The what? 
     Shepherd: Says here on the catalog from the search that we found a 5 gallon bucket of 70% hydrogen peroxide.
@@ -318,6 +319,7 @@ position: -541,694
     TinkerBell: Again? Are you even listening?
     Shepherd: Quiet, I'm asking the questions here.
 <<endif>>
+    Shepherd: Why is this still here then?
     TinkerBell: I mean, is it that important why its in my car? I think its pretty irrelevant.
     Shepherd: Just answer the question.
     TinkerBell: I must have forgotten it after doing the inventory run.
@@ -383,6 +385,7 @@ position: -970,1027
     TinkerBell: You already asked me that, aren't you taking notes on this?
     <<jump TinkerBell_Q4_Start>>
 <<else>>
+    Shepherd: What's with the bat?
     TinkerBell: I'm not really sure what you're talking about.
     Shepherd: I have to wonder, why do you have a bat in your car as well?
     TinkerBell: I play softball, why do you keep thinking everything in my car is suspicious?
@@ -403,6 +406,7 @@ position: -558,1008
     TinkerBell: You already asked me that, aren't you taking notes on this?
     <<jump TinkerBell_Q4_Start>>
 <<endif>>
+    Shepherd: Do you expect me to believe that?
     TinkerBell: Its for softball, I swear to Jupiter.
     TinkerBell: Why won't you believe me?
     Shepherd: If its for sport reasons, why does it say "Gaslight" on it?
