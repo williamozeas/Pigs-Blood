@@ -3,6 +3,9 @@ tags:
 position: -749,-1282
 ---
 <<RemoveAllEvidence>>
+<<ResetStatements>>
+<<ResetLives>>
+<<SetLoseNode TinkerBellLose>>
 <<LoadEvidence Pigs_Autopsy>>
 <<LoadEvidence TinkerBell_Boots>>
 <<LoadEvidence Pigs_Testimony>>
@@ -632,4 +635,9 @@ Matches: Just now, you should really try to stop spacing out like that.
 Shepherd: Sorry, just lost in thought.
 Matches: Clearly.
 <<jump Wolf2>>
+===
+
+title: TinkerBellLose
+---
+TinkerBell: Alright. 
 ===
