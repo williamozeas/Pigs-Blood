@@ -153,7 +153,7 @@ position: 123,141
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
-        <<SetStatementResponse Pigs_Q1_WhereTheyWere Pigs_Farm_Map Pigs_Q2_Accusation_Correct>>
+        <<SetStatementResponse Pigs_Q2_WhereTheyWere Pigs_Farm_Map Pigs_Q2_Accusation_Correct>>
         <<PromptStatement Pigs_Q2_Accusation_Proof>>
 -> Review
     <<Review>>
@@ -193,6 +193,7 @@ Bricks: No clue, I didn't even know Sticks had any friends.
 Shepherd: And if I rember correctly neither of you saw anyone enter or leave?
 Bricks: That's right, neither of us were in a spot where we could see the house.
 Shepherd: <style="int">(Is that even possible?)</style> //
+<<AddStatement Pigs_Q2_WhereTheyWere "At the time of the murder, Bricks was tending to his strawberries and Straw was clearing brush for firewood">>
 <<jump Pigs_Q2_Start>>
 ===
 title: Pigs_Q2_Accusation_Proof
