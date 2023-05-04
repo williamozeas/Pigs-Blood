@@ -13,7 +13,7 @@ public class Lives : MonoBehaviour
 
     public Sprite thereLife, goneLife;
 
-    public void Start()
+    public void Awake()
     {
         totalLives = lives.Count;
         remainingLives = totalLives;
