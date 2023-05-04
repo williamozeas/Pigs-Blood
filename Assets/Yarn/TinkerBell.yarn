@@ -273,7 +273,7 @@ position: -758,481
         -> Why is this still here then? <<if $reviewCompletedTB == true && visited("TinkerBell_Q3_Question_1") == true>>
             <<jump TinkerBell_Q3_Question_2>>
     -> Accuse <<if $reviewCompletedTB == true>>
-        -> This evidence proves you wrong!
+        -> Take a look at this.
             <<ResetEvidenceResponses>>
             <<SetEvidenceResponse TinkerBell_Boots TinkerBell_Q3_Accusation_Correct>>
             <<PromptEvidence TinkerBell_Q3_Accusation_Default>>
@@ -359,6 +359,7 @@ tags:
 position: -763,955
 ---
 <<AddCharacter TinkerBell>>
+<<SetPose TinkerBell neutral_idle>>
 <<SetMusic QuestionsFaster>>
 <<SetPose TinkerBell neutral_idle>>
     -> Question
@@ -495,7 +496,7 @@ position: -1061,1423
     TinkerBell: You already asked, each dumb question makes me want to answer less.
 <<else>>
     Shepherd:The boss? 
-    Shepherd: You mean Wolf? Hes in our custody at this moment.
+    Shepherd: You mean Wolf? He's in our custody at this moment.
     TinkerBell: Who?
     <<PlayEffect interesting>>
     Shepherd: Wolf..Isn't he the new boss?
@@ -545,7 +546,7 @@ position: -991,1605
     <<jump TinkerBell_Q5_Start>>
 <<else>>
     Shepherd: What do you know of this new boss?  
-    TinkerBell: I dont know much. He's new in the area. 
+    TinkerBell: I don't know much. He's new in the area. 
     Shepherd: Did he take over from anyone or is this his own group.
     TinkerBell: He made it all himself, and he invited me to join after the Pigs recommended me.
     Shepherd: Have you ever seen him? Do you know what he looks like? Body shape? Anything?
@@ -615,7 +616,7 @@ position: -774,1745
 Shepherd: Alright. TinkerBell you are formally under arrest for the murder of Sticks Pig. 
 Shepherd: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
 Shepherd: Matches? Can you go book her?
-<<PlayEffect FadeToWhite>>
+<<PlayEffect ToWhite>>
 <<RemoveCharacter TinkerBell>>
 <<wait 5>>
 <<SetMusic Chill>>
