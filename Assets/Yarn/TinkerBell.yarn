@@ -33,6 +33,7 @@ title: TinkerBell_Q1_Start
 tags:
 position: -749,-923
 ---
+<<AddCharacter TinkerBell>>
 <<SetPose TinkerBell neutral_idle>>
 <<SetMusic Questions>>
 <<if visited("TinkerBell_Q1_Question_3") == true && visited("TinkerBell_Q1_Question_1") == true >>
@@ -150,6 +151,7 @@ title: TinkerBell_Q2_Start
 tags:
 position: -757,-330
 ---
+<<AddCharacter TinkerBell>>
 <<SetPose TinkerBell neutral_idle>>
 <<SetMusic Questions>>
 -> Question
@@ -261,10 +263,11 @@ title: TinkerBell_Q3_Start
 tags:
 position: -758,481
 ---
+<<AddCharacter TinkerBell>>
 <<declare $reviewCompletedTB = false as bool>>
 <<SetMusic Questions>>
 <<SetPose TinkerBell neutral_idle>>
-    -> Question
+    -> Question <<if $reviewCompleted == true>>
         -> Why all the Hydrogen Peroxide? <<if $reviewCompleted == true>>
             <<jump TinkerBell_Q3_Question_1>>
         -> Why is this still here then? <<if $reviewCompleted == true && visited("TinkerBell_Q3_Question_1") == true>>
@@ -353,6 +356,7 @@ title: TinkerBell_Q4_Start
 tags:
 position: -763,955
 ---
+<<AddCharacter TinkerBell>>
 <<SetMusic QuestionsFaster>>
 <<SetPose TinkerBell CheckedOut>>
     -> Question
@@ -452,6 +456,7 @@ title: TinkerBell_Q5_Start
 tags:
 position: -777,1287
 ---
+<<AddCharacter TinkerBell>>
 <<SetMusic QuestionsFaster>>
 <<SetPose TinkerBell neutral_idle>>
 <<if visited("TinkerBell_Q5_Question_1") == true && visited("TinkerBell_Q5_Question_2") == true && visited("TinkerBell_Q5_Question_3") == true  && visited("TinkerBell_Q5_Question_4") == true>>
@@ -597,6 +602,7 @@ Shepherd: <style="int">(You can hear Match Girl's voice "Theres a time and place
 title: TinkerBell_Q6
 position: -774,1745
 ---
+
 <<PlayEffect Emphasis>>
 Shepherd: Alright. TinkerBell you are formally under arrest for the murder of INSERT NAME HERE. 
 Shepherd: You have the right to remain silent. Anything you say can be used against you in a court of law. You have the right to have an attorney present now and during any future questioning. If you cannot afford an attorney, one will be appointed for you at no cost.
