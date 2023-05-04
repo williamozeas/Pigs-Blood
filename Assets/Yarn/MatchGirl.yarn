@@ -192,7 +192,7 @@ Shepherd: No!
 <<StopMusic>>
 <<SetPose MatchGirl grabbing>>
 <<wait 0.5>>
-<<PlayEffect FadeToWhite>>
+<<PlayEffect ToWhite>>
 <<wait 2>>
 //set pose not holding paper?
 <<RemoveEvidence Wolf_BlackmailLetter>>
@@ -273,7 +273,7 @@ Shepherd: <style="int">(But maybe, the rabbit hole goes deeper. And if it does, 
 Shepherd: <style="int">(I can't nail her with anything here, or she'll just burn the evidence. What's some evidence she can't get rid of...?)</style>
 <<PlayEffect Energy>>
 Shepherd: <style="int">(...!)</style>
-<<PlayMusic QuestionsFaster>>
+<<SetMusic QuestionsFaster>>
 Shepherd: Wolf?
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
@@ -285,7 +285,7 @@ Shepherd: <style="int">(Hm. But in that case...?)</style>
 Shepherd: But in that case, another piece of evidence doesn't make sense...
 <<ResetEvidenceResponses>>
 <<SetEvidenceResponse Wolf_CarDescription MatchGirl_Q3_Accusation_Correct>>
-<<PromptEvidence>>
+<<PromptEvidence MatchGirl_Q3_Accusation_Default>>
 ===
 title: MatchGirl_Q3_Accusation_Default
 tags:
@@ -520,7 +520,7 @@ Matches: It's over. You have no proof.
 Shepherd: No-!
 Matches: Nobody will ever believe you, Shepherd.
 Shepherd: <style="int">(It can't be over!)</style>
-<<FadeToBlack>>
+<<PlayEffect ToBlack>>
 <<wait 3>>
 <<RemoveCharacter MatchGirl>>
 <<StopJump MatchGirl>> //This might work?? needs to be tested though
