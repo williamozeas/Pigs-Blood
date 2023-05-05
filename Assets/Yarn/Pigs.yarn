@@ -10,11 +10,10 @@
 <<LoadEvidence Pigs_Crime_Scene>>
 <<LoadEvidence Pigs_Farm_Map>>
 <<LoadEvidence Pigs_Tax_Returns>>
-<<ReviewWithDestination PigsStart>>
 <<ResetLives>>
 <<ResetStatements>>
 <<SetLoseNode PigsLose>>
-
+<<jump PigsStart>>
 ===
 
 title: PigsStart

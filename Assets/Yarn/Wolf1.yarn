@@ -622,7 +622,13 @@ Shepherd: Them?
 Matches: The brothers, the ones who worked at the farm?
 Shepherd: Right.
 Matches: I wrote up the profiles as always, plus got all the relevant evidence. Feel free to peruse.
-<<jump Pigs>>
+
+<<LoadEvidence Pigs_Autopsy>>
+<<LoadEvidence Pigs_FamilyPortrait>>
+<<LoadEvidence Pigs_Crime_Scene>>
+<<LoadEvidence Pigs_Farm_Map>>
+<<LoadEvidence Pigs_Tax_Returns>>
+<<ReviewWithDestination Pigs>>
 ===
 
 title: WolfLose
