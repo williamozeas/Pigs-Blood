@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4073937832991952660}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7703845858074874726}
@@ -110,7 +110,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7703845857647817699}
   m_LocalRotation: {x: -0, y: -0.0000000018626449, z: 0.033127513, w: 0.99945116}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -119,7 +119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.797}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75.3, y: 80.7}
+  m_AnchoredPosition: {x: 102.6, y: 47.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7703845857647817696
@@ -178,8 +178,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -436,17 +436,17 @@ PrefabInstance:
     - target: {fileID: 8473578621966848433, guid: 2fc08bfcd112f4af09c456ddfef02293,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10.1
+      value: 6.21
       objectReference: {fileID: 0}
     - target: {fileID: 8473578621966848433, guid: 2fc08bfcd112f4af09c456ddfef02293,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 6.85
+      value: 8.78
       objectReference: {fileID: 0}
     - target: {fileID: 8473578621966848433, guid: 2fc08bfcd112f4af09c456ddfef02293,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8473578621966848433, guid: 2fc08bfcd112f4af09c456ddfef02293,
         type: 3}
@@ -456,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 8473578621966848433, guid: 2fc08bfcd112f4af09c456ddfef02293,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.64
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 8473578621966848433, guid: 2fc08bfcd112f4af09c456ddfef02293,
         type: 3}

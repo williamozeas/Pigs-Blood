@@ -48,6 +48,9 @@ Straw: STIIIIIIIICKKSSSSS!!-
 Bricks: I, I'm sorry, Straw is just so torn up- could we, ah, maybe avoid sayin'-
 Shepherd: Of course, I understand. These things are hard.
 <<SetPose Straw sad_crying>>
+Bricks: We always were close, y'see.
+Bricks: He was... the smart one. Made up for us not getting much education.
+Bricks: We stuck together.
 Straw: *sniffle*
 Shepherd: <style="int">(Oh, boy. The younger one seems a bit... unstable. I should be gentle with my questioning.)</style>
 <<AddStatement Pigs_Straw "Straw seems a bit unstable and extremely out of it.">>
@@ -385,7 +388,7 @@ Bricks: Ignore him officer, he's an idiot who makes things up all the time. Righ
 <<StopMusic>>
 <<SetPose Straw giggle_rub>>
 Straw: Hehe yeah.
-<<AddStatement Pigs_Basement "There is something in that basement that they both want to hide that makes them a lot of money.">>
+<<AddStatement Pigs_Basement "They are hiding something in that basement that makes them a lot of money.">>
 Shepherd: How about we switch gears a bit? Straw, try not to listen to what your brother and I are saying.
 Straw: Hehe okie dokie!
 Shepherd:<style="int">(No clue what's up with him. Hope he's not listening to this next part)</style>
