@@ -14,6 +14,11 @@ public class ButtonInteraction : MonoBehaviour
     public void clickToStartGame() {
         SceneManager.LoadScene("Interrogation");
     }
+    
+    public void clickToRestart() {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Interrogation");
+    }
 
     // Update is called once per frame
     void Update()
