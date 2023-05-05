@@ -546,7 +546,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 708615809}
         m_TargetAssemblyTypeName: ButtonInteraction, Assembly-CSharp
-        m_MethodName: clickToStartGame
+        m_MethodName: clickToRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
