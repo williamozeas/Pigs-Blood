@@ -641,7 +641,7 @@ public class YarnCommandManager : DialogueViewBase
 			    SetEvidenceResponse(statementResponse.evidence, statementResponse.node);
 		    }
 	    }
-	    else if (response != null) //proper response found
+	    else if (response != null && response.statement == "") //proper response found
 	    {
 		    node = response.node;
 	    }
