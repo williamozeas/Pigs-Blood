@@ -248,6 +248,7 @@ position: 350,186
 ---
 <<SetPose Bricks neutral_sitting>>
 <<SetPose Straw neutral_idle>>
+<<StopMusic>>
 Shepherd: You both say that you were in places where you could not see the house.
 Bricks: Yeah, so?
 Shepherd: Looking at the map of the property, the spots you both claim to have been either had a sightline to the house or the driveway out.
@@ -369,6 +370,7 @@ position: 353,432
 ---
 <<SetPose Bricks neutral_sitting>>
 <<SetPose Straw neutral_lookingDown>>
+<<StopMusic>>
 Shepherd: You mentioned you all were relatively poor correct?
 Bricks: Thats what I said, yeah.
 <<PlayEffect Emphasis>>

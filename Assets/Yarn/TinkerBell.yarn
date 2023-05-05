@@ -351,6 +351,7 @@ title: TinkerBell_Q3_Accusation_Correct
 position: -751,715
 ---
 <<SetPose TinkerBell neutral_idle>>
+<<StopMusic>>
 TinkerBell: Um... why are you showing me a picture of my boots? Why did you even take this picture?
 Shepherd: Just out of curiosity, what's up with their color?
 TinkerBell: What do you mean the color is fine...
@@ -442,6 +443,7 @@ title: TinkerBell_Q4_Accusation_Correct
 position: -767,1109
 ---
 <<PlayEffect Emphasis>>
+<<StopMusic>>
 Shepherd: TinkerBell, do you recognize why I am questioning you?
 TinkerBell: I..I don't know.
 <<SetMusic Contradiction>>
