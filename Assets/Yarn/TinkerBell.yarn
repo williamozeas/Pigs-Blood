@@ -30,7 +30,7 @@ Shepherd: And you're much more... flamboyant than I expected.
 <<SetPose TinkerBell angry_idle>>
 TinkerBell: Flamboyant? I hope you're just as bad at interrogating as you are complimenting people.
 <<PlayEffect Failure>>
-Shepherd: That wasnt... ugh
+Shepherd: That wasn't a... ugh.
 
 <<jump TinkerBell_Q1_Start>>
 ===
@@ -95,7 +95,7 @@ Shepherd: You do that yourself? I would have guessed the boss wouldn't want to g
 TinkerBell: Gives me something to do, and honestly it's rather relaxing. And besides, less hands involved means less potential product disappearance.
 Shepherd: What kind of stuff would be disappearing at a club?
 TinkerBell: Mostly booze and the like. I worry mostly about any of the stage effects going missing. 
-Shepherd: Hmm..I see
+Shepherd: Hmm... I see.
 
 <<jump TinkerBell_Q1_Start>>
 
@@ -446,7 +446,7 @@ Shepherd: TinkerBell, do you recognize why I am questioning you?
 TinkerBell: I..I don't know.
 <<SetMusic Contradiction>>
 Shepherd: This is the autopsy report for Stick Pig. His brothers mentioned that he had been planning to meet with you.
-Shepherd: Their interrogations heavily implied that you were responsible. Your's so far has only strengthened our theory.
+Shepherd: Their interrogations heavily implied that you were responsible. Yours so far has only strengthened our theory.
 <<PlayEffect shock>>
 <<SetPose TinkerBell sad_down>>
 TinkerBell: He's... he... I... killed him? No..nonononono..
@@ -632,10 +632,10 @@ Shepherd: Matches? Can you go book her?
 <<SetMusic Chill>>
 <<PlayEffect Reveal>>
 <<AddCharacter MatchGirl>>
-Shepard: <style="int">(Hmm, this story got a bit more interesting.)</style>
-Shepard: <style="int">(TinkerBell not knowing who Wolf or the Boss are is really odd. Her description of the Boss is rather specific...)</style>
+Shepherd: <style="int">(Hmm, this story got a bit more interesting.)</style>
+Shepherd: <style="int">(TinkerBell not knowing who Wolf or the Boss are is really odd. Her description of the Boss is rather specific...)</style>
 
-Shepard: <style="int">(Wolf was certainly lying before, maybe he'll be a bit more willing to speak honestly now)</style>
+Shepherd: <style="int">(Wolf was certainly lying before, maybe he'll be a bit more willing to speak honestly now)</style>
 <<PlayEffect Emphasis>>
 Matches: Shepherd!
 Shepherd: Matches? When..When did you get here?

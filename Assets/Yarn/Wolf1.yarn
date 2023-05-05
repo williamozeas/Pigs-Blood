@@ -422,6 +422,7 @@ Shepherd: You're lying again. I've half a mind to get you indicted this instant.
 Wolf: Wait, wait. Okay, I might have lied. But I just went out to do an errand. I swear.
 Shepherd: Are you... shedding?
 Wolf: ...I do that when I'm nervous. Please, hear me out.
+<<SetMusic Questions>>
 <<jump Wolf_Q4>>
 
 
@@ -438,7 +439,6 @@ title: Wolf_Q4_Start
 position: -747,700
 ---
 <<AddCharacter Wolf>>
-<<SetMusic Answers>>
 <<SetPose Wolf neutral_idle>>
 -> Question
     -> What errand?
