@@ -401,7 +401,7 @@ MonoBehaviour:
   bl_corner: {fileID: 582521652510674611}
   statementPrefab: {fileID: 8700011588109859900, guid: 4f3d84f12dbc144bcbbf25e9b10cabd2,
     type: 3}
-  statementsPerPage: 7
+  statementsPerPage: 5
   pagePrefab: {fileID: 676521007479997262, guid: eeb56828186ea4599be7bec039e53803,
     type: 3}
 --- !u!1 &9034188055300433442

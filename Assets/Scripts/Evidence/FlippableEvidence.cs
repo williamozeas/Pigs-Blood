@@ -38,7 +38,17 @@ public abstract class FlippableEvidence<T> : EvidenceAbstract, IFlippable where 
     public override void Inspect (float time = 1f)
     {
         base.Inspect(time);
-        br_corner.gameObject.SetActive(true);
+        if (pages.Count > 1 && currentPage == 0)
+        {
+            br_corner.gameObject.SetActive(true);
+        } else if (pages.Count > 1 && pages.Count - 1 > currentPage)
+        {
+            br_corner.gameObject.SetActive(true);
+            bl_corner.gameObject.SetActive(true);
+        } else if (pages.Count > 1 && pages.Count - 1 == currentPage)
+        {
+            bl_corner.gameObject.SetActive(true);
+        }
     }
     
     public override void UnInspect()

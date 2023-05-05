@@ -55,6 +55,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+#if !UNITY_EDITOR
         string currentCheckpoint = PlayerPrefs.GetString("Checkpoint", "Start");
         if (YarnCommandManager.Runner.IsDialogueRunning)
         {
@@ -65,13 +66,13 @@ public class GameManager : Singleton<GameManager>
         {
             YarnCommandManager.Runner.startNode = currentCheckpoint;
         }
+#endif
     }
 
     private void Update()
     {
         //TODO: Make button?
-        Debug.Log(PlayerState);
-        if (PlayerState == PlayerState.Review)
+        if (PlayerState == PlayerState.Review || PlayerState == PlayerState.ChooseEvidence)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -110,10 +111,13 @@ public class GameManager : Singleton<GameManager>
     }
 
     private string currentTalkNode;
+    private bool escPressed;
     private void SetPlayerState(PlayerState value)
     {
         switch (value)
         {
+            // case (PlayerState.ChooseEvidence):
+            // case (PlayerState.Inspecting):
             case (PlayerState.Review):
             {
                 if (playerState == PlayerState.Talk)
@@ -124,8 +128,9 @@ public class GameManager : Singleton<GameManager>
             }
             case (PlayerState.Talk):
             {
-                if (playerState == PlayerState.Review)
+                if (playerState == PlayerState.Review)// || playerState == PlayerState.ChooseEvidence || playerState == PlayerState.Inspecting)
                 {
+                    YarnCommandManager.Runner.Stop();
                     YarnCommandManager.Runner.StartDialogue(currentTalkNode);
                 }
                 break;

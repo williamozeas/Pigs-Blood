@@ -375,7 +375,8 @@ public class YarnCommandManager : DialogueViewBase
 	public void ResetLives()
 	{
 		//@efe restore all lives
-		lives.ResetLives();
+		if(lives)
+			lives.ResetLives();
 	}
 	
 	public void SetLoseNode(string newLoseNode)
@@ -630,7 +631,7 @@ public class YarnCommandManager : DialogueViewBase
 	    EvidenceResponse response = evidenceResponses.Find(response => evidence == response.evidence);
 	    List<EvidenceResponse> statementResponses = evidenceResponses.FindAll(response => evidence == response.statement);
 	    string node;
-	    if (statementResponses.Count > 0 && response == null) //correct statement given
+	    if (statementResponses.Count > 0) //correct statement given
 	    {
 		    node = defaultResponse; //default response will be at the proof node
 		    ResetEvidenceResponses();
@@ -648,6 +649,7 @@ public class YarnCommandManager : DialogueViewBase
 	    {
 		    node = defaultResponse;
 	    }
+	    // runner.Stop();
 	    runner.StartDialogue(node);
     }
 

@@ -442,6 +442,15 @@ title: Wolf2_Q3_Start
 tags:
 position: 124,340
 ---
+<<LoadEvidence Wolf_MetroPass>>
+<<LoadEvidence Wolf_ArrestReport>>
+<<LoadEvidence Wolf_CCTV>>
+<<LoadEvidence Wolf_Profile>>
+<<LoadEvidence Wolf_FamilyPortrait>>
+<<LoadEvidence TinkerBell_Testimony>>
+<<LoadEvidence Pigs_Crime_Scene>>
+<<LoadEvidence Pigs_Autopsy>>
+<<LoadEvidence Pigs_Testimony>>
 <<AddCharacter Wolf>>
 <<SetPose Wolf neutral_idle>>
 <<SetMusic QuestionsFaster>>
@@ -462,10 +471,11 @@ position: 124,340
         //SET CORRECT EVIDENCE HERE
         <<if visited("Wolf2_Q3_Accusation_Correct_MetroPass") == true && visited("Wolf2_Q3_Accusation_Correct_Car") == false>>
             //Second contradiction
-            <<SetStatementResponse Wolf2_Q3_FakedMetro Wolf2_Q3_SeeKids Wolf2_Q3_Accusation_Correct_CCTV>>
-            <<PromptStatement Wolf2_Q3_Accusation_Contradict>>
+            <<SetStatementResponse Wolf2_Q3_FakedMetro Wolf2_Q3_ChangeClothes Wolf2_Q3_Accusation_Correct_CCTV>>
+            <<SetStatementResponse Wolf2_Q3_ChangeClothes Wolf2_Q3_FakedMetro Wolf2_Q3_Accusation_Correct_CCTV>>
+            
         <<endif>>
-        <<PromptStatement Wolf2_Q3_Accusation_Proof>>
+        <<PromptStatement Wolf2_Q3_Accusation_Contradict>>
     -> You're lying about this statement!
         <<ResetEvidenceResponses>>
         //SET CORRECT EVIDENCE HERE
@@ -567,7 +577,7 @@ position: -149,435
 Shepherd: So, why did you try to return to the scene of the crime? You had gotten away with it!
 Wolf: ...
 Wolf: I didn't trust Tinker Bell. I had to make sure she did it.
-<<AddStatement Wolf2_Q3_ChangeClothes "Wolf went back to the scene of the crime because he didn't trust Tinker Bell.">>
+<<AddStatement Wolf2_Q3_Trust "Wolf went back to the scene of the crime because he didn't trust Tinker Bell.">>
 Shepherd: Why didn't you trust her?
 Wolf: I don't trust anybody.
 Shepherd: How edgy.
@@ -722,7 +732,7 @@ Shepherd: Yet, you also said that you got your new clothes from home and insiste
 Shepherd: So? Which is it, Wolf? Did you change your clothes or not?
 <<SetPose Wolf angry_tapping>>
 Wolf: Fine! Fine! I didn't change my clothes! 
-<<RemoveStatement Wolf2_Q3_ChangeClothes "Wolf got his new clothes from his home.">>
+<<RemoveStatement Wolf2_Q3_ChangeClothes "Wolf got his new clothes from his home after the crime.">>
 <<AddStatement Wolf2_Q3_DidntChangeClothes "Wolf did not change his clothes.">>
 Wolf: Why are you nitpicking everything I say?! I'm confessing to the crime!
 Shepherd: Wolf, I'm just trying to find the truth. Why are you still lying?

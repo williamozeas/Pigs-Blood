@@ -58,7 +58,7 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
 
     public void AddStatement(string ID, string display)
     {
-        if (statements.Find(statement => statement.ID == ID))
+         if (statements.Find(statement => statement.ID == ID))
         {
             return;
         }
@@ -76,6 +76,7 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
         newStatement.holder = this;
         statements.Add(newStatement);
         pageToAdd.statements.Add(newStatement);
+        
     }
     
     private void SetStatementsActive(bool active)
@@ -109,15 +110,24 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
                 Destroy(page.gameObject);
             }
         }
+
+        currentPage = 0;
     }
 
     public void RemoveStatement(string idToRemove)
     {
+        var matching = statements.FindAll(statement => statement.ID == idToRemove);
         statements.RemoveAll(statement => statement.ID == idToRemove);
         foreach (var page in pages)
         {
             page.statements.RemoveAll(statement => statement.ID == idToRemove);
         }
+
+        for (int i = matching.Count - 1; i >= 0; i--)
+        {
+            Destroy(matching[i].gameObject);
+        }
+        
     }
     
     public override void Populate()
