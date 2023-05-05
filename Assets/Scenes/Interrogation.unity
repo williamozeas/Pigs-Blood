@@ -6074,7 +6074,7 @@ PrefabInstance:
     - target: {fileID: 8517922602376601813, guid: fe758d2578e924949a58776c2f5fb87f,
         type: 3}
       propertyPath: startNode
-      value: Start
+      value: Wolf2_Q3_Start
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6565498351959831318, guid: fe758d2578e924949a58776c2f5fb87f, type: 3}
