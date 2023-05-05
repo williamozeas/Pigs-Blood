@@ -238,6 +238,7 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
 
         flippingPage.localRotation = rightRot; 
         nextPage.localPosition = backPos;
+        nextPage.localRotation = rightRot;
         if (!curIsOne)
         {
             prevPage.localPosition = frontPos;
