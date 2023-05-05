@@ -46,7 +46,6 @@ Shepherd: ...I'm sure you're very torn up by the death of Sticks-
 Straw: STIIIIIIIICKKSSSSS!!-
 <<PlayEffect Energy>>
 Bricks: I, I'm sorry, Straw is just so torn up- could we, ah, maybe avoid sayin'-
-<<SetMusic Chill>>
 Shepherd: Of course, I understand. These things are hard.
 <<SetPose Straw sad_crying>>
 Straw: *sniffle*
@@ -136,7 +135,7 @@ Bricks: Oh for Pete's sake Straw, watch yer' phrasin'. Excuse him officer, He wa
 <<wait 0.5>>
 Shepherd: I..alright..Where on the property was this?
 Bricks: Over on the other side of the shed, opposite of my field.
-<<AddStatement Pigs_Q1_WhereTheyWere "At the time of the murder, Bricks was tending to his strawberries and Straw was clearing brush for firewood">>
+<<AddStatement Pigs_Q2_WhereTheyWere "At the time of the murder, Bricks was tending to his strawberries and Straw was clearing brush for firewood">>
 <<jump Pigs_Q1_Start>>
 ===
 
@@ -246,17 +245,17 @@ position: 350,186
 ---
 <<SetPose Bricks neutral_sitting>>
 <<SetPose Straw neutral_idle>>
-Shepherd: You both say that you were in places where you could not see the house
+Shepherd: You both say that you were in places where you could not see the house.
 Bricks: Yeah, so?
-Shepherd: Looking at the map of the property, the spots you both claim to have been either had a sightline to the house or the driveway out
+Shepherd: Looking at the map of the property, the spots you both claim to have been either had a sightline to the house or the driveway out.
 <<PlayEffect Energy>>
 Bricks: Are you callin' me a liar? Them's fightin' words.
 Straw: Yeah, fightin' words.
 Shepherd: I'm not calling either of you liars, but neither of you are telling me the truth.
 Shepherd: So how about we start again?
-Bricks: Nah, we aint gonna change our stories
+Bricks: Nah, we aint gonna change our stories.
 Shepherd: Fine then, lets come back to this.
-Shepherd:<style="int">(I need to be careful, these two seem liable to get violent)</style>
+Shepherd:<style="int">(I need to be careful, these two seem liable to get violent.)</style>
 <<jump Pigs_Q3_Start>>
 
 //Pigs Q3
@@ -671,6 +670,7 @@ Shepherd: And this "boss"... who is that?
 Bricks: ...I don't know. We've only dealt with TinkerBell.
 Shepherd:... Alright. Thank you for your cooperation.
 <<SetPose Straw sad_crying>>
+<<SetMusic Chill>>
 Straw: Bring her down!
 Bricks: For our brother, for Sticks.
 <<PlayEffect ToWhite>>
@@ -681,8 +681,7 @@ title: Pigs_Ending
 tags:
 position: 58,1403
 ---
-<<SetMusic Chill>>
-<<wait 5>>
+<<wait 3>>
 <<RemoveCharacter Bricks>>
 <<RemoveCharacter Straw>>
 <<AddCharacter MatchGirl>>
@@ -695,8 +694,8 @@ Shepherd: I think she owns a nightclub downtown, though I never expected her to 
 Matches: Some people will always dissapoint huh? Anyways, head home Shepherd. We should have her in here at some point tomorrow morning to have a chat with you.
 Shepherd: Thanks Matches, really appreciate it.
 <<PlayEffect ToBlack>>
-<<wait 5>>
 <<StopMusic>>
+<<wait 3>>
 <<RemoveCharacter MatchGirl>>
 
 <<jump StartTinkerBell>>

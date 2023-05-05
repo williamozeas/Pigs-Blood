@@ -111,6 +111,9 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
             }
         }
 
+        var pagezero = pages[0];
+        pages.Clear();
+        pages.Add(pagezero);
         currentPage = 0;
     }
 
