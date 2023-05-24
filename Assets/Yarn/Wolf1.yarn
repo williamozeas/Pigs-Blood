@@ -37,7 +37,8 @@ Wolf: I can see that. Anyone ever tell you that your organization skills are ter
 Shepherd: Anyone ever tell you that your following-the-law skills are terrible?
 <<PlayEffect Failure>>
 <<SetPose Wolf angry_tapping>>
-Wolf: Wow. You really got me with that one. Besides, my following-the-law skills are up to par - I think <style="emph">you</style> need to work on <style="emph">your</style> idea of what "breaking the law" is.
+Wolf: Wow. You really got me with that one. 
+Wolf: Besides, my following-the-law skills are up to par - I think <style="emph">you</style> need to work on <style="emph">your</style> idea of what "breaking the law" is.
 Wolf: What am I even in here for? Walking too slowly?
 <<PlayEffect Emphasis>>
 Shepherd: One of the Pigs brothers was found dead.
@@ -615,7 +616,7 @@ Shepherd: Sometimes I feel bad for them.
 Matches: Don't. It's easier that way.
 Shepherd: ...
 Matches: He did something bad, and he has to pay for it.
-Matches: Besides, think of the pig who died. We've gotta make it up to his friends, his family.
+Matches: Besides, think of the pig who died. We've gotta make it up to his friends and family.
 Shepherd: Right.
 Matches: Speaking of... we've got them lined up in the next room. 
 Shepherd: Them?

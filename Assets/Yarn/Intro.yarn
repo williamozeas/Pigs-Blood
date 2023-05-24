@@ -85,7 +85,11 @@ title: Intro_Q1_Success
 Shepherd: He's 30. Says so right on his report.
 <<SetPose MatchGirl neutral_idle>>
 Matches: Glad my work writing those isn't in vain. Even if your workspace is as organized as a burning building.
-Shepherd: Very funny. I have my methods. Besides, have I let you down yet?
+Shepherd: Very funny. I have my methods. 
+<<PlayEffect Failure>>
+Matches: I don't see how being disorganized is a method.
+Shepherd: We all have our vices. Some of us chew matches, some of us don't know how to use a filing cabinet.
+Shepherd: Besides, have I let you down yet?
 Matches: Of course not. You're as good a detective as we've ever seen here. Though, I'll be watching from the next room if you need help.
 <<StopMusic>>
 <<wait 1>>

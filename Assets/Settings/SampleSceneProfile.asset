@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb60a22f311433c4c962b888d1393f88, type: 3}
   m_Name: PaniniProjection
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   distance:
     m_OverrideState: 1
     m_Value: 0.589
@@ -103,10 +103,10 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 8
   intensity:
     m_OverrideState: 1
-    m_Value: 0.091
+    m_Value: 0.28
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -148,8 +148,9 @@ MonoBehaviour:
   - {fileID: 849379129802519247}
   - {fileID: -7893295128165547882}
   - {fileID: -2681831398165579406}
-  - {fileID: -7011558710299706105}
   - {fileID: -4268035686565261666}
+  - {fileID: 6638259246775043772}
+  - {fileID: -7011558710299706105}
   - {fileID: -6016235652437871460}
 --- !u!114 &849379129802519247
 MonoBehaviour:
@@ -167,3 +168,35 @@ MonoBehaviour:
   mode:
     m_OverrideState: 1
     m_Value: 2
+--- !u!114 &2977587280820926376
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d4afc11d8a246709f875ce1b237ac9, type: 3}
+  m_Name: CustomEffectComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  kernelSize:
+    m_OverrideState: 1
+    m_Value: 5
+--- !u!114 &6638259246775043772
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d4afc11d8a246709f875ce1b237ac9, type: 3}
+  m_Name: KuwaharaEffectComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  kernelSize:
+    m_OverrideState: 1
+    m_Value: 7

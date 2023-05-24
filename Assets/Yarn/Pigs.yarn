@@ -691,8 +691,8 @@ position: 58,1403
 <<AddCharacter MatchGirl>>
 <<SetPose MatchGirl neutral_idle>>
 <<PlayEffect Reveal>>
-Matches: TinkerBell huh?
-Shepherd: Thats what they said.
+Matches: TinkerBell, huh?
+Shepherd: That's what they said.
 Matches: You ever heard of her? Who is she?
 Shepherd: I think she owns a nightclub downtown, though I never expected her to be the murderous type.
 Matches: Some people will always dissapoint huh? Anyways, head home Shepherd. We should have her in here at some point tomorrow morning to have a chat with you.
