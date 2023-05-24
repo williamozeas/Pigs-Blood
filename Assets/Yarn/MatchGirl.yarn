@@ -513,6 +513,7 @@ position: 58,1403
 ---
 <<SetMusic Contradiction>>
 <<PlayEffect Shock>>
+<<AddCharacter MatchGirl>>
 <<SetPose MatchGirl irritated_sitting>>
 Matches: No!!
 Shepherd: Yes, that's right. You have a particular habit of chewing on matches. 
@@ -528,7 +529,7 @@ Shepherd: It's over, Matches.
 <<wait 3>>
 <<RemoveCharacter MatchGirl>>
 <<AddCharacter Wolf>>
-<<SetMusic>>
+<<StopMusic>>
 <<PlayEffect Reveal>>
 Shepherd: <style="int">(...So. We're done here.)</style>
 Wolf: Am I free to go?
@@ -565,10 +566,14 @@ Shepherd: <style="int">(...)</style>
 Shepherd: <style="int">(...But after Wolf, I can see why she felt that way.)</style>
 Shepherd: <style="int">(It's strange, the Big Bad Wolf fears the boy who cries his name.)</style>
 <<wait 2>>
-Shepherd: <style="int">(From now on, I have to make it up to the innocent.)</style>
-Shepherd: <style="int">(And never stop searching for the truth!)</style>
+Shepherd: <style="int">(From now on, I have to be better.)</style>
+Shepherd: <style="int">(I have to make it up to the innocent.)</style>
+<<wait 1>>
+Shepherd: <style="int">(And I must never stop searching for the truth.)</style>
 <<PlayEffect ToBlack>>
 <<wait 2>>
+<<StopMusic>>
+Shepherd: <style="int">THE END.</style>
 <<Checkpoint Start>>
 ===
 title: MatchGirlLose
