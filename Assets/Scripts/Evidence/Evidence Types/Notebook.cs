@@ -105,16 +105,16 @@ public class Notebook : FlippableEvidence<NotebookPage>, IStatementHolder
         {
             NotebookPage page = pages[i];
             page.statements.Clear();
-            if (i != 0)
-            {
-                Destroy(page.gameObject);
-            }
+            Destroy(page.gameObject);
         }
 
-        var pagezero = pages[0];
+        // var pagezero = pages[0];
         pages.Clear();
-        pages.Add(pagezero);
+        NotebookPage newPage = Instantiate(pagePrefab, transform.position + backPos, transform.rotation * rightRot, transform).GetComponent<NotebookPage>();
+        newPage.transform.localPosition += new Vector3(0, 0.006f, 0);
+        pages.Add(newPage);
         currentPage = 0;
+        
     }
 
     public void RemoveStatement(string idToRemove)

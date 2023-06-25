@@ -303,7 +303,7 @@ Wolf: You heard me.
 title: Wolf_Q3_Start
 position: -751,186
 ---
-<<SetMusic QuestionsFaster>>
+<<SetMusic Questions>>
 <<AddCharacter Wolf>>
 <<SetPose Wolf neutral_idle>>
 -> Question
@@ -423,7 +423,7 @@ Shepherd: You're lying again. I've half a mind to get you indicted this instant.
 Wolf: Wait, wait. Okay, I might have lied. But I just went out to do an errand. I swear.
 Shepherd: Are you... shedding?
 Wolf: ...I do that when I'm nervous. Please, hear me out.
-<<SetMusic Questions>>
+<<SetMusic QuestionsFaster>>
 <<jump Wolf_Q4>>
 
 
