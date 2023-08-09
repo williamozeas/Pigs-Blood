@@ -60,32 +60,25 @@ PrefabInstance:
         External
         Examination:
 
-        The victim is identified as a male pig of approximately
-        5 years old. The pig is 3 feet tall and weighs approximately 150 pounds.
-        The victim has suffered extensive head trauma, with multiple lacerations
-        and fractures to the skull. There are also several large contusions on the
-        torso and limbs. The cause of death is consistent with blunt force trauma
-        to the head.'
+        The victim was a pig, exact age is unknown at this
+        time, estimating between 5 and 6 years old. Victim is 95 cm tall, weighing
+        approximately 70 kg. Extensive damage to the upper skull is noted, with multiple
+        lacerations and skull fractures present. Similar damage is present on upper
+        arms and torso, though less severe. Cause of death appears to be blunt force
+        trauma and blood loss.'
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
       propertyPath: pagesText.Array.data[1]
-      value: 'Internal Examination:
-
-        The skull is fractured in several places.
-        The brain itself is severely damaged, with evidence of hemorrhage and contusions.
-        The victim''s lungs are filled with blood, indicating that the pig likely
-        bled out while waiting for medical attention. There are also multiple fractures
-        to the ribs and sternum. The liver and kidneys show signs of minor damage,
-        likely caused by blunt force trauma.
-
-
-        Toxicology:
-
-        Trace
-        amounts of psychedelic substances were detected in blood and urine samples.
-        Victim was not under influence at time of death, but may have taken some
-        variation of drug within the past few days.'
+      value: "Internal Examination:\r\nVictim skull shows multiple fractures with
+        shards lodged within brain tissue. Signs of internal brain hemorrhage are
+        evident in areas around the shards indicating extreme force upon blows. Blood
+        clots measuring 2-3 cm were also present within gray matter. Parts of the
+        occipital lobe and cerebellum are missing. Damage to brain stem present,
+        with fractures in cervical vertebrae from C1 to C5.  \r\n\r\nToxicology:\r\nBlood
+        and urine samples show trace amounts of Pixie Dust. Findings indicate the
+        victim was not under influence at time of death, but may have ingested some
+        within the past 24 hours.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150074, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
@@ -93,11 +86,9 @@ PrefabInstance:
       value: 'Conclusion:
 
 
-        Based on the findings of the external and internal
-        examinations, it is the opinion of the medical examiner that the victim,
-        a male pig, died as a result of blunt force trauma to the head. The victim
-        bled out while waiting for medical attention. The manner of death is homicide,
-        and the investigation is ongoing.'
+        Based on condition of victim''s skull and vertebrae,
+        this deparment''s conclusion is likely homicide with cause of death surmised
+        to be repeated blunt force trauma on skull and cerrebral hemorrhaging.'
       objectReference: {fileID: 0}
     - target: {fileID: 568681983026150075, guid: e9237cd618652460097a3aba9efdfbc4,
         type: 3}
